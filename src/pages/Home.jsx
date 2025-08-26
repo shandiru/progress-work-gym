@@ -12,6 +12,7 @@ import TrainersSection from "../components/Home/PersonalTrainers"
 import Equipment from "../components/Home/Equipment"
 import Contact from "../components/Home/Contact"
 import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
+import Products from "../components/Home/Products"
 
 function Home() {
 
@@ -26,6 +27,7 @@ function Home() {
          <WhyChooseUsSection />
      
       <Equipment />
+      <Products />
     
       <CustomerReviews />
       <Contact />
