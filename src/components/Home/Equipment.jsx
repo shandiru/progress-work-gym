@@ -56,6 +56,13 @@ const equipmentData = {
       img: "/placeholder.webp",
     },
   ],
+    Cardio: [
+    {
+      name: "Preacher Curl Bench",
+      desc: "Isolated bicep curl training bench",
+      img: "/placeholder.webp",
+    }
+  ],
 };
 
 export default function Equipment() {
