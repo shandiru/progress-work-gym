@@ -11,7 +11,7 @@ import MembershipPlans from "../components/Home/MembershipSection"
 import TrainersSection from "../components/Home/PersonalTrainers"
 import Equipment from "../components/Home/Equipment"
 import Contact from "../components/Home/Contact"
-
+import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
 
 function Home() {
 
@@ -23,10 +23,10 @@ function Home() {
       <About />
       <TrainersSection />
       <Partners />
-      <LifestyleSection />
-      <WhatWeDoBest />
+         <WhyChooseUsSection />
+     
       <Equipment />
-      <LatestEquipment />
+    
       <CustomerReviews />
       <Contact />
       <Footer />
