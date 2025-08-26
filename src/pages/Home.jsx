@@ -13,7 +13,7 @@ import Equipment from "../components/Home/Equipment"
 import Contact from "../components/Home/Contact"
 import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
 import Products from "../components/Home/Products"
-
+import FaqSection from "../components/Home/FaqSection"
 function Home() {
 
   return (
@@ -30,6 +30,7 @@ function Home() {
       <Products />
     
       <CustomerReviews />
+      <FaqSection />
       <Contact />
       <Footer />
     </>
