@@ -14,6 +14,8 @@ import Contact from "../components/Home/Contact"
 import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
 import Products from "../components/Home/Products"
 import FaqSection from "../components/Home/FaqSection"
+import ContactForm from "../components/Home/ContactForm"
+
 function Home() {
 
   return (
@@ -32,6 +34,7 @@ function Home() {
       <CustomerReviews />
       <FaqSection />
       <Contact />
+      <ContactForm />
       <Footer />
     </>
   )
