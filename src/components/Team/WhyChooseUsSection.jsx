@@ -1,3 +1,4 @@
+// File: WhyChooseUsSection.jsx
 'use client';
 import React from "react";
 import { GiGymBag, GiWeightLiftingUp } from "react-icons/gi";
@@ -32,32 +33,33 @@ export default function WhyChooseUsSection() {
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl font-bold leading-snug">
-            We Can Give A Shape Of <br />
-            Your Body Here!
+            Built for every body.
           </h2>
 
           {/* Paragraph */}
           <p className="text-gray-300 text-base max-w-xl">
-            Gymat an unknown printer took a galley of type and scarey aretea mbled it to make a type specimen book. May has survived not only five centuries, but also the leap into electronic.
+            From first-timers to IFBB Pros, our dedicated training rooms and
+            constantly updated equipment give you everything you need to succeed.
+            At Progress Works, we make fitness simple.
           </p>
 
-          {/* Features */}
+          {/* Features / Keywords */}
           <div className="grid grid-cols-2 gap-6 mt-6">
             <div className="flex items-center gap-3">
               <GiWeightLiftingUp className="text-[#ed1c24] text-3xl" />
-              <span className="font-semibold">Free Fitness <br /> Training</span>
+              <span className="font-semibold">Strength</span>
             </div>
             <div className="flex items-center gap-3">
               <FaDumbbell className="text-[#ed1c24] text-3xl" />
-              <span className="font-semibold">Modern Gym <br /> Equipments</span>
+              <span className="font-semibold">Cardio</span>
             </div>
             <div className="flex items-center gap-3">
               <GiGymBag className="text-[#ed1c24] text-3xl" />
-              <span className="font-semibold">Gym Bag <br /> Equipments</span>
+              <span className="font-semibold">Equipment</span>
             </div>
             <div className="flex items-center gap-3">
               <FaBottleWater className="text-[#ed1c24] text-3xl" />
-              <span className="font-semibold">Fresh Bottle <br /> Water</span>
+              <span className="font-semibold">Results</span>
             </div>
           </div>
 

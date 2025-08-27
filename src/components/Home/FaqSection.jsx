@@ -1,16 +1,12 @@
+// File: AboutFaqSection.jsx
 import React, { useId, useState } from "react";
 
 export default function AboutFaqSection({
   imageSrc = "/faq.png",
   imageAlt = "Gym athlete working out",
   titleKicker = "FAQ",
-  title = (
-    <>
-      HERE GYM FITNESS MEETS <span className="block mt-1 text-red-600">EXCELLENCE!</span>
-    </>
-  ),
-  intro =
-    "Lorem ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since.",
+  title = "FAQ: Your Fitness, Answered",
+  intro = "Got questions? We’ve got the answers — so you can focus on smashing your goals.",
   faqs = defaultFaqs,
 }) {
   return (
@@ -32,8 +28,12 @@ export default function AboutFaqSection({
 
           {/* RIGHT: CONTENT + FAQ */}
           <div className="order-1 lg:order-2">
-            <div className="mb-6 text-sm font-semibold uppercase tracking-widest text-red-600">{titleKicker}</div>
-            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
+            <div className="mb-2 text-sm font-semibold uppercase tracking-widest text-red-600">
+              {titleKicker}
+            </div>
+            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+              {title}
+            </h2>
             <p className="mt-5 max-w-prose text-gray-300">{intro}</p>
 
             <div className="mt-8 space-y-3">
@@ -64,7 +64,9 @@ function FaqRow({ index, item }) {
         className="group flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-black/80"
       >
         <div className="flex items-center gap-4">
-          <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-red-600/20 font-semibold text-red-600">{String(index + 1).padStart(2, "0")}</span>
+          <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-red-600/20 font-semibold text-red-600">
+            {String(index + 1).padStart(2, "0")}
+          </span>
           <span className="text-base font-semibold sm:text-lg">{item.q}</span>
         </div>
         <span
@@ -73,7 +75,14 @@ function FaqRow({ index, item }) {
           }`}
           aria-hidden
         >
-          <svg viewBox="0 0 24 24" className="h-4 w-4 text-red-600"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+          <svg viewBox="0 0 24 24" className="h-4 w-4 text-red-600">
+            <path
+              d="M12 5v14M5 12h14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
         </span>
       </button>
 
@@ -81,7 +90,9 @@ function FaqRow({ index, item }) {
         id={panelId}
         role="region"
         aria-labelledby={btnId}
-        className={`grid transition-[grid-template-rows] duration-300 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
       >
         <div className="min-h-0 overflow-hidden">
           <p className="px-5 pb-5 text-gray-300">{item.a}</p>
@@ -91,21 +102,22 @@ function FaqRow({ index, item }) {
   );
 }
 
+/* ---- Your gym FAQ content ---- */
 const defaultFaqs = [
   {
-    q: "How do I know if my brakes need to be replaced?",
-    a: "If you're hearing grinding or squeaking, the pedal feels soft, or stopping distance increases, it's time for an inspection. Our trainers can also check equipment safety protocols with you on day one.",
+    q: "Do I need to be fit before joining?",
+    a: "Not at all. Progress Works Gym is built for everyone — from complete beginners to seasoned athletes.",
   },
   {
-    q: "How do I know which gym class is right for me?",
-    a: "Start with your goal: fat loss, strength, or mobility. Speak to our front desk for a quick screening—we'll match you to a beginner, intermediate, or advanced track.",
+    q: "What makes Progress Works different from other gyms?",
+    a: "We offer dedicated training rooms, top-tier equipment that’s always up to date, and a supportive community that treats fitness as a lifestyle, not a chore.",
   },
   {
-    q: "Do I need to bring any equipment to a gym class?",
-    a: "Bring a water bottle and towel. We provide all class gear; weightlifting kits and mats are sanitized and ready.",
+    q: "Can I get help with my workouts?",
+    a: "Yes. Our team and community are here to guide you, whether you need advice on form, programs, or just a push to stay consistent.",
   },
   {
-    q: "Can I join any type of class if I'm a beginner?",
-    a: "Absolutely. Every class has scaled options. Coaches demonstrate regressions and progressions so you can train safely at your level.",
+    q: "How often do you update your equipment?",
+    a: "Regularly. We stay on top of the latest trends and replace equipment to keep your training experience fresh and effective.",
   },
 ];

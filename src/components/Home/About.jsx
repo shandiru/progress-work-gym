@@ -1,3 +1,4 @@
+// File: About.jsx
 import React from "react";
 import { FaDumbbell } from "react-icons/fa";
 import { GiGymBag, GiBodyBalance } from "react-icons/gi";
@@ -15,33 +16,34 @@ export default function About() {
 
           {/* Heading */}
           <h1 className="text-[24px] sm:text-[36px] lg:text-[40px] font-bold leading-tight text-gray-900">
-            Take Your Health And Body To <br />
-            <span className="text-[#ed1c24]">Next Level</span>
+            Fitness. Lifestyle. <span className="text-[#ed1c24]">Progress.</span>
           </h1>
 
           {/* Paragraph */}
           <p className="text-gray-600 text-base leading-relaxed max-w-lg">
-            Gymat an unknown printer took a galley of type and scr arsy mbled it to make a type specimen book. It has survived not only five centuri but also the.
+            Founded in 2016, Progress Works Gym is where anyone can train, grow,
+            and feel their best. We bring the latest equipment and a holistic
+            approach to fitness in Leicester.
           </p>
 
-          {/* Features */}
+          {/* Features / Keywords */}
           <div className="grid grid-cols-3 text-center divide-x divide-gray-300 border-y border-gray-300 py-6">
             <div className="px-4">
               <FaDumbbell className="text-[#ed1c24] text-4xl mx-auto mb-2" />
               <p className="text-sm font-bold text-gray-900 uppercase">
-                Professional<br />Trainers
+                Progress
               </p>
             </div>
             <div className="px-4">
               <GiGymBag className="text-[#ed1c24] text-4xl mx-auto mb-2" />
               <p className="text-sm font-bold text-gray-900 uppercase">
-                Modern<br />Equipments
+                Lifestyle
               </p>
             </div>
             <div className="px-4">
               <GiBodyBalance className="text-[#ed1c24] text-4xl mx-auto mb-2" />
               <p className="text-sm font-bold text-gray-900 uppercase">
-                Body Building<br />Machine
+                Community
               </p>
             </div>
           </div>
@@ -71,4 +73,3 @@ export default function About() {
     </section>
   );
 }
-

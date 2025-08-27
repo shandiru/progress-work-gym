@@ -15,7 +15,7 @@ import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
 import Products from "../components/Home/Products"
 import FaqSection from "../components/Home/FaqSection"
 import ContactForm from "../components/Home/ContactForm"
-
+import Review from "../components/Home/Review"
 function Home() {
 
   return (
@@ -31,7 +31,7 @@ function Home() {
       <Equipment />
       <Products />
     
-      <CustomerReviews />
+      <Review />
       <FaqSection />
       <Contact />
       <ContactForm />
