@@ -29,9 +29,10 @@ export default function Contact() {
             title="Google Street View"
             className="w-full h-96"
             loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!4v1712419757756!6m8!1m7!1sCAoSLEFGMVFpcE9EZ29pSEFwU3hsZ2NBcmptN0NReGVyUk1KYjVRckl3WWR6V2No!2m2!1d52.647937!2d-1.1914016!3f270!4f0!5f0.7820865974627469"
+            src="https://www.google.com/maps/embed?pb=!4v1756308331182!6m8!1m7!1sCAoSHENJQUJJaEFHYnphcUNoaVEtMmZ6eEQ0QURNRzI.!2m2!1d52.6531416305378!2d-1.201020344245777!3f-18.184931506849313!4f-90!5f0.4000000000000002"
             allowFullScreen
           ></iframe>
+          
         </div>
 
         {/* Address and Buttons */}
