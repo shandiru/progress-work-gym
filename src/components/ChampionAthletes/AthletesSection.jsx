@@ -121,6 +121,42 @@ const ATHLETES = [
       { label: "Body Fat", value: "16%" },
     ],
   },
+  {
+    name: "Kerry sexton",
+    role: "Pro Athlete",
+    img: "/7.png",
+    blurb:
+      "Wellness division champion known for her incredible lower body development",
+    achievements: [
+      "Wellness Olympia Champion 2023",
+      "Arnold Classic Wellness Winner",
+      "IFBB Pro Card 2021",
+    ],
+    tags: ["Wellness Training", "Glute Development", "Lower Body Specialization"],
+    stats: [
+      { label: "Weight", value: "150 lbs" },
+      { label: "Height", value: `5'5"` },
+      { label: "Body Fat", value: "16%" },
+    ],
+  },
+  {
+    name: "Marc hector",
+    role: "Pro Athlete",
+    img: "/8.jpeg",
+    blurb:
+      "Wellness division champion known for her incredible lower body development",
+    achievements: [
+      "Wellness Olympia Champion 2023",
+      "Arnold Classic Wellness Winner",
+      "IFBB Pro Card 2021",
+    ],
+    tags: ["Wellness Training", "Glute Development", "Lower Body Specialization"],
+    stats: [
+      { label: "Weight", value: "150 lbs" },
+      { label: "Height", value: `5'5"` },
+      { label: "Body Fat", value: "16%" },
+    ],
+  },
 ];
 
 function Badge({ children, solid = false }) {
