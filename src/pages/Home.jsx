@@ -31,7 +31,7 @@ function Home() {
       <Equipment />
       <Products />
     
-      <Review />
+      <CustomerReviews />
       <FaqSection />
       <Contact />
       <ContactForm />
