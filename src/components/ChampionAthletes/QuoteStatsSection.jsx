@@ -3,7 +3,7 @@ import React from "react";
 
 export default function QuoteStatsSection() {
   return (
-    <section className="py-20 bg-card">
+    <section className="py-20 bg-card bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-8 text-balance">
           "Success isn't given. It's earned in the gym."

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CtaSection() {
   return (
-    <section className="py-20 bg-primary text-primary-foreground">
+    <section className="py-20 bg-primary text-primary-foreground bg-black text-white">
       <div className="max-w-4xl mx-auto text-center px-6">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
           Ready to Train Like a Champion?

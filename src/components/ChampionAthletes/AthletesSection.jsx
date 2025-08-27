@@ -18,7 +18,7 @@ const ATHLETES = [
   {
     name: "Marcus Steel",
     role: "Pro Athlete",
-    img: "/muscular-bodybuilder-posing-in-gym.png",
+    img: "/1.png",
     blurb: "3x Mr. Olympia Champion with 15 years of competitive experience",
     achievements: [
       "Mr. Olympia 2021, 2022, 2023",
@@ -35,7 +35,7 @@ const ATHLETES = [
   {
     name: "Sarah Phoenix",
     role: "Pro Athlete",
-    img: "/female-bodybuilder-flexing-muscles-in-competition-.png",
+    img: "/2.png",
     blurb:
       "Rising star in women's bodybuilding with incredible dedication",
     achievements: [
@@ -53,7 +53,7 @@ const ATHLETES = [
   {
     name: "Jake Thunder",
     role: "Pro Athlete",
-    img: "/heavyweight-bodybuilder-deadlifting-massive-weight.png",
+    img: "/3.png",
     blurb:
       "Powerhouse athlete known for his incredible strength and size",
     achievements: [
@@ -71,7 +71,7 @@ const ATHLETES = [
   {
     name: "Luna Vega",
     role: "Pro Athlete",
-    img: "/athletic-female-bodybuilder-doing-bicep-curls.png",
+    img: "/4.png",
     blurb: "Versatile athlete excelling in multiple fitness disciplines",
     achievements: [
       "CrossFit Games Top 10",
@@ -88,7 +88,7 @@ const ATHLETES = [
   {
     name: "Rex Titan",
     role: "Pro Athlete",
-    img: "/classic-physique-bodybuilder-posing-with-perfect-s.png",
+    img: "/5.png",
     blurb:
       "Classic physique specialist with perfect proportions and aesthetics",
     achievements: [
@@ -106,7 +106,7 @@ const ATHLETES = [
   {
     name: "Aria Storm",
     role: "Pro Athlete",
-    img: "/wellness-category-female-bodybuilder-showcasing-lo.png",
+    img: "/6.png",
     blurb:
       "Wellness division champion known for her incredible lower body development",
     achievements: [
@@ -214,13 +214,13 @@ function AthleteCard({ a }) {
 
 export default function AthletesSection() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-black text-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Our Champion Athletes
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl mx-auto">
             These incredible athletes have chosen our facility to push their limits and
             achieve greatness. Their dedication and results speak for themselves.
           </p>

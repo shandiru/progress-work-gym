@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/10">
+    <section className="relative bg-black text-white h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/10">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"

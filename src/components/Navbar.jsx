@@ -20,19 +20,24 @@ const Navbar = () => {
                     <div className=" sm:flex space-x-16 text-sm md:text-base mt-10 ml-10">
                         <Link
                             to="/"
-                            className={`hover:text-gray-300 ${
-                                location.pathname === "/" ? "text-red-600 font-semibold" : ""
-                            }`}
+                            className={`hover:text-gray-300 ${location.pathname === "/" ? "text-red-600 font-semibold" : ""
+                                }`}
                         >
                             Home
                         </Link>
                         <Link
                             to="/team"
-                            className={`hover:text-red-500 ${
-                                location.pathname === "/team" ? "text-red-600 font-semibold" : ""
-                            }`}
+                            className={`hover:text-red-500 ${location.pathname === "/team" ? "text-red-600 font-semibold" : ""
+                                }`}
                         >
                             Personal Trainers
+                        </Link>
+                        <Link
+                            to="/ChampionAthletes"
+                            className={`hover:text-red-500 ${location.pathname === "/ChampionAthletes" ? "text-red-600 font-semibold" : ""
+                                }`}
+                        >
+                            ChampionAthletes
                         </Link>
                     </div>
                 </div>

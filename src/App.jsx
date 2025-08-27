@@ -15,7 +15,6 @@ function App() {
           <Route path="/special-memberships" element={<SpecialMemberships />} />
            <Route path="/day-passes" element={<DayPasses />} />
            <Route path="/ChampionAthletes" element={< ChampionAthletes />} /> 
-      
       </Routes>
     </Router>
   );
