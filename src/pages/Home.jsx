@@ -16,12 +16,15 @@ import Products from "../components/Home/Products"
 import FaqSection from "../components/Home/FaqSection"
 import ContactForm from "../components/Home/ContactForm"
 import Review from "../components/Home/Review"
+import ChampSection from "../components/Home/ChampSection"
+
 function Home() {
 
   return (
     <>
       <Navbar />
       <Header />
+      < ChampSection />
       <MembershipPlans />
       <About />
       <TrainersSection />

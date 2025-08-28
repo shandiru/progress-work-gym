@@ -120,4 +120,16 @@ const defaultFaqs = [
     q: "How often do you update your equipment?",
     a: "Regularly. We stay on top of the latest trends and replace equipment to keep your training experience fresh and effective.",
   },
+  {
+    q: "How often do you update your equipment?",
+    a: "Regularly. We stay on top of the latest trends and replace equipment to keep your training experience fresh and effective.",
+  },
+  {
+    q: "How often do you update your equipment?",
+    a: "Regularly. We stay on top of the latest trends and replace equipment to keep your training experience fresh and effective.",
+  },
+  {
+    q: "How often do you update your equipment?",
+    a: "Regularly. We stay on top of the latest trends and replace equipment to keep your training experience fresh and effective.",
+  },
 ];

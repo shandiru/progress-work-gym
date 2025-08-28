@@ -6,25 +6,45 @@ const plans = [
     title: '1 Month',
     price: 45,
     image: '/pricing1.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Gym available during all hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
   },
   {
     title: '3 Month',
     price: 116,
     image: '/pricing2.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Gym available during all hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
   },
   {
     title: '6 Month',
     price: 213,
     image: '/pricing3.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Gym available during all hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
   },
   {
     title: '12 Month',
     price: 396,
     image: '/pricing1.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Gym available during all hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
   },
 ]
 
@@ -34,7 +54,9 @@ export default function PricingPlansSection() {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">Exclusive Pricing Plan</h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Gymat an unknown printer took a galley of type and scrambled make a type specimen book.
+          All Pay As You Go memberships are on a no-contract basis. 
+          Enjoy access to the gym during all available hours, with unlimited usage 
+          and a free induction included.
         </p>
       </div>
 
@@ -45,10 +67,16 @@ export default function PricingPlansSection() {
             className="bg-white rounded-md shadow-md overflow-hidden flex flex-col justify-between"
           >
             <div className="relative">
-              <img src={plan.image} alt={plan.title} className="w-full h-64 object-cover grayscale" />
+              <img
+                src={plan.image}
+                alt={plan.title}
+                className="w-full h-64 object-cover grayscale"
+              />
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-10 w-[85%]">
                 <div className="bg-white py-2 text-center transform -skew-y-3 shadow-md">
-                  <div className="text-red-600 font-semibold text-lg transform skew-y-3">{plan.title}</div>
+                  <div className="text-red-600 font-semibold text-lg transform skew-y-3">
+                    {plan.title}
+                  </div>
                 </div>
               </div>
             </div>

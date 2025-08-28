@@ -6,13 +6,24 @@ const plans = [
     title: 'Senior Citizen',
     price: 31,
     image: '/pricing1.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Available to seniors aged 65 years and above',
+      'Gym access during all available hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
   },
   {
     title: 'Off Peak',
     price: 33,
     image: '/pricing2.jpg',
-    features: ['Free Hand', 'Gym Fitness', 'Weight Loss', 'Personal Trainer', 'Cycling'],
+    features: [
+      'Pay As You Go (No Contract)',
+      'Valid Mon – Fri, 10:00am – 3:30pm',
+      'Unlimited usage during off-peak hours',
+      'Free induction',
+    ],
   },
 ]
 
@@ -20,9 +31,11 @@ export default function PricingPlansSection() {
   return (
     <section className="bg-[#f8f8f8] py-20 px-4 sm:px-6 lg:px-12">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">Exclusive Pricing Plan</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Special Memberships</h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Gymat an unknown printer took a galley of type and scrambled make a type specimen book.
+          These special memberships are also Pay As You Go with no contract. 
+          Senior Citizen memberships are for individuals aged 65 years and above, 
+          while Off-Peak memberships allow access Monday to Friday from 10:00am to 3:30pm.
         </p>
       </div>
 
@@ -33,11 +46,17 @@ export default function PricingPlansSection() {
             className="bg-white rounded-md shadow-md overflow-hidden flex flex-col justify-between"
           >
             <div className="relative">
-              <img src={plan.image} alt={plan.title} className="w-full h-64 object-cover grayscale" />
+              <img
+                src={plan.image}
+                alt={plan.title}
+                className="w-full h-64 object-cover grayscale"
+              />
               {/* Skewed Label */}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-10 w-[85%]">
                 <div className="bg-white py-2 text-center transform -skew-y-3 shadow-md">
-                  <div className="text-red-600 font-semibold text-lg transform skew-y-3">{plan.title}</div>
+                  <div className="text-red-600 font-semibold text-lg transform skew-y-3">
+                    {plan.title}
+                  </div>
                 </div>
               </div>
             </div>

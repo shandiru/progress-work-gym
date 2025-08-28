@@ -86,6 +86,34 @@ const trainers = [
       ],
     },
   },
+   {
+    name: "Tom",
+    title: "Tom Personal Training",
+    experience: "5 years Experience",
+    img: "/body.avif",
+    description:
+      "From beginners to seasoned athletes — I tailor plans to help every client succeed.",
+    detailed: {
+      heading: "1-1 Personal Training & Support",
+      intro:
+        "Whatever your goal is, I am confident I can help. I’ve worked with both total beginners and competitive lifters alike.",
+      paragraph:
+        "You'll get structure, consistency, and a plan tailored to your needs to help you progress confidently toward your goals.",
+      outro:
+        "My coaching is not just about reps — it's about building a sustainable lifestyle and consistent growth.",
+      stats: [
+        { label: "Years Experience", value: "5+" },
+        { label: "Clients Trained", value: "300+" },
+        { label: "Workouts Delivered", value: "3,000+" },
+      ],
+      services: [
+        "Strength Coaching",
+        "Fat Loss Programs",
+        "Muscle Gain Plans",
+        "Tailored Coaching Support",
+      ],
+    },
+  },
 ];
 
 export default function TrainersSection() {
