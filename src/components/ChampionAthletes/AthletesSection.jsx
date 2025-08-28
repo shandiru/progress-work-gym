@@ -16,39 +16,40 @@ const ACCENT = {
 
 const ATHLETES = [
   {
-    name: "Kerry sexton",
-    role: "Pro Athlete",
+    name: "Kerry Sexton",
+    role: "IFBB Pro Bikini Athlete",
     img: "/7.png",
     blurb:
-      "Wellness division champion known for her incredible lower body development",
+      "UK IFBB Pro Bikini competitor, Olympia-qualified for 2025. Known for her stage presence and consistent top finishes on the international pro circuit.",
     achievements: [
-      "Wellness Olympia Champion 2023",
-      "Arnold Classic Wellness Winner",
-      "IFBB Pro Card 2021",
+      "Winner — 2024 IFBB Romania Muscle Fest Pro (Olympia Qualification)",
+      "Top 3 — 2024 IFBB Nutriyummy Pro Cup",
+      "British Amateur Champion — 2017",
+      "Earned IFBB Pro Card — 2019",
     ],
-    tags: ["Wellness Training", "Glute Development", "Lower Body Specialization"],
+    tags: ["Bikini Division", "Olympia 2025", "Posing & Coaching"],
     stats: [
-      { label: "Weight", value: "150 lbs" },
-      { label: "Height", value: `5'5"` },
-      { label: "Body Fat", value: "16%" },
+      { label: "Height", value: "TBD" },
+      { label: "Stage Weight", value: "TBD" },
+      { label: "Instagram", value: "@kerrysexton_ifbbpro" },
     ],
   },
   {
-    name: "Marc hector",
-    role: "Pro Athlete",
+    name: "Marc Hector",
+    role: "IFBB Pro Bodybuilder",
     img: "/8.jpeg",
     blurb:
-      "Wellness division champion known for her incredible lower body development",
+      "IFBB Pro bodybuilder and online coach from the UK. Co-CEO at HECXTN and affiliated with TBJP Nutrition & Clothing.",
     achievements: [
-      "Wellness Olympia Champion 2023",
-      "Arnold Classic Wellness Winner",
-      "IFBB Pro Card 2021",
+      "5th — 2022 IFBB Arnold Classic UK (Open Bodybuilding)",
+      "3rd — 2022 IFBB Tsunami Cup Pro",
+      "Earned IFBB Pro status",
     ],
-    tags: ["Wellness Training", "Glute Development", "Lower Body Specialization"],
+    tags: ["Bodybuilding", "Contest Prep", "Online Coaching"],
     stats: [
-      { label: "Weight", value: "150 lbs" },
-      { label: "Height", value: `5'5"` },
-      { label: "Body Fat", value: "16%" },
+      { label: "Height", value: "TBD" },
+      { label: "Stage Weight", value: "TBD" },
+      { label: "Instagram", value: "@marc__hector" },
     ],
   },
 ];
@@ -113,7 +114,9 @@ function AthleteCard({ a }) {
             <ul className={`text-sm ${ACCENT.muted} space-y-1`}>
               {a.achievements.map((t, i) => (
                 <li className="flex items-center" key={i}>
-                  <span className={`w-2 h-2 ${ACCENT.dot} rounded-full mr-2 flex-shrink-0`} />
+                  <span
+                    className={`w-2 h-2 ${ACCENT.dot} rounded-full mr-2 flex-shrink-0`}
+                  />
                   {t}
                 </li>
               ))}
