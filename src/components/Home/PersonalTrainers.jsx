@@ -86,7 +86,7 @@ const trainers = [
       ],
     },
   },
-   {
+  {
     name: "Tom",
     title: "Tom Personal Training",
     experience: "5 years Experience",
@@ -130,7 +130,8 @@ export default function TrainersSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Trainers Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {trainers.map((trainer, index) => (
           <div
             key={index}
@@ -146,7 +147,9 @@ export default function TrainersSection() {
             <p className="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 mb-4">
               {trainer.experience}
             </p>
-            <p className="text-center text-gray-300 text-sm mb-4">{trainer.description}</p>
+            <p className="text-center text-gray-300 text-sm mb-4">
+              {trainer.description}
+            </p>
             <button
               onClick={() => setSelectedTrainer(trainer)}
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold"
@@ -159,8 +162,8 @@ export default function TrainersSection() {
 
       {/* Modal */}
       {selectedTrainer && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-70 px-4 py-5 ">
-          <div className="bg-[#161b22] border border-red-600 rounded-md max-w-2xl w-full sm:h-150 mx-auto p-5 relative text-white">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-70 px-4 py-5">
+          <div className="bg-[#161b22] border border-red-600 rounded-md max-w-2xl w-full mx-auto p-5 relative text-white">
             <button
               onClick={() => setSelectedTrainer(null)}
               className="absolute top-3 right-4 text-white text-xl"
@@ -189,9 +192,15 @@ export default function TrainersSection() {
               <h4 className="text-red-500 font-semibold mb-2">
                 {selectedTrainer.detailed.heading}
               </h4>
-              <p className="text-sm text-gray-300 mb-2">{selectedTrainer.detailed.intro}</p>
-              <p className="text-sm text-gray-300 mb-2">{selectedTrainer.detailed.paragraph}</p>
-              <p className="text-sm text-gray-300 mb-4">{selectedTrainer.detailed.outro}</p>
+              <p className="text-sm text-gray-300 mb-2">
+                {selectedTrainer.detailed.intro}
+              </p>
+              <p className="text-sm text-gray-300 mb-2">
+                {selectedTrainer.detailed.paragraph}
+              </p>
+              <p className="text-sm text-gray-300 mb-4">
+                {selectedTrainer.detailed.outro}
+              </p>
 
               {/* Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 text-center">
@@ -205,7 +214,9 @@ export default function TrainersSection() {
 
               {/* Services */}
               <div className="mb-4">
-                <h5 className="font-semibold text-white mb-2">Services Offered</h5>
+                <h5 className="font-semibold text-white mb-2">
+                  Services Offered
+                </h5>
                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-300">
                   {selectedTrainer.detailed.services.map((s, i) => (
                     <li key={i}>{s}</li>
