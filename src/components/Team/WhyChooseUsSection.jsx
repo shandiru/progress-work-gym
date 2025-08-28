@@ -11,18 +11,18 @@ export default function WhyChooseUsSection() {
         {/* Left Side: Image or Video */}
         <div className="relative">
           <div className="relative rounded-md overflow-hidden shadow-lg w-full max-w-[500px] mx-auto border-[6px] border-white rotate-[-2deg]">
-            <img
-              src="/man-training.jpg"
+            <video
+              src="/back.mp4" // replace this with the actual path to your video
               alt="Fitness training"
               className="w-full h-auto object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="bg-white text-black rounded-full p-4 shadow-lg hover:scale-110 transition">
-                ►
-              </button>
-            </div>
           </div>
         </div>
+
 
         {/* Right Side Content */}
         <div className="space-y-6 relative">

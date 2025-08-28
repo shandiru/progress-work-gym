@@ -26,11 +26,11 @@ function Home() {
       <About />
       <TrainersSection />
       <Partners />
-         <WhyChooseUsSection />
-     
+      <WhyChooseUsSection />
+
       <Equipment />
       <Products />
-    
+
       <Review />
       <FaqSection />
       <Contact />
