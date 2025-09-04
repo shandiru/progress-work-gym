@@ -72,6 +72,7 @@ That’s from Brad edit what you need too 😜`,
   },
 ];
 
+
 export default function TrainersSection() {
   const [activeTrainer, setActiveTrainer] = useState(null);
 
@@ -88,25 +89,26 @@ export default function TrainersSection() {
         {trainers.map((t, i) => (
           <div
             key={i}
-            className="border border-red-600 p-6 rounded-md flex flex-col items-center bg-[#161b22]"
+            className="border border-red-600 p-6 rounded-md bg-[#161b22] flex flex-col justify-between h-full"
           >
-            <img
-              src={t.image}
-              alt={t.name}
-              className="w-32 h-32 object-cover rounded-full mb-4"
-            />
-            <h3 className="text-xl font-semibold text-center">{t.name}</h3>
-            <p className="text-red-500 text-sm text-center">{t.title}</p>
-            <p className="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 mb-4">
-              {t.experience}
-            </p>
-            <p className="text-center text-gray-300 text-sm mb-4">{t.shortDesc}</p>
+            <div className="flex flex-col items-center">
+              <img
+                src={t.image}
+                alt={t.name}
+                className="w-32 h-32 object-cover rounded-full mb-4"
+              />
+              <h3 className="text-xl font-semibold text-center">{t.name}</h3>
+              <p className="text-red-500 text-sm text-center">{t.title}</p>
+              <p className="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 mb-4 text-center">
+                {t.experience}
+              </p>
+              <p className="text-center text-gray-300 text-sm">{t.shortDesc}</p>
+            </div>
 
-            {/* Wrap the button inside a flex container */}
-            <div className="flex justify-center w-full">
+            <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setActiveTrainer(t)}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold"
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-md"
               >
                 Read More
               </button>
@@ -115,8 +117,7 @@ export default function TrainersSection() {
         ))}
       </div>
 
-
-      {/* Modal */}
+      {/* Modal (unchanged) */}
       {activeTrainer && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4">
           <div className="bg-[#161b22] border border-red-600 rounded-lg w-full max-w-2xl p-6 relative text-white overflow-y-auto max-h-[90vh]">
@@ -146,8 +147,7 @@ export default function TrainersSection() {
             <p className="text-sm text-gray-300 mb-2">{activeTrainer.fullDesc.intro}</p>
             <p className="text-sm text-gray-300 mb-4">{activeTrainer.fullDesc.paragraph}</p>
 
-            {/* Safely Render Stats */}
-            {activeTrainer.fullDesc.stats && activeTrainer.fullDesc.stats.length > 0 && (
+            {activeTrainer.fullDesc.stats?.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
                 {activeTrainer.fullDesc.stats.map((stat, idx) => (
                   <div key={idx} className="bg-[#0d1117] border rounded-md p-4">
@@ -159,8 +159,7 @@ export default function TrainersSection() {
             )}
 
             <div className="flex flex-col md:flex-row gap-8">
-              {/* Safely Render Services */}
-              {activeTrainer.fullDesc.services && activeTrainer.fullDesc.services.length > 0 && (
+              {activeTrainer.fullDesc.services?.length > 0 && (
                 <div>
                   <h4 className="text-white font-semibold mb-2">Services Offered</h4>
                   <ul className="list-disc list-inside text-gray-300 text-sm">
@@ -171,8 +170,7 @@ export default function TrainersSection() {
                 </div>
               )}
 
-              {/* Safely Render Contact */}
-              {activeTrainer.fullDesc.contact && activeTrainer.fullDesc.contact.length > 0 && (
+              {activeTrainer.fullDesc.contact?.length > 0 && (
                 <div className="ml-8">
                   <h4 className="text-white font-semibold mb-2">Contact</h4>
                   <ul className="list-disc list-inside text-gray-300 text-sm">
@@ -201,5 +199,5 @@ export default function TrainersSection() {
         </div>
       )}
     </section>
-  );
+  );
 }

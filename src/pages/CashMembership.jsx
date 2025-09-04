@@ -8,7 +8,7 @@ const CashMemberships = () => {
   return (
     <div>
       <Navbar />
-     <CashMembership />
+      <CashMembership />
       <Footer />
     </div>
   )

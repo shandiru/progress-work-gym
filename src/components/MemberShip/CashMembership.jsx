@@ -3,42 +3,19 @@ import React from 'react'
 
 const plans = [
   {
-    title: '1 Month',
+    title: '1 Month Rolling Membership',
     price: 45,
-    image: '/pricing1.jpg',
     features: [
-      'Pay As You Go (No Contract)',
-      'Gym available during all hours',
-      'Unlimited usage',
-      'Free induction',
+      'No Joining Fee',
+      'Usage 7 Days a Week',
+      'Wide Range of Facilities',
+      'Expert Help And Advice',
+      "1 Month Cancellation"
     ],
   },
   {
-    title: '3 Month',
-    price: 116,
-    image: '/pricing2.jpg',
-    features: [
-      'Pay As You Go (No Contract)',
-      'Gym available during all hours',
-      'Unlimited usage',
-      'Free induction',
-    ],
-  },
-  {
-    title: '6 Month',
-    price: 213,
-    image: '/pricing3.jpg',
-    features: [
-      'Pay As You Go (No Contract)',
-      'Gym available during all hours',
-      'Unlimited usage',
-      'Free induction',
-    ],
-  },
-  {
-    title: '12 Month',
-    price: 396,
-    image: '/pricing1.jpg',
+    title: '1 Month Couples Membership',
+    price: 68.00 ,
     features: [
       'Pay As You Go (No Contract)',
       'Gym available during all hours',
@@ -60,7 +37,7 @@ export default function PricingPlansSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
         {plans.map((plan, index) => (
           <div
             key={index}
