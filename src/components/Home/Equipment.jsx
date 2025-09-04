@@ -253,7 +253,7 @@ export default function Equipment() {
         <button
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className="text-red-500 md:flex hidden text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
+          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
         >
           <FaChevronLeft />
         </button>
@@ -282,7 +282,7 @@ export default function Equipment() {
         <button
           onClick={nextSlide}
           disabled={startIndex + 3 >= items.length}
-          className="text-red-500 md:flex hidden text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
+          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
         >
           <FaChevronRight />
         </button>

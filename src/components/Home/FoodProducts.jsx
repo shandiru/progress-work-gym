@@ -272,7 +272,7 @@ export default function Products() {
           disabled={startIndex === 0}
           className={`${
             startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-          } text-red-500 hidden md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
+          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
         >
           <FaChevronLeft />
         </button>
@@ -305,7 +305,7 @@ export default function Products() {
             startIndex >= items.length - 3
               ? "opacity-50 cursor-not-allowed"
               : ""
-          } text-red-500 hidden md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
+          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
         >
           <FaChevronRight />
         </button>

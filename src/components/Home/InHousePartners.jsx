@@ -5,7 +5,7 @@ const PARTNERS = [
   {
     name: "Fine Line",
     handle: "@finelines_tattoo_pmuleicester",
-    photo: "/jodie.png",
+    photo: "/jodie1.png",
     logo: "/fineline.png",
   },
   {

@@ -15,7 +15,7 @@ const partners = [
     },
     {
         name: "Cybex",
-        image: "/cybex.png",
+        image: "/cybex.avif",
         link: null,
     },
      {
