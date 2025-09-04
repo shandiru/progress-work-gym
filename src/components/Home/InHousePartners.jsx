@@ -4,7 +4,7 @@ import React from "react";
 const PARTNERS = [
   {
     name: "Fine Line",
-    handle: "@jodiemcomer",
+    handle: "@finelines_tattoo_pmuleicester",
     photo: "/jodie.png",
     logo: "/fineline.png",
   },
@@ -16,13 +16,13 @@ const PARTNERS = [
   },
   {
     name: "Milenium Fit",
-    handle: "@fitness_milenium",
+    handle: "@millenniumfit1",
     photo: "/h-p-3.jpg",
-    logo: "/fit.jpg",
+    logo: "/fit.png",
   },
   {
     name: "Urban Martial Arts",
-    handle: "@urbanmartialartsgloucester",
+    handle: "@umaleicester",
     photo: "/h-p-4.png",
     logo: "/art.jpg",
   },

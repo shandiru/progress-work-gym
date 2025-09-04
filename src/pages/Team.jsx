@@ -8,11 +8,9 @@ import WhyChooseUsSection from '../components/Team/WhyChooseUsSection'
 const Team = () => {
   return (
     <div>
-      <Navbar />
       <Trainer />
       <TrainerCards />
       <WhyChooseUsSection />
-      <Footer />
     </div>
   )
 }

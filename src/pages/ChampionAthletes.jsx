@@ -9,12 +9,10 @@ import CtaSection from '../components/ChampionAthletes/CtaSection'
 const ChampionAthletes = () => {
   return (
     <div>
-      <Navbar />
-    <HeroSection />
-    <AthletesSection />
-    <QuoteStatsSection />
-    <CtaSection />
-      <Footer />
+      <HeroSection />
+      <AthletesSection />
+      <QuoteStatsSection />
+      <CtaSection />
     </div>
   )
 }

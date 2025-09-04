@@ -7,9 +7,7 @@ import SpecialMemberships from '../components/MemberShip/SpecialMemberships'
 const SpecialMembershipss = () => {
   return (
     <div>
-      <Navbar />
-     <SpecialMemberships />
-      <Footer />
+      <SpecialMemberships />
     </div>
   )
 }

@@ -4,7 +4,7 @@ const trainers = [
   {
     name: "Teigan",
     title: "Personal Training & Online Coach",
-    image: "/h-p-4.png",
+    image: "/teigan.png",
     experience: "2 years Experience",
     shortDesc:
       "Neil and Mandy have asked me to send over my portfolio for the website. If you need anything else please let me know.",

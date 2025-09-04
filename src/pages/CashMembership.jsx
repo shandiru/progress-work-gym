@@ -7,9 +7,7 @@ import CashMembership from '../components/MemberShip/CashMembership'
 const CashMemberships = () => {
   return (
     <div>
-      <Navbar />
       <CashMembership />
-      <Footer />
     </div>
   )
 }

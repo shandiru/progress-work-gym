@@ -220,7 +220,7 @@ export default function Equipment() {
   };
 
   return (
-    <section className="bg-black text-white py-35 px-4">
+    <section className="bg-black text-white py-12 px-4 md:px-8 lg:px-12">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold">
           OUR <span className="text-red-600">EQUIPMENT</span>
@@ -253,13 +253,13 @@ export default function Equipment() {
         <button
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className="text-red-500 hidden md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
+          className="text-red-500 md:flex hidden text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
         >
           <FaChevronLeft />
         </button>
 
         {/* Equipment Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
           {visibleItems.map((item, index) => (
             <div
               key={index}
@@ -268,7 +268,7 @@ export default function Equipment() {
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-full h-48 object-cover bg-gray-800"
+                className="w-full h-92 object-cover bg-gray-800"
               />
               <div className="bg-[#0d1117] p-4">
                 <h4 className="font-bold text-white">{item.name}</h4>
@@ -282,7 +282,7 @@ export default function Equipment() {
         <button
           onClick={nextSlide}
           disabled={startIndex + 3 >= items.length}
-          className="text-red-500 hidden md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
+          className="text-red-500 md:flex hidden text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400"
         >
           <FaChevronRight />
         </button>

@@ -7,9 +7,7 @@ import DayPasses from '../components/MemberShip/DayPasses'
 const DayPassess = () => {
   return (
     <div>
-      <Navbar />
-    <DayPasses />
-      <Footer />
+      <DayPasses />
     </div>
   )
 }

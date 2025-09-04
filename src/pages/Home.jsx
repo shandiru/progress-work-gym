@@ -24,7 +24,6 @@ function Home() {
 
   return (
     <>
-      <Navbar />
       <Header />
       <About />
       <TrainersSection />
@@ -41,7 +40,6 @@ function Home() {
       <FaqSection />
       <Contact />
       <ContactForm />
-      <Footer />
     </>
   )
 }
