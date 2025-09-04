@@ -25,7 +25,7 @@ const partners = [
     },
     {
         name: "Panatta",
-        image: "/panatta.avif",
+        image: "/panatta.png",
         link: null,
     },
     
