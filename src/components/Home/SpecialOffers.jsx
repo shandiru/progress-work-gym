@@ -6,9 +6,14 @@ export default function SpecialOffers() {
   const [open, setOpen] = useState(false);
 
   const offers = [
-    { title: "2 for 1 on Waffles", note: "Every Tuesday, after 5pm" },
-    { title: "Free Topping Upgrade", note: "On any Sundae over £7" },
-    { title: "Family Bundle", note: "Any 4 desserts for £25" },
+    {
+      title: "Gym Membership",
+      note: "Surprise someone you love with the perfect gift — a voucher for any of our flexible pay-as-you-go memberships.",
+    },
+    {
+      title: "10% Blue Light Discount",
+      note: "We’re proud to support our Blue Light community — our way of saying thank you for all that you do.",
+    },
   ];
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 
 const plans = [
   {
-    title: "Cash Membership",
+    title: "Pay As You Go",
     slug: "cash-membership",
     options: [
       { label: "1 Month", price: "£45" },
