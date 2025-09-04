@@ -1,22 +1,44 @@
 import React, { useState } from "react";
 
-// All Trainers with full data
 const trainers = [
   {
-    name: "Luke",
-    title: "Train Smart Coaching",
+    name: "Teigan",
+    title: "Personal Training & Online Coach",
+    image: "/h-p-4.png",
+    experience: "2 years Experience",
+    shortDesc:
+      "Neil and Mandy have asked me to send over my portfolio for the website. If you need anything else please let me know.",
+    fullDesc: {
+      intro: `I help people create structure in both training and nutrition so they can achieve real, sustainable results. Whether you’ve been training for years or are completely new to the gym, my goal is to make fitness simple, effective and tailored to you.`,
+      paragraph: `With the right guidance, accountability, and support, you’ll not only see progress—you’ll feel stronger, more confident and in control of your health. Together, we’ll build a clear plan that fits your lifestyle and empowers you to unlock your best self.`,
+      stats: [
+        { label: "Years Experience", value: "2" },
+        { label: "Sessions Delivered", value: "800+" },
+        { label: "Client Transformations", value: "50+" },
+        { label: "Ongoing Support & Accountability", value: "100%" },
+      ],
+      services: [
+        "1-1 Personal Training",
+        "Online Coaching",
+        "Hybrid training packages",
+        "Balanced nutrition plans",
+      ],
+      contact: [
+        { label: "Instagram/Facebook", value: "Teiganfitpt" },
+        { label: "Mobile Number", value: "07919011133" },
+      ]
+    },
+  },
+  {
+    name: "Luke - Train Smart Coaching",
+    title: "1-1 Personal Trainer & Online Coaching",
+    image: "/boy.avif",
     experience: "10 years Experience",
-    img: "/boy.avif",
-    description:
-      "No more nutrition fads or nonsense training, just an evidence-based approach that delivers you the results you're after.",
-    detailed: {
-      heading: "1-1 Personal Trainer & Online Coaching",
-      intro:
-        "With over a decade of experience, 100’s of transformed clients & over 5,000 sessions delivered – I’m here to help you confidently take charge of your health & fitness.",
-      paragraph:
-        "Whether you’ve never stepped foot in a gym before, to competition prep & everything else in between – Train Smart Coaching maps out the most efficient & effective route possible to your goals.",
-      outro:
-        "No more nutrition fads or nonsense training, just an evidence-based approach that delivers you the results you’re after. You will feel comfortable & confident in your journey from day 1, never left in the dark.",
+    shortDesc:
+      "No more fads, just evidence-based training that delivers real results.",
+    fullDesc: {
+      intro: `With over a decade of experience, 100’s of transformed clients & over 5,000 sessions delivered – I’m here to help you confidently take charge of your health & fitness.`,
+      paragraph: `Whether you’ve never stepped foot in a gym or you're aiming for competition prep, Train Smart Coaching provides the most efficient and effective route to your goals.`,
       stats: [
         { label: "Years Experience", value: "10+" },
         { label: "Clients Transformed", value: "100’s" },
@@ -25,71 +47,33 @@ const trainers = [
       services: [
         "Beginner-Friendly Training",
         "Online Coaching",
-        "Competition Preparation",
+        "Competition Prep",
         "Evidence-Based Approach",
       ],
     },
   },
   {
-    name: "Teigan",
-    title: "TeiganFit – Personal & Online Coaching",
-    experience: "7 years Experience",
-    img: "/h-p-4.png",
-    description:
-      "Helping clients develop their physique with structure in diet and training.",
-    detailed: {
-      heading: "Personal Training & Online Coaching",
-      intro:
-        "I am taking on clients who want to improve their physique by teaching how structure in both diet and training can enhance results.",
-      paragraph:
-        "Whether you’ve trained for years or never stepped foot in a gym, I’m here to help you take control of your health and fitness with the support you may be missing.",
-      outro:
-        "You’ll feel empowered, guided, and motivated to unlock your best self through smart, tailored fitness.",
-      stats: [
-        { label: "Years Experience", value: "7+" },
-        { label: "Clients Helped", value: "200+" },
-        { label: "Programs Delivered", value: "1,000+" },
-      ],
-      services: [
-        "Structured Diet Plans",
-        "Online Coaching",
-        "Personal Training",
-        "Motivational Support",
-      ],
-    },
-  },
-  {
-    name: "Brad Holt",
-    title: "Brad Holt Personal Training",
-    experience: "5 years Experience",
-    img: "/body.avif",
-    description:
-      "From beginners to seasoned athletes — I tailor plans to help every client succeed.",
-    detailed: {
-      heading: "1-1 Personal Training & Support",
-      intro:
-        "Whatever your goal is, I am confident I can help. I’ve worked with both total beginners and competitive lifters alike.",
-      paragraph:
-        "You'll get structure, consistency, and a plan tailored to your needs to help you progress confidently toward your goals.",
-      outro:
-        "My coaching is not just about reps — it's about building a sustainable lifestyle and consistent growth.",
-      stats: [
-        { label: "Years Experience", value: "5+" },
-        { label: "Clients Trained", value: "300+" },
-        { label: "Workouts Delivered", value: "3,000+" },
-      ],
-      services: [
-        "Strength Coaching",
-        "Fat Loss Programs",
-        "Muscle Gain Plans",
-        "Tailored Coaching Support",
-      ],
+    name: "Brad - Brad Holt Personal Training",
+    title: "1-1 Personal Trainer & Online Coaching",
+    image: "/body.avif",
+    experience: "over the years of Experience",
+    shortDesc:
+      "Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.",
+    fullDesc: {
+      intro: `As a Body Transformation Specialist, my mission is simple: to help you unlock your full potential. Whether through 1-to-1 personal training or online coaching, I provide tailored programs that deliver lasting results.`,
+      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.
+      All coaching at Complete Physiaues comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.
+That’s from Brad edit what you need too 😜`,
+
+      stats: [], // Empty stats
+      services: [], // Empty services
+      contact: [], // Empty contact
     },
   },
 ];
 
 export default function TrainersSection() {
-  const [selectedTrainer, setSelectedTrainer] = useState(null);
+  const [activeTrainer, setActiveTrainer] = useState(null);
 
   return (
     <section className="bg-[#0d1117] text-white py-16 px-4">
@@ -97,34 +81,31 @@ export default function TrainersSection() {
         <h2 className="text-3xl md:text-4xl font-bold">
           MEET THE <span className="text-red-600">TRAINERS</span>
         </h2>
-        <p className="text-gray-400 mt-2">
-          Expert guidance from certified professionals
-        </p>
+        <p className="text-gray-400 mt-2">Expert guidance from certified professionals</p>
       </div>
 
-      {/* Trainers Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {trainers.map((trainer, index) => (
+        {trainers.map((t, i) => (
           <div
-            key={index}
+            key={i}
             className="border border-red-600 p-6 rounded-md flex flex-col items-center bg-[#161b22]"
           >
             <img
-              src={trainer.img}
-              alt={trainer.name}
+              src={t.image}
+              alt={t.name}
               className="w-32 h-32 object-cover rounded-full mb-4"
             />
-            <h3 className="text-xl font-semibold text-center">{trainer.name}</h3>
-            <p className="text-red-500 text-sm text-center">{trainer.title}</p>
+            <h3 className="text-xl font-semibold text-center">{t.name}</h3>
+            <p className="text-red-500 text-sm text-center">{t.title}</p>
             <p className="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 mb-4">
-              {trainer.experience}
+              {t.experience}
             </p>
-            <p className="text-center text-gray-300 text-sm mb-4">
-              {trainer.description}
-            </p>
-            <div className="w-full text-center mt-auto">
+            <p className="text-center text-gray-300 text-sm mb-4">{t.shortDesc}</p>
+
+            {/* Wrap the button inside a flex container */}
+            <div className="flex justify-center w-full">
               <button
-                onClick={() => setSelectedTrainer(trainer)}
+                onClick={() => setActiveTrainer(t)}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold"
               >
                 Read More
@@ -134,85 +115,87 @@ export default function TrainersSection() {
         ))}
       </div>
 
+
       {/* Modal */}
-      {selectedTrainer && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-70 px-4 py-5">
-          <div className="bg-[#161b22] border border-red-600 rounded-md max-w-2xl w-full mx-auto p-5 relative text-white">
+      {activeTrainer && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4">
+          <div className="bg-[#161b22] border border-red-600 rounded-lg w-full max-w-2xl p-6 relative text-white overflow-y-auto max-h-[90vh]">
             <button
-              onClick={() => setSelectedTrainer(null)}
-              className="absolute top-3 right-4 text-white text-xl"
+              onClick={() => setActiveTrainer(null)}
+              className="absolute top-4 right-4 text-white text-2xl"
             >
               &times;
             </button>
 
-            {/* Header */}
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex gap-4 items-center mb-6">
               <img
-                src={selectedTrainer.img}
-                alt={selectedTrainer.name}
+                src={activeTrainer.image}
+                alt={activeTrainer.name}
                 className="w-16 h-16 rounded-full object-cover"
               />
               <div>
-                <h3 className="text-xl font-semibold">{selectedTrainer.name}</h3>
-                <p className="text-red-500 text-sm">{selectedTrainer.title}</p>
-                <p className="bg-red-600 inline-block text-xs px-2 py-0.5 rounded-full mt-1">
-                  {selectedTrainer.experience}
+                <h3 className="text-xl font-semibold">{activeTrainer.name}</h3>
+                <p className="text-red-500 text-sm">{activeTrainer.title}</p>
+                <p className="text-xs bg-red-600 inline-block mt-1 px-2 py-0.5 rounded-full">
+                  {activeTrainer.experience}
                 </p>
               </div>
             </div>
 
-            {/* Content */}
-            <div className="mb-6">
-              <h4 className="text-red-500 font-semibold mb-2">
-                {selectedTrainer.detailed.heading}
-              </h4>
-              <p className="text-sm text-gray-300 mb-2">
-                {selectedTrainer.detailed.intro}
-              </p>
-              <p className="text-sm text-gray-300 mb-2">
-                {selectedTrainer.detailed.paragraph}
-              </p>
-              <p className="text-sm text-gray-300 mb-4">
-                {selectedTrainer.detailed.outro}
-              </p>
+            <p className="text-sm text-gray-300 mb-2">{activeTrainer.shortDesc}</p>
+            <p className="text-sm text-gray-300 mb-2">{activeTrainer.fullDesc.intro}</p>
+            <p className="text-sm text-gray-300 mb-4">{activeTrainer.fullDesc.paragraph}</p>
 
-              {/* Stats */}
-              {selectedTrainer.detailed.stats && selectedTrainer.detailed.stats.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 text-center">
-                  {selectedTrainer.detailed.stats.map((stat, i) => (
-                    <div key={i} className="bg-[#0d1117] p-4 border rounded-md">
-                      <p className="text-red-500 font-bold text-lg">{stat.value}</p>
-                      <p className="text-sm text-gray-300">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+            {/* Safely Render Stats */}
+            {activeTrainer.fullDesc.stats && activeTrainer.fullDesc.stats.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
+                {activeTrainer.fullDesc.stats.map((stat, idx) => (
+                  <div key={idx} className="bg-[#0d1117] border rounded-md p-4">
+                    <p className="text-red-500 font-bold text-lg">{stat.value}</p>
+                    <p className="text-sm text-gray-300">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
 
-              {/* Services */}
-              {selectedTrainer.detailed.services && selectedTrainer.detailed.services.length > 0 && (
-                <div className="mb-4">
-                  <h5 className="font-semibold text-white mb-2">
-                    Services Offered
-                  </h5>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-300">
-                    {selectedTrainer.detailed.services.map((s, i) => (
-                      <li key={i}>{s}</li>
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Safely Render Services */}
+              {activeTrainer.fullDesc.services && activeTrainer.fullDesc.services.length > 0 && (
+                <div>
+                  <h4 className="text-white font-semibold mb-2">Services Offered</h4>
+                  <ul className="list-disc list-inside text-gray-300 text-sm">
+                    {activeTrainer.fullDesc.services.map((s, idx) => (
+                      <li key={idx}>{s}</li>
                     ))}
                   </ul>
                 </div>
               )}
 
-              <div className="flex gap-2 mt-5 sm:-mt-5 justify-end">
-                <button className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-sm">
-                  Book Consultation
-                </button>
-                <button
-                  onClick={() => setSelectedTrainer(null)}
-                  className="border border-red-600 text-red-500 px-4 py-2 rounded text-sm"
-                >
-                  Close
-                </button>
-              </div>
+              {/* Safely Render Contact */}
+              {activeTrainer.fullDesc.contact && activeTrainer.fullDesc.contact.length > 0 && (
+                <div className="ml-8">
+                  <h4 className="text-white font-semibold mb-2">Contact</h4>
+                  <ul className="list-disc list-inside text-gray-300 text-sm">
+                    {activeTrainer.fullDesc.contact.map((c, idx) => (
+                      <li key={idx}>
+                        <strong>{c.label}:</strong> {c.value}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <div className="flex gap-2 justify-end mt-6">
+              <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded">
+                Book Consultation
+              </button>
+              <button
+                onClick={() => setActiveTrainer(null)}
+                className="border border-red-600 px-4 py-2 text-sm text-red-500 rounded"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
