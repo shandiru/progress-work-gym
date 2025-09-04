@@ -4,7 +4,7 @@ const partners = [
     {
         name: "Hussle",
         image:
-            "https://static.wixstatic.com/media/3626f3_fdbc2b05fab54d4e9e1b2279d27055a1~mv2.png",
+            "hussle.png",
         link: "https://www.hussle.com/gyms-in-leicester/progress-works-gym-gym-details",
     },
     {
@@ -15,7 +15,7 @@ const partners = [
     },
     {
         name: "Cybex",
-        image: "/cybex.avif",
+        image: "/cybex.png",
         link: null,
     },
      {

@@ -3,10 +3,10 @@ import React from "react";
 
 const PARTNERS = [
   {
-    name: "Smalls Kitchen",
+    name: "Fine Line",
     handle: "@jodiemcomer",
-    photo: "/h-p-1.jpg",
-    logo: "/jodie.png",
+    photo: "/jodie.png",
+    logo: "/fineline.png",
   },
   {
     name: "Top Teir Pysio - Keith",
