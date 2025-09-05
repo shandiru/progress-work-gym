@@ -42,22 +42,22 @@ const equipmentData = {
     {
       name: "Barbell Squat Rack",
       desc: "Perform squats safely with a barbell",
-      img: "/p9.jpg", // Image for Barbell Squat Rack
+      img: "/PD-9.png", // Image for Barbell Squat Rack
     },
     {
       name: "Smith Machine Squats",
       desc: "Perform squats with controlled movement",
-      img: "/p10.jpg", // Image for Smith Machine Squats
+      img: "/PD-10.png", // Image for Smith Machine Squats
     },
     {
       name: "Front Squat Barbell",
       desc: "Enhance quad engagement with front squats",
-      img: "/p11.jpg", // Image for Front Squat Barbell
+      img: "/PD-11.png", // Image for Front Squat Barbell
     },
     {
       name: "Squat Platform",
       desc: "Elevated platform for squats and leg work",
-      img: "/p12.jpg", // Image for Squat Platform
+      img: "/PD-12.png", // Image for Squat Platform
     },
     {
       name: "Leg Press Calf Raise",
