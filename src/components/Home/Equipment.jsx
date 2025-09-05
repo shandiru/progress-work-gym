@@ -262,11 +262,23 @@ const equipmentData = {
     },
   ],
     Cardio: [
-    {
-      name: "Preacher Curl Bench",
-      desc: "Isolated bicep curl training bench",
-      img: "/placeholder.webp",
-    }
+   {
+  name: "Treadmill",
+  desc: "Boost endurance and burn calories with walking, jogging, or running workouts",
+  img: "/C1.png",
+},{
+  name: "Stair Climber",
+  desc: "High-intensity cardio machine to strengthen legs and glutes while improving endurance",
+  img: "/C2.png",
+},
+{
+  name: "Recumbent Bike",
+  desc: "Low-impact cardio with full back support, perfect for endurance and rehabilitation",
+  img: "/C3.png",
+}
+
+
+
   ],
 };
 
