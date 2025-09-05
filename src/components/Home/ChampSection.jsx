@@ -54,11 +54,23 @@ const ATHLETES = [
   },
 ];
 
+/** ---- Alignment helpers ----
+ * Make the area ABOVE “Specialties” the same height in every card.
+ * That area = (Name/Role) + Blurb + Achievements.
+ * We normalize Blurb with a constant min height, and Achievements with a
+ * dynamic min height based on the largest list length.
+ */
+const MAX_ACHIEVEMENTS = Math.max(...ATHLETES.map(a => a.achievements.length));
+const BLURB_MIN_HEIGHT = 80;      // ~3 lines at text-sm (adjust if needed)
+const ACHIEVEMENT_ROW_H = 28;     // ~28px per bullet row
+const ACH_HDR_H = 24 + 8;         // Key Achievements heading + small gap
+const ACHIEVEMENTS_MIN_HEIGHT = ACH_HDR_H + MAX_ACHIEVEMENTS * ACHIEVEMENT_ROW_H;
+
 function Badge({ children, solid = false }) {
   return (
     <span
       className={[
-        "inline-flex items-center justify-center rounded-md px-2 py-0.5 text-xs font-medium",
+        "inline-flex shrink-0 whitespace-nowrap items-center justify-center rounded-md px-2 py-0.5 text-xs font-medium",
         solid
           ? `${ACCENT.primaryBg} text-white`
           : `${ACCENT.badgeBg} ${ACCENT.badgeText} border ${ACCENT.border}`,
@@ -71,16 +83,19 @@ function Badge({ children, solid = false }) {
 
 function Metric({ value, label }) {
   const isInstagram = label.toLowerCase() === "instagram";
-  const handle = typeof value === "string" && value.startsWith("@") ? value.slice(1) : value;
+  const handle =
+    typeof value === "string" && value.startsWith("@") ? value.slice(1) : value;
 
   return (
-    <div className="text-center min-w-0"> {/* allow children to truncate */}
+    <div className="text-center min-w-0">
       <div
         className={[
           "font-semibold",
           ACCENT.primary,
           isInstagram ? "text-sm sm:text-base" : "text-base sm:text-lg",
-          isInstagram ? "truncate overflow-hidden text-ellipsis whitespace-nowrap max-w-[9rem] sm:max-w-[10rem] md:max-w-[12rem] mx-auto" : "",
+          isInstagram
+            ? "truncate overflow-hidden text-ellipsis whitespace-nowrap max-w-[9rem] sm:max-w-[10rem] md:max-w-[12rem] mx-auto"
+            : "",
         ].join(" ")}
         title={typeof value === "string" ? value : undefined}
       >
@@ -133,36 +148,44 @@ function AthleteCard({ a }) {
             <Badge solid>{a.role}</Badge>
           </div>
 
-          <p className={`${ACCENT.muted} text-sm leading-relaxed mb-4`}>
+          {/* Blurb — normalized height */}
+          <p
+            className={`${ACCENT.muted} text-sm leading-relaxed mb-4`}
+            style={{ minHeight: BLURB_MIN_HEIGHT }}
+          >
             {a.blurb}
           </p>
 
-          {/* Achievements */}
-          <div className="space-y-2 mb-4">
+          {/* Key Achievements — bullet list, normalized height */}
+          <div className="space-y-2 mb-4" style={{ minHeight: ACHIEVEMENTS_MIN_HEIGHT }}>
             <h4 className="font-semibold text-white text-sm">Key Achievements</h4>
             <ul className={`text-sm ${ACCENT.muted} space-y-1`}>
               {a.achievements.map((t, i) => (
                 <li className="flex items-start" key={i}>
-                  <span className={`mt-1 w-2 h-2 ${ACCENT.dot} rounded-full mr-2 flex-shrink-0`} />
+                  <span
+                    className={`mt-1 w-2 h-2 ${ACCENT.dot} rounded-full mr-2 flex-shrink-0`}
+                  />
                   <span>{t}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Tags */}
+          {/* Specialties — single line (no wrap), horizontal scroll if overflow */}
           <div className="mb-4">
             <h4 className="font-semibold text-white text-sm mb-2">Specialties</h4>
-            <div className="flex flex-wrap gap-2">
-              {a.tags.map((t) => (
-                <Badge key={t}>{t}</Badge>
-              ))}
+            <div className="w-full overflow-x-auto">
+              <div className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap pr-1">
+                {a.tags.map((t) => (
+                  <Badge key={t}>{t}</Badge>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Metrics */}
           <div className="mt-auto pt-4 border-t border-red-600">
-            <div className="grid grid-cols-3 gap-4 min-w-0"> {/* min-w-0 enables truncate in children */}
+            <div className="grid grid-cols-3 gap-4 min-w-0">
               {a.stats.map((s) => (
                 <Metric key={s.label} {...s} />
               ))}
@@ -174,7 +197,7 @@ function AthleteCard({ a }) {
   );
 }
 
-export default function HomeAthletesDuo() {
+export default function AthletesSection() {
   return (
     <section className="bg-black text-white">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
@@ -183,12 +206,13 @@ export default function HomeAthletesDuo() {
           <h2 className="text-[28px] sm:text-4xl md:text-[44px] font-extrabold tracking-tight">
             Our Champion Athletes
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Meet the icons who represent dedication, power, and performance at the highest level.
+          <p className="text-xl max-w-3xl mx-auto mt-5">
+            These incredible athletes have chosen our facility to push their limits and
+            achieve greatness. Their dedication and results speak for themselves.
           </p>
         </div>
 
-        {/* 2-up grid with equal heights */}
+        {/* 2-up grid */}
         <div className="pb-16 sm:pb-20">
           <div className="mx-auto grid max-w-4xl grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-stretch">
             {ATHLETES.map((a) => (
