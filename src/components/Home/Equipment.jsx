@@ -234,15 +234,21 @@ const equipmentData = {
   ],
   Chest: [
     {
-      name: "Chest Press Machine",
-      desc: "Simulates bench press safely",
-      img: "/placeholder.webp",
-    },
-    {
-      name: "Pec Deck Machine",
-      desc: "Isolated chest fly motion",
-      img: "/placeholder.webp",
-    },
+  name: "Chest Press Machine",
+  desc: "Simulates bench press safely",
+  img: "CH-1.png",
+}
+,{
+  name: "Cable Crossover Machine",
+  desc: "Versatile machine for chest flys, tricep pushdowns, and functional training",
+  img: "CH-2.png",
+},
+{
+  name: "Standing Multi-Flight Machine",
+  desc: "Multi-angle chest fly and rear delt training with adjustable arms",
+  img: "CH-3.png",
+},
+
   ],
   Arms: [
    {
