@@ -248,6 +248,37 @@ const equipmentData = {
   desc: "Multi-angle chest fly and rear delt training with adjustable arms",
   img: "CH-3.png",
 },
+{
+  name: "Pec Deck Machine",
+  desc: "Isolates chest muscles with controlled fly motion",
+  img: "CH-4.png",
+},
+{
+  name: "Plate-Loaded Chest Press",
+  desc: "Mimics free-weight bench press with plate-loaded resistance",
+  img: "CH-5.png",
+},
+{
+  name: "Plate-Loaded Incline Chest Press",
+  desc: "Targets upper chest with incline pressing motion using plate resistance",
+  img: "CH-6.png",
+},
+{
+  name: "Flat Bench Press",
+  desc: "Classic barbell bench press for chest, shoulders, and triceps",
+  img: "CH-7.png",
+},
+{
+  name: "Smith Machine",
+  desc: "Guided barbell system for safe bench press, squats, and shoulder presses",
+  img: "CH-8.png",
+},
+{
+  name: "Plate-Loaded Seated Chest Press",
+  desc: "Seated chest press with plate resistance for stability and chest isolation",
+  img: "CH-9.png",
+},
+
 
   ],
   Arms: [
