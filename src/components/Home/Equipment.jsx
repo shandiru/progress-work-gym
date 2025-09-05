@@ -276,6 +276,34 @@ const equipmentData = {
   desc: "Low-impact cardio with full back support, perfect for endurance and rehabilitation",
   img: "/C3.png",
 }
+,{
+  name: "StairMaster",
+  desc: "Climb continuously rotating stairs to build lower body strength and cardio endurance",
+  img: "/C4.png",
+}
+,{
+  name: "Air Bike",
+  desc: "Full-body cardio machine combining pedaling and arm pushing for high-intensity training",
+  img: "/C5.png",
+},
+{
+  name: "Elliptical Trainer",
+  desc: "Low-impact full-body cardio workout that burns calories and protects joints",
+  img: "/C6.png",
+},
+{
+  name: "Fan Bike",
+  desc: "Full-body cardio with fan resistance that scales with your effort, ideal for HIIT",
+  img: "/C7.png",
+},
+{
+  name: "Upright Bike",
+  desc: "Simulates outdoor cycling to build leg strength and improve cardiovascular endurance",
+  img: "/C8.png",
+}
+
+
+
 
 
 
