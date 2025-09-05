@@ -65,7 +65,7 @@ export default function WhyChooseUsSection() {
 
           {/* CTA Button */}
           <a
-            href="#"
+            href="#member"
             className="inline-block mt-6 text-white font-semibold border border-white px-6 py-3 rounded hover:bg-[#ed1c24] hover:border-[#ed1c24] transition"
           >
             Join Now →

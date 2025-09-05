@@ -40,7 +40,7 @@ const plans = [
 
 export default function MembershipPlans() {
   return (
-    <section className="bg-[#0d1117] text-white py-12 px-4">
+    <section className="bg-[#0d1117] text-white py-12 px-4" id="member">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">
           MEMBERSHIP <span className="text-red-600">PLANS</span>
