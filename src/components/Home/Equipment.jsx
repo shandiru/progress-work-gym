@@ -62,17 +62,17 @@ const equipmentData = {
     {
       name: "Leg Press Calf Raise",
       desc: "Focus on calf muscles with this machine",
-      img: "/p13.jpg", // Image for Leg Press Calf Raise
+      img: "/PD-13.png", // Image for Leg Press Calf Raise
     },
     {
       name: "Hack Squat Press",
       desc: "Hybrid machine for squats and presses",
-      img: "/p14.jpg", // Image for Hack Squat Press
+      img: "/PD-14.png", // Image for Hack Squat Press
     },
     {
       name: "Cable Leg Extensions",
       desc: "Effective for isolating the quadriceps",
-      img: "/p15.jpg", // Image for Cable Leg Extensions
+      img: "/PD-15.png", // Image for Cable Leg Extensions
     },
     {
       name: "Standing Calf Raise",
