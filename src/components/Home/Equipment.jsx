@@ -77,27 +77,27 @@ const equipmentData = {
     {
       name: "Standing Calf Raise",
       desc: "Build calf muscles with full range of motion",
-      img: "/p16.jpg", // Image for Standing Calf Raise
+      img: "/PD-16.png", // Image for Standing Calf Raise
     },
     {
       name: "Seated Calf Raise",
       desc: "Focused on strengthening the calves",
-      img: "/p17.jpg", // Image for Seated Calf Raise
+      img: "/PD-17.png", // Image for Seated Calf Raise
     },
     {
       name: "Barbell Deadlift",
       desc: "Great for building hamstrings and glutes",
-      img: "/p18.jpg", // Image for Barbell Deadlift
+      img: "/PD-18.png", // Image for Barbell Deadlift
     },
     {
       name: "Leg Day Squat Rack",
       desc: "Dedicated rack for squats and leg training",
-      img: "/p19.jpg", // Image for Leg Day Squat Rack
+      img: "/PD-19.png", // Image for Leg Day Squat Rack
     },
     {
       name: "Lunge Station",
       desc: "Perfect for unilateral leg work",
-      img: "/p20.jpg", // Image for Lunge Station
+      img: "/PD-20.png", // Image for Lunge Station
     },
     {
       name: "Glute Kickback Machine",
