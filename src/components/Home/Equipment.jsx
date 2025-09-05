@@ -7,17 +7,17 @@ const equipmentData = {
     {
       name: "Leg Press Machine",
       desc: "Build quad and hamstring strength",
-      img: "/p1.jpg", // Image for Leg Press Machine
+      img: "/PD-1.png", // Image for Leg Press Machine
     },
     {
       name: "Leg Curl Machine",
       desc: "Isolate the hamstrings for strength",
-      img: "/p3.jpg", // Image for Leg Curl Machine
+      img: "/PD-2.png", // Image for Leg Curl Machine
     },
     {
       name: "Smith Machine",
       desc: "Versatile machine for squats and presses",
-      img: "/p4.jpg", // Image for Smith Machine
+      img: "/PD-3.png", // Image for Smith Machine
     },
     {
       name: "Seated Leg Press",
