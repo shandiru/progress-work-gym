@@ -301,6 +301,12 @@ const equipmentData = {
   desc: "Simulates outdoor cycling to build leg strength and improve cardiovascular endurance",
   img: "/C8.png",
 }
+,
+{
+  name: "SkiErg",
+  desc: "Simulates cross-country skiing for a powerful full-body cardio and strength workout",
+  img: "/C9.png",
+}
 
 
 
