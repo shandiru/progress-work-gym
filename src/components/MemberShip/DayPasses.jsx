@@ -5,7 +5,7 @@ const plans = [
   {
     title: '1 Day',
     price: 9,
-    image: '/pricing1.jpg',
+    image: '/logo.avif',
     features: [
       'Full Day Pass',
       'Unlimited Access',
@@ -15,7 +15,7 @@ const plans = [
   {
     title: '7 Day',
     price: 21,
-    image: '/pricing2.jpg',
+    image: '/logo.avif',
     features: [
       'Unlimited Week Pass',
       '7 Days Access',
@@ -25,7 +25,7 @@ const plans = [
   {
     title: 'Multi Pass',
     price: 65,
-    image: '/pricing3.jpg',
+    image: '/logo.avif',
     features: [
       '10 Visit Pass',
       'Valid for 3 Months',
@@ -53,15 +53,15 @@ export default function PricingPlansSection() {
             className="bg-white rounded-md shadow-md overflow-hidden flex flex-col justify-between"
           >
             {/* Image */}
-            <div className="relative">
+            <div className="relative bg-black h-64 flex items-center justify-center">
               <img
                 src={plan.image}
                 alt={plan.title}
-                className="w-full h-64 object-cover grayscale"
+                className="max-h-[85%] max-w-[85%] object-contain grayscale"
               />
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-10 w-[85%]">
-                <div className="bg-white py-2 text-center transform -skew-y-3 shadow-md">
-                  <div className="text-red-600 font-semibold text-lg transform skew-y-3">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-[85%]">
+                <div className="bg-white py-2 text-center -skew-y-3 shadow-md">
+                  <div className="text-red-600 font-semibold text-lg skew-y-3">
                     {plan.title}
                   </div>
                 </div>

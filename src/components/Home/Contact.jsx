@@ -3,7 +3,7 @@ import { HiLocationMarker } from "react-icons/hi";
 
 export default function Contact() {
   return (
-    <section className="bg-[#0d1117] text-white py-16 px-4">
+    <section className="bg-[#0d1117] text-white py-16 px-4" id="contact">
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">

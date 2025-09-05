@@ -50,7 +50,7 @@ export default function About() {
 
           {/* CTA */}
           <a
-            href="#"
+            href="/#contact"
             className="inline-block mt-6 bg-black text-white text-sm font-bold uppercase px-6 py-3 rounded shadow hover:bg-gray-800 transition"
           >
             Take A Tour →
