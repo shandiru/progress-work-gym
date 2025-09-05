@@ -99,51 +99,51 @@ const equipmentData = {
       desc: "Perfect for unilateral leg work",
       img: "/PD-20.png", // Image for Lunge Station
     },
-    {
-      name: "Glute Kickback Machine",
-      desc: "Isolate and grow your glutes",
-      img: "/p21.jpg", // Image for Glute Kickback Machine
-    },
+    // {
+    //   name: "Glute Kickback Machine",
+    //   desc: "Isolate and grow your glutes",
+    //   img: "/p21.jpg", // Image for Glute Kickback Machine
+    // },
     {
       name: "Seated Hamstring Curl",
       desc: "Target the hamstrings with proper form",
-      img: "/p22.jpg", // Image for Seated Hamstring Curl
+      img: "/PD-22.png", // Image for Seated Hamstring Curl
     },
     {
       name: "Leg Strength Press",
       desc: "Build overall leg strength",
-      img: "/p23.jpg", // Image for Leg Strength Press
+      img: "/PD-23.png", // Image for Leg Strength Press
     },
     {
       name: "Assisted Squat Machine",
       desc: "Squats with assisted movement for safety",
-      img: "/p24.jpg", // Image for Assisted Squat Machine
+      img: "/PD-24.png", // Image for Assisted Squat Machine
     },
     {
       name: "Kettlebell Deadlifts",
       desc: "Deadlifts using kettlebells for varied engagement",
-      img: "/p25.jpg", // Image for Kettlebell Deadlifts
+      img: "/PD-25.png", // Image for Kettlebell Deadlifts
     },
     {
       name: "Barbell Romanian Deadlift",
       desc: "Target the posterior chain with this deadlift variation",
-      img: "/p26.jpg", // Image for Barbell Romanian Deadlift
+      img: "/PD-26.png", // Image for Barbell Romanian Deadlift
     },
     {
       name: "Step-Up Machine",
       desc: "Great for working glutes and quads",
-      img: "/p27.jpg", // Image for Step-Up Machine
+      img: "/PD-27.png", // Image for Step-Up Machine
     },
     {
       name: "Hip Thrust Machine",
       desc: "Isolate and grow glute muscles",
-      img: "/p28.jpg", // Image for Hip Thrust Machine
+      img: "/PD-28.png", // Image for Hip Thrust Machine
     },
-    {
-      name: "Smith Machine Leg Press",
-      desc: "Press legs in the Smith machine for controlled motion",
-      img: "/p29.jpg", // Image for Smith Machine Leg Press
-    },
+    // {
+    //   name: "Smith Machine Leg Press",
+    //   desc: "Press legs in the Smith machine for controlled motion",
+    //   img: "/p29.jpg", // Image for Smith Machine Leg Press
+    // },
   ],
   Back: [
   {
