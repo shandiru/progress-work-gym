@@ -295,6 +295,29 @@ const equipmentData = {
   desc: "Arm curl machine using weight plates to isolate and build bicep strength",
   img: "/A9.png",
 }
+,
+{
+  name: "Plate-Loaded Squat Machine",
+  desc: "Lower body machine designed to simulate barbell squats while providing guided movement and safety",
+  img: "/A10.png",
+}
+,
+{
+  name: "Seated Chest Press Machine",
+  desc: "Weight stack machine designed for pressing movements to strengthen the chest, shoulders, and triceps",
+  img: "/A13.png",
+}
+,{
+  name: "Preacher Curl Machine",
+  desc: "Bicep isolation machine designed for controlled preacher curls with adjustable resistance",
+  img: "/A14.png",
+}
+,
+{
+  name: "Seated Arm Curl Machine",
+  desc: "Selectorized bicep curl machine that provides guided resistance for safe and effective arm training",
+  img: "/A15.png",
+}
 
   ],
     Cardio: [
