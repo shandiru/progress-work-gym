@@ -149,13 +149,74 @@ const equipmentData = {
     {
       name: "Lat Pulldown",
       desc: "Target your lats and upper back",
-      img: "/placeholder.webp",
+      img: "/G1.png",
     },
     {
-      name: "Seated Row Machine",
-      desc: "Mid-back and rear deltoid engagement",
-      img: "/placeholder.webp",
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G2.png",
     },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G3.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G4.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G5.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G6.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G7.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G8.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G9.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G10.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G11.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G12.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G13.png",
+    },
+    {
+      name: "Lat Pulldown",
+      desc: "Target your lats and upper back",
+      img: "/G14.png",
+    },
+   
   ],
   Chest: [
     {
