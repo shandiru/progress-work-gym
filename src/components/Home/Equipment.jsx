@@ -245,21 +245,23 @@ const equipmentData = {
     },
   ],
   Arms: [
-    {
-      name: "Preacher Curl Bench",
-      desc: "Isolated bicep curl training bench",
-      img: "/placeholder.webp",
-    },
-    {
-      name: "Cable Bicep Station",
-      desc: "Adjustable cable system for bicep work",
-      img: "/placeholder.webp",
-    },
-    {
-      name: "Tricep Dip Machine",
-      desc: "Assisted tricep dip machine",
-      img: "/placeholder.webp",
-    },
+   {
+  name: "Cybex Bravo Functional Trainer",
+  desc: "Versatile cable-based functional trainer for full-body strength and conditioning exercises",
+  img: "/A1.png",
+}
+,
+  {
+  name: "Pec Deck / Rear Delt Machine",
+  desc: "Dual-function machine designed for chest flys and rear deltoid exercises",
+  img: "/A2.png",
+}
+,{
+  name: "Lat Pulldown / Low Row Machine",
+  desc: "Combination unit for performing lat pulldowns and seated rows to target the back and lats",
+  img: "/A3.png",
+}
+
   ],
     Cardio: [
    {
