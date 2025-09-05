@@ -146,76 +146,90 @@ const equipmentData = {
     },
   ],
   Back: [
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G1.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G2.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G3.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G4.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G5.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G6.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G7.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G8.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G9.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G10.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G11.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G12.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G13.png",
-    },
-    {
-      name: "Lat Pulldown",
-      desc: "Target your lats and upper back",
-      img: "/G14.png",
-    },
+  {
+  name: "Seated Row",
+  desc: "Build a strong back with controlled rowing movements",
+  img: "/G1.png",
+}
+,
+   {
+  name: "Assisted Pull-Up / Dip",
+  desc: "Strengthen your upper body with supported pull-ups and dips",
+  img: "/G2.png",
+}
+,
+   {
+  name: "Functional Trainer",
+  desc: "Versatile cable system for full-body strength and stability training",
+  img: "/G3.png",
+}
+,
+  {
+  name: "Seated Calf Raise",
+  desc: "Isolate and strengthen your calves with controlled seated raises",
+  img: "/G4.png",
+}
+,
+  {
+  name: "Seated Row",
+  desc: "Develop a strong back with controlled seated cable rows",
+  img: "/G5.png",
+}
+,
+  {
+  name: "Lat Pulldown",
+  desc: "Build a wide, strong back with controlled pulldown movements",
+  img: "/G6.png",
+}
+,
+   {
+  name: "Lat Pulldown / Seated Row Combo",
+  desc: "Dual-function machine for building both lats and mid-back strength",
+  img: "/G7.png",
+}
+,
+  {
+  name: "Cable Crossover",
+  desc: "Versatile dual-cable system for chest, arms, shoulders, and functional training",
+  img: "/G8.png",
+}
+,
+  {
+  name: "Cable Row / Pulldown Combo",
+  desc: "Dual-purpose machine for building both back width and thickness",
+  img: "/G9.png",
+}
+,
+   {
+  name: "Plate-Loaded Lat Pulldown",
+  desc: "Strengthen your lats and upper back with a plate-loaded pulldown for natural resistance",
+  img: "/G10.png",
+}
+,
+  {
+  name: "Plate-Loaded Low Row",
+  desc: "Build back thickness and strength with heavy plate-loaded rows",
+  img: "/G11.png",
+}
+,
+  {
+  name: "Plate-Loaded Iso-Lateral Row",
+  desc: "Train each side independently for balanced back strength and muscle symmetry",
+  img: "/G12.png",
+}
+,
+ {
+  name: "Chest Press",
+  desc: "Build chest, triceps, and shoulders with a guided pressing motion",
+  img: "/G13.png",
+}
+,
+ {
+  name: "Chest Fly / Rear Delt",
+  desc: "Dual-function machine to target chest with flyes and rear delts with reverse flyes",
+  img: "/G14.png",
+}
+,
    
   ],
   Chest: [
