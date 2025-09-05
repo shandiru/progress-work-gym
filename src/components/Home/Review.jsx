@@ -52,7 +52,7 @@ export default function Review() {
 
   return (
     <section
-      id="testimonials"
+      id="review"
       className="py-20 bg-gradient-to-b from-black via-[#111] to-black text-white"
     >
       <div className="container mx-auto px-4 md:px-12">

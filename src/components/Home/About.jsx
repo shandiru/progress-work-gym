@@ -5,7 +5,7 @@ import { GiGymBag, GiBodyBalance } from "react-icons/gi";
 
 export default function About() {
   return (
-    <section className="relative bg-white overflow-hidden py-16 px-4 sm:px-6 lg:px-12">
+    <section className="relative bg-white overflow-hidden py-16 px-4 sm:px-6 lg:px-12" id="about">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Content */}
         <div className="space-y-6 relative z-10">

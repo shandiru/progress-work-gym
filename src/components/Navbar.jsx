@@ -1,60 +1,92 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { FaInstagram } from "react-icons/fa";
+"use client";
+import React, { useState } from "react";
+import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
-    const location = useLocation();
+// Navigation links for the site
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Who Are We", href: "#about" },
+  { label: "Trainers", href: "#trainers" },
+  { label: "Membership", href: "#member" },
+  { label: "Why Choose Us", href: "#why" },
+  { label: "Review", href: "#review" },
+  { label: "Personal Trainers", href: "/team" },
+  { label: "Champion Athletes", href: "/ChampionAthletes" },
+];
 
-    return (
-        <nav className="bg-[#020414] text-white px-4 py-3 w-full shadow-md">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-                {/* Logo */}
-                <div className="flex items-center space-x-4">
-                    <img
-                        src="/logo.avif"
-                        alt="Progress Works Gym Logo"
-                        className="h-16 w-auto"
-                    />
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-                    {/* Navigation Links */}
-                    <div className=" sm:flex space-x-16 text-sm md:text-base mt-10 ml-10">
-                        <Link
-                            to="/"
-                            className={`hover:text-gray-300 ${location.pathname === "/" ? "text-red-600 font-semibold" : ""
-                                }`}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            to="/team"
-                            className={`hover:text-red-500 ${location.pathname === "/team" ? "text-red-600 font-semibold" : ""
-                                }`}
-                        >
-                            Personal Trainers
-                        </Link>
-                        <Link
-                            to="/ChampionAthletes"
-                            className={`hover:text-red-500 ${location.pathname === "/ChampionAthletes" ? "text-red-600 font-semibold" : ""
-                                }`}
-                        >
-                            ChampionAthletes
-                        </Link>
-                    </div>
-                </div>
+  return (
+    <header className="bg-[#06091A] text-white shadow-md fixed w-full top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <a href="/" className="flex items-center gap-2">
+          <img
+            src="/logo.avif"
+            alt="Progress Works Gym"
+            className="h-12 w-auto"
+          />
+        </a>
 
-                {/* Instagram Icon */}
-                <div className="w-8 h-8 bg-white rounded-full mt-10 flex items-center justify-center">
-                    <a
-                        href="https://www.instagram.com/progress_works_gym"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaInstagram className="text-black hover:text-pink-500 text-lg sm:text-xl" />
-                    </a>
-                </div>
-            </div>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-8">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-base font-medium hover:text-red-500 transition"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
-    );
-};
 
-export default Navbar;
+        {/* Instagram Icon (Desktop) */}
+        <a
+          href="https://www.instagram.com/progress_works_gym"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
+        >
+          <FaInstagram className="text-lg" />
+        </a>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#06091A] border-t border-gray-700">
+          <nav className="flex flex-col items-center gap-6 py-6">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-lg font-medium hover:text-red-500 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="https://www.instagram.com/progress_works_gym"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-lg hover:text-red-500 transition"
+              onClick={() => setMenuOpen(false)}
+            >
+              <FaInstagram /> Instagram
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
