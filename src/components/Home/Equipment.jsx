@@ -22,22 +22,22 @@ const equipmentData = {
     {
       name: "Seated Leg Press",
       desc: "Target quads, hamstrings, and glutes",
-      img: "/p5.jpg", // Image for Seated Leg Press
+      img: "/PD-5.png", // Image for Seated Leg Press
     },
     {
       name: "Leg Extension Machine",
       desc: "Isolate and strengthen quadriceps",
-      img: "/p6.jpg", // Image for Leg Extension Machine
+      img: "/PD-6.png", // Image for Leg Extension Machine
     },
     {
       name: "Walking Lunge Machine",
       desc: "Great for building glutes and legs",
-      img: "/p7.jpg", // Image for Walking Lunge Machine
+      img: "/PD-7.png", // Image for Walking Lunge Machine
     },
     {
       name: "Glute Ham Raise",
       desc: "Targets glutes and hamstrings",
-      img: "/p8.jpg", // Image for Glute Ham Raise
+      img: "/PD-8.png", // Image for Glute Ham Raise
     },
     {
       name: "Barbell Squat Rack",
