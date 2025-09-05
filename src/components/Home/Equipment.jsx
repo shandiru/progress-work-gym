@@ -261,6 +261,40 @@ const equipmentData = {
   desc: "Combination unit for performing lat pulldowns and seated rows to target the back and lats",
   img: "/A3.png",
 }
+,{
+  name: "Cable Crossover Machine",
+  desc: "Dual adjustable pulley system for versatile cable exercises including chest flys, tricep pushdowns, and functional training",
+  img: "/A4.png",
+}
+,{
+  name: "Plate-Loaded Chest Press",
+  desc: "Strength machine that mimics the motion of a bench press using weight plates for resistance",
+  img: "/A5.png",
+}
+,
+{
+  name: "Plate-Loaded Shoulder Press",
+  desc: "Overhead press machine using weight plates to build shoulder and tricep strength",
+  img: "/A6.png",
+}
+,
+{
+  name: "Standing Calf Raise Machine",
+  desc: "Weight stack machine designed to strengthen and build the calf muscles through standing raises",
+  img: "/A7.png",
+}
+,
+{
+  name: "Chest Press Machine",
+  desc: "Plate-loaded machine designed to simulate the motion of a bench press for building chest, shoulders, and triceps",
+  img: "/A8.png",
+}
+,
+{
+  name: "Plate-Loaded Bicep Curl",
+  desc: "Arm curl machine using weight plates to isolate and build bicep strength",
+  img: "/A9.png",
+}
 
   ],
     Cardio: [
