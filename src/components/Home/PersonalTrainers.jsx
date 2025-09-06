@@ -143,7 +143,7 @@ export default function TrainersSection() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-300 mb-2">{activeTrainer.shortDesc}</p>
+            {/* <p className="text-sm text-gray-300 mb-2">{activeTrainer.shortDesc}</p> */}
             <p className="text-sm text-gray-300 mb-2">{activeTrainer.fullDesc.intro}</p>
             <p className="text-sm text-gray-300 mb-4">{activeTrainer.fullDesc.paragraph}</p>
 
