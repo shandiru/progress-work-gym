@@ -109,36 +109,36 @@ const equipmentData = {
       desc: "Target the hamstrings with proper form",
       img: "/PD-22.png", // Image for Seated Hamstring Curl
     },
-    {
-      name: "Leg Strength Press",
-      desc: "Build overall leg strength",
-      img: "/PD-23.png", // Image for Leg Strength Press
-    },
-    {
-      name: "Assisted Squat Machine",
-      desc: "Squats with assisted movement for safety",
-      img: "/PD-24.png", // Image for Assisted Squat Machine
-    },
-    {
-      name: "Kettlebell Deadlifts",
-      desc: "Deadlifts using kettlebells for varied engagement",
-      img: "/PD-25.png", // Image for Kettlebell Deadlifts
-    },
-    {
-      name: "Barbell Romanian Deadlift",
-      desc: "Target the posterior chain with this deadlift variation",
-      img: "/PD-26.png", // Image for Barbell Romanian Deadlift
-    },
-    {
-      name: "Step-Up Machine",
-      desc: "Great for working glutes and quads",
-      img: "/PD-27.png", // Image for Step-Up Machine
-    },
-    {
-      name: "Hip Thrust Machine",
-      desc: "Isolate and grow glute muscles",
-      img: "/PD-28.png", // Image for Hip Thrust Machine
-    },
+    // {
+    //   name: "Leg Strength Press",
+    //   desc: "Build overall leg strength",
+    //   img: "/PD-23.png", // Image for Leg Strength Press
+    // },
+    // {
+    //   name: "Assisted Squat Machine",
+    //   desc: "Squats with assisted movement for safety",
+    //   img: "/PD-24.png", // Image for Assisted Squat Machine
+    // },
+    // {
+    //   name: "Kettlebell Deadlifts",
+    //   desc: "Deadlifts using kettlebells for varied engagement",
+    //   img: "/PD-25.png", // Image for Kettlebell Deadlifts
+    // },
+    // {
+    //   name: "Barbell Romanian Deadlift",
+    //   desc: "Target the posterior chain with this deadlift variation",
+    //   img: "/PD-26.png", // Image for Barbell Romanian Deadlift
+    // },
+    // {
+    //   name: "Step-Up Machine",
+    //   desc: "Great for working glutes and quads",
+    //   img: "/PD-27.png", // Image for Step-Up Machine
+    // },
+    // {
+    //   name: "Hip Thrust Machine",
+    //   desc: "Isolate and grow glute muscles",
+    //   img: "/PD-28.png", // Image for Hip Thrust Machine
+    // },
     // {
     //   name: "Smith Machine Leg Press",
     //   desc: "Press legs in the Smith machine for controlled motion",
