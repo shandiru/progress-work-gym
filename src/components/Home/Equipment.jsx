@@ -350,11 +350,7 @@ const equipmentData = {
   img: "/A14.png",
 }
 ,
-{
-  name: "Seated Arm Curl Machine",
-  desc: "Selectorized bicep curl machine that provides guided resistance for safe and effective arm training",
-  img: "/A15.png",
-}
+
 
   ],
     Cardio: [
