@@ -7,7 +7,7 @@ const trainers = [
     image: "/h-p-4.png",
     experience: "2 years Experience",
     shortDesc:
-      "Neil and Mandy have asked me to send over my portfolio for the website. If you need anything else please let me know.",
+      "I help people create structure in both training and nutrition so they can achieve real, sustainable results.",
     fullDesc: {
       intro: `I help people create structure in both training and nutrition so they can achieve real, sustainable results. Whether you’ve been training for years or are completely new to the gym, my goal is to make fitness simple, effective and tailored to you.`,
       paragraph: `With the right guidance, accountability, and support, you’ll not only see progress—you’ll feel stronger, more confident and in control of your health. Together, we’ll build a clear plan that fits your lifestyle and empowers you to unlock your best self.`,
