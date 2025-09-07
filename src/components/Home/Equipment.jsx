@@ -109,26 +109,26 @@ const equipmentData = {
       desc: "Target the hamstrings with proper form",
       img: "/PD-22.png", // Image for Seated Hamstring Curl
     },
-    // {
-    //   name: "Leg Strength Press",
-    //   desc: "Build overall leg strength",
-    //   img: "/PD-23.png", // Image for Leg Strength Press
-    // },
-    // {
-    //   name: "Assisted Squat Machine",
-    //   desc: "Squats with assisted movement for safety",
-    //   img: "/PD-24.png", // Image for Assisted Squat Machine
-    // },
-    // {
-    //   name: "Kettlebell Deadlifts",
-    //   desc: "Deadlifts using kettlebells for varied engagement",
-    //   img: "/PD-25.png", // Image for Kettlebell Deadlifts
-    // },
-    // {
-    //   name: "Barbell Romanian Deadlift",
-    //   desc: "Target the posterior chain with this deadlift variation",
-    //   img: "/PD-26.png", // Image for Barbell Romanian Deadlift
-    // },
+    {
+      name: "Leg Strength Press",
+      desc: "Build overall leg strength",
+      img: "/PD-23.png", // Image for Leg Strength Press
+    },
+    {
+      name: "Assisted Squat Machine",
+      desc: "Squats with assisted movement for safety",
+      img: "/PD-24.png", // Image for Assisted Squat Machine
+    },
+    {
+      name: "Kettlebell Deadlifts",
+      desc: "Deadlifts using kettlebells for varied engagement",
+      img: "/PD-25.png", // Image for Kettlebell Deadlifts
+    },
+    {
+      name: "Barbell Romanian Deadlift",
+      desc: "Target the posterior chain with this deadlift variation",
+      img: "/PD-26.png", // Image for Barbell Romanian Deadlift
+    },
     // {
     //   name: "Step-Up Machine",
     //   desc: "Great for working glutes and quads",
