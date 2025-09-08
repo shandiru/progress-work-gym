@@ -201,7 +201,7 @@ const productData = {
     {
       "name": "Grenade Protein Bar Cookie Dough",
       "desc": "Cookie dough flavor packed with protein",
-      "img": "Grenade_Protein_Bar-Cookie_Dough-removebg-preview.png"
+      "img": "Grenade_Cookie_Dough_Bar-removebg-preview.png"
     },
 
     {
@@ -217,17 +217,17 @@ const productData = {
     {
       "name": "Per4m Protein Bar Chocolate Peanut Butter",
       "desc": "Chocolate and peanut butter protein goodness",
-      "img": "Per4m_Protein_Bar-Chocolate_Peanut_Butter-removebg-preview.png"
+      "img": "Per4m_Peanut_butter_bar-removebg-preview.png"
     },
     {
       "name": "Snickers Crisp Hi Protein Bar",
       "desc": "Crispy Snickers with added protein",
-      "img": "Snickers_Crisp_Hi_Protein_Bars-removebg-preview.png"
+      "img": "Snickers_Crisp_Protein_Bar_-removebg-preview.png"
     },
     {
       "name": "Snickers Hi Protein Cookies",
       "desc": "Snickers with cookie twist and protein boost",
-      "img": "Snickers_Hi-Protein_Cookies-removebg-preview.png"
+      "img": "Snickers_Cookies-removebg-preview.png"
     },
     {
       "name": "Snickers Hi Protein Bar",
@@ -240,22 +240,22 @@ const productData = {
     {
       "name": "Chefs Brigade Liquid Egg Whites",
       "desc": "Pure protein boost for clean nutrition",
-      "img": "Chefs_Brigade_-_Liquid_Egg_Whites-removebg-preview.png"
+      "img": "Liquid_Eggs_whites_-removebg-preview.png"
     },
     {
       "name": "Grenade Cookies & Cream",
       "desc": "Delicious protein snack with classic flavor",
-      "img": "Grenade_-_Cookies___Cream-removebg-preview.png"
+      "img": "Grenade_Cookies_and_Cream-removebg-preview.png"
     },
     {
       "name": "Grenade Fudge Brownie",
       "desc": "Rich chocolate taste packed with protein",
-      "img": "Grenade_-_Fudge_Brownie_-removebg-preview.png"
+      "img": "Grenade_Fudge_Brownie-removebg-preview.png"
     },
     {
       "name": "Grenade Salted Caramel",
       "desc": "Sweet & salty protein satisfaction",
-      "img": "Grenade_-_Salted_Caramel__copy-removebg-preview.png"
+      "img": "Grenade_Salted_Caramel-removebg-preview.png"
     },
     {
       "name": "Grenade Strawberries & Cream",
