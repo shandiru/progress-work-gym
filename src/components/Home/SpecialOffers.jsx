@@ -22,24 +22,24 @@ export default function SpecialOffers() {
         {/* Heading */}
         <header className="text-center mb-6">
           <h1 className="text-3xl font-extrabold mb-2">Special Offers</h1>
-          <p className="text-red-600 text-base">
+          <p className="text-red-500 text-base">
             Discover amazing deals and exclusive benefits
           </p>
         </header>
 
         {/* Card */}
-        <div className="w-full rounded-xl border border-red-600 bg-black/50 shadow-md">
+        <div className="w-full rounded-xl border border-red-500 bg-red-600/10 shadow-md">
           {/* Card header */}
           <div className="flex items-start justify-between gap-4 p-5">
             <div>
               <h2 className="text-xl font-semibold">Current Offers</h2>
-              <p className="text-red-600 text-sm">
+              <p className="text-red-400 text-sm">
                 Click to view all available deals
               </p>
             </div>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex items-center gap-2 h-8 px-3 rounded-md border border-red-600 text-white hover:bg-red-600 transition"
+              className="inline-flex items-center gap-2 h-8 px-3 rounded-md border border-red-500 text-white hover:bg-red-600 transition"
             >
               View Offers
               <FiChevronDown
@@ -49,7 +49,7 @@ export default function SpecialOffers() {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-red-600/40 mx-5" />
+          <div className="h-px bg-red-500/40 mx-5" />
 
           {/* Collapsible body */}
           {open && (
@@ -57,10 +57,10 @@ export default function SpecialOffers() {
               {offers.map((o, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-red-600/50 p-3 bg-black/70"
+                  className="rounded-lg border border-red-500 bg-red-600/20 p-3 shadow-sm"
                 >
-                  <div className="font-semibold">{o.title}</div>
-                  <div className="text-red-600 text-sm mt-1">{o.note}</div>
+                  <div className="font-semibold text-white">{o.title}</div>
+                  <div className="text-red-200 text-sm mt-1">{o.note}</div>
                 </div>
               ))}
             </div>
