@@ -295,22 +295,22 @@ const productData = {
     {
       "name": "Reign Monster Razzle Berry",
       "desc": "Energy drink with bold berry flavor",
-      "img": "Reign_Monster_REIGN_Razzle_Berry-removebg-preview.png"
+      "img": "Reign_Razzle_Berry-removebg-preview.png"
     },
     {
       "name": "UFIT 25G Banana",
       "desc": "Protein-packed banana shake",
-      "img": "UFIT_25G__-_Banana-removebg-preview.png"
+      "img": "UFIT-Banana-Protein-Shake-removebg-preview.png"
     },
     {
       "name": "UFIT 25G Salted Caramel",
       "desc": "Sweet & salty protein drink",
-      "img": "UFIT_25G__-_Salted_Caramel_-removebg-preview.png"
+      "img": "UFIT_Salted_Caramel-removebg-preview.png"
     },
     {
       "name": "UFIT 25G White Chocolate",
       "desc": "Creamy protein drink with white chocolate flavor",
-      "img": "UFIT_25G__-_White_Chocolate_-removebg-preview.png"
+      "img": "UFIT_White_chocolate_-removebg-preview.png"
     },
     {
       "name": "UFIT 25G Caramel Biscuit",
