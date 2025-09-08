@@ -80,12 +80,12 @@ const productData = {
     {
       "name": "Naughty Boy Birthday Cake",
       "desc": "Sweet birthday cake flavored protein powder",
-      "img": "Naughty_Bot_Birthday_Cake-removebg-preview.png"
+      "img": "Naughty_Boy_Birthday_Cake-removebg-preview.png"
     },
     {
       "name": "Naughty Boy Chocolate Orange",
       "desc": "Rich chocolate with a zesty orange twist",
-      "img": "Naughty_Boy-Chocolate_Orange-removebg-preview.png"
+      "img": "Naughty Boy Chocolate Orange.png"
     },
     {
       "name": "NXT Nutrition Beef Isolate Lemon Lime",
@@ -100,12 +100,12 @@ const productData = {
     {
       "name": "Per4m Protein Pancakes Chocolate Chip",
       "desc": "Protein-packed pancakes with chocolate chips",
-      "img": "Per4m_Protein_Pancakes-Chocolate_Chip-removebg-preview.png"
+      "img": "Per4m_Chocolate_chip_pancakes_-removebg-preview.png"
     },
     {
       "name": "Per4m Protein Pancakes Cookies n Creme",
       "desc": "Delicious cookies n creme protein pancake mix",
-      "img": "Per4m_Protein_Pancakes-Cookies_n_Creme_-removebg-preview.png"
+      "img": "Per4m_Cookies_and_Cream-removebg-preview.png"
     },
     {
       "name": "Per4m Whey Protein Baklava",
@@ -115,7 +115,7 @@ const productData = {
     {
       "name": "Per4m Whey Protein Banana Creme",
       "desc": "Smooth banana creme whey protein powder",
-      "img": "Per4m_Whey_Protein-Banana_Creme-removebg-preview.png"
+      "img": "Per4m_Banana_Whey-removebg-preview.png"
     },
     {
       "name": "Per4m Whey Protein Carrot Cake",
@@ -178,7 +178,7 @@ const productData = {
     {
       "name": "Bounty Hi Protein Bar",
       "desc": "Tropical coconut and chocolate with protein boost",
-      "img": "Bounty-Hi_Protein_Bar-removebg-preview.png"
+      "img": "Bounty_Protein_Bar_-removebg-preview.png"
     },
     {
       "name": "Food Connections Chocolate Caramel",
@@ -445,7 +445,7 @@ export default function Products() {
               key={index}
               className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300"
             >
-              <div className="w-full h-48 flex items-center justify-center bg-black">
+              <div className="w-full h-48 flex items-center justify-center bg-white">
                 <img
                   src={item.img}
                   alt={item.name}
