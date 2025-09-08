@@ -5,97 +5,97 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const equipmentData = {
   "Legs": [
     {
-      name: "Leg Press Machine",
+      name: "Leg1",
       desc: "Build quad and hamstring strength",
       img: "/PD-1.png", // Image for Leg Press Machine
     },
     {
-      name: "Leg Curl Machine",
+      name: "Leg2",
       desc: "Isolate the hamstrings for strength",
       img: "/PD-2.png", // Image for Leg Curl Machine
     },
     {
-      name: "Smith Machine",
+      name: "Leg3",
       desc: "Versatile machine for squats and presses",
       img: "/PD-3.png", // Image for Smith Machine
     },
     {
-      name: "Seated Leg Press",
+      name: "Leg4",
       desc: "Target quads, hamstrings, and glutes",
       img: "/PD-5.png", // Image for Seated Leg Press
     },
     {
-      name: "Leg Extension Machine",
+      name: "Leg5",
       desc: "Isolate and strengthen quadriceps",
       img: "/PD-6.png", // Image for Leg Extension Machine
     },
     {
-      name: "Walking Lunge Machine",
+      name: "Leg6",
       desc: "Great for building glutes and legs",
       img: "/PD-7.png", // Image for Walking Lunge Machine
     },
     {
-      name: "Glute Ham Raise",
+      name: "Leg7",
       desc: "Targets glutes and hamstrings",
       img: "/PD-8.png", // Image for Glute Ham Raise
     },
     {
-      name: "Barbell Squat Rack",
+      name: "Leg8",
       desc: "Perform squats safely with a barbell",
       img: "/PD-9.png", // Image for Barbell Squat Rack
     },
     {
-      name: "Smith Machine Squats",
+      name: "Leg9",
       desc: "Perform squats with controlled movement",
       img: "/PD-10.png", // Image for Smith Machine Squats
     },
     {
-      name: "Front Squat Barbell",
+      name: "Leg10",
       desc: "Enhance quad engagement with front squats",
       img: "/PD-11.png", // Image for Front Squat Barbell
     },
     {
-      name: "Squat Platform",
+      name: "Leg11",
       desc: "Elevated platform for squats and leg work",
       img: "/PD-12.png", // Image for Squat Platform
     },
     {
-      name: "Leg Press Calf Raise",
+      name: "Leg12",
       desc: "Focus on calf muscles with this machine",
       img: "/PD-13.png", // Image for Leg Press Calf Raise
     },
     {
-      name: "Hack Squat Press",
+      name: "Leg13",
       desc: "Hybrid machine for squats and presses",
       img: "/PD-14.png", // Image for Hack Squat Press
     },
     {
-      name: "Cable Leg Extensions",
+      name: "Leg14",
       desc: "Effective for isolating the quadriceps",
       img: "/PD-15.png", // Image for Cable Leg Extensions
     },
     {
-      name: "Standing Calf Raise",
+      name: "Leg15",
       desc: "Build calf muscles with full range of motion",
       img: "/PD-16.png", // Image for Standing Calf Raise
     },
     {
-      name: "Seated Calf Raise",
+      name: "Leg16",
       desc: "Focused on strengthening the calves",
       img: "/PD-17.png", // Image for Seated Calf Raise
     },
     {
-      name: "Barbell Deadlift",
+      name: "Leg17",
       desc: "Great for building hamstrings and glutes",
       img: "/PD-18.png", // Image for Barbell Deadlift
     },
     {
-      name: "Leg Day Squat Rack",
+      name: "Leg18",
       desc: "Dedicated rack for squats and leg training",
       img: "/PD-19.png", // Image for Leg Day Squat Rack
     },
     {
-      name: "Lunge Station",
+      name: "Leg19",
       desc: "Perfect for unilateral leg work",
       img: "/PD-20.png", // Image for Lunge Station
     },
@@ -105,27 +105,27 @@ const equipmentData = {
     //   img: "/p21.jpg", // Image for Glute Kickback Machine
     // },
     {
-      name: "Seated Hamstring Curl",
+      name: "Leg20",
       desc: "Target the hamstrings with proper form",
       img: "/PD-22.png", // Image for Seated Hamstring Curl
     },
     {
-      name: "Leg Strength Press",
+      name: "Leg21",
       desc: "Build overall leg strength",
       img: "/PD-23.png", // Image for Leg Strength Press
     },
     {
-      name: "Assisted Squat Machine",
+      name: "Leg22",
       desc: "Squats with assisted movement for safety",
       img: "/PD-24.png", // Image for Assisted Squat Machine
     },
     {
-      name: "Kettlebell Deadlifts",
+      name: "Leg23",
       desc: "Deadlifts using kettlebells for varied engagement",
       img: "/PD-25.png", // Image for Kettlebell Deadlifts
     },
     {
-      name: "Barbell Romanian Deadlift",
+      name: "Leg24",
       desc: "Target the posterior chain with this deadlift variation",
       img: "/PD-26.png", // Image for Barbell Romanian Deadlift
     },
@@ -147,85 +147,85 @@ const equipmentData = {
   ],
   Back: [
   {
-  name: "Seated Row",
+  name: "Back1",
   desc: "Build a strong back with controlled rowing movements",
   img: "/G1.png",
 }
 ,
    {
-  name: "Assisted Pull-Up / Dip",
+  name: "Back2",
   desc: "Strengthen your upper body with supported pull-ups and dips",
   img: "/G2.png",
 }
 ,
    {
-  name: "Functional Trainer",
+  name: "Back3",
   desc: "Versatile cable system for full-body strength and stability training",
   img: "/G3.png",
 }
 ,
   {
-  name: "Seated Calf Raise",
+  name: "Back4",
   desc: "Isolate and strengthen your calves with controlled seated raises",
   img: "/G4.png",
 }
 ,
   {
-  name: "Seated Row",
+  name: "Back5",
   desc: "Develop a strong back with controlled seated cable rows",
   img: "/G5.png",
 }
 ,
   {
-  name: "Lat Pulldown",
+  name: "Back6",
   desc: "Build a wide, strong back with controlled pulldown movements",
   img: "/G6.png",
 }
 ,
    {
-  name: "Lat Pulldown / Seated Row Combo",
+  name: "Back7",
   desc: "Dual-function machine for building both lats and mid-back strength",
   img: "/G7.png",
 }
 ,
   {
-  name: "Cable Crossover",
+  name: "Back8",
   desc: "Versatile dual-cable system for chest, arms, shoulders, and functional training",
   img: "/G8.png",
 }
 ,
   {
-  name: "Cable Row / Pulldown Combo",
+  name: "Back9",
   desc: "Dual-purpose machine for building both back width and thickness",
   img: "/G9.png",
 }
 ,
    {
-  name: "Plate-Loaded Lat Pulldown",
+  name: "Back10",
   desc: "Strengthen your lats and upper back with a plate-loaded pulldown for natural resistance",
   img: "/G10.png",
 }
 ,
   {
-  name: "Plate-Loaded Low Row",
+  name: "Back11",
   desc: "Build back thickness and strength with heavy plate-loaded rows",
   img: "/G11.png",
 }
 ,
   {
-  name: "Plate-Loaded Iso-Lateral Row",
+  name: "Back12",
   desc: "Train each side independently for balanced back strength and muscle symmetry",
   img: "/G12.png",
 }
 ,
  {
-  name: "Chest Press",
+  name: "Back13",
   desc: "Build chest, triceps, and shoulders with a guided pressing motion",
   img: "/G13.png",
 }
 ,
  {
-  name: "Chest Fly / Rear Delt",
+  name: "Back14",
   desc: "Dual-function machine to target chest with flyes and rear delts with reverse flyes",
   img: "/G14.png",
 }
@@ -234,47 +234,47 @@ const equipmentData = {
   ],
   Chest: [
     {
-  name: "Chest Press Machine",
+  name: "Chest1",
   desc: "Simulates bench press safely",
   img: "CH-1.png",
 }
 ,{
-  name: "Cable Crossover Machine",
+  name: "Chest2",
   desc: "Versatile machine for chest flys, tricep pushdowns, and functional training",
   img: "CH-2.png",
 },
 {
-  name: "Standing Multi-Flight Machine",
+  name: "Chest3",
   desc: "Multi-angle chest fly and rear delt training with adjustable arms",
   img: "CH-3.png",
 },
 {
-  name: "Pec Deck Machine",
+  name: "Chest4",
   desc: "Isolates chest muscles with controlled fly motion",
   img: "CH-4.png",
 },
 {
-  name: "Plate-Loaded Chest Press",
+  name: "Chest5",
   desc: "Mimics free-weight bench press with plate-loaded resistance",
   img: "CH-5.png",
 },
 {
-  name: "Plate-Loaded Incline Chest Press",
+  name: "Chest6",
   desc: "Targets upper chest with incline pressing motion using plate resistance",
   img: "CH-6.png",
 },
 {
-  name: "Flat Bench Press",
+  name: "Chest7",
   desc: "Classic barbell bench press for chest, shoulders, and triceps",
   img: "CH-7.png",
 },
 {
-  name: "Smith Machine",
+  name: "Chest8",
   desc: "Guided barbell system for safe bench press, squats, and shoulder presses",
   img: "CH-8.png",
 },
 {
-  name: "Plate-Loaded Seated Chest Press",
+  name: "Chest9",
   desc: "Seated chest press with plate resistance for stability and chest isolation",
   img: "CH-9.png",
 },
@@ -283,69 +283,69 @@ const equipmentData = {
   ],
   Arms: [
    {
-  name: "Cybex Bravo Functional Trainer",
+  name: "Arms1",
   desc: "Versatile cable-based functional trainer for full-body strength and conditioning exercises",
   img: "/A1.png",
 }
 ,
   {
-  name: "Pec Deck / Rear Delt Machine",
+  name: "Arms2",
   desc: "Dual-function machine designed for chest flys and rear deltoid exercises",
   img: "/A2.png",
 }
 ,{
-  name: "Lat Pulldown / Low Row Machine",
+  name: "Arms3",
   desc: "Combination unit for performing lat pulldowns and seated rows to target the back and lats",
   img: "/A3.png",
 }
 ,{
-  name: "Cable Crossover Machine",
+  name: "Arms4",
   desc: "Dual adjustable pulley system for versatile cable exercises including chest flys, tricep pushdowns, and functional training",
   img: "/A4.png",
 }
 ,{
-  name: "Plate-Loaded Chest Press",
+  name: "Arms5",
   desc: "Strength machine that mimics the motion of a bench press using weight plates for resistance",
   img: "/A5.png",
 }
 ,
 {
-  name: "Plate-Loaded Shoulder Press",
+  name: "Arms6",
   desc: "Overhead press machine using weight plates to build shoulder and tricep strength",
   img: "/A6.png",
 }
 ,
 {
-  name: "Standing Calf Raise Machine",
+  name: "Arms7",
   desc: "Weight stack machine designed to strengthen and build the calf muscles through standing raises",
   img: "/A7.png",
 }
 ,
 {
-  name: "Chest Press Machine",
+  name: "Arms8",
   desc: "Plate-loaded machine designed to simulate the motion of a bench press for building chest, shoulders, and triceps",
   img: "/A8.png",
 }
 ,
 {
-  name: "Plate-Loaded Bicep Curl",
+  name: "Arms9",
   desc: "Arm curl machine using weight plates to isolate and build bicep strength",
   img: "/A9.png",
 }
 ,
 {
-  name: "Plate-Loaded Squat Machine",
+  name: "Arms10",
   desc: "Lower body machine designed to simulate barbell squats while providing guided movement and safety",
   img: "/A10.png",
 }
 ,
 {
-  name: "Seated Chest Press Machine",
+  name: "Arms11",
   desc: "Weight stack machine designed for pressing movements to strengthen the chest, shoulders, and triceps",
   img: "/A13.png",
 }
 ,{
-  name: "Preacher Curl Machine",
+  name: "Arms12",
   desc: "Bicep isolation machine designed for controlled preacher curls with adjustable resistance",
   img: "/A14.png",
 }
@@ -355,47 +355,47 @@ const equipmentData = {
   ],
     Cardio: [
    {
-  name: "Treadmill",
+  name: "Cardio1",
   desc: "Boost endurance and burn calories with walking, jogging, or running workouts",
   img: "/C1.png",
 },{
-  name: "Stair Climber",
+  name: "Cardio2",
   desc: "High-intensity cardio machine to strengthen legs and glutes while improving endurance",
   img: "/C2.png",
 },
 {
-  name: "Recumbent Bike",
+  name: "Cardio3",
   desc: "Low-impact cardio with full back support, perfect for endurance and rehabilitation",
   img: "/C3.png",
 }
 ,{
-  name: "StairMaster",
+  name: "Cardio4",
   desc: "Climb continuously rotating stairs to build lower body strength and cardio endurance",
   img: "/C4.png",
 }
 ,{
-  name: "Air Bike",
+  name: "Cardio5",
   desc: "Full-body cardio machine combining pedaling and arm pushing for high-intensity training",
   img: "/C5.png",
 },
 {
-  name: "Elliptical Trainer",
+  name: "Cardio6",
   desc: "Low-impact full-body cardio workout that burns calories and protects joints",
   img: "/C6.png",
 },
 {
-  name: "Fan Bike",
+  name: "Cardio7",
   desc: "Full-body cardio with fan resistance that scales with your effort, ideal for HIIT",
   img: "/C7.png",
 },
 {
-  name: "Upright Bike",
+  name: "Cardio8",
   desc: "Simulates outdoor cycling to build leg strength and improve cardiovascular endurance",
   img: "/C8.png",
 }
 ,
 {
-  name: "SkiErg",
+  name: "Cardio9",
   desc: "Simulates cross-country skiing for a powerful full-body cardio and strength workout",
   img: "/C9.png",
 }
