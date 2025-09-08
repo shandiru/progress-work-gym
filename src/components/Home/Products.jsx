@@ -260,37 +260,37 @@ const productData = {
     {
       "name": "Grenade Strawberries & Cream",
       "desc": "Fruity and creamy protein indulgence",
-      "img": "Grenade_-_Strawberries___Cream-removebg-preview.png"
+      "img": "Grenade_Strawberry_and_Cream-removebg-preview.png"
     },
     {
       "name": "Grenade White Chocolate",
       "desc": "Smooth and sweet protein fuel",
-      "img": "Grenade_-_White_Chocolate-removebg-preview.png"
+      "img": "Grenade_White_Chocolate-removebg-preview.png"
     },
     {
       "name": "Lucozade Sport Drink Raspberry",
       "desc": "Hydration with refreshing raspberry flavor",
-      "img": "Lucozade_Sport_Drink_Raspberry-removebg-preview.png"
+      "img": "Lucazade_Raspberry-removebg-preview.png"
     },
     {
       "name": "QNT Actif BCAA Grapefruit",
       "desc": "Refreshing BCAA drink with grapefruit taste",
-      "img": "QNT_Actif_By_Juice_BCAA_S_8000__-_Grapefruit_-removebg-preview.png"
+      "img": "QNT_Grape_Fruit_BCAA-removebg-preview.png"
     },
     {
       "name": "QNT Actif BCAA Lemon",
       "desc": "Boost recovery with lemon flavored BCAAs",
-      "img": "QNT_Actif_By_Juice_BCAA_S_8000_-_Lemon-removebg-preview.png"
+      "img": "QNT_Lemon_BCAA-removebg-preview.png"
     },
     {
       "name": "QNT Carbo Load Lemon Lime",
       "desc": "Energy-loaded drink with citrus twist",
-      "img": "QNT_Carbo_Load_-_Lemon_Lime-removebg-preview.png"
+      "img": "QNT_Carb_Load_Lemon_and_Lime-removebg-preview.png"
     },
     {
       "name": "QNT Carbo Load Superfruit",
       "desc": "Superfruit-powered carbohydrate drink",
-      "img": "QNT_Carbo_Load_-_Superfruit_-removebg-preview.png"
+      "img": "QNT_Carb_Superfruit-removebg-preview.png"
     },
     {
       "name": "Reign Monster Razzle Berry",
