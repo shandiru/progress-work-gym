@@ -52,12 +52,12 @@ const productData = {
     {
       name: "Innova Pharm - Nova Pump Neuro Pump - Sour Apple",
       desc: "Innovative formula for ultimate performance",
-      img: "/innova.png", // Innova image
+      img: "/Inovva_Pharm_Sour_Apple-removebg-preview.png", // Innova image
     },
     {
       name: "Naughty Boy - Strawberry Mango",
       desc: "Tropical mango flavor for a boost of energy",
-      img: "/mango.png", // Mango image
+      img: "/Naughty_Boy_Strawberry_mango-removebg-preview.png", // Mango image
     },
     {
       name: "Naughty Boy Fruit Twist ",
@@ -65,9 +65,9 @@ const productData = {
       img: "/Naughty_Boy_Fruit_Twist.png", // Naughty Boy Fruit Twist image
     },
     {
-      name: "Zombie Juice - Tropical Cruch",
+      name: "Zombie Juice Tropical Crush",
       desc: "Tropical explosion of energy and flavor",
-      img: "/tropical.png", // Tropical image
+      img: "/NaughtyBoyFruit-removebg-preview.png", // Tropical image
     },
     {
       name: "Zombie Juice - Lemon Energy",
