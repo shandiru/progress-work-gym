@@ -183,19 +183,19 @@ const productData = {
     {
       "name": "Food Connections Chocolate Caramel",
       "desc": "Chocolate and caramel protein bar indulgence",
-      "img": "Food_Connections-Chocolate_Caramel-removebg-preview.png"
+      "img": "Connections_Chocolate_caramel-removebg-preview.png"
     },
 
     {
       "name": "Food Connections Strawberry Jam",
       "desc": "Sweet strawberry jam-filled protein bar",
-      "img": "Food_Connections-Strawberry_Jam_-removebg-preview.png"
+      "img": "Connections_Strawberry_Jam-removebg-preview.png"
     },
 
     {
       "name": "Food Connections Sultana Cherry",
       "desc": "Fruity protein bar with sultana and cherry",
-      "img": "Food_Connections-Sultana_Cherry-removebg-preview.png"
+      "img": "Connections_Sultana_Cherry-removebg-preview.png"
     },
 
     {
