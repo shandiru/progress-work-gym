@@ -344,32 +344,32 @@ const productData = {
     {
       "name": "QNT 53g Protein Shake Chocolate",
       "desc": "Rich chocolate protein shake with 53g protein",
-      "img": "QNT_53g_Protein_Shake_-_Chocolate_-removebg-preview.png"
+      "img": "QNT-Protein-Recovery-Shake-1x500ml-Glass-Bottle-RTDs-Ready-To-Drink-QNT-1x500ml-Chocolate-1000x1000-removebg-preview.png"
     },
     {
       "name": "QNT 53g Protein Shake Cookie",
       "desc": "Cookie-inspired shake packed with protein",
-      "img": "QNT_53g_Protein_Shake_-_Cookie-removebg-preview.png"
+      "img": "QNT-Protein-Recovery-Shake-1x500ml-Glass-Bottle-RTDs-Ready-To-Drink-QNT-1x500ml-Cookie-Flavour-5-1000x1000-removebg-preview.png"
     },
     {
       "name": "QNT 53g Protein Shake Strawberry",
       "desc": "Strawberry protein shake for fruity recovery",
-      "img": "QNT_53g_Protein_Shake_-_Strawberry_-removebg-preview.png"
+      "img": "QNT_Strawberry-removebg-preview.png"
     },
     {
       "name": "QNT 53g Protein Shake Vanilla",
       "desc": "Classic vanilla protein shake for muscle growth",
-      "img": "QNT_53g_Protein_Shake_-_Vanilla-removebg-preview.png"
+      "img": "QNT_Vanilla_-removebg-preview.png"
     },
     {
       "name": "Red Bull Sugar Free Pink Edition",
       "desc": "Zero sugar energy boost with pink edition flavor",
-      "img": "Red_Bull_Sugar_Free_Pink_Edition-removebg-preview.png"
+      "img": "323435_redbullpinkedition_518592s-removebg-preview.png"
     },
     {
       "name": "Red Bull Winter Edition Iced Vanilla Berry",
       "desc": "Seasonal energy drink with iced vanilla berry flavor",
-      "img": "Red_Bull_Winter_Edition_Iced_Vanilla_Berry-removebg-preview.png"
+      "img": "Red_Bull_Vanilla_berry-removebg-preview.png"
     }
   ]
 
