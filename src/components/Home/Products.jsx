@@ -42,7 +42,7 @@ const productData = {
     {
       name: "EHP Labs - Oxyshred Proton Plasma",
       desc: "Enhanced energy and focus with every scoop",
-      img: "/EHP Labs Oxyshred proton plasma.png", // EHP image
+      img: "/Oxyshred_Proton_Plasma-removebg-preview.png", // EHP image
     },
     {
       name: "Conteh Mega Pump - Fruit Burst",
@@ -320,7 +320,7 @@ const productData = {
     {
       "name": "UFIT 25G Raspberry Ripple",
       "desc": "Sweet and tangy raspberry ripple flavor",
-      "img": "UFIT_25G_-_Rasberry_Ripple-removebg-preview.png"
+      "img": "UFIT-25g-Raspberry-Ripple-330ml-removebg-preview.png"
     }, {
       "name": "EHP Labs x Ghostbusters Oxyshred Proton Plasma",
       "desc": "High-energy formula with explosive Ghostbusters collab",
@@ -329,17 +329,17 @@ const productData = {
     {
       "name": "EHP Labs x Ghostbusters Oxyshred Slimer",
       "desc": "Limited edition Oxyshred with Slimer-inspired flavor",
-      "img": "EHP_Labs_x_Ghostbusters_Oxyshred_Slimer-removebg-preview.png"
+      "img": ""
     },
     {
       "name": "Ice Valley Water",
       "desc": "Pure and refreshing natural spring water",
-      "img": "Ice_ValleyWater_-removebg-preview.png"
+      "img": "Ice_Valley_water-removebg-preview.png"
     },
     {
       "name": "QNT 53g Protein Shake Banana",
       "desc": "Banana-flavored protein shake with 53g protein",
-      "img": "QNT_53g_Protein_Shake_-_Banana-removebg-preview.png"
+      "img": "QNT_Banana-removebg-preview.png"
     },
     {
       "name": "QNT 53g Protein Shake Chocolate",
