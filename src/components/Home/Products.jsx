@@ -7,7 +7,7 @@ const productData = {
     {
       name: "ABE-Candy Ice Blast",
       desc: "Refreshing and energizing formula",
-      img: "/ABE_Candy_Ice_Blast.png", // ABE Candy Ice Blast image
+      img: "/ABE_Candy_Ice_Blast_-removebg-preview.png", // ABE Candy Ice Blast image
     },
     {
       name: "Naughty Boy - Apple Power",
@@ -17,37 +17,37 @@ const productData = {
     {
       name: "ABE-Baddy Berry",
       desc: "Intense focus and energy",
-      img: "/baddy.png", // Baddy image
+      img: "/ABE_Baddy_Berry-removebg-preview.png", // Baddy image
     },
     {
       name: "Nova Pump - Stim Free - Blackberry Mojito",
       desc: "Blackberry flavor for a burst of energy",
-      img: "/blackberry.png", // Blackberry image
+      img: "/Nova_Pump_Blackberry_Mojito-removebg-preview.png", // Blackberry image
     },
     {
       name: "Naughty Boy - Blue Razz",
       desc: "Smooth blue berry flavor with intense effects",
-      img: "/blue.png", // Blue image
+      img: "/Naughty_Boy_Blue_Raz-removebg-preview.png", // Blue image
     },
     {
       name: "Conteh - Conviction - Blue Ice Pop",
       desc: "Cool and energizing ice flavor",
-      img: "/blue-ice.png", // Blue Ice image
+      img: "/Conteh_Conviction_Blue_Ice_pop-removebg-preview (1).png", // Blue Ice image
     },
     {
       name: "Conteh Mega Pump - Rasberry Twist",
       desc: "Energy and endurance with a unique flavor",
-      img: "/conteh.png", // Conteh image
+      img: "/Conteh_Mega_Pump_Raspberry_Twist-removebg-preview.png", // Conteh image
     },
     {
       name: "EHP Labs - Oxyshred Proton Plasma",
       desc: "Enhanced energy and focus with every scoop",
-      img: "/EHP.png", // EHP image
+      img: "/EHP Labs Oxyshred proton plasma.png", // EHP image
     },
     {
       name: "Conteh Mega Pump - Fruit Burst",
       desc: "Packed with fruit flavor and natural energy",
-      img: "/Fruit.png", // Fruit image
+      img: "/Conteh_Mega_Pump_Fruit_Burst-removebg-preview.png", // Fruit image
     },
     {
       name: "Innova Pharm - Nova Pump Neuro Pump - Sour Apple",
