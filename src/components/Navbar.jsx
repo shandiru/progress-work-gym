@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Membership", href: "#member" },
   { label: "Why Choose Us", href: "#why" },
   { label: "Review", href: "#review" },
-  { label: "Personal Trainers", href: "/team" },
+  
   { label: "Champion Athletes", href: "/ChampionAthletes" },
 ];
 
