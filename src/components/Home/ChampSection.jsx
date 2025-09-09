@@ -1,5 +1,6 @@
-// HomeAthletesDuo.jsx
-import React from "react";
+// File: HomeAthletesDuo.jsx
+"use client";
+import React, { useEffect, useRef } from "react";
 
 /** Red + Black theme palette */
 const ACCENT = {
@@ -54,16 +55,11 @@ const ATHLETES = [
   },
 ];
 
-/** ---- Alignment helpers ----
- * Make the area ABOVE “Specialties” the same height in every card.
- * That area = (Name/Role) + Blurb + Achievements.
- * We normalize Blurb with a constant min height, and Achievements with a
- * dynamic min height based on the largest list length.
- */
-const MAX_ACHIEVEMENTS = Math.max(...ATHLETES.map(a => a.achievements.length));
-const BLURB_MIN_HEIGHT = 80;      // ~3 lines at text-sm (adjust if needed)
-const ACHIEVEMENT_ROW_H = 28;     // ~28px per bullet row
-const ACH_HDR_H = 24 + 8;         // Key Achievements heading + small gap
+/** ---- Alignment helpers ---- */
+const MAX_ACHIEVEMENTS = Math.max(...ATHLETES.map((a) => a.achievements.length));
+const BLURB_MIN_HEIGHT = 80; // ~3 lines at text-sm (adjust if needed)
+const ACHIEVEMENT_ROW_H = 28; // ~28px per bullet row
+const ACH_HDR_H = 24 + 8; // Key Achievements heading + small gap
 const ACHIEVEMENTS_MIN_HEIGHT = ACH_HDR_H + MAX_ACHIEVEMENTS * ACHIEVEMENT_ROW_H;
 
 function Badge({ children, solid = false }) {
@@ -119,22 +115,22 @@ function Metric({ value, label }) {
 
 function AthleteCard({ a }) {
   return (
-    <figure className="group rounded-2xl p-0.5 bg-gradient-to-b from-red-600/20 to-transparent h-full">
+    <figure className="athlete-card group rounded-2xl p-0.5 bg-gradient-to-b from-red-600/20 to-transparent h-full">
       <div
         className={[
           ACCENT.surface,
-          "rounded-2xl border",
+          "athlete-inner rounded-2xl border",
           ACCENT.border,
           "shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden",
           "flex flex-col h-full",
         ].join(" ")}
       >
         {/* Image */}
-        <div className="relative overflow-hidden rounded-2xl h-[360px] sm:h-[420px]">
+        <div className="athlete-img-wrap relative overflow-hidden rounded-2xl h-[360px] sm:h-[420px]">
           <img
             src={a.img}
             alt={a.name}
-            className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+            className="athlete-img block w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
           />
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 to-transparent" />
         </div>
@@ -142,7 +138,7 @@ function AthleteCard({ a }) {
         {/* Content */}
         <figcaption className="px-5 sm:px-6 pb-6 pt-4 flex flex-col flex-1">
           <div className="flex items-center justify-between gap-3 mb-2">
-            <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
+            <h3 className="athlete-name text-lg sm:text-xl font-semibold tracking-tight text-white">
               {a.name}
             </h3>
             <Badge solid>{a.role}</Badge>
@@ -157,7 +153,10 @@ function AthleteCard({ a }) {
           </p>
 
           {/* Key Achievements — bullet list, normalized height */}
-          <div className="space-y-2 mb-4" style={{ minHeight: ACHIEVEMENTS_MIN_HEIGHT }}>
+          <div
+            className="athlete-achievements space-y-2 mb-4"
+            style={{ minHeight: ACHIEVEMENTS_MIN_HEIGHT }}
+          >
             <h4 className="font-semibold text-white text-sm">Key Achievements</h4>
             <ul className={`text-sm ${ACCENT.muted} space-y-1`}>
               {a.achievements.map((t, i) => (
@@ -175,7 +174,7 @@ function AthleteCard({ a }) {
           <div className="mb-4">
             <h4 className="font-semibold text-white text-sm mb-2">Specialties</h4>
             <div className="w-full overflow-x-auto">
-              <div className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap pr-1">
+              <div className="athlete-tags inline-flex flex-nowrap items-center gap-2 whitespace-nowrap pr-1">
                 {a.tags.map((t) => (
                   <Badge key={t}>{t}</Badge>
                 ))}
@@ -198,11 +197,142 @@ function AthleteCard({ a }) {
 }
 
 export default function AthletesSection() {
+  const sectionRef = useRef(null);
+  const headWrapRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    let ctx;
+    let mounted = true;
+    (async () => {
+      const gsapModule = await import("gsap");
+      const ST = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default || gsapModule;
+      const ScrollTrigger = ST.ScrollTrigger || ST.default;
+      gsap.registerPlugin(ScrollTrigger);
+      if (!mounted) return;
+
+      ctx = gsap.context(() => {
+        // Heading reveal
+        const title = headWrapRef.current?.querySelector("h2");
+        const sub = headWrapRef.current?.querySelector("p");
+        gsap.set([title, sub], { autoAlpha: 0, y: 24 });
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: headWrapRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+            defaults: { ease: "power3.out" },
+          })
+          .to(title, { autoAlpha: 1, y: 0, duration: 0.5 })
+          .to(sub, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
+
+        // Cards in view stagger
+        const cards = gridRef.current
+          ? Array.from(gridRef.current.querySelectorAll(".athlete-card"))
+          : [];
+        gsap.set(cards, {
+          autoAlpha: 0,
+          y: 28,
+          rotateX: 6,
+          transformOrigin: "50% 100%",
+        });
+        gsap.to(cards, {
+          autoAlpha: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        // Parallax on athlete photos
+        const photoWraps = gridRef.current
+          ? Array.from(gridRef.current.querySelectorAll(".athlete-img-wrap"))
+          : [];
+        photoWraps.forEach((wrap) => {
+          const img = wrap.querySelector(".athlete-img");
+          if (!img) return;
+          gsap.fromTo(
+            img,
+            { y: -8 },
+            {
+              y: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.6,
+              },
+            }
+          );
+        });
+
+        // Tags gentle marquee drift (loop)
+        const tagRows = gridRef.current
+          ? Array.from(gridRef.current.querySelectorAll(".athlete-tags"))
+          : [];
+        tagRows.forEach((row) => {
+          const w = row.scrollWidth - row.clientWidth;
+          if (w > 0) {
+            gsap.fromTo(
+              row,
+              { x: 0 },
+              {
+                x: -Math.min(w, 60), // move up to 60px left
+                duration: 6,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+              }
+            );
+          }
+        });
+
+        // Hover lift micro-interaction on each card
+        const inners = gridRef.current
+          ? Array.from(gridRef.current.querySelectorAll(".athlete-inner"))
+          : [];
+        inners.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+              y: -6,
+              boxShadow: "0 12px 24px rgba(239,68,68,0.25)",
+              duration: 0.18,
+              ease: "power2.out",
+            });
+          });
+          card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+              y: 0,
+              boxShadow: "0 0px 0px rgba(0,0,0,0)",
+              duration: 0.22,
+              ease: "power2.out",
+            });
+          });
+        });
+      }, sectionRef);
+    })();
+
+    return () => {
+      mounted = false;
+      ctx?.revert();
+    };
+  }, []);
+
   return (
-    <section className="bg-black text-white">
+    <section className="bg-black text-white" ref={sectionRef}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         {/* Heading */}
-        <div className="py-12 sm:py-14 text-center">
+        <div ref={headWrapRef} className="py-12 sm:py-14 text-center">
           <h2 className="text-[28px] sm:text-4xl md:text-[44px] font-extrabold tracking-tight">
             Our Champion Athletes
           </h2>
@@ -214,7 +344,10 @@ export default function AthletesSection() {
 
         {/* 2-up grid */}
         <div className="pb-16 sm:pb-20">
-          <div className="mx-auto grid max-w-4xl grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-stretch">
+          <div
+            ref={gridRef}
+            className="mx-auto grid max-w-4xl grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-stretch"
+          >
             {ATHLETES.map((a) => (
               <AthleteCard key={a.name} a={a} />
             ))}

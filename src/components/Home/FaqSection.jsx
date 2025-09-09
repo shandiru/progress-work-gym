@@ -1,21 +1,101 @@
 // File: AboutFaqSection.jsx
-import React, { useId, useState } from "react";
+"use client";
+import React, { useEffect, useId, useRef, useState } from "react";
 
 export default function AboutFaqSection({
-  imageSrc = "/newfaq.png", // <- your 'mamuball' image here
+  imageSrc = "/newfaq.png",
   imageAlt = "Gym athlete working out",
   titleKicker = "FAQ",
   title = "FAQ: Your Fitness, Answered",
   intro = "Got questions? We’ve got the answers — so you can focus on smashing your goals.",
   faqs = defaultFaqs,
 }) {
+  const sectionRef = useRef(null);
+  const mediaRef = useRef(null);
+  const kickerRef = useRef(null);
+  const titleRef = useRef(null);
+  const introRef = useRef(null);
+  const faqWrapRef = useRef(null);
+
+  useEffect(() => {
+    let ctx;
+    let mounted = true;
+
+    (async () => {
+      const gsapModule = await import("gsap");
+      const ST = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default || gsapModule;
+      const ScrollTrigger = ST.ScrollTrigger || ST.default;
+      gsap.registerPlugin(ScrollTrigger);
+      if (!mounted) return;
+
+      ctx = gsap.context(() => {
+        // Initial states
+        gsap.set([kickerRef.current, titleRef.current, introRef.current], { autoAlpha: 0, y: 24 });
+        gsap.set(mediaRef.current, { autoAlpha: 0, y: 24, rotate: -3 });
+        const rows = faqWrapRef.current
+          ? Array.from(faqWrapRef.current.querySelectorAll(".faq-row"))
+          : [];
+        gsap.set(rows, { autoAlpha: 0, y: 20 });
+
+        // Left image reveal + subtle parallax
+        gsap.to(mediaRef.current, {
+          autoAlpha: 1,
+          y: 0,
+          rotate: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          scrollTrigger: { trigger: mediaRef.current, start: "top 85%" },
+        });
+        gsap.to(mediaRef.current, {
+          y: -8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: mediaRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.6,
+          },
+        });
+
+        // Text reveal
+        gsap
+          .timeline({
+            scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
+            defaults: { ease: "power3.out" },
+          })
+          .to(kickerRef.current, { autoAlpha: 1, y: 0, duration: 0.35 })
+          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.1")
+          .to(introRef.current, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
+
+        // FAQ rows stagger in
+        gsap.to(rows, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.45,
+          ease: "power3.out",
+          stagger: 0.08,
+          scrollTrigger: { trigger: faqWrapRef.current, start: "top 85%" },
+        });
+      }, sectionRef);
+    })();
+
+    return () => {
+      mounted = false;
+      ctx?.revert();
+    };
+  }, []);
+
   return (
-    <section className="relative w-full bg-black text-white">
+    <section ref={sectionRef} className="relative w-full bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 lg:px-6 space-y-12">
-        {/* ROW 1: Left = Image, Right = Heading */}
+        {/* ROW 1 */}
         <div className="grid items-stretch gap-10 lg:grid-cols-2">
           {/* LEFT: IMAGE */}
-          <div className="relative order-1 overflow-hidden rounded-2xl border border-red-600/20 bg-black">
+          <div
+            ref={mediaRef}
+            className="relative order-1 overflow-hidden rounded-2xl border border-red-600/20 bg-black"
+          >
             <img
               src={imageSrc}
               alt={imageAlt}
@@ -27,21 +107,21 @@ export default function AboutFaqSection({
             <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black/70 to-transparent" />
           </div>
 
-          {/* RIGHT: TEXT CONTENT */}
+          {/* RIGHT: TEXT */}
           <div className="order-2 flex flex-col justify-center">
-            <div className="mb-2 text-sm font-semibold uppercase tracking-widest text-red-600">
+            <div ref={kickerRef} className="mb-2 text-sm font-semibold uppercase tracking-widest text-red-600">
               {titleKicker}
             </div>
-            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 ref={titleRef} className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
               {title}
             </h2>
-            <p className="mt-5 max-w-prose text-gray-300">{intro}</p>
+            <p ref={introRef} className="mt-5 max-w-prose text-gray-300">{intro}</p>
           </div>
         </div>
 
-        {/* ROW 2: FAQ CENTERED */}
+        {/* ROW 2: FAQ */}
         <div className="flex justify-center">
-          <div className="w-full max-w-3xl">
+          <div ref={faqWrapRef} className="w-full max-w-3xl">
             <div className="mt-2 space-y-3">
               {faqs.map((item, idx) => (
                 <FaqRow key={idx} index={idx} item={item} />
@@ -60,8 +140,63 @@ function FaqRow({ index, item }) {
   const btnId = `${uid}-btn`;
   const panelId = `${uid}-panel`;
 
+  // refs for animation
+  const rowRef = useRef(null);
+  const bodyRef = useRef(null);
+
+  // smooth open/close with GSAP (height:auto)
+  useEffect(() => {
+    (async () => {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default || gsapModule;
+
+      const el = bodyRef.current;
+      if (!el) return;
+
+      if (open) {
+        gsap.set(el, { display: "block" });
+        gsap.fromTo(
+          el,
+          { height: 0, autoAlpha: 0 },
+          {
+            height: "auto",
+            autoAlpha: 1,
+            duration: 0.3,
+            ease: "power2.out",
+            clearProps: "height",
+          }
+        );
+      } else {
+        gsap.to(el, {
+          height: 0,
+          autoAlpha: 0,
+          duration: 0.25,
+          ease: "power2.inOut",
+          onComplete: () => gsap.set(el, { display: "none" }),
+        });
+      }
+    })();
+  }, [open]);
+
+  // subtle hover lift micro-interaction
+  const onEnter = async () => {
+    const gsapModule = await import("gsap");
+    const gsap = gsapModule.default || gsapModule;
+    gsap.to(rowRef.current, { y: -2, duration: 0.12, ease: "power2.out" });
+  };
+  const onLeave = async () => {
+    const gsapModule = await import("gsap");
+    const gsap = gsapModule.default || gsapModule;
+    gsap.to(rowRef.current, { y: 0, duration: 0.15, ease: "power2.out" });
+  };
+
   return (
-    <div className="overflow-hidden rounded-xl border border-red-600/20 bg-black/60">
+    <div
+      ref={rowRef}
+      className="faq-row overflow-hidden rounded-xl border border-red-600/20 bg-black/60"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
       <button
         id={btnId}
         aria-expanded={open}
@@ -82,26 +217,15 @@ function FaqRow({ index, item }) {
           aria-hidden
         >
           <svg viewBox="0 0 24 24" className="h-4 w-4 text-red-600">
-            <path
-              d="M12 5v14M5 12h14"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
+            <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </span>
       </button>
 
-      <div
-        id={panelId}
-        role="region"
-        aria-labelledby={btnId}
-        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
-      >
-        <div className="min-h-0 overflow-hidden">
-          <p className="px-5 pb-5 text-gray-300">{item.a}</p>
+      {/* Body: height animated by GSAP (kept in DOM) */}
+      <div id={panelId} role="region" aria-labelledby={btnId}>
+        <div ref={bodyRef} className="px-5 pb-5 text-gray-300" style={{ display: "none", height: 0, overflow: "hidden" }}>
+          {item.a}
         </div>
       </div>
     </div>

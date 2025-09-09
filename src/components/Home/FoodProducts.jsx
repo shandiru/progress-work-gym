@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+// File: Products.jsx
+"use client";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 
 // Product data by category
 const productData = {
@@ -210,23 +213,45 @@ const productData = {
   ],
 };
 
+
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("Pots of gold");
   const [startIndex, setStartIndex] = useState(0);
 
-  const items = productData[activeCategory];
-  const visibleItems = items.slice(startIndex, startIndex + 3);
+  // Refs for GSAP
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subRef = useRef(null);
+  const tabsRef = useRef(null);
+  const gridRef = useRef(null);
+  const leftBtnRef = useRef(null);
+  const rightBtnRef = useRef(null);
 
-  const categories = Object.keys(productData);
+  // For direction + category change animations
+  const lastIndexRef = useRef(0);
+  const lastCategoryRef = useRef(activeCategory);
 
-  const prevSlide = () => {
+  // Data guards
+  const items = useMemo(
+    () => (productData?.[activeCategory] ? productData[activeCategory] : []),
+    [activeCategory]
+  );
+  const visibleItems = useMemo(
+    () => items.slice(startIndex, startIndex + 3),
+    [items, startIndex]
+  );
+  const categories = useMemo(() => Object.keys(productData || {}), []);
+
+  const prevSlide = async () => {
     if (startIndex > 0) {
+      await pressButton(leftBtnRef);
       setStartIndex((prev) => prev - 1);
     }
   };
 
-  const nextSlide = () => {
+  const nextSlide = async () => {
     if (startIndex < items.length - 3) {
+      await pressButton(rightBtnRef);
       setStartIndex((prev) => prev + 1);
     }
   };
@@ -236,24 +261,159 @@ export default function Products() {
     setStartIndex(0);
   };
 
+  // Initial scroll reveals
+  useEffect(() => {
+    let ctx;
+    let mounted = true;
+
+    (async () => {
+      const gsapModule = await import("gsap");
+      const ScrollTriggerModule = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default || gsapModule;
+      const ScrollTrigger =
+        ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
+      gsap.registerPlugin(ScrollTrigger);
+      if (!mounted) return;
+
+      ctx = gsap.context(() => {
+        // Initial states
+        gsap.set([titleRef.current, subRef.current], { autoAlpha: 0, y: 24 });
+        gsap.set([tabsRef.current, leftBtnRef.current, rightBtnRef.current], {
+          autoAlpha: 0,
+          y: 16,
+        });
+
+        // Title + subtitle
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+            defaults: { ease: "power3.out" },
+          })
+          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 })
+          .to(subRef.current, { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.2")
+          .to(
+            [tabsRef.current, leftBtnRef.current, rightBtnRef.current],
+            { autoAlpha: 1, y: 0, duration: 0.4, stagger: 0.1 },
+            "-=0.1"
+          );
+
+        // Initial cards stagger
+        const cards = () =>
+          gridRef.current
+            ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
+            : [];
+
+        gsap.set(cards(), {
+          autoAlpha: 0,
+          y: 28,
+          rotateX: 6,
+          transformOrigin: "50% 100%",
+        });
+
+        gsap.to(cards(), {
+          autoAlpha: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }, sectionRef);
+    })();
+
+    return () => {
+      mounted = false;
+      ctx?.revert();
+    };
+  }, []);
+
+  // Animate when paging or switching category
+  useEffect(() => {
+    (async () => {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default || gsapModule;
+
+      const cards =
+        gridRef.current &&
+        Array.from(gridRef.current.querySelectorAll(":scope > div"));
+      if (!cards || !cards.length) return;
+
+      // Category changed → fade/raise with slight stagger
+      if (lastCategoryRef.current !== activeCategory) {
+        gsap.fromTo(
+          cards,
+          { autoAlpha: 0, y: 20 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.45,
+            ease: "power3.out",
+            stagger: 0.08,
+          }
+        );
+        lastCategoryRef.current = activeCategory;
+        lastIndexRef.current = startIndex;
+        return;
+      }
+
+      // Paging → slide from direction
+      const dir = Math.sign(startIndex - lastIndexRef.current) || 1; // right=1, left=-1
+      gsap.fromTo(
+        cards,
+        { x: 24 * dir, autoAlpha: 0 },
+        {
+          x: 0,
+          autoAlpha: 1,
+          duration: 0.35,
+          ease: "power3.out",
+          stagger: 0.06,
+        }
+      );
+      lastIndexRef.current = startIndex;
+    })();
+  }, [activeCategory, startIndex, visibleItems.length]);
+
+  // Micro press for arrows
+  const pressButton = async (ref) => {
+    const gsapModule = await import("gsap");
+    const gsap = gsapModule.default || gsapModule;
+    if (!ref.current) return;
+    await gsap.to(ref.current, {
+      scale: 0.94,
+      duration: 0.08,
+      ease: "power2.out",
+      yoyo: true,
+      repeat: 1,
+    });
+  };
+
   return (
-    <section className="bg-black text-white py-35 px-4">
+    <section className="bg-black text-white py-35 px-4" ref={sectionRef}>
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
           OUR <span className="text-red-600">FOODS</span>
         </h2>
-        <p className="text-gray-400 mt-2">
+        <p className="text-gray-400 mt-2" ref={subRef}>
           Fuel your workouts with premium supplements
         </p>
       </div>
 
       {/* Category Tabs */}
-      <div className="flex justify-center flex-wrap gap-4 mb-10">
+      <div ref={tabsRef} className="flex justify-center flex-wrap gap-4 mb-10">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md ${
+            className={`px-4 py-1 border rounded-md transition-colors ${
               activeCategory === cat
                 ? "bg-red-600 text-white"
                 : "border-red-600 text-white hover:bg-red-600"
@@ -268,28 +428,30 @@ export default function Products() {
       <div className="flex items-center justify-center gap-4">
         {/* Left Arrow */}
         <button
+          ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
           className={`${
             startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
+          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400 will-change-transform`}
+          aria-label="Previous"
         >
           <FaChevronLeft />
         </button>
 
         {/* Product Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full" ref={gridRef}>
           {visibleItems.map((item, index) => (
             <div
-              key={index}
-              className="border border-red-600 rounded-md overflow-hidden"
+              key={`${item.name}-${index}`}
+              className="border border-red-600 rounded-md overflow-hidden bg-[#0d1117] will-change-transform"
             >
               <img
                 src={item.img}
                 alt={item.name}
                 className="w-full h-48 object-cover bg-gray-800"
               />
-              <div className="bg-[#0d1117] p-4">
+              <div className="p-4">
                 <h4 className="font-bold text-white">{item.name}</h4>
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
@@ -299,13 +461,13 @@ export default function Products() {
 
         {/* Right Arrow */}
         <button
+          ref={rightBtnRef}
           onClick={nextSlide}
           disabled={startIndex >= items.length - 3}
           className={`${
-            startIndex >= items.length - 3
-              ? "opacity-50 cursor-not-allowed"
-              : ""
-          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400`}
+            startIndex >= items.length - 3 ? "opacity-50 cursor-not-allowed" : ""
+          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400 will-change-transform`}
+          aria-label="Next"
         >
           <FaChevronRight />
         </button>
@@ -313,3 +475,5 @@ export default function Products() {
     </section>
   );
 }
+
+
