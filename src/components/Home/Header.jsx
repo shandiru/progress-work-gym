@@ -78,24 +78,7 @@ export default function Header() {
       {/* Overlay (use bg-black/50 or bg-black bg-opacity-50) */}
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      {/* Vertical Buttons */}
-      <div
-        ref={btnsRef}
-        className="fixed left-3 top-1/2 -translate-y-1/2 z-20 space-y-48 cursor-pointer"
-      >
-        <a
-          href="#member"
-          className="-rotate-90 origin-left bg-red-600 text-white hover:bg-red-500 px-10 pt-2 font-bold text-lg text-center tracking-widest block"
-        >
-          SIGN UP TODAY
-        </a>
-        <a
-          href="#contact"
-          className="-rotate-90 origin-left bg-black text-white hover:bg-gray-700 px-10 pt-2 font-bold text-lg text-center tracking-widest block"
-        >
-          CONTACT US
-        </a>
-      </div>
+     
 
       {/* Centered Text */}
       <div
