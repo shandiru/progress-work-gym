@@ -1,5 +1,6 @@
 // File: Footer.jsx
 import { FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -52,6 +53,12 @@ export default function Footer() {
               >
                 Champion Athletes
               </a>
+            </li>
+            <li>
+              <Link to="/privacy-policy" className="hover:text-red-500">Privacy Policy</Link> {/* Updated link */}
+            </li>
+            <li>
+              <Link to="/terms-conditions" className="hover:text-red-500">Terms & Conditions</Link> {/* Updated link */}
             </li>
           </ul>
         </div>
