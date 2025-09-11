@@ -584,8 +584,9 @@ export default function Equipment() {
 
   return (
     <section
-      className="bg-black text-white py-12 px-4 md:px-8 lg:px-12"
+      className="bg-black text-white py-12 px-4 md:px-8 lg:px-12 scroll-m-15"
       ref={sectionRef}
+      id="ourequipment"
     >
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>

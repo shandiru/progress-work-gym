@@ -70,7 +70,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black overflow-hidden py-16 px-4 sm:px-6 lg:px-12"
+      className="relative bg-black overflow-hidden py-16 px-4 sm:px-6 lg:px-12 scroll-m-15"
       id="about"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">

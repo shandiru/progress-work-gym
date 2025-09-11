@@ -8,14 +8,22 @@ const NAV_LINKS = [
   { label: "Who Are We", href: "#about" },
   { label: "Trainers", href: "#trainers" },
   { label: "Membership", href: "#member" },
+  { label: "Special Offer", href: "#specialoffer" },
+  { label: "Our Equipment", href: "#ourequipment" },
+  { label: "Product", hasDropdown: true },
+  { label: "Our Partners", href: "#ourpartners" },
   { label: "Why Choose Us", href: "#why" },
   { label: "Review", href: "#review" },
-  
-  { label: "Champion Athletes", href: "/ChampionAthletes" },
+  { label: "Champion Athletes", href: "#ChampionAthletes" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for the dropdown
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <header className="bg-[#06091A] text-white shadow-md fixed w-full top-0 left-0 z-50">
@@ -32,13 +40,33 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8">
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-base font-medium hover:text-red-500 transition"
-            >
-              {link.label}
-            </a>
+            <div key={link.label} className="relative">
+              <a
+                href={link.href}
+                className="text-xs font-medium hover:text-red-500 transition"
+                onClick={link.hasDropdown ? toggleDropdown : undefined} // Only toggle dropdown for 'Product'
+              >
+                {link.label}
+              </a>
+
+              {/* Dropdown for Product */}
+              {link.hasDropdown && dropdownOpen && (
+                <div className="absolute top-full text-sm left-0 w-35 bg-[#06091A] text-white border-t border-gray-700 mt-2">
+                  <a
+                    href="#ourproducts"
+                    className="block px-4 py-2 font-medium hover:text-red-500 transition"
+                  >
+                    Our Products
+                  </a>
+                  <a
+                    href="#ourfoods"
+                    className="block px-4 py-2 font-medium hover:text-red-500 transition"
+                  >
+                    Our Foods
+                  </a>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -66,14 +94,35 @@ export default function Navbar() {
         <div className="md:hidden bg-[#06091A] border-t border-gray-700">
           <nav className="flex flex-col items-center gap-6 py-6">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-lg font-medium hover:text-red-500 transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </a>
+              <div key={link.label} className="relative">
+                <a
+                  href={link.href}
+                  className="text-lg font-medium hover:text-red-500 transition"
+                  onClick={link.hasDropdown ? toggleDropdown : undefined}
+                >
+                  {link.label}
+                </a>
+
+                {/* Dropdown for Product in mobile */}
+                {link.hasDropdown && dropdownOpen && (
+                  <div className="absolute top-full left-0 w-full bg-[#06091A] text-white border-t border-gray-700 mt-2">
+                    <a
+                      href="#ourproducts"
+                      className="block px-4 py-2 text-lg font-medium hover:text-red-500 transition"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Our Products
+                    </a>
+                    <a
+                      href="#ourfoods"
+                      className="block px-4 py-2 text-lg font-medium hover:text-red-500 transition"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Our Foods
+                    </a>
+                  </div>
+                )}
+              </div>
             ))}
             <a
               href="https://www.instagram.com/progress_works_gym"

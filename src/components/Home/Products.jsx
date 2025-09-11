@@ -561,7 +561,7 @@ export default function Products() {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-4" ref={sectionRef}>
+    <section className="bg-black text-white py-20 px-4 scroll-m-15" id="ourproducts" ref={sectionRef}>
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
           OUR <span className="text-red-600">PRODUCTS</span>

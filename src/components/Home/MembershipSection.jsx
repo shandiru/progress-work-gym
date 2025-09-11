@@ -120,7 +120,7 @@ export default function MembershipPlans() {
 
   return (
     <section
-      className="bg-[#0d1117] text-white py-12 px-4"
+      className="bg-[#0d1117] text-white py-12 px-4 scroll-m-15"
       id="member"
       ref={sectionRef}
     >

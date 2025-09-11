@@ -329,7 +329,7 @@ export default function AthletesSection() {
   }, []);
 
   return (
-    <section className="bg-black text-white" ref={sectionRef}>
+    <section className="bg-black text-white scroll-m-15" ref={sectionRef} id="ChampionAthletes">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         {/* Heading */}
         <div ref={headWrapRef} className="py-12 sm:py-14 text-center">

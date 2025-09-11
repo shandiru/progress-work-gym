@@ -126,7 +126,7 @@ export default function Review() {
     <section
       id="review"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-black via-[#111] to-black text-white"
+      className="py-20 bg-gradient-to-b from-black via-[#111] to-black text-white scroll-m-15"
     >
       <div className="container mx-auto px-4 md:px-12">
         {/* Heading */}
@@ -172,6 +172,16 @@ export default function Review() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+        <div className="flex justify-center mt-10">
+          <a
+            href="https://www.google.com/search?sca_esv=e8888196465888af&rlz=1C5CHFA_enCA1132CA1132&sxsrf=AE3TifPEzi8oZHVjbz8tcVaQxbzSqO_Scw:1757604017645&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E8txHfcHuRZ2d7VrZ71OZzGfu0Dhlh2V0cxJFF7pQXCApxQUKwFG2EnFi22Fxhc0YbUGARY1chQMt2lpUsxZt59sTdF6IGRJEhv9bmo0aqulok6Hvct3vZkH861qvL_iKxTu2xs%3D&q=Progress+Works+Gym+Ltd+Glenfield+Leicester+Reviews&sa=X&ved=2ahUKEwiMp4KZgdGPAxXSYfUHHS1sLUUQ0bkNegQIIRAE&biw=1536&bih=730&dpr=1.25"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center inline-block px-6 py-2 border border-white text-white rounded-lg font-semibold hover:bg-red-600 transition-all duration-300"
+          >
+            Review
+          </a>
         </div>
       </div>
 

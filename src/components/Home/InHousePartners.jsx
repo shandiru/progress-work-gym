@@ -88,7 +88,7 @@ export default function InHousePartners() {
   }, []);
 
   return (
-    <section className="w-full bg-black text-white px-4 py-16" ref={sectionRef}>
+    <section className="w-full bg-black text-white px-4 py-16 scroll-m-15" ref={sectionRef} id="ourpartners">
       {/* Heading */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <p ref={eyebrowRef} className="text-red-600 tracking-widest font-semibold">

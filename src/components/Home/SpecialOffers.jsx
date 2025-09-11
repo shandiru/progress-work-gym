@@ -121,7 +121,7 @@ export default function SpecialOffers() {
   }, [open]);
 
   return (
-    <section className="bg-black text-white px-4 py-10" ref={sectionRef}>
+    <section className="bg-black text-white px-4 py-10 scroll-m-15" ref={sectionRef} id="specialoffer">
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
         <header className="text-center mb-6">
