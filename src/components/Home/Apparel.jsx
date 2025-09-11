@@ -103,6 +103,19 @@ const equipmentData = {
     img: "/shorts.png",
   }
 ]
+,
+"Hoodies": [
+  {
+    name: "Hoodie 1",
+    desc: "Classic gym-style hoodie crafted for comfort and durability. Perfect for training sessions or casual wear.",
+    img: "/Hoodies-1.png",
+  },
+  {
+    name: "Hoodie 2",
+    desc: "Lightweight performance hoodie with a relaxed fit, offering breathable comfort for workouts and daily wear.",
+    img: "/Hoodies-2.png",
+  }
+]
 
 
  
