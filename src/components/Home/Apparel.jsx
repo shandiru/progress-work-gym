@@ -59,7 +59,7 @@ const equipmentData = {
 
 };
 export default function Equipment() {
-  const [activeCategory, setActiveCategory] = useState("Legs");
+  const [activeCategory, setActiveCategory] = useState("Hoodies");
   const [startIndex, setStartIndex] = useState(0);
 
   // --- Refs for GSAP
