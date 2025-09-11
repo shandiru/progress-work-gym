@@ -116,6 +116,69 @@ const equipmentData = {
     img: "/Hoodies-2.png",
   }
 ]
+,
+"Vests": [
+  {
+    name: "Vest V-1",
+    desc: "Lightweight training vest designed for maximum breathability and freedom of movement.",
+    img: "/V-1.png",
+  },
+  {
+    name: "Vest V-2",
+    desc: "Classic sleeveless gym vest made from soft cotton, perfect for workouts and casual wear.",
+    img: "/V-2.png",
+  },
+  {
+    name: "Vest V-3",
+    desc: "Performance vest with quick-dry fabric to keep you cool during intense training.",
+    img: "/V-3.png",
+  },
+  {
+    name: "Vest V-4",
+    desc: "Minimalist athletic vest offering comfort and flexibility for everyday training.",
+    img: "/V-4.png",
+  },
+  {
+    name: "Vest V-5",
+    desc: "Durable gym vest featuring a relaxed fit and moisture-wicking fabric for all-day wear.",
+    img: "/V-5.png",
+  },
+  {
+    name: "Vest V-6",
+    desc: "Breathable mesh vest designed to keep you cool and dry during tough sessions.",
+    img: "/V-6.png",
+  },
+  {
+    name: "Vest V-7",
+    desc: "Slim-fit gym vest built for comfort, flexibility, and a modern athletic style.",
+    img: "/V-7.png",
+  },
+  {
+    name: "Vest V-8",
+    desc: "Stretch-fit vest offering lightweight support and unrestricted range of motion.",
+    img: "/V-8.png",
+  },
+  {
+    name: "Vest V-9",
+    desc: "Comfort-focused vest made with soft-touch fabric and subtle logo detailing.",
+    img: "/V-9.png",
+  },
+  {
+    name: "Vest V-10",
+    desc: "Performance-driven vest featuring sweat-wicking technology for intense training.",
+    img: "/V-10.png",
+  },
+  {
+    name: "Vest V-11",
+    desc: "Sporty sleeveless vest designed for layering or wearing solo at the gym.",
+    img: "/V-11.png",
+  },
+  {
+    name: "Vest V-12",
+    desc: "All-purpose gym vest with a modern cut and breathable stretch fabric.",
+    img: "/V-12.png",
+  }
+]
 
 
  
