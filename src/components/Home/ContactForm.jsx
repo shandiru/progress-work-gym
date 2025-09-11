@@ -1,12 +1,57 @@
-// File: ContactForm.jsx
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactForm() {
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate heading + paragraph
+      gsap.from(headingRef.current.children, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+      });
+
+      // Animate form fields
+      gsap.from(formRef.current.children, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.15,
+        delay: 0.2,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="contact" className="bg-black py-16 px-4 sm:px-6 lg:px-12">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="bg-black py-16 px-4 sm:px-6 lg:px-12"
+    >
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-10">
+        <div ref={headingRef} className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
             Get in Touch
           </h2>
@@ -17,7 +62,10 @@ export default function ContactForm() {
         </div>
 
         {/* Form */}
-        <form className="bg-[#111111] rounded-lg border border-red-600/30 p-6 sm:p-8 grid grid-cols-1 gap-5 shadow-lg">
+        <form
+          ref={formRef}
+          className="bg-[#111111] rounded-lg border border-red-600/30 p-6 sm:p-8 grid grid-cols-1 gap-5 shadow-lg"
+        >
           {/* Full Name */}
           <div>
             <label className="block text-xs font-semibold text-gray-300 mb-1.5">

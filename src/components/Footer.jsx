@@ -1,13 +1,55 @@
-// File: Footer.jsx
+"use client";
+import { useEffect, useRef } from "react";
 import { FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  const colsRef = useRef([]);
+  const bottomBarRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(colsRef.current, {
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+      });
+
+      gsap.from(bottomBarRef.current, {
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.8,
+        ease: "power3.out",
+      });
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <footer className="bg-black text-gray-400 py-14 px-6 lg:px-12">
+    <footer
+      ref={footerRef}
+      className="bg-black text-gray-400 py-14 px-6 lg:px-12"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Column 1: Brand */}
-        <div>
+        <div ref={(el) => (colsRef.current[0] = el)}>
           <img
             src="/logo.avif"
             alt="Progress Works Gym Logo"
@@ -30,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* Column 2: Quick Links */}
-        <div>
+        <div ref={(el) => (colsRef.current[1] = el)}>
           <h4 className="text-white text-lg font-semibold mb-5 relative inline-block">
             Quick Links
             <span className="absolute left-0 -bottom-1 h-[2px] w-10 bg-red-600"></span>
@@ -55,16 +97,20 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link to="/privacy-policy" className="hover:text-red-500">Privacy Policy</Link> {/* Updated link */}
+              <Link to="/privacy-policy" className="hover:text-red-500">
+                Privacy Policy
+              </Link>
             </li>
             <li>
-              <Link to="/terms-conditions" className="hover:text-red-500">Terms & Conditions</Link> {/* Updated link */}
+              <Link to="/terms-conditions" className="hover:text-red-500">
+                Terms & Conditions
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Column 3: Contact Info */}
-        <div>
+        <div ref={(el) => (colsRef.current[2] = el)}>
           <h4 className="text-white text-lg font-semibold mb-5 relative inline-block">
             Contact
             <span className="absolute left-0 -bottom-1 h-[2px] w-10 bg-red-600"></span>
@@ -104,7 +150,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
+      <div
+        ref={bottomBarRef}
+        className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500"
+      >
         <p>
           &copy; {new Date().getFullYear()}{" "}
           <span className="text-white font-semibold">Progress Works Gym</span>.
