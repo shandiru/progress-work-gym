@@ -20,6 +20,7 @@ import ChampSection from "../components/Home/ChampSection"
 import InHousePartners from "../components/Home/InHousePartners"
 import SpecialOffers from "../components/Home/SpecialOffers"
 import FoodProducts from "../components/Home/FoodProducts"
+import Apparel from "../components/Home/Apparel"
 function Home() {
 
   return (
@@ -33,6 +34,7 @@ function Home() {
       <Equipment />
       <Products />
       <FoodProducts />
+      <Apparel />
       <InHousePartners />
       <ChampSection />
       <WhyChooseUsSection />
