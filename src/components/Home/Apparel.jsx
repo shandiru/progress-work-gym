@@ -93,6 +93,21 @@ const equipmentData = {
     name: "T-Shirt T-8",
     desc: "Light and airy gym t-shirt offering a classic fit with a modern aesthetic for everyday wear.",
     img: "/T-8.png",
+  },
+  {
+    name: "T-Shirt RT-1",
+    desc: "Premium cotton training t-shirt with a modern cut and soft finish for all-day comfort.",
+    img: "/RT-1.png",
+  },
+  {
+    name: "T-Shirt RT-2",
+    desc: "Sporty short sleeve tee made with moisture-wicking fabric to keep you cool during workouts.",
+    img: "/RT-2.png",
+  },
+  {
+    name: "T-Shirt RT-3",
+    desc: "Lightweight and flexible gym t-shirt designed for performance and style.",
+    img: "/RT-3.png",
   }
 
 ],
