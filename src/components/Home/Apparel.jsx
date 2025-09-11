@@ -54,8 +54,52 @@ const equipmentData = {
     name: "Hoodie HO-9",
     desc: "Lightweight hoodie perfect for all seasons. Combines sporty looks with soft-touch fabric.",
     img: "/HO-9.png",
+  },],
+
+  "TShirts": [
+  {
+    name: "T-Shirt T-1",
+    desc: "Lightweight performance tee designed for comfort and breathability during intense workouts or casual wear.",
+    img: "/T-1.png",
+  },
+  {
+    name: "T-Shirt T-2",
+    desc: "Classic cotton gym t-shirt featuring the Progress Works Gym logo. Soft fabric and a relaxed fit.",
+    img: "/T-2.png",
+  },
+  {
+    name: "T-Shirt T-3",
+    desc: "Sleek black t-shirt with minimalist styling. Perfect for both training sessions and everyday use.",
+    img: "/T-3.png",
+  },
+  {
+    name: "T-Shirt T-4",
+    desc: "Durable training t-shirt made with moisture-wicking material to keep you dry during workouts.",
+    img: "/T-4.png",
+  },
+  {
+    name: "T-Shirt T-5",
+    desc: "Athletic-fit t-shirt with contrast shoulder panels, offering a sporty look and flexible movement.",
+    img: "/T-5.png",
+  },
+  {
+    name: "T-Shirt T-6",
+    desc: "Two-tone training t-shirt combining breathable mesh fabric and stretch comfort for active sessions.",
+    img: "/T-6.png",
+  },
+  {
+    name: "T-Shirt T-7",
+    desc: "Soft cotton tee with subtle logo detailing, designed for all-day comfort and casual layering.",
+    img: "/T-7.png",
+  },
+  {
+    name: "T-Shirt T-8",
+    desc: "Light and airy gym t-shirt offering a classic fit with a modern aesthetic for everyday wear.",
+    img: "/T-8.png",
   }
 ]
+
+
 
 };
 export default function Equipment() {
