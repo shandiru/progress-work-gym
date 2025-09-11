@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 
-// Navigation links for the site
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Who Are We", href: "#about" },
@@ -19,22 +18,14 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // State for the dropdown
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  const [productOpen, setProductOpen] = useState(false); // separate toggle for Product
 
   return (
     <header className="bg-[#06091A] text-white shadow-md fixed w-full top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
-          <img
-            src="/logo.avif"
-            alt="Progress Works Gym"
-            className="h-12 w-auto"
-          />
+          <img src="/logo.avif" alt="Progress Works Gym" className="h-12 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
@@ -44,23 +35,30 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className="text-xs font-medium hover:text-red-500 transition"
-                onClick={link.hasDropdown ? toggleDropdown : undefined} // Only toggle dropdown for 'Product'
+                onClick={
+                  link.hasDropdown
+                    ? (e) => {
+                        e.preventDefault();
+                        setProductOpen(!productOpen);
+                      }
+                    : undefined
+                }
               >
                 {link.label}
               </a>
 
-              {/* Dropdown for Product */}
-              {link.hasDropdown && dropdownOpen && (
-                <div className="absolute top-full text-sm left-0 w-35 bg-[#06091A] text-white border-t border-gray-700 mt-2">
+              {/* Dropdown for Product (desktop) */}
+              {link.hasDropdown && productOpen && (
+                <div className="absolute top-full left-0 mt-2 w-40 bg-[#06091A] text-white border border-gray-700 rounded shadow">
                   <a
                     href="#ourproducts"
-                    className="block px-4 py-2 font-medium hover:text-red-500 transition"
+                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
                   >
                     Our Products
                   </a>
                   <a
                     href="#ourfoods"
-                    className="block px-4 py-2 font-medium hover:text-red-500 transition"
+                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
                   >
                     Our Foods
                   </a>
@@ -83,7 +81,10 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            setProductOpen(false);
+          }}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -92,30 +93,37 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#06091A] border-t border-gray-700">
-          <nav className="flex flex-col items-center gap-6 py-6">
+          <nav className="flex flex-col gap-4 py-6 px-6">
             {NAV_LINKS.map((link) => (
-              <div key={link.label} className="relative">
-                <a
-                  href={link.href}
-                  className="text-lg font-medium hover:text-red-500 transition"
-                  onClick={link.hasDropdown ? toggleDropdown : undefined}
+              <div key={link.label} className="flex flex-col">
+                {/* Mobile main link */}
+                <button
+                  className="flex justify-between items-center text-lg font-medium hover:text-red-500 transition w-full"
+                  onClick={
+                    link.hasDropdown
+                      ? () => setProductOpen(!productOpen)
+                      : () => setMenuOpen(false)
+                  }
                 >
                   {link.label}
-                </a>
+                  {link.hasDropdown && (
+                    <span className="ml-2 text-sm">{productOpen ? "▲" : "▼"}</span>
+                  )}
+                </button>
 
-                {/* Dropdown for Product in mobile */}
-                {link.hasDropdown && dropdownOpen && (
-                  <div className="absolute top-full left-0 w-full bg-[#06091A] text-white border-t border-gray-700 mt-2">
+                {/* Product Dropdown (mobile inline) */}
+                {link.hasDropdown && productOpen && (
+                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-700 pl-4">
                     <a
                       href="#ourproducts"
-                      className="block px-4 py-2 text-lg font-medium hover:text-red-500 transition"
+                      className="block text-base font-medium hover:text-red-500 transition"
                       onClick={() => setMenuOpen(false)}
                     >
                       Our Products
                     </a>
                     <a
                       href="#ourfoods"
-                      className="block px-4 py-2 text-lg font-medium hover:text-red-500 transition"
+                      className="block text-base font-medium hover:text-red-500 transition"
                       onClick={() => setMenuOpen(false)}
                     >
                       Our Foods
@@ -124,6 +132,8 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+
+            {/* Instagram Link */}
             <a
               href="https://www.instagram.com/progress_works_gym"
               target="_blank"
