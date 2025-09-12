@@ -1,4 +1,3 @@
-// File: Contact.jsx
 "use client";
 import React, { useEffect, useRef } from "react";
 import { HiLocationMarker } from "react-icons/hi";
@@ -116,8 +115,9 @@ export default function Contact() {
             132 Station Rd, Glenfield, Leicester LE3 8BR
           </p>
           <div ref={btnsRef} className="flex flex-col sm:flex-row justify-center gap-4">
+            {/* Button to Open in Google Maps */}
             <a
-              href="https://goo.gl/maps/Dpr8svJDd4m2"
+              href="https://www.google.com/maps/@52.6531416,-1.2010203,3a,90y,10.17h/data=!3m8!1e1!3m6!1sCIABIhAGbzaqChiQ-2fzxD4ADMG2!2e10!3e12" // Google Maps Location Link
               target="_blank"
               rel="noopener noreferrer"
               className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium will-change-transform"
@@ -129,8 +129,10 @@ export default function Contact() {
             >
               Open in Google Maps
             </a>
+
+            {/* Button to Get Directions */}
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=132+Station+Rd,+Glenfield,+Leicester+LE3+8BR"
+              href="https://www.google.com/maps/dir/?api=1&destination=132+Station+Rd,+Glenfield,+Leicester+LE3+8BR" // Google Maps Directions Link
               target="_blank"
               rel="noopener noreferrer"
               className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-5 py-2 rounded-md text-sm font-medium will-change-transform"

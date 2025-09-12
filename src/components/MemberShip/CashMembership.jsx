@@ -52,7 +52,7 @@ export default function PricingPlansSection() {
   return (
     <section className="bg-[#f8f8f8] py-20 px-4 sm:px-6 lg:px-12">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">Exclusive Pricing Plan</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 mt-10">Exclusive Pricing Plan</h2>
         <p className="text-gray-600 max-w-xl mx-auto">
           All Pay As You Go memberships are on a no-contract basis.
           Enjoy access to the gym during all available hours, with unlimited usage

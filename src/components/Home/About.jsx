@@ -1,8 +1,7 @@
-// File: About.jsx
 "use client";
 import React, { useEffect, useRef } from "react";
-import { FaDumbbell } from "react-icons/fa";
-import { GiGymBag, GiBodyBalance } from "react-icons/gi";
+import { FaArrowRight, FaDumbbell, FaTrophy } from "react-icons/fa";  // New icons from FontAwesome
+import { GiGymBag, GiBodyBalance, GiWeightLiftingUp } from "react-icons/gi"; // More relevant icons
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -116,8 +115,8 @@ export default function About() {
               <p className="text-sm font-bold text-white uppercase">Lifestyle</p>
             </div>
             <div className="px-4">
-              <GiBodyBalance className="text-[#ed1c24] text-4xl mx-auto mb-2" />
-              <p className="text-sm font-bold text-white uppercase">Community</p>
+              <GiWeightLiftingUp className="text-[#ed1c24] text-4xl mx-auto mb-2" /> {/* New Icon */}
+              <p className="text-sm font-bold text-white uppercase">Strength</p> {/* Changed text */}
             </div>
           </div>
 
@@ -127,7 +126,7 @@ export default function About() {
             href="/#contact"
             className="inline-block mt-6 bg-[#ed1c24] text-white text-sm font-bold uppercase px-6 py-3 rounded shadow hover:bg-red-700 transition"
           >
-            Take A Tour →
+            Take A Tour <FaArrowRight className="inline-block ml-2" /> {/* React icon as arrow */}
           </a>
         </div>
 

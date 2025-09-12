@@ -41,112 +41,112 @@ export default function Navbar() {
                     : () => setMenuOpen(false)
                 }
               >
-              {link.label}
-            </a>
+                {link.label}
+              </a>
 
-              {/* Dropdown for Product (desktop) */ }
+              {/* Dropdown for Product (desktop) */}
               {
-              link.hasDropdown && productOpen && (
-                <div className="absolute top-full left-0 mt-2 w-40 bg-[#06091A] text-white border border-gray-700 rounded shadow cursor-pointer">
-                  <a
-                    href="#ourproducts"
-                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
-                  >
-                    Our Products
-                  </a>
-                  <a
-                    href="#ourfoods"
-                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
-                  >
-                    Our Foods
-                  </a>
-                </div>
-              )
-            }
+                link.hasDropdown && productOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-40 bg-[#06091A] text-white border border-gray-700 rounded shadow cursor-pointer">
+                    <a
+                      href="#ourproducts"
+                      className="block px-4 py-2 text-sm hover:text-red-500 transition"
+                    >
+                      Our Products
+                    </a>
+                    <a
+                      href="#ourfoods"
+                      className="block px-4 py-2 text-sm hover:text-red-500 transition"
+                    >
+                      Our Foods
+                    </a>
+                  </div>
+                )
+              }
             </div>
           ))}
-    </nav>
+        </nav>
 
-        {/* Instagram Icon (Desktop) */ }
-  <a
-    href="https://www.instagram.com/progress_works_gym"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
-  >
-    <FaInstagram className="text-lg" />
-  </a>
+        {/* Instagram Icon (Desktop) */}
+        <a
+          href="https://www.instagram.com/progress_works_gym"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
+        >
+          <FaInstagram className="text-lg" />
+        </a>
 
-  {/* Mobile Hamburger Button */ }
-  <button
-    className="md:hidden text-white text-2xl"
-    onClick={() => {
-      setMenuOpen(!menuOpen);
-      setProductOpen(false);
-    }}
-  >
-    {menuOpen ? <FaTimes /> : <FaBars />}
-  </button>
+        {/* Mobile Hamburger Button */}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            setProductOpen(false);
+          }}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div >
 
-    {/* Mobile Menu */ }
-  {
-    menuOpen && (
-      <div className="md:hidden bg-[#06091A] border-t border-gray-700">
-        <nav className="flex flex-col gap-4 py-6 px-6">
-          {NAV_LINKS.map((link) => (
-            <div key={link.label} className="flex flex-col">
-              {/* Mobile main link */}
-              <button
-                className="flex justify-between items-center text-lg font-medium hover:text-red-500 transition w-full"
-                onClick={
-                  link.hasDropdown
-                    ? () => setProductOpen(!productOpen)
-                    : () => setMenuOpen(false)
-                }
-              >
-                {link.label}
-                {link.hasDropdown && (
-                  <span className="ml-2 text-sm">{productOpen ? "▲" : "▼"}</span>
-                )}
-              </button>
+      {/* Mobile Menu */}
+      {
+        menuOpen && (
+          <div className="md:hidden bg-[#06091A] border-t border-gray-700">
+            <nav className="flex flex-col gap-4 py-6 px-6">
+              {NAV_LINKS.map((link) => (
+                <div key={link.label} className="flex flex-col">
+                  {/* Mobile main link */}
+                  <button
+                    className="flex justify-between items-center text-lg font-medium hover:text-red-500 transition w-full"
+                    onClick={
+                      link.hasDropdown
+                        ? () => setProductOpen(!productOpen)
+                        : () => setMenuOpen(false)
+                    }
+                  >
+                    {link.label}
+                    {link.hasDropdown && (
+                      <span className="ml-2 text-sm">{productOpen ? "▲" : "▼"}</span>
+                    )}
+                  </button>
 
-              {/* Product Dropdown (mobile inline) */}
-              {link.hasDropdown && productOpen && (
-                <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-700 pl-4">
-                  <a
-                    href="#ourproducts"
-                    className="block text-base font-medium hover:text-red-500 transition"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Our Products
-                  </a>
-                  <a
-                    href="#ourfoods"
-                    className="block text-base font-medium hover:text-red-500 transition"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Our Foods
-                  </a>
+                  {/* Product Dropdown (mobile inline) */}
+                  {link.hasDropdown && productOpen && (
+                    <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-700 pl-4">
+                      <a
+                        href="#ourproducts"
+                        className="block text-base font-medium hover:text-red-500 transition"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Our Products
+                      </a>
+                      <a
+                        href="#ourfoods"
+                        className="block text-base font-medium hover:text-red-500 transition"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Our Foods
+                      </a>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              ))}
 
-          {/* Instagram Link */}
-          <a
-            href="https://www.instagram.com/progress_works_gym"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-lg hover:text-red-500 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            <FaInstagram /> Instagram
-          </a>
-        </nav>
-      </div>
-    )
-  }
+              {/* Instagram Link */}
+              <a
+                href="https://www.instagram.com/progress_works_gym"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-lg hover:text-red-500 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FaInstagram /> Instagram
+              </a>
+            </nav>
+          </div>
+        )
+      }
     </header >
   );
 }

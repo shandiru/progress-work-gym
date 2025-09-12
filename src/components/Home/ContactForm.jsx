@@ -69,7 +69,7 @@ export default function ContactForm() {
           {/* Full Name */}
           <div>
             <label className="block text-xs font-semibold text-gray-300 mb-1.5">
-              Full Name
+              Full Name*
             </label>
             <input
               type="text"
@@ -82,7 +82,7 @@ export default function ContactForm() {
           {/* Email */}
           <div>
             <label className="block text-xs font-semibold text-gray-300 mb-1.5">
-              Email
+              Email*
             </label>
             <input
               type="email"
@@ -95,7 +95,7 @@ export default function ContactForm() {
           {/* Phone */}
           <div>
             <label className="block text-xs font-semibold text-gray-300 mb-1.5">
-              Phone
+              Phone*
             </label>
             <input
               type="tel"
@@ -108,7 +108,7 @@ export default function ContactForm() {
           {/* Message */}
           <div>
             <label className="block text-xs font-semibold text-gray-300 mb-1.5">
-              Message
+              Message*
             </label>
             <textarea
               rows="4"

@@ -162,7 +162,7 @@ export default function Footer() {
         <p className="mt-2">
           Powered by{" "}
           <a
-            href="https://ansely.com"
+            href="https://www.ansely.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 font-semibold hover:underline"
