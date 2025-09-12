@@ -79,7 +79,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#0d1117] text-white py-16 px-4" id="contact">
+    <section ref={sectionRef} className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15" id="contact">
       {/* Header */}
       <div ref={headRef} className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">
@@ -104,7 +104,7 @@ export default function Contact() {
             title="Google Street View"
             className="w-full h-96"
             loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!4v1756308331182!6m8!1m7!1sCAoSHENJQUJJaEFHYnphcUNoaVEtMmZ6eEQ0QURNRzI.!2m2!1d52.6531416305378!2d-1.201020344245777!3f-18.184931506849313!4f-90!5f0.4000000000000002"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9681.889077652451!2d-1.2026835309661887!3d52.651446780978894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48775e32b9178d8d%3A0x3011cd51fd68c792!2s132%20Station%20Rd%2C%20Glenfield%2C%20Leicester%20LE3%208BR%2C%20UK!5e0!3m2!1sen!2slk!4v1757669375245!5m2!1sen!2slk"
             allowFullScreen
           ></iframe>
         </div>
