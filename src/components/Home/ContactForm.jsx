@@ -1,7 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from "emailjs-com"; // Import EmailJS
+import { toast, ToastContainer } from "react-toastify"; // Import toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import the default CSS for Toastify
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +12,8 @@ export default function ContactForm() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const formRef = useRef(null);
+
+  const [formStatus, setFormStatus] = useState(""); // For showing form submission status
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,6 +48,40 @@ export default function ContactForm() {
     return () => ctx.revert();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Gather form data
+    const formData = new FormData(e.target);
+    const data = {
+      from_name: formData.get("name"),
+      from_email: formData.get("email"),
+      from_phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+
+    // Send email via EmailJS
+    emailjs
+      .send(
+        "service_8642cwa", // Service ID from EmailJS
+        "template_gza1ztb", // Template ID from EmailJS
+        data,
+        "tmUgtXKf_TwGrV1iE" // User ID from EmailJS
+      )
+      .then(
+        (response) => {
+          // Show success toast
+          toast.success("Message sent successfully!");
+          console.log("Success:", response);
+        },
+        (error) => {
+          // Show error toast
+          toast.error("Message failed to send. Please try again.");
+          console.log("Error:", error);
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
@@ -64,6 +103,7 @@ export default function ContactForm() {
         {/* Form */}
         <form
           ref={formRef}
+          onSubmit={handleSubmit} // Bind the submit handler
           className="bg-[#111111] rounded-lg border border-red-600/30 p-6 sm:p-8 grid grid-cols-1 gap-5 shadow-lg"
         >
           {/* Full Name */}
@@ -73,6 +113,7 @@ export default function ContactForm() {
             </label>
             <input
               type="text"
+              name="name" // Add name attribute for reference
               placeholder="Enter your full name"
               className="w-full bg-black border border-gray-700 rounded-md px-3 py-2.5 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               required
@@ -86,6 +127,7 @@ export default function ContactForm() {
             </label>
             <input
               type="email"
+              name="email" // Add name attribute for reference
               placeholder="Enter your email"
               className="w-full bg-black border border-gray-700 rounded-md px-3 py-2.5 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               required
@@ -99,6 +141,7 @@ export default function ContactForm() {
             </label>
             <input
               type="tel"
+              name="phone" // Add name attribute for reference
               placeholder="Enter your phone number"
               className="w-full bg-black border border-gray-700 rounded-md px-3 py-2.5 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               required
@@ -111,6 +154,7 @@ export default function ContactForm() {
               Message*
             </label>
             <textarea
+              name="message" // Add name attribute for reference
               rows="4"
               placeholder="Type your message here..."
               className="w-full bg-black border border-gray-700 rounded-md px-3 py-2.5 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 resize-none transition"
@@ -128,6 +172,19 @@ export default function ContactForm() {
             </button>
           </div>
         </form>
+
+        {/* Toast Notifications Container */}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </section>
   );
