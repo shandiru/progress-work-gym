@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/debit" element={<Debit />} />
+        <Route path="/plans-pricing" element={<Debit />} />
         <Route path="/cash-membership" element={<CashMembership />} />
         <Route path="/special-memberships" element={<SpecialMemberships />} />
         <Route path="/day-passes" element={<DayPasses />} />

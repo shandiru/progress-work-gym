@@ -15,7 +15,7 @@ const plans = [
   },
   {
     title: "Direct Debit Membership: ",
-    slug: "debit",
+    slug: "plans-pricing",
     options: [
       { label: "1 Month Rolling Membership", price: "£39" },
       { label: "1 Month Couples Membership", price: "£68" },
