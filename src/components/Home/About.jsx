@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { FaArrowRight, FaDumbbell, FaTrophy } from "react-icons/fa";  // New icons from FontAwesome
-import { GiGymBag, GiBodyBalance, GiWeightLiftingUp } from "react-icons/gi"; // More relevant icons
+import { FaArrowRight, FaDumbbell } from "react-icons/fa";
+import { GiGymBag, GiWeightLiftingUp } from "react-icons/gi";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -21,16 +21,18 @@ export default function About() {
       const gsapModule = await import("gsap");
       const ScrollTriggerModule = await import("gsap/ScrollTrigger");
       const gsap = gsapModule.default || gsapModule;
-      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
+      const ScrollTrigger =
+        ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
       gsap.registerPlugin(ScrollTrigger);
 
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Prepare initial states (no layout shift)
-        gsap.set([badgeRef.current, headingRef.current, paraRef.current, ctaRef.current], {
-          autoAlpha: 0, y: 30,
-        });
+        // Prepare initial states
+        gsap.set(
+          [badgeRef.current, headingRef.current, paraRef.current, ctaRef.current],
+          { autoAlpha: 0, y: 30 }
+        );
         gsap.set(circleRef.current, { autoAlpha: 0, scale: 0.6, transformOrigin: "center" });
         gsap.set(imageRef.current, { autoAlpha: 0, x: 40 });
 
@@ -115,8 +117,8 @@ export default function About() {
               <p className="text-sm font-bold text-white uppercase">Lifestyle</p>
             </div>
             <div className="px-4">
-              <GiWeightLiftingUp className="text-[#ed1c24] text-4xl mx-auto mb-2" /> {/* New Icon */}
-              <p className="text-sm font-bold text-white uppercase">Strength</p> {/* Changed text */}
+              <GiWeightLiftingUp className="text-[#ed1c24] text-4xl mx-auto mb-2" />
+              <p className="text-sm font-bold text-white uppercase">Strength</p>
             </div>
           </div>
 
@@ -126,16 +128,16 @@ export default function About() {
             href="/#contact"
             className="inline-block mt-6 bg-[#ed1c24] text-white text-sm font-bold uppercase px-6 py-3 rounded shadow hover:bg-red-700 transition"
           >
-            Take A Tour <FaArrowRight className="inline-block ml-2" /> {/* React icon as arrow */}
+            Take A Tour <FaArrowRight className="inline-block ml-2" />
           </a>
         </div>
 
         {/* Right Image with Red Half-Circle Background */}
-        <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px]">
+        <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] flex items-center justify-end">
           {/* Red Half-Circle Shape */}
           <div
             ref={circleRef}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-[85%] aspect-square rounded-full bg-[#ed1c24] z-0"
+            className="absolute right-0 w-[85%] aspect-square rounded-full bg-[#ed1c24] z-0"
           ></div>
 
           {/* Runner Image */}
@@ -143,7 +145,7 @@ export default function About() {
             ref={imageRef}
             src="/whoarewe.png"
             alt="Running Visual"
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-[650px] z-10 object-contain object-right"
+            className="relative z-10 w-full max-w-[650px] object-contain object-right"
           />
         </div>
       </div>
