@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Product data by category
 const productData = {
-  "preWorkout": [
+  "Pre Workout": [
     {
       name: "ABE-Candy Ice Blast",
       desc: "Refreshing and energizing formula",
@@ -379,7 +379,7 @@ const productData = {
 };
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState("preWorkout");
+  const [activeCategory, setActiveCategory] = useState("Pre Workout");
   const [startIndex, setStartIndex] = useState(0);
 
   // Refs for animations
