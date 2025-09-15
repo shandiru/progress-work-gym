@@ -61,27 +61,37 @@ export default function MembershipPlans() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // initial states
-        gsap.set([titleRef.current, subtitleRef.current], { autoAlpha: 0, y: 24 });
+        // Initial states
+        gsap.set([titleRef.current, subtitleRef.current], {
+          autoAlpha: 0,
+          y: 24,
+        });
+
         const cards = gridRef.current
           ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
           : [];
-        gsap.set(cards, { autoAlpha: 0, y: 32, rotateX: 6, transformOrigin: "50% 100%" });
 
-        // title + subtitle reveal
+        gsap.set(cards, {
+          autoAlpha: 0,
+          y: 32,
+          rotateX: 6,
+          transformOrigin: "50% 100%",
+        });
+
+        // Titles animation
         gsap
           .timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 78%",
-              toggleActions: "play none none reverse",
+              start: "top 85%",
+              toggleActions: "play none reverse reverse",
             },
             defaults: { ease: "power3.out" },
           })
           .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 })
           .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
 
-        // cards stagger in
+        // Cards animation
         gsap.to(cards, {
           autoAlpha: 1,
           y: 0,
@@ -91,12 +101,12 @@ export default function MembershipPlans() {
           stagger: 0.12,
           scrollTrigger: {
             trigger: gridRef.current,
-            start: "top 82%",
-            toggleActions: "play none none reverse",
+            start: "top 88%",
+            toggleActions: "play none reverse reverse",
           },
         });
 
-        // subtle parallax while scrolling
+        // Parallax effect
         cards.forEach((card) => {
           gsap.to(card, {
             y: -8,
@@ -109,6 +119,8 @@ export default function MembershipPlans() {
             },
           });
         });
+
+        ScrollTrigger.refresh(); // Ensure it works on mobile
       }, sectionRef);
     })();
 
@@ -120,7 +132,7 @@ export default function MembershipPlans() {
 
   return (
     <section
-      className="bg-[#0d1117] text-white py-12 px-4 scroll-m-15"
+      className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15 min-h-screen"
       id="member"
       ref={sectionRef}
     >

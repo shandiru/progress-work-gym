@@ -1,3 +1,4 @@
+// File: TrainersSection.jsx
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -57,12 +58,14 @@ const trainers = [
     name: "Brad - Brad Holt Personal Training",
     title: "1-1 Personal Trainer & Online Coaching",
     image: "/body.avif",
-    experience: "Over the years of Experience",
+    experience: "over the years of Experience",
     shortDesc:
       "Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.",
     fullDesc: {
       intro: `As a Body Transformation Specialist, my mission is simple: to help you unlock your full potential. Whether through 1-to-1 personal training or online coaching, I provide tailored programs that deliver lasting results.`,
-      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle. All coaching at Complete Physiques comes with guaranteed results with a money-back guarantee, so you can feel confident you’re investing in real progress.`,
+      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.
+      All coaching at Complete Physiaues comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.
+That’s from Brad edit what you need too 😜`,
       stats: [],
       services: [],
       contact: [],
@@ -73,13 +76,17 @@ const trainers = [
 export default function TrainersSection() {
   const [activeTrainer, setActiveTrainer] = useState(null);
 
+  // Refs for animations
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const gridRef = useRef(null);
+
+  // Modal refs
   const overlayRef = useRef(null);
   const modalRef = useRef(null);
 
+  // GSAP: scroll animations for title/subtitle/cards
   useEffect(() => {
     let ctx;
     let mounted = true;
@@ -88,76 +95,60 @@ export default function TrainersSection() {
       const gsapModule = await import("gsap");
       const ScrollTriggerModule = await import("gsap/ScrollTrigger");
       const gsap = gsapModule.default || gsapModule;
-      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
+      const ScrollTrigger =
+        ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
       gsap.registerPlugin(ScrollTrigger);
 
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        gsap.set([titleRef.current, subtitleRef.current], { autoAlpha: 0, y: 40 });
-
+        // Initial states
+        gsap.set([titleRef.current, subtitleRef.current], { autoAlpha: 0, y: 24 });
         const cards = gridRef.current
           ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
           : [];
+        gsap.set(cards, { autoAlpha: 0, y: 30, rotateX: 6, transformOrigin: "50% 100%" });
 
-        gsap.set(cards, {
-          autoAlpha: 0,
-          y: 40,
-          rotateX: 10,
-          transformOrigin: "center bottom",
-        });
-
-        // Animate title/subtitle
+        // Title/subtitle in
         gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 85%",
-            toggleActions: "play none reverse reverse",
+            start: "top 75%",
+            toggleActions: "play none none reverse",
           },
+          defaults: { ease: "power3.out" },
         })
-          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" })
-          .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out" }, "-=0.3");
+          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 })
+          .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
 
-        // Animate each card individually
+        // Cards stagger in
+        gsap.to(cards, {
+          autoAlpha: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        // Subtle parallax on scroll (optional nicety)
         cards.forEach((card) => {
-          gsap.fromTo(
-            card,
-            {
-              autoAlpha: 0,
-              y: 50,
-              rotateX: 12,
-              scale: 0.96,
-              transformOrigin: "center bottom",
-            },
-            {
-              autoAlpha: 1,
-              y: 0,
-              rotateX: 0,
-              scale: 1,
-              duration: 0.8,
-              ease: "power4.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 90%",
-                toggleActions: "play none reverse reverse",
-              },
-            }
-          );
-
-          // Optional parallax
           gsap.to(card, {
-            y: -12,
+            y: -8,
             ease: "none",
             scrollTrigger: {
               trigger: card,
               start: "top bottom",
               end: "bottom top",
-              scrub: 0.4,
+              scrub: 0.5,
             },
           });
         });
-
-        ScrollTrigger.refresh();
       }, sectionRef);
     })();
 
@@ -167,29 +158,38 @@ export default function TrainersSection() {
     };
   }, []);
 
-  const openTrainer = async (trainer) => {
-    setActiveTrainer(trainer);
+  // Open modal with animation
+  const openTrainer = async (t) => {
+    setActiveTrainer(t);
+
+    // Animate AFTER state sets and modal is in DOM
+    // Small timeout to ensure DOM paints
     setTimeout(async () => {
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default || gsapModule;
+
       if (overlayRef.current && modalRef.current) {
         gsap.set(overlayRef.current, { autoAlpha: 0 });
-        gsap.set(modalRef.current, { autoAlpha: 0, y: 24, scale: 0.98 });
-        gsap.timeline()
-          .to(overlayRef.current, { autoAlpha: 1, duration: 0.15 })
+        gsap.set(modalRef.current, { autoAlpha: 0, y: 24, scale: 0.98, transformOrigin: "50% 50%" });
+
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        tl.to(overlayRef.current, { autoAlpha: 1, duration: 0.15 })
           .to(modalRef.current, { autoAlpha: 1, y: 0, scale: 1, duration: 0.22 }, "<");
       }
     }, 0);
   };
 
+  // Close modal with animation
   const closeTrainer = async () => {
     const gsapModule = await import("gsap");
     const gsap = gsapModule.default || gsapModule;
+
     if (overlayRef.current && modalRef.current) {
-      gsap.timeline({
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.inOut" },
         onComplete: () => setActiveTrainer(null),
-      })
-        .to(modalRef.current, { autoAlpha: 0, y: 20, scale: 0.98, duration: 0.18 })
+      });
+      tl.to(modalRef.current, { autoAlpha: 0, y: 20, scale: 0.98, duration: 0.18 })
         .to(overlayRef.current, { autoAlpha: 0, duration: 0.15 }, "<");
     } else {
       setActiveTrainer(null);
@@ -217,7 +217,11 @@ export default function TrainersSection() {
             className="border border-red-600 p-6 rounded-md bg-[#161b22] flex flex-col justify-between h-full will-change-transform"
           >
             <div className="flex flex-col items-center">
-              <img src={t.image} alt={t.name} className="w-32 h-32 object-cover rounded-full mb-4" />
+              <img
+                src={t.image}
+                alt={t.name}
+                className="w-32 h-32 object-cover rounded-full mb-4"
+              />
               <h3 className="text-xl font-semibold text-center">{t.name}</h3>
               <p className="text-red-500 text-sm text-center">{t.title}</p>
               <p className="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 mb-4 text-center">
@@ -244,6 +248,7 @@ export default function TrainersSection() {
           ref={overlayRef}
           className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4"
           onClick={(e) => {
+            // Close on backdrop click (not when clicking inside modal)
             if (e.target === e.currentTarget) closeTrainer();
           }}
         >
@@ -262,7 +267,11 @@ export default function TrainersSection() {
             </button>
 
             <div className="flex gap-4 items-center mb-6">
-              <img src={activeTrainer.image} alt={activeTrainer.name} className="w-16 h-16 rounded-full object-cover" />
+              <img
+                src={activeTrainer.image}
+                alt={activeTrainer.name}
+                className="w-16 h-16 rounded-full object-cover"
+              />
               <div>
                 <h3 className="text-xl font-semibold">{activeTrainer.name}</h3>
                 <p className="text-red-500 text-sm">{activeTrainer.title}</p>
@@ -274,7 +283,9 @@ export default function TrainersSection() {
 
             <p className="text-sm text-gray-300 mb-2">{activeTrainer.shortDesc}</p>
             <p className="text-sm text-gray-300 mb-2">{activeTrainer.fullDesc.intro}</p>
-            <p className="text-sm text-gray-300 mb-4">{activeTrainer.fullDesc.paragraph}</p>
+            <p className="text-sm text-gray-300 mb-4">
+              {activeTrainer.fullDesc.paragraph}
+            </p>
 
             {activeTrainer.fullDesc.stats?.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
@@ -304,7 +315,9 @@ export default function TrainersSection() {
                   <h4 className="text-white font-semibold mb-2">Contact</h4>
                   <ul className="list-disc list-inside text-gray-300 text-sm">
                     {activeTrainer.fullDesc.contact.map((c, idx) => (
-                      <li key={idx}><strong>{c.label}:</strong> {c.value}</li>
+                      <li key={idx}>
+                        <strong>{c.label}:</strong> {c.value}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -312,8 +325,13 @@ export default function TrainersSection() {
             </div>
 
             <div className="flex gap-2 justify-end mt-6">
-              <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded">Book Consultation</button>
-              <button onClick={closeTrainer} className="border border-red-600 px-4 py-2 text-sm text-red-500 rounded">
+              <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded">
+                Book Consultation
+              </button>
+              <button
+                onClick={closeTrainer}
+                className="border border-red-600 px-4 py-2 text-sm text-red-500 rounded"
+              >
                 Close
               </button>
             </div>
