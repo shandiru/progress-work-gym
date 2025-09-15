@@ -1,4 +1,3 @@
-// File: TrainersSection.jsx
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -58,14 +57,12 @@ const trainers = [
     name: "Brad - Brad Holt Personal Training",
     title: "1-1 Personal Trainer & Online Coaching",
     image: "/body.avif",
-    experience: "over the years of Experience",
+    experience: "Over the years of Experience",
     shortDesc:
       "Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.",
     fullDesc: {
       intro: `As a Body Transformation Specialist, my mission is simple: to help you unlock your full potential. Whether through 1-to-1 personal training or online coaching, I provide tailored programs that deliver lasting results.`,
-      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.
-      All coaching at Complete Physiaues comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.
-That’s from Brad edit what you need too 😜`,
+      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.`,
       stats: [],
       services: [],
       contact: [],
@@ -76,17 +73,13 @@ That’s from Brad edit what you need too 😜`,
 export default function TrainersSection() {
   const [activeTrainer, setActiveTrainer] = useState(null);
 
-  // Refs for animations
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const gridRef = useRef(null);
-
-  // Modal refs
   const overlayRef = useRef(null);
   const modalRef = useRef(null);
 
-  // GSAP: scroll animations for title/subtitle/cards
   useEffect(() => {
     let ctx;
     let mounted = true;
@@ -102,53 +95,86 @@ export default function TrainersSection() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Initial states
-        gsap.set([titleRef.current, subtitleRef.current], { autoAlpha: 0, y: 24 });
+        gsap.set([titleRef.current, subtitleRef.current], {
+          autoAlpha: 0,
+          y: 24,
+        });
+
         const cards = gridRef.current
           ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
           : [];
-        gsap.set(cards, { autoAlpha: 0, y: 30, rotateX: 6, transformOrigin: "50% 100%" });
 
-        // Title/subtitle in
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            toggleActions: "play none none reverse",
-          },
-          defaults: { ease: "power3.out" },
-        })
-          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 })
-          .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
-
-        // Cards stagger in
-        gsap.to(cards, {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
+        gsap.set(cards, {
+          autoAlpha: 0,
+          y: 40,
+          rotateX: 6,
+          transformOrigin: "50% 100%",
         });
 
-        // Subtle parallax on scroll (optional nicety)
-        cards.forEach((card) => {
-          gsap.to(card, {
-            y: -8,
-            ease: "none",
+        // Title Animation
+        gsap
+          .timeline({
             scrollTrigger: {
-              trigger: card,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.5,
+              trigger: sectionRef.current,
+              start: "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          })
+          .to(titleRef.current, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "power3.out",
+          })
+          .to(
+            subtitleRef.current,
+            { autoAlpha: 1, y: 0, duration: 0.45, ease: "power3.out" },
+            "-=0.3"
+          );
+
+        const isMobile = window.innerWidth < 640;
+
+        if (isMobile) {
+          // Animate each card separately on scroll (mobile)
+          ScrollTrigger.batch(cards, {
+            interval: 0.2,
+            batchMax: 1,
+            onEnter: (batch) =>
+              gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                rotateX: 0,
+                duration: 0.6,
+                ease: "power3.out",
+              }),
+            onLeaveBack: (batch) =>
+              gsap.to(batch, {
+                autoAlpha: 0,
+                y: 40,
+                rotateX: 6,
+                duration: 0.4,
+                ease: "power2.in",
+              }),
+            start: "top 95%",
+            end: "bottom top",
+            toggleActions: "play none none reverse",
+          });
+        } else {
+          // Desktop grid stagger
+          gsap.to(cards, {
+            autoAlpha: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.6,
+            ease: "power3.out",
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
             },
           });
-        });
+        }
       }, sectionRef);
     })();
 
@@ -158,46 +184,46 @@ export default function TrainersSection() {
     };
   }, []);
 
-  // Open modal with animation
   const openTrainer = async (t) => {
     setActiveTrainer(t);
-
-    // Animate AFTER state sets and modal is in DOM
-    // Small timeout to ensure DOM paints
     setTimeout(async () => {
-      const gsapModule = await import("gsap");
-      const gsap = gsapModule.default || gsapModule;
+      const { default: gsap } = await import("gsap");
+      gsap.set(overlayRef.current, { autoAlpha: 0 });
+      gsap.set(modalRef.current, {
+        autoAlpha: 0,
+        y: 24,
+        scale: 0.98,
+        transformOrigin: "50% 50%",
+      });
 
-      if (overlayRef.current && modalRef.current) {
-        gsap.set(overlayRef.current, { autoAlpha: 0 });
-        gsap.set(modalRef.current, { autoAlpha: 0, y: 24, scale: 0.98, transformOrigin: "50% 50%" });
-
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        tl.to(overlayRef.current, { autoAlpha: 1, duration: 0.15 })
-          .to(modalRef.current, { autoAlpha: 1, y: 0, scale: 1, duration: 0.22 }, "<");
-      }
+      gsap
+        .timeline()
+        .to(overlayRef.current, { autoAlpha: 1, duration: 0.15 })
+        .to(modalRef.current, { autoAlpha: 1, y: 0, scale: 1, duration: 0.2 });
     }, 0);
   };
 
-  // Close modal with animation
   const closeTrainer = async () => {
-    const gsapModule = await import("gsap");
-    const gsap = gsapModule.default || gsapModule;
-
-    if (overlayRef.current && modalRef.current) {
-      const tl = gsap.timeline({
-        defaults: { ease: "power2.inOut" },
+    const { default: gsap } = await import("gsap");
+    gsap
+      .timeline({
         onComplete: () => setActiveTrainer(null),
-      });
-      tl.to(modalRef.current, { autoAlpha: 0, y: 20, scale: 0.98, duration: 0.18 })
-        .to(overlayRef.current, { autoAlpha: 0, duration: 0.15 }, "<");
-    } else {
-      setActiveTrainer(null);
-    }
+      })
+      .to(modalRef.current, {
+        autoAlpha: 0,
+        y: 20,
+        scale: 0.98,
+        duration: 0.18,
+      })
+      .to(overlayRef.current, { autoAlpha: 0, duration: 0.15 }, "<");
   };
 
   return (
-    <section className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15" id="trainers" ref={sectionRef}>
+    <section
+      ref={sectionRef}
+      id="trainers"
+      className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15"
+    >
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
           MEET THE <span className="text-red-600">TRAINERS</span>
@@ -248,7 +274,6 @@ export default function TrainersSection() {
           ref={overlayRef}
           className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4"
           onClick={(e) => {
-            // Close on backdrop click (not when clicking inside modal)
             if (e.target === e.currentTarget) closeTrainer();
           }}
         >
@@ -261,7 +286,6 @@ export default function TrainersSection() {
             <button
               onClick={closeTrainer}
               className="absolute top-4 right-4 text-white text-2xl leading-none"
-              aria-label="Close"
             >
               &times;
             </button>

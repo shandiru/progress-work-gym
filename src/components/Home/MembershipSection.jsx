@@ -61,66 +61,87 @@ export default function MembershipPlans() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Initial states
+        const cards = gridRef.current
+          ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
+          : [];
+
+        // Title animation
         gsap.set([titleRef.current, subtitleRef.current], {
           autoAlpha: 0,
           y: 24,
         });
 
-        const cards = gridRef.current
-          ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
-          : [];
-
-        gsap.set(cards, {
-          autoAlpha: 0,
-          y: 32,
-          rotateX: 6,
-          transformOrigin: "50% 100%",
-        });
-
-        // Titles animation
         gsap
           .timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top 85%",
-              toggleActions: "play none reverse reverse",
+              toggleActions: "play none none none",
             },
             defaults: { ease: "power3.out" },
           })
           .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 })
           .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
 
-        // Cards animation
-        gsap.to(cards, {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 88%",
-            toggleActions: "play none reverse reverse",
+        // Responsive animations
+        ScrollTrigger.matchMedia({
+          // 📱 Mobile: animate each box one by one as you scroll
+          "(max-width: 767px)": () => {
+            cards.forEach((card) => {
+              gsap.set(card, { autoAlpha: 0, y: 32 });
+              gsap.to(card, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 90%",
+                  toggleActions: "play none none none", // 👈 FIXED: do not hide on scroll back
+                },
+              });
+            });
+          },
+
+          // 💻 Desktop: grid fades in with stagger, then parallax scroll effect
+          "(min-width: 768px)": () => {
+            gsap.set(cards, {
+              autoAlpha: 0,
+              y: 32,
+              rotateX: 6,
+              transformOrigin: "50% 100%",
+            });
+
+            gsap.to(cards, {
+              autoAlpha: 1,
+              y: 0,
+              rotateX: 0,
+              duration: 0.6,
+              ease: "power3.out",
+              stagger: 0.12,
+              scrollTrigger: {
+                trigger: gridRef.current,
+                start: "top 88%",
+                toggleActions: "play none none reverse",
+              },
+            });
+
+            cards.forEach((card) => {
+              gsap.to(card, {
+                y: -8,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 0.6,
+                },
+              });
+            });
           },
         });
 
-        // Parallax effect
-        cards.forEach((card) => {
-          gsap.to(card, {
-            y: -8,
-            ease: "none",
-            scrollTrigger: {
-              trigger: card,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.6,
-            },
-          });
-        });
-
-        ScrollTrigger.refresh(); // Ensure it works on mobile
+        ScrollTrigger.refresh();
       }, sectionRef);
     })();
 
@@ -132,9 +153,9 @@ export default function MembershipPlans() {
 
   return (
     <section
+      ref={sectionRef}
       className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15 min-h-screen"
       id="member"
-      ref={sectionRef}
     >
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
@@ -164,7 +185,9 @@ export default function MembershipPlans() {
                   className="flex justify-between items-center bg-[#1c1f26] px-4 py-2 rounded-md"
                 >
                   <span>{option.label}</span>
-                  <span className="text-red-500 font-semibold">{option.price}</span>
+                  <span className="text-red-500 font-semibold">
+                    {option.price}
+                  </span>
                 </li>
               ))}
             </ul>
