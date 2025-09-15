@@ -131,7 +131,7 @@ export default function TrainersSection() {
           stagger: 0.12,
           scrollTrigger: {
             trigger: gridRef.current,
-            start: "top 80%",
+            start: "top 90%",
             toggleActions: "play none none reverse",
           },
         });
