@@ -30,8 +30,7 @@ const ATHLETES = [
     ],
     tags: ["Bikini Division", "Olympia 2025", "Posing & Coaching"],
     stats: [
-      { label: "Height", value: "TBD" },
-      { label: "Stage Weight", value: "TBD" },
+    
       { label: "Instagram", value: "@kerrysexton_ifbbpro" },
     ],
   },
@@ -48,8 +47,7 @@ const ATHLETES = [
     ],
     tags: ["Bodybuilding", "Contest Prep", "Online Coaching"],
     stats: [
-      { label: "Height", value: "TBD" },
-      { label: "Stage Weight", value: "TBD" },
+   
       { label: "Instagram", value: "@marc__hector" },
     ],
   },
@@ -183,13 +181,15 @@ function AthleteCard({ a }) {
           </div>
 
           {/* Metrics */}
-          <div className="mt-auto pt-4 border-t border-red-600">
-            <div className="grid grid-cols-3 gap-4 min-w-0">
-              {a.stats.map((s) => (
-                <Metric key={s.label} {...s} />
-              ))}
+          {/* Metrics */}
+            <div className="mt-auto pt-4 border-t border-red-600">
+              <div className="flex justify-center">
+                {a.stats.map((s) => (
+                  <Metric key={s.label} {...s} />
+                ))}
+              </div>
             </div>
-          </div>
+
         </figcaption>
       </div>
     </figure>
