@@ -201,6 +201,7 @@ const equipmentData = {
 
 
 };
+
 export default function Equipment() {
   const [activeCategory, setActiveCategory] = useState("TShirts");
   const [startIndex, setStartIndex] = useState(0);
@@ -229,62 +230,27 @@ export default function Equipment() {
       const gsapModule = await import("gsap");
       const ScrollTriggerModule = await import("gsap/ScrollTrigger");
       const gsap = gsapModule.default || gsapModule;
-      const ScrollTrigger =
-        ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
+      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
       gsap.registerPlugin(ScrollTrigger);
+
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Initial states
-        gsap.set([titleRef.current, subRef.current], { autoAlpha: 0, y: 24 });
-        gsap.set([tabsRef.current, leftBtnRef.current, rightBtnRef.current], {
-          autoAlpha: 0,
-          y: 16,
-        });
+        // Initial states for title & subtitle
+        gsap.set([titleRef.current, subRef.current], { opacity: 0, y: 24 });
 
-        // Title & subtitle
+        // Title & subtitle animation
         gsap
           .timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 80%",
+              start: "top 80%", // Adjust trigger start position
               toggleActions: "play none none reverse",
             },
             defaults: { ease: "power3.out" },
           })
-          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 })
-          .to(subRef.current, { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.2")
-          .to(
-            [tabsRef.current, leftBtnRef.current, rightBtnRef.current],
-            { autoAlpha: 1, y: 0, duration: 0.4, stagger: 0.1 },
-            "-=0.1"
-          );
-
-        // Initial cards reveal (stagger)
-        const cards = () =>
-          gridRef.current
-            ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
-            : [];
-        gsap.set(cards(), {
-          autoAlpha: 0,
-          y: 28,
-          rotateX: 6,
-          transformOrigin: "50% 100%",
-        });
-
-        gsap.to(cards(), {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
+          .to(titleRef.current, { opacity: 1, y: 0, duration: 0.45 })
+          .to(subRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
       }, sectionRef);
     })();
 
@@ -378,6 +344,9 @@ export default function Equipment() {
       ref={sectionRef}
       id="Apparel"
     >
+
+
+      {/* Carousel */}
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
           OUR <span className="text-red-600">APPAREL</span>
@@ -387,39 +356,21 @@ export default function Equipment() {
         </p>
       </div>
 
-       <div className="col-span-full text-center py-24">
-            <h3 className="text-3xl font-bold text-white">
-               Coming <span className="text-red-600">Soon</span>
-            </h3>
-            <p className="text-gray-400 mt-3 text-lg">
-              We're preparing something amazing for you.
-            </p>
-          </div>
-
-      {/* Category Tabs */}
-      {/* <div
-        ref={tabsRef}
-        className="flex justify-center flex-wrap gap-4 mb-10"
+      <div
+        ref={gridRef}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto"
       >
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${
-              activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border-red-600 text-white hover:bg-red-600"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div> */}
-
-      {/* Carousel */}
-      {/* <div className="flex items-center justify-center gap-4"> */}
-        {/* Left Arrow */}
-        {/* <button
+        <div className="col-span-full text-center py-24">
+          <h3 className="text-3xl font-bold text-white">
+            Coming <span className="text-red-600">Soon</span>
+          </h3>
+          <p className="text-gray-400 mt-3 text-lg">
+            We're preparing something amazing for you.
+          </p>
+        </div>
+      </div>
+      {/* <div className="flex items-center justify-center gap-4">
+        <button
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
@@ -427,13 +378,9 @@ export default function Equipment() {
           aria-label="Previous"
         >
           <FaChevronLeft />
-        </button> */}
+        </button>
 
-        {/* Equipment Cards */}
-        {/* <div
-          ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl"
-        >
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
@@ -450,10 +397,9 @@ export default function Equipment() {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
 
-        {/* Right Arrow */}
-        {/* <button
+        <button
           ref={rightBtnRef}
           onClick={nextSlide}
           disabled={startIndex + 3 >= items.length}
@@ -461,11 +407,12 @@ export default function Equipment() {
           aria-label="Next"
         >
           <FaChevronRight />
-        </button> */}
-      {/* </div> */}
+        </button>
+      </div> */}
     </section>
   );
 }
+
 
 
 
