@@ -144,7 +144,7 @@ export default function SpecialOffers() {
               <h2 className="text-xl font-semibold">Current Offers</h2>
               <p className="text-red-400 text-sm">Click to view all available deals</p>
             </div>
-            <button
+            {/* <button
               onClick={() => setOpen((v) => !v)}
               className="inline-flex items-center gap-2 h-8 px-3 rounded-md border border-red-500 text-white hover:bg-red-600 transition"
               aria-expanded={open}
@@ -154,7 +154,19 @@ export default function SpecialOffers() {
               <FiChevronDown
                 className={`transition-transform ${open ? "rotate-180" : ""}`}
               />
-            </button>
+            </button> */}
+            <button
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex items-center gap-2 h-10 px-4 rounded-md border border-red-500 text-sm sm:text-base text-white hover:bg-red-600 transition whitespace-nowrap"
+            aria-expanded={open}
+            aria-controls="offers-body"
+          >
+            View Offers
+            <FiChevronDown
+              className={`transition-transform ${open ? "rotate-180" : ""}`}
+            />
+          </button>
+
           </div>
 
           {/* Divider */}
