@@ -1,9 +1,9 @@
-// File: Equipment.jsx
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// ✅ Uses your existing equipmentData object
+
+
 
 // Equipment data by category
 const equipmentData = {
@@ -411,26 +411,22 @@ const equipmentData = {
 
   ],
 };
+
 export default function Equipment() {
   const [activeCategory, setActiveCategory] = useState("Legs");
   const [startIndex, setStartIndex] = useState(0);
 
-  // --- Refs for GSAP
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subRef = useRef(null);
-  const tabsRef = useRef(null);
   const gridRef = useRef(null);
-  const leftBtnRef = useRef(null);
-  const rightBtnRef = useRef(null);
-  const lastIndexRef = useRef(0);
-  const lastCategoryRef = useRef(activeCategory);
 
   const items = useMemo(() => equipmentData[activeCategory] || [], [activeCategory]);
   const visibleItems = useMemo(() => items.slice(startIndex, startIndex + 3), [items, startIndex]);
-  const categories = useMemo(() => Object.keys(equipmentData || {}), []);
 
-  // --- Scroll reveal setup
+  // 👉 Change to true later to show real content
+  const showRealContent = false;
+
   useEffect(() => {
     let ctx;
     let mounted = true;
@@ -445,14 +441,9 @@ export default function Equipment() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Initial states
         gsap.set([titleRef.current, subRef.current], { autoAlpha: 0, y: 24 });
-        gsap.set([tabsRef.current, leftBtnRef.current, rightBtnRef.current], {
-          autoAlpha: 0,
-          y: 16,
-        });
+        gsap.set(gridRef.current, { autoAlpha: 0, y: 24 });
 
-        // Title & subtitle
         gsap
           .timeline({
             scrollTrigger: {
@@ -464,37 +455,7 @@ export default function Equipment() {
           })
           .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 })
           .to(subRef.current, { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.2")
-          .to(
-            [tabsRef.current, leftBtnRef.current, rightBtnRef.current],
-            { autoAlpha: 1, y: 0, duration: 0.4, stagger: 0.1 },
-            "-=0.1"
-          );
-
-        // Initial cards reveal (stagger)
-        const cards = () =>
-          gridRef.current
-            ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
-            : [];
-        gsap.set(cards(), {
-          autoAlpha: 0,
-          y: 28,
-          rotateX: 6,
-          transformOrigin: "50% 100%",
-        });
-
-        gsap.to(cards(), {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
+          .to(gridRef.current, { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.2");
       }, sectionRef);
     })();
 
@@ -503,84 +464,6 @@ export default function Equipment() {
       ctx?.revert();
     };
   }, []);
-
-  // --- Animate when paging (left/right) or switching category
-  useEffect(() => {
-    (async () => {
-      const gsapModule = await import("gsap");
-      const gsap = gsapModule.default || gsapModule;
-      const cards =
-        gridRef.current &&
-        Array.from(gridRef.current.querySelectorAll(":scope > div"));
-
-      if (!cards || !cards.length) return;
-
-      // Category change → soft fade/raise
-      if (lastCategoryRef.current !== activeCategory) {
-        gsap.fromTo(
-          cards,
-          { autoAlpha: 0, y: 20 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.45,
-            ease: "power3.out",
-            stagger: 0.08,
-          }
-        );
-        lastCategoryRef.current = activeCategory;
-        lastIndexRef.current = startIndex;
-        return;
-      }
-
-      // Slide direction based on index change
-      const dir = Math.sign(startIndex - lastIndexRef.current) || 1; // right = 1, left = -1
-      gsap.fromTo(
-        cards,
-        { x: 24 * dir, autoAlpha: 0 },
-        {
-          x: 0,
-          autoAlpha: 1,
-          duration: 0.35,
-          ease: "power3.out",
-          stagger: 0.06,
-        }
-      );
-      lastIndexRef.current = startIndex;
-    })();
-  }, [activeCategory, startIndex, visibleItems.length]);
-
-  // --- Micro press animation on arrows
-  const pressButton = async (ref) => {
-    const gsapModule = await import("gsap");
-    const gsap = gsapModule.default || gsapModule;
-    if (!ref.current) return;
-    await gsap.to(ref.current, {
-      scale: 0.94,
-      duration: 0.08,
-      ease: "power2.out",
-      yoyo: true,
-      repeat: 1,
-    });
-  };
-
-  const prevSlide = async () => {
-    if (startIndex === 0) return;
-    await pressButton(leftBtnRef);
-    setStartIndex((prev) => Math.max(prev - 1, 0));
-  };
-
-  const nextSlide = async () => {
-    if (startIndex + 3 >= items.length) return;
-    await pressButton(rightBtnRef);
-    setStartIndex((prev) => Math.min(prev + 1, items.length - 3));
-  };
-
-  const handleCategory = async (cat) => {
-    if (cat === activeCategory) return;
-    setActiveCategory(cat);
-    setStartIndex(0);
-  };
 
   return (
     <section
@@ -597,45 +480,12 @@ export default function Equipment() {
         </p>
       </div>
 
-      {/* Category Tabs */}
       <div
-        ref={tabsRef}
-        className="flex justify-center flex-wrap gap-4 mb-10"
+        ref={gridRef}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto"
       >
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${
-              activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border-red-600 text-white hover:bg-red-600"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Carousel */}
-      <div className="flex items-center justify-center gap-4">
-        {/* Left Arrow */}
-        <button
-          ref={leftBtnRef}
-          onClick={prevSlide}
-          disabled={startIndex === 0}
-          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400 disabled:opacity-40 disabled:cursor-not-allowed will-change-transform"
-          aria-label="Previous"
-        >
-          <FaChevronLeft />
-        </button>
-
-        {/* Equipment Cards */}
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl"
-        >
-          {visibleItems.map((item, index) => (
+        {showRealContent ? (
+          visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
               className="border border-red-600 rounded-md overflow-hidden bg-[#0d1117] will-change-transform"
@@ -650,28 +500,21 @@ export default function Equipment() {
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Right Arrow */}
-        <button
-          ref={rightBtnRef}
-          onClick={nextSlide}
-          disabled={startIndex + 3 >= items.length}
-          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400 disabled:opacity-40 disabled:cursor-not-allowed will-change-transform"
-          aria-label="Next"
-        >
-          <FaChevronRight />
-        </button>
+          ))
+        ) : (
+          <div className="col-span-full text-center py-24">
+            <h3 className="text-3xl font-bold text-white">
+               Coming <span className="text-red-600">Soon</span>
+            </h3>
+            <p className="text-gray-400 mt-3 text-lg">
+              We're preparing something amazing for you.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 }
-
-
-
-
-
 
 
 
