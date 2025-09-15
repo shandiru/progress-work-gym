@@ -28,7 +28,7 @@ const plans = [
     image: '/logo.avif',
     features: [
       '10 Visit Pass',
-      'Valid for 3 Months',
+      'Valid for 4 Months',
       'Use Anytime',
       'Rock Up & Train',
     ],
