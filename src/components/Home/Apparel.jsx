@@ -387,8 +387,17 @@ export default function Equipment() {
         </p>
       </div>
 
+       <div className="col-span-full text-center py-24">
+            <h3 className="text-3xl font-bold text-white">
+               Coming <span className="text-red-600">Soon</span>
+            </h3>
+            <p className="text-gray-400 mt-3 text-lg">
+              We're preparing something amazing for you.
+            </p>
+          </div>
+
       {/* Category Tabs */}
-      <div
+      {/* <div
         ref={tabsRef}
         className="flex justify-center flex-wrap gap-4 mb-10"
       >
@@ -405,12 +414,12 @@ export default function Equipment() {
             {cat}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Carousel */}
-      <div className="flex items-center justify-center gap-4">
+      {/* <div className="flex items-center justify-center gap-4"> */}
         {/* Left Arrow */}
-        <button
+        {/* <button
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
@@ -418,10 +427,10 @@ export default function Equipment() {
           aria-label="Previous"
         >
           <FaChevronLeft />
-        </button>
+        </button> */}
 
         {/* Equipment Cards */}
-        <div
+        {/* <div
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl"
         >
@@ -441,10 +450,10 @@ export default function Equipment() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Right Arrow */}
-        <button
+        {/* <button
           ref={rightBtnRef}
           onClick={nextSlide}
           disabled={startIndex + 3 >= items.length}
@@ -452,8 +461,8 @@ export default function Equipment() {
           aria-label="Next"
         >
           <FaChevronRight />
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
     </section>
   );
 }
