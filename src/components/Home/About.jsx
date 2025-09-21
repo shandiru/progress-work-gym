@@ -98,7 +98,7 @@ export default function About() {
             ref={paraRef}
             className="text-gray-300 text-base leading-relaxed max-w-lg"
           >
-            Founded in 2016, Progress Works Gym is where anyone can train, grow,
+            Founded in 2019, Progress Works Gym is where anyone can train, grow,
             and feel their best. We bring the latest equipment and a holistic
             approach to fitness in Leicester.
           </p>
