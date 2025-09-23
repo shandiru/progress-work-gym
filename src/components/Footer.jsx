@@ -84,13 +84,13 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/team" className="hover:text-red-500 transition-colors">
+              <a href="#trainers" className="hover:text-red-500 transition-colors">
                 Personal Trainers
               </a>
             </li>
             <li>
               <a
-                href="/ChampionAthletes"
+                href="#ChampionAthletes"
                 className="hover:text-red-500 transition-colors"
               >
                 Champion Athletes
