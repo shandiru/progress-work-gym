@@ -63,7 +63,7 @@ export default function ContactForm() {
     // Send email via EmailJS
     emailjs
       .send(
-        "service_8642cwa", // Service ID from EmailJS
+        "service_404lxe7", // Service ID from EmailJS
         "template_gza1ztb", // Template ID from EmailJS
         data,
         "tmUgtXKf_TwGrV1iE" // User ID from EmailJS
