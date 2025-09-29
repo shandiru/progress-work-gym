@@ -75,7 +75,7 @@ All coaching at Complete Physiques comes with guaranteed result with a money-bac
       services: [],
       contact: [
         { label: "My Website", value: "www.completephysiques.co.uk", platform: "website" },
-        { label: "Instagram", value: "@bradholt_", platform: "instagram" },
+        { label: "Instagram", value: "bradholt_", platform: "instagram" },
         { label: "YouTube", value: "@bradholtpt", platform: "youtube" },
       ],
     },
