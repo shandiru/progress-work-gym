@@ -62,7 +62,7 @@ const trainers = [
   {
     name: "Brad - Brad Holt Personal Training",
     title: "1-1 Personal Trainer & Online Coaching",
-    image: "/body.avif",
+    image: "/boy.jpg",
     experience: "With years of Experience",
     shortDesc:
       "Hi, it’s Brad from Complete Physiques. Personal trainer at progress works gym. Many has told me to forward you a bio for the website which I’ve added below.",
