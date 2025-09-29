@@ -4,7 +4,7 @@ import React from 'react'
 const plans = [
   {
     title: '1 Month Rolling Membership',
-    price: '45',
+    price: '39',
     image: '/logo.avif',
     features: [
       'No Joining Fee',
