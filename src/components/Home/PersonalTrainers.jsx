@@ -8,7 +8,7 @@ const trainers = [
     image: "/teigan.png",
     experience: "2 years Experience",
     shortDesc:
-      "I help people create structure in both training and nutrition so they can achieve real, sustainable results.",
+      "Hi, it’s Teigan, I help people create structure in both training and nutrition so they can achieve real, sustainable results.",
     fullDesc: {
       intro: `I help people create structure in both training and nutrition so they can achieve real, sustainable results. Whether you’ve been training for years or are completely new to the gym, my goal is to make fitness simple, effective and tailored to you.`,
       paragraph: `With the right guidance, accountability, and support, you’ll not only see progress—you’ll feel stronger, more confident and in control of your health. Together, we’ll build a clear plan that fits your lifestyle and empowers you to unlock your best self.`,
@@ -25,8 +25,9 @@ const trainers = [
         "Balanced nutrition plans",
       ],
       contact: [
-        { label: "Instagram/Facebook", value: "Teiganfitpt" },
-        { label: "Mobile Number", value: "07919011133" },
+        { label: "Instagram", value: "Teiganfitpt", platform: "instagram" },
+        { label: "Facebook", value: "Teiganfitpt", platform: "facebook" },
+        { label: "Mobile Number", value: "+447919011133", platform: "phone" },
       ],
     },
   },
@@ -36,7 +37,7 @@ const trainers = [
     image: "/boy.avif",
     experience: "10 years Experience",
     shortDesc:
-      "No more fads, just evidence-based training that delivers real results.",
+      "Hi, it’s Luke, No more fads, just evidence-based training that delivers real results.",
     fullDesc: {
       intro: `With over a decade of experience, 100’s of transformed clients & over 5,000 sessions delivered – I’m here to help you confidently take charge of your health & fitness.`,
       paragraph: `Whether you’ve never stepped foot in a gym or you're aiming for competition prep, Train Smart Coaching provides the most efficient and effective route to your goals.`,
@@ -51,28 +52,38 @@ const trainers = [
         "Competition Prep",
         "Evidence-Based Approach",
       ],
+      contact: [
+        { label: "Email", value: "trainsmartgym@gmail.com", platform: "email" },
+        { label: "Mobile", value: "+447376412103", platform: "phone" },
+        { label: "Instagram", value: "Lukeknightspt", platform: "instagram" },
+      ],
     },
   },
   {
     name: "Brad - Brad Holt Personal Training",
     title: "1-1 Personal Trainer & Online Coaching",
     image: "/body.avif",
-    experience: "Over the years of Experience",
+    experience: "With years of Experience",
     shortDesc:
-      "Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.",
+      "Hi, it’s Brad from Complete Physiques. Personal trainer at progress works gym. Many has told me to forward you a bio for the website which I’ve added below.",
     fullDesc: {
-      intro: `As a Body Transformation Specialist, my mission is simple: to help you unlock your full potential. Whether through 1-to-1 personal training or online coaching, I provide tailored programs that deliver lasting results.`,
-      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.`,
+      intro: `Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.`,
+      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.
+
+All coaching at Complete Physiques comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.`,
       stats: [],
       services: [],
-      contact: [],
+      contact: [
+        { label: "My Website", value: "www.completephysiques.co.uk", platform: "website" },
+        { label: "Instagram", value: "@bradholt_", platform: "instagram" },
+        { label: "YouTube", value: "@bradholtpt", platform: "youtube" },
+      ],
     },
   },
 ];
 
 export default function TrainersSection() {
   const [activeTrainer, setActiveTrainer] = useState(null);
-
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -135,7 +146,6 @@ export default function TrainersSection() {
         const isMobile = window.innerWidth < 640;
 
         if (isMobile) {
-          // Animate each card separately on scroll (mobile)
           ScrollTrigger.batch(cards, {
             interval: 0.2,
             batchMax: 1,
@@ -160,7 +170,6 @@ export default function TrainersSection() {
             toggleActions: "play none none reverse",
           });
         } else {
-          // Desktop grid stagger
           gsap.to(cards, {
             autoAlpha: 1,
             y: 0,
@@ -193,7 +202,6 @@ export default function TrainersSection() {
         autoAlpha: 0,
         y: 24,
         scale: 0.98,
-        transformOrigin: "50% 50%",
       });
 
       gsap
@@ -218,6 +226,28 @@ export default function TrainersSection() {
       .to(overlayRef.current, { autoAlpha: 0, duration: 0.15 }, "<");
   };
 
+  const getUrl = (item) => {
+    if (item.platform === "website") {
+      return `https://${item.value.replace(/\s+/g, "")}`;
+    }
+    if (item.platform === "instagram") {
+      return `https://instagram.com/${item.value}`;
+    }
+    if (item.platform === "facebook") {
+      return `https://facebook.com/search/top?q=${item.value}`;
+    }
+    if (item.platform === "youtube") {
+      return `https://youtube.com/results?search_query=${item.value}`;
+    }
+    if (item.platform === "phone") {
+      return `tel:${item.value}`;
+    }
+    if (item.platform === "email") {
+      return `mailto:${item.value}`;
+    }
+    return item.value;
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -240,7 +270,7 @@ export default function TrainersSection() {
         {trainers.map((t, i) => (
           <div
             key={i}
-            className="border border-red-600 p-6 rounded-md bg-[#161b22] flex flex-col justify-between h-full will-change-transform"
+            className="border border-red-600 p-6 rounded-md bg-[#161b22] flex flex-col justify-between h-full"
           >
             <div className="flex flex-col items-center">
               <img
@@ -280,8 +310,6 @@ export default function TrainersSection() {
           <div
             ref={modalRef}
             className="bg-[#161b22] border border-red-600 rounded-lg w-full max-w-2xl p-6 relative text-white overflow-y-auto max-h-[90vh]"
-            role="dialog"
-            aria-modal="true"
           >
             <button
               onClick={closeTrainer}
@@ -337,10 +365,17 @@ export default function TrainersSection() {
               {activeTrainer.fullDesc.contact?.length > 0 && (
                 <div className="md:ml-8">
                   <h4 className="text-white font-semibold mb-2">Contact</h4>
-                  <ul className="list-disc list-inside text-gray-300 text-sm">
+                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
                     {activeTrainer.fullDesc.contact.map((c, idx) => (
                       <li key={idx}>
-                        <strong>{c.label}:</strong> {c.value}
+                        <a
+                          href={getUrl(c)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-400 "
+                        >
+                          <strong className="text-white">{c.label} : </strong><span className="hover:underline">{c.value}</span>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -349,9 +384,22 @@ export default function TrainersSection() {
             </div>
 
             <div className="flex gap-2 justify-end mt-6">
-              <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded">
+              <a
+                href={
+                  activeTrainer.name.includes("Brad")
+                    ? getUrl(
+                      activeTrainer.fullDesc.contact.find((c) => c.platform === "website")
+                    )
+                    : getUrl(
+                      activeTrainer.fullDesc.contact.find((c) => c.platform === "phone")
+                    )
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded text-white"
+              >
                 Book Consultation
-              </button>
+              </a>
               <button
                 onClick={closeTrainer}
                 className="border border-red-600 px-4 py-2 text-sm text-red-500 rounded"
