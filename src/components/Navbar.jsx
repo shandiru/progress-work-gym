@@ -1,19 +1,20 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Who Are We", href: "#about" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Membership", href: "#member" },
-  { label: "Special Offer", href: "#specialoffer" },
-  { label: "Our Equipment", href: "#ourequipment" },
+  { label: "Who Are We", href: "/#about" },
+  { label: "Trainers", href: "/#trainers" },
+  { label: "Membership", href: "/#member" },
+  { label: "Special Offer", href: "/#specialoffer" },
+  { label: "Our Equipment", href: "/#ourequipment" },
   { label: "Product", hasDropdown: true },
-  { label: "Our Partners", href: "#ourpartners" },
-  { label: "Why Choose Us", href: "#why" },
-  { label: "Review", href: "#review" },
-  { label: "Champion Athletes", href: "#ChampionAthletes" },
+  { label: "Our Partners", href: "/#ourpartners" },
+  { label: "Why Choose Us", href: "/#why" },
+  { label: "Review", href: "/#review" },
+  { label: "Champion Athletes", href: "/#ChampionAthletes" },
 ];
 
 export default function Navbar() {
@@ -26,7 +27,7 @@ export default function Navbar() {
   useEffect(() => {
     function handleClickOutside(event) {
       if (
-        dropdownRef.current && 
+        dropdownRef.current &&
         !dropdownRef.current.contains(event.target) &&
         productButtonRef.current &&
         !productButtonRef.current.contains(event.target)
@@ -78,35 +79,38 @@ export default function Navbar() {
                   {link.label}
                 </button>
               ) : (
-                <a
-                  href={link.href}
+                <HashLink
+                  smooth
+                  to={link.href}
                   className="text-xs font-medium hover:text-red-500 transition cursor-pointer"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </HashLink>
               )}
 
               {/* Dropdown for Product (desktop) */}
               {link.hasDropdown && productOpen && (
-                <div 
+                <div
                   ref={dropdownRef}
                   className="absolute top-full left-0 mt-2 w-40 bg-[#06091A] text-white border border-gray-700 rounded shadow cursor-pointer"
                 >
-                  <a
-                    href="#ourproducts"
+                  <HashLink
+                    smooth
+                    to="/#ourproducts"
                     className="block px-4 py-2 text-sm hover:text-red-500 transition"
                     onClick={handleDropdownItemClick}
                   >
                     Our Products
-                  </a>
-                  <a
-                    href="#ourfoods"
+                  </HashLink>
+                  <HashLink
+                    smooth
+                    to="/#ourfoods"
                     className="block px-4 py-2 text-sm hover:text-red-500 transition"
                     onClick={handleDropdownItemClick}
                   >
                     Our Foods
-                  </a>
+                  </HashLink>
                 </div>
               )}
             </div>
@@ -151,32 +155,35 @@ export default function Navbar() {
                     <span className="ml-2 text-sm">{productOpen ? "▲" : "▼"}</span>
                   </button>
                 ) : (
-                  <a
-                    href={link.href}
+                  <HashLink
+                    smooth
+                    to={link.href}
                     className="text-lg font-medium hover:text-red-500 transition"
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </HashLink>
                 )}
 
                 {/* Product Dropdown (mobile inline) */}
                 {link.hasDropdown && productOpen && (
                   <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-700 pl-4">
-                    <a
-                      href="#ourproducts"
+                    <HashLink
+                      smooth
+                      to="#ourproducts"
                       className="block text-base font-medium hover:text-red-500 transition"
                       onClick={handleDropdownItemClick}
                     >
                       Our Products
-                    </a>
-                    <a
-                      href="#ourfoods"
+                    </HashLink>
+                    <HashLink
+                      smooth
+                      to="#ourfoods"
                       className="block text-base font-medium hover:text-red-500 transition"
                       onClick={handleDropdownItemClick}
                     >
                       Our Foods
-                    </a>
+                    </HashLink>
                   </div>
                 )}
               </div>
