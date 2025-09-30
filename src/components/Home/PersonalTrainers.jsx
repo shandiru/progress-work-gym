@@ -60,17 +60,15 @@ const trainers = [
     },
   },
   {
-    name: "Brad - Brad Holt Personal Training",
+    name: "Brad - Complete Physiques",
     title: "1-1 Personal Trainer & Online Coaching",
     image: "/boy.jpg",
-    experience: "With years of Experience",
+    experience: "10 years of Experience",
     shortDesc:
-      "Hi, it’s Brad from Complete Physiques. Personal trainer at progress works gym. Many has told me to forward you a bio for the website which I’ve added below.",
+      "Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.",
     fullDesc: {
-      intro: `Hi, I’m Brad, the founder of Complete Physiques. Over the years, I’ve had the privilege of transforming and working with hundreds of clients, helping them achieve life-changing results both physically and mentally.`,
-      paragraph: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.
-
-All coaching at Complete Physiques comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.`,
+      intro: `With years of experience in the fitness industry, I understand that no two clients are the same. That’s why I focus on building sustainable routines, personalised nutrition strategies, and training plans designed to suit your lifestyle.`,
+      paragraph: `All coaching at Complete Physiques comes with guaranteed result with a money-back guarantee, so you can feel confident you’re investing in real progress.`,
       stats: [],
       services: [],
       contact: [
