@@ -9,7 +9,7 @@ import Debit from "./components/MemberShip/Debit";
 import ScrollToTop from "./components/ScrollToTop";
 import TermsConditions from "./components/Term";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-
+import GDPRBanner from "../src/components/GDPRBanner"
 function App() {
   return (
     <Router>
@@ -25,6 +25,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
+      <GDPRBanner />
     </Router>
   );
 }
