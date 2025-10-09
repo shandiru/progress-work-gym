@@ -1,201 +1,204 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Who Are We", href: "/#about" },
-  { label: "Trainers", href: "/#trainers" },
-  { label: "Membership", href: "/#member" },
-  { label: "Special Offer", href: "/#specialoffer" },
-  { label: "Our Equipment", href: "/#ourequipment" },
-  { label: "Product", hasDropdown: true },
-  { label: "Our Partners", href: "/#ourpartners" },
-  { label: "Why Choose Us", href: "/#why" },
-  { label: "Review", href: "/#review" },
-  { label: "Champion Athletes", href: "/#ChampionAthletes" },
+  {
+    label: "About",
+    href: "/#about",
+    dropdown: [
+      { label: "Who Are We", href: "/#about" },
+      { label: "Trainers", href: "/#trainers" },
+      { label: "Our Partners", href: "/#ourpartners" },
+    ],
+  },
+  {
+    label: "Programs",
+    href: "/#programs",
+    dropdown: [
+      { label: "Special Offer", href: "/#specialoffer" },
+      { label: "Our Equipment", href: "/#ourequipment" },
+      { label: "Champion Athletes", href: "/#ChampionAthletes" },
+    ],
+  },
+  {
+    label: "Membership",
+    href: "/#member",
+    dropdown: [
+      { label: "Plans", href: "/#member" },
+      { label: "Why Choose Us", href: "/#why" },
+    ],
+  },
+  {
+    label: "Products",
+    href: "/#ourproducts",
+    dropdown: [
+      { label: "Our Products", href: "/#ourproducts" },
+      { label: "Our Foods", href: "/#ourfoods" },
+    ],
+  },
+  { label: "Reviews", href: "/#review" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productOpen, setProductOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const productButtonRef = useRef(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Handle clicks outside of dropdown
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        productButtonRef.current &&
-        !productButtonRef.current.contains(event.target)
-      ) {
-        setProductOpen(false);
-      }
-    }
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    // Only add listener when dropdown is open
-    if (productOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [productOpen]);
-
-  const handleProductClick = (e) => {
-    e.preventDefault();
+  const toggleDropdown = (label, e) => {
     e.stopPropagation();
-    setProductOpen(!productOpen);
+    setActiveDropdown(activeDropdown === label ? null : label);
   };
 
-  const handleDropdownItemClick = () => {
-    setProductOpen(false);
+  const closeAllMenus = () => {
     setMenuOpen(false);
+    setActiveDropdown(null);
   };
 
   return (
-    <header className="bg-[#06091A] text-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <img src="/logo.avif" alt="Progress Works Gym" className="h-12 w-auto" />
+    <header className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
+        {/* ✅ Logo */}
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/logo.avif"
+            alt="Progress Works Gym"
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        {/* ✅ Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-10 font-semibold text-sm tracking-wide">
           {NAV_LINKS.map((link) => (
-            <div key={link.label} className="relative">
-              {link.hasDropdown ? (
+            <div key={link.label} className="relative flex items-center gap-1 group">
+              <HashLink
+                smooth
+                to={link.href}
+                className="transition-all text-white/90 hover:text-red-500"
+                onClick={closeAllMenus}
+              >
+                {link.label}
+              </HashLink>
+
+              {link.dropdown && (
                 <button
-                  ref={productButtonRef}
-                  className="text-xs font-medium hover:text-red-500 transition cursor-pointer"
-                  onClick={handleProductClick}
+                  onClick={(e) => toggleDropdown(link.label, e)}
+                  className="ml-1 text-white/80 hover:text-red-500 transition"
                 >
-                  {link.label}
+                  {activeDropdown === link.label ? (
+                    <FiChevronUp className="w-4 h-4" />
+                  ) : (
+                    <FiChevronDown className="w-4 h-4" />
+                  )}
                 </button>
-              ) : (
-                <HashLink
-                  smooth
-                  to={link.href}
-                  className="text-xs font-medium hover:text-red-500 transition cursor-pointer"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </HashLink>
               )}
 
-              {/* Dropdown for Product (desktop) */}
-              {link.hasDropdown && productOpen && (
-                <div
-                  ref={dropdownRef}
-                  className="absolute top-full left-0 mt-2 w-40 bg-[#06091A] text-white border border-gray-700 rounded shadow cursor-pointer"
-                >
-                  <HashLink
-                    smooth
-                    to="/#ourproducts"
-                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Our Products
-                  </HashLink>
-                  <HashLink
-                    smooth
-                    to="/#ourfoods"
-                    className="block px-4 py-2 text-sm hover:text-red-500 transition"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Our Foods
-                  </HashLink>
+              {/* ✅ Dropdown */}
+              {link.dropdown && activeDropdown === link.label && (
+                <div className="absolute top-[2.5rem] left-0 w-52 bg-[#0B0F1F] border border-gray-700 rounded-lg shadow-xl overflow-hidden">
+                  {link.dropdown.map((item, index) => (
+                    <HashLink
+                      key={index}
+                      smooth
+                      to={item.href}
+                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-red-600/20 transition"
+                      onClick={closeAllMenus}
+                    >
+                      {item.label}
+                    </HashLink>
+                  ))}
                 </div>
               )}
             </div>
           ))}
         </nav>
 
-        {/* Instagram Icon (Desktop) */}
+        {/* ✅ Instagram Icon */}
         <a
           href="https://www.instagram.com/progress_works_gym"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
+          className="hidden lg:inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
         >
           <FaInstagram className="text-lg" />
         </a>
 
-        {/* Mobile Hamburger Button */}
+        {/* ✅ Mobile Hamburger */}
         <button
-          className="md:hidden text-white text-2xl"
+          className="lg:hidden text-white text-2xl"
           onClick={() => {
             setMenuOpen(!menuOpen);
-            setProductOpen(false);
+            setActiveDropdown(null);
           }}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Drawer */}
       {menuOpen && (
-        <div className="md:hidden bg-[#06091A] border-t border-gray-700">
-          <nav className="flex flex-col gap-4 py-6 px-6">
+        <div className="lg:hidden bg-[#06091A] border-t border-gray-700">
+          <nav className="flex flex-col gap-4 py-6 px-6 text-base">
             {NAV_LINKS.map((link) => (
               <div key={link.label} className="flex flex-col">
-                {/* Mobile main link */}
-                {link.hasDropdown ? (
-                  <button
-                    className="flex justify-between items-center text-lg font-medium hover:text-red-500 transition w-full"
-                    onClick={() => setProductOpen(!productOpen)}
-                  >
-                    {link.label}
-                    <span className="ml-2 text-sm">{productOpen ? "▲" : "▼"}</span>
-                  </button>
-                ) : (
+                <div className="flex justify-between items-center">
                   <HashLink
                     smooth
                     to={link.href}
                     className="text-lg font-medium hover:text-red-500 transition"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={closeAllMenus}
                   >
                     {link.label}
                   </HashLink>
-                )}
+                  {link.dropdown && (
+                    <button
+                      onClick={(e) => toggleDropdown(link.label, e)}
+                      className="text-white hover:text-red-500"
+                    >
+                      {activeDropdown === link.label ? (
+                        <FiChevronUp className="w-5 h-5" />
+                      ) : (
+                        <FiChevronDown className="w-5 h-5" />
+                      )}
+                    </button>
+                  )}
+                </div>
 
-                {/* Product Dropdown (mobile inline) */}
-                {link.hasDropdown && productOpen && (
+                {link.dropdown && activeDropdown === link.label && (
                   <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-700 pl-4">
-                    <HashLink
-                      smooth
-                      to="#ourproducts"
-                      className="block text-base font-medium hover:text-red-500 transition"
-                      onClick={handleDropdownItemClick}
-                    >
-                      Our Products
-                    </HashLink>
-                    <HashLink
-                      smooth
-                      to="#ourfoods"
-                      className="block text-base font-medium hover:text-red-500 transition"
-                      onClick={handleDropdownItemClick}
-                    >
-                      Our Foods
-                    </HashLink>
+                    {link.dropdown.map((item) => (
+                      <HashLink
+                        key={item.label}
+                        smooth
+                        to={item.href}
+                        className="block text-base font-medium text-gray-300 hover:text-red-500 transition"
+                        onClick={closeAllMenus}
+                      >
+                        {item.label}
+                      </HashLink>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
 
-            {/* Instagram Link */}
+            {/* Instagram (Mobile) */}
             <a
               href="https://www.instagram.com/progress_works_gym"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg hover:text-red-500 transition"
-              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 text-lg hover:text-red-500 transition mt-4"
+              onClick={closeAllMenus}
             >
               <FaInstagram /> Instagram
             </a>

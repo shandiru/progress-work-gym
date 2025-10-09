@@ -1,4 +1,3 @@
-// File: MembershipPlans.jsx
 "use client";
 import React, { useEffect, useRef } from "react";
 
@@ -14,7 +13,7 @@ const plans = [
     ],
   },
   {
-    title: "Direct Debit Membership: ",
+    title: "Direct Debit Membership",
     slug: "plans-pricing",
     options: [
       { label: "1 Month Rolling Membership", price: "£39" },
@@ -85,7 +84,7 @@ export default function MembershipPlans() {
 
         // Responsive animations
         ScrollTrigger.matchMedia({
-          // 📱 Mobile: animate each box one by one as you scroll
+          // 📱 Mobile
           "(max-width: 767px)": () => {
             cards.forEach((card) => {
               gsap.set(card, { autoAlpha: 0, y: 32 });
@@ -97,13 +96,13 @@ export default function MembershipPlans() {
                 scrollTrigger: {
                   trigger: card,
                   start: "top 90%",
-                  toggleActions: "play none none none", // 👈 FIXED: do not hide on scroll back
+                  toggleActions: "play none none none",
                 },
               });
             });
           },
 
-          // 💻 Desktop: grid fades in with stagger, then parallax scroll effect
+          // 💻 Desktop / Tablet
           "(min-width: 768px)": () => {
             gsap.set(cards, {
               autoAlpha: 0,
@@ -154,9 +153,10 @@ export default function MembershipPlans() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15 min-h-screen"
+      className="bg-[#0d1117] text-white py-16 px-4 scroll-m-15 pb-0 md:pb-30"
       id="member"
     >
+      {/* Title */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold" ref={titleRef}>
           MEMBERSHIP <span className="text-red-600">PLANS</span>
@@ -166,18 +166,20 @@ export default function MembershipPlans() {
         </p>
       </div>
 
+      {/* Grid */}
       <div
         ref={gridRef}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
       >
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="border border-red-600 rounded-md p-6 flex flex-col justify-between bg-[#141820] will-change-transform"
+            className="border border-red-600 rounded-md p-6 flex flex-col justify-between bg-[#141820] will-change-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/10 transition-all duration-300"
           >
             <h3 className="text-xl font-semibold text-red-500 mb-4">
               {plan.title}
             </h3>
+
             <ul className="space-y-3 mb-4 flex-grow">
               {plan.options.map((option, idx) => (
                 <li
@@ -191,6 +193,7 @@ export default function MembershipPlans() {
                 </li>
               ))}
             </ul>
+
             <a
               href={`/${plan.slug}`}
               className="block text-center w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-md font-semibold mt-auto"

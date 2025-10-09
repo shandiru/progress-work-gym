@@ -1,4 +1,3 @@
-// File: Partners.jsx
 "use client";
 import React, { useEffect, useRef } from "react";
 
@@ -31,7 +30,6 @@ export default function Partners() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Initial states
         gsap.set(titleRef.current, { autoAlpha: 0, y: 20 });
         gsap.set(dividerRef.current, { autoAlpha: 0, scaleY: 0, transformOrigin: "top" });
 
@@ -68,8 +66,8 @@ export default function Partners() {
           },
         });
 
-        // Subtle parallax per logo
-        logos.forEach((logo, i) => {
+        // Parallax
+        logos.forEach((logo) => {
           gsap.to(logo, {
             y: -8,
             ease: "none",
@@ -107,10 +105,10 @@ export default function Partners() {
           ></div>
         </div>
 
-        {/* Logos */}
+        {/* ✅ Fixed Layout — now wraps until 1280px */}
         <div
           ref={logosRef}
-          className="flex flex-wrap md:flex-nowrap items-center justify-center gap-6 mt-6"
+          className="flex flex-wrap xl:flex-nowrap items-center justify-center gap-6 mt-6"
         >
           {partners.map((partner, index) =>
             partner.link ? (
