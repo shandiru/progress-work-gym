@@ -57,7 +57,7 @@ export default function Footer() {
             height={60}
             className="object-contain mb-4"
           />
-          <h1 className="text-2xl font-bold text-white">
+          <h1 className="text-2xl md:text-xl lg:text-2xl font-bold text-white">
             Progress Works Gym
             <span className="text-sm font-normal text-gray-500 block mt-1">
               GYM & STUDIO

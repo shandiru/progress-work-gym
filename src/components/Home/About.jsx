@@ -28,7 +28,6 @@ export default function About() {
       if (!mounted) return;
 
       ctx = gsap.context(() => {
-        // Prepare initial states
         gsap.set(
           [badgeRef.current, headingRef.current, paraRef.current, ctaRef.current],
           { autoAlpha: 0, y: 30 }
@@ -39,10 +38,8 @@ export default function About() {
         const featureItems = featuresRef.current
           ? Array.from(featuresRef.current.querySelectorAll(":scope > div"))
           : [];
-
         gsap.set(featureItems, { autoAlpha: 0, y: 20 });
 
-        // Timeline when section enters viewport
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -74,7 +71,7 @@ export default function About() {
       className="relative bg-black overflow-hidden py-16 px-4 sm:px-6 lg:px-12 scroll-m-15"
       id="about"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
         {/* Left Content */}
         <div className="space-y-6 relative z-10">
           {/* Badge */}
@@ -88,7 +85,7 @@ export default function About() {
           {/* Heading */}
           <h1
             ref={headingRef}
-            className="text-[24px] sm:text-[36px] lg:text-[40px] font-bold leading-tight text-white"
+            className="text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold leading-tight text-white"
           >
             Fitness. Lifestyle. <span className="text-[#ed1c24]">Progress.</span>
           </h1>
@@ -96,14 +93,14 @@ export default function About() {
           {/* Paragraph */}
           <p
             ref={paraRef}
-            className="text-gray-300 text-base leading-relaxed max-w-lg"
+            className="text-gray-300 text-base leading-relaxed max-w-xl md:max-w-none"
           >
             Founded in 2019, Progress Works Gym is where anyone can train, grow,
             and feel their best. We bring the latest equipment and a holistic
             approach to fitness in Leicester.
           </p>
 
-          {/* Features / Keywords */}
+          {/* Features */}
           <div
             ref={featuresRef}
             className="grid grid-cols-3 text-center divide-x divide-gray-700 border-y border-gray-700 py-6"
@@ -132,12 +129,12 @@ export default function About() {
           </a>
         </div>
 
-        {/* Right Image with Red Half-Circle Background */}
+        {/* Right Image + Circle */}
         <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] flex items-center justify-end">
-          {/* Red Half-Circle Shape */}
+          {/* Red Half-Circle */}
           <div
             ref={circleRef}
-            className="absolute right-0 w-[85%] aspect-square rounded-full bg-[#ed1c24] z-0"
+            className="absolute right-0 w-[90%] md:w-[70%] lg:w-[85%] aspect-square rounded-full bg-[#ed1c24] z-0"
           ></div>
 
           {/* Runner Image */}
@@ -145,7 +142,7 @@ export default function About() {
             ref={imageRef}
             src="/whoarewe.png"
             alt="Running Visual"
-            className="relative z-10 w-full max-w-[650px] object-contain object-right"
+            className="relative z-10 w-[90%] md:w-[100%] lg:max-w-[650px] object-contain object-right"
           />
         </div>
       </div>
