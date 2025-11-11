@@ -11,30 +11,31 @@ const beforeAfterData = [
   // 🧥 Hoodie Category
   { id: 1, category: "Hoodie", before: "/Hoodie 1a.png", after: "/Hoodie 1b.png" },
   { id: 2, category: "Hoodie", before: "/Hoodie 2a.png", after: "/Hoodie 2b.png" },
-  { id: 3, category: "Hoodie", before: "/Hoodie 3a.png", after: "/Hoodie 3b.png" },
-  { id: 4, category: "Hoodie", before: "/Hoodie 4a.png", after: "/Hoodie 4b.png" },
-  { id: 5, category: "Hoodie", before: "/Hoodie 5a.png", after: "/Hoodie 5b.png" },
-  { id: 6, category: "Hoodie", before: "/Hoodie 6.png", after: "/Hoodie 6.png" },
+  { id: 3, category: "Hoodie", before: "/hoodie 3a.png", after: "/hoodie 3b.png" },
+  { id: 4, category: "Hoodie", before: "/hoodie 4b.png", after: "/hoodie 4a.png" },
+  { id: 5, category: "Hoodie", before: "/hoodie 5a.png", after: "/hoodie5b.png" },
 
   // 👕 T-shirt Category
-  { id: 7, category: "T-shirt", before: "/t shirt 1a.png", after: "/t shirt 1b.png" },
+  { id: 7, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
   { id: 8, category: "T-shirt", before: "/t shirt 2a.png", after: "/t shirt 2 a.png" },
-  { id: 9, category: "T-shirt", before: "/t shirt 3a.png", after: "/t shirt 3b.png" },
-  { id: 10, category: "T-shirt", before: "/t shirt 4a.png", after: "/t shirt 4b.png" },
-  { id: 11, category: "T-shirt", before: "/t shirt 5b.png", after: "/t shirt 6b.png" },
+  { id: 9, category: "T-shirt", before: "/t shirt 3b.png", after: "/t shirt 3a.png" },
+  { id: 10, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
+  { id: 11, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
+  { id: 11, category: "T-shirt", before: "/t shirt 6a.png", after: "/t shirt 6b.png" },
+  { id: 11, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
 
   // 🦺 Vest Category
-  { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1b.png" },
-  { id: 13, category: "Vest", before: "/vest 2a.png", after: "/vest 2b.png" },
-  { id: 14, category: "Vest", before: "/vest 3a.png", after: "/vest 3b.png" },
+  { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
+  { id: 13, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
+  { id: 14, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
   { id: 15, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
-  { id: 16, category: "Vest", before: "/vest 5a.png", after: "/vest 5b.png" },
-  { id: 17, category: "Vest", before: "/vest 6a.png", after: "/vest 6.png" },
+  { id: 16, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
+  { id: 17, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
 ];
 
 
 export default function BeforeAfterGallery() {
- const [activeCategory, setActiveCategory] = useState("Hoodie");
+  const [activeCategory, setActiveCategory] = useState("Hoodie");
   const [startIndex, setStartIndex] = useState(0);
   const gridRef = useRef(null);
   const leftBtnRef = useRef(null);
@@ -135,11 +136,10 @@ export default function BeforeAfterGallery() {
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${
-              activeCategory === cat
+            className={`px-4 py-1 border rounded-md transition-colors ${activeCategory === cat
                 ? "bg-red-600 text-white"
                 : "border-red-600 text-white hover:bg-red-600"
-            }`}
+              }`}
           >
             {cat}
           </button>
@@ -153,9 +153,8 @@ export default function BeforeAfterGallery() {
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className={`${
-            startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-          } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
+          className={`${startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+            } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
           aria-label="Previous"
         >
           <FaChevronLeft />
@@ -176,9 +175,8 @@ export default function BeforeAfterGallery() {
           ref={rightBtnRef}
           onClick={nextSlide}
           disabled={startIndex >= items.length - 3}
-          className={`${
-            startIndex >= items.length - 3 ? "opacity-50 cursor-not-allowed" : ""
-          } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
+          className={`${startIndex >= items.length - 3 ? "opacity-50 cursor-not-allowed" : ""
+            } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
           aria-label="Next"
         >
           <FaChevronRight />
