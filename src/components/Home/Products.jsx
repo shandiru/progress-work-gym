@@ -608,7 +608,7 @@ export default function Products() {
               key={`${item.name}-${index}`}
               className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300 will-change-transform"
             >
-              <div className="w-full h-48 flex items-center justify-center bg-white">
+              <div className="w-full h-68 flex items-center justify-center bg-white">
                 <img
                   src={item.img}
                   alt={item.name}
