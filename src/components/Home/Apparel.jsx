@@ -22,15 +22,14 @@ const beforeAfterData = [
   { id: 9, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
   { id: 10, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
   { id: 11, category: "T-shirt", before: "/t shirt 6a.png", after: "/t shirt 6b.png" },
-  { id: 12, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
 
   // 🦺 Vest Category
-  { id: 13, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
-  { id: 14, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
-  { id: 15, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
-  { id: 16, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
-  { id: 17, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
-  { id: 18, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
+  { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
+  { id: 13, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
+  { id: 14, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
+  { id: 15, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
+  { id: 16, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
+  { id: 17, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
 ];
 
 
