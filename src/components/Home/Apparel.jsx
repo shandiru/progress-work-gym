@@ -32,18 +32,16 @@ const beforeAfterData = [
   { id: 17, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
 ];
 
-
 export default function BeforeAfterGallery() {
   const [activeCategory, setActiveCategory] = useState("Hoodie");
   const [startIndex, setStartIndex] = useState(0);
   const gridRef = useRef(null);
   const leftBtnRef = useRef(null);
   const rightBtnRef = useRef(null);
-  const sectionRef = useRef(null);
   const lastIndexRef = useRef(0);
   const lastCategoryRef = useRef(activeCategory);
 
-  // Filtered data for category
+  // Filtered data
   const items = useMemo(
     () =>
       activeCategory === "All"
@@ -52,7 +50,23 @@ export default function BeforeAfterGallery() {
     [activeCategory]
   );
 
-  const visibleItems = useMemo(() => items.slice(startIndex, startIndex + 3), [items, startIndex]);
+  // Adjust visible items by screen size
+  const [itemsPerView, setItemsPerView] = useState(3);
+  useEffect(() => {
+    const updateItems = () => {
+      if (window.innerWidth < 640) setItemsPerView(1);
+      else if (window.innerWidth < 1024) setItemsPerView(2);
+      else setItemsPerView(3);
+    };
+    updateItems();
+    window.addEventListener("resize", updateItems);
+    return () => window.removeEventListener("resize", updateItems);
+  }, []);
+
+  const visibleItems = useMemo(
+    () => items.slice(startIndex, startIndex + itemsPerView),
+    [items, startIndex, itemsPerView]
+  );
 
   const prevSlide = async () => {
     if (startIndex > 0) {
@@ -62,7 +76,7 @@ export default function BeforeAfterGallery() {
   };
 
   const nextSlide = async () => {
-    if (startIndex < items.length - 3) {
+    if (startIndex < items.length - itemsPerView) {
       await pressButton(rightBtnRef);
       setStartIndex((prev) => prev + 1);
     }
@@ -74,8 +88,6 @@ export default function BeforeAfterGallery() {
   };
 
   const pressButton = async (ref) => {
-    const gsapModule = await import("gsap");
-    const gsap = gsapModule.default || gsapModule;
     if (!ref.current) return;
     await gsap.to(ref.current, {
       scale: 0.94,
@@ -86,31 +98,22 @@ export default function BeforeAfterGallery() {
     });
   };
 
-  // Animate grid when changing slides or category
+  // Animate transitions
   useEffect(() => {
-    const gsapModule = gsap;
     const cards = gridRef.current && Array.from(gridRef.current.querySelectorAll(":scope > div"));
-    if (!cards || !cards.length) return;
+    if (!cards?.length) return;
 
-    // Category changed → fade
     if (lastCategoryRef.current !== activeCategory) {
       gsap.fromTo(
         cards,
         { autoAlpha: 0, y: 20 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-          stagger: 0.08,
-        }
+        { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }
       );
       lastCategoryRef.current = activeCategory;
       lastIndexRef.current = startIndex;
       return;
     }
 
-    // Slide transition
     const dir = Math.sign(startIndex - lastIndexRef.current) || 1;
     gsap.fromTo(
       cards,
@@ -121,61 +124,63 @@ export default function BeforeAfterGallery() {
   }, [activeCategory, startIndex, visibleItems.length]);
 
   return (
-    <section className="bg-black text-white py-20 px-4" ref={sectionRef} id="before-after">
+    <section className="bg-black text-white py-16 px-4 sm:px-8" id="before-after">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">
-          OUR  <span className="text-red-600">APPAREL</span>
+          OUR <span className="text-red-600">APPAREL</span>
         </h2>
-        <p className="text-gray-400 mt-2">State-of-the-art machines for every muscle group</p>
+        <p className="text-gray-400 mt-2 text-sm md:text-base">
+          State-of-the-art machines for every muscle group
+        </p>
       </div>
 
       {/* Category Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${activeCategory === cat
+            className={`px-4 py-1 rounded-md text-sm sm:text-base transition-colors ${
+              activeCategory === cat
                 ? "bg-red-600 text-white"
-                : "border-red-600 text-white hover:bg-red-600"
-              }`}
+                : "border border-red-600 text-white hover:bg-red-600"
+            }`}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      {/* Carousel Navigation */}
-      <div className="flex items-center justify-center gap-4">
-        {/* Left Arrow */}
+      {/* Carousel Controls + Grid */}
+      <div className="flex items-center justify-center gap-3 sm:gap-5">
         <button
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className={`${startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-            } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
+          className={`${
+            startIndex === 0 ? "opacity-40 cursor-not-allowed" : ""
+          } text-red-500 text-lg sm:text-xl bg-white rounded-full p-2 sm:p-3 hover:bg-gray-300`}
           aria-label="Previous"
         >
           <FaChevronLeft />
         </button>
 
-        {/* Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl w-full"
         >
           {visibleItems.map((item) => (
             <BeforeAfterCard key={item.id} before={item.before} after={item.after} />
           ))}
         </div>
 
-        {/* Right Arrow */}
         <button
           ref={rightBtnRef}
           onClick={nextSlide}
-          disabled={startIndex >= items.length - 3}
-          className={`${startIndex >= items.length - 3 ? "opacity-50 cursor-not-allowed" : ""
-            } text-red-500 text-xl bg-white rounded-full p-2 hover:bg-gray-300 will-change-transform`}
+          disabled={startIndex >= items.length - itemsPerView}
+          className={`${
+            startIndex >= items.length - itemsPerView ? "opacity-40 cursor-not-allowed" : ""
+          } text-red-500 text-lg sm:text-xl bg-white rounded-full p-2 sm:p-3 hover:bg-gray-300`}
           aria-label="Next"
         >
           <FaChevronRight />
@@ -220,23 +225,20 @@ function BeforeAfterCard({ before, after }) {
   return (
     <div
       ref={containerRef}
-      className="ba-card relative w-full h-110 aspect-[4/3] rounded-lg overflow-hidden border border-red-600 bg-[#0d1117] shadow-lg"
+      className="relative w-full h-110 aspect-[4/3] rounded-lg overflow-hidden border border-red-600 bg-[#0d1117] shadow-lg"
     >
-      {/* Before */}
       <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" />
-      {/* After */}
       <img
         ref={afterRef}
         src={after}
         alt="After"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Handle */}
       <div
         ref={handleRef}
         className="absolute top-0 bottom-0 w-[3px] bg-red-600 cursor-ew-resize z-10 flex items-center justify-center"
       >
-        <div className="absolute -left-3 bg-red-600 text-white text-xs px-2 py-1 rounded-full shadow">
+        <div className="absolute -left-3 bg-red-600 text-white text-[10px] sm:text-xs px-2 py-1 rounded-full shadow">
           ⇆
         </div>
       </div>
