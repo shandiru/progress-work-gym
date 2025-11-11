@@ -16,21 +16,21 @@ const beforeAfterData = [
   { id: 5, category: "Hoodie", before: "/hoodie 5a.png", after: "/hoodie5b.png" },
 
   // 👕 T-shirt Category
-  { id: 7, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
-  { id: 8, category: "T-shirt", before: "/t shirt 2a.png", after: "/t shirt 2 a.png" },
-  { id: 9, category: "T-shirt", before: "/t shirt 3b.png", after: "/t shirt 3a.png" },
-  { id: 10, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
-  { id: 11, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
+  { id: 6, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
+  { id: 7, category: "T-shirt", before: "/t shirt 2a.png", after: "/t shirt 2 a.png" },
+  { id: 8, category: "T-shirt", before: "/t shirt 3b.png", after: "/t shirt 3a.png" },
+  { id: 9, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
+  { id: 10, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
   { id: 11, category: "T-shirt", before: "/t shirt 6a.png", after: "/t shirt 6b.png" },
-  { id: 11, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
+  { id: 12, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
 
   // 🦺 Vest Category
-  { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
-  { id: 13, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
-  { id: 14, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
-  { id: 15, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
-  { id: 16, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
-  { id: 17, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
+  { id: 13, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
+  { id: 14, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
+  { id: 15, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
+  { id: 16, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
+  { id: 17, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
+  { id: 18, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
 ];
 
 
@@ -125,9 +125,9 @@ export default function BeforeAfterGallery() {
     <section className="bg-black text-white py-20 px-4" ref={sectionRef} id="before-after">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">
-          BEFORE & <span className="text-red-600">AFTER RESULTS</span>
+          OUR  <span className="text-red-600">APPAREL</span>
         </h2>
-        <p className="text-gray-400 mt-2">Real transformations you can see</p>
+        <p className="text-gray-400 mt-2">State-of-the-art machines for every muscle group</p>
       </div>
 
       {/* Category Buttons */}
