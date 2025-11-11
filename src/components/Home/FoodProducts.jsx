@@ -449,7 +449,7 @@ export default function Products() {
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-full h-48 object-cover bg-gray-800"
+                className="w-full h-78 object-cover bg-gray-800"
               />
               <div className="p-4">
                 <h4 className="font-bold text-white">{item.name}</h4>
