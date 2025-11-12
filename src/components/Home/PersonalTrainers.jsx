@@ -34,7 +34,7 @@ const trainers = [
   {
     name: "Luke - Train Smart Coaching",
     title: "1-1 Personal Trainer & Online Coaching",
-    image: "/boy.avif",
+    image: "/boynew.png",
     experience: "10 years Experience",
     shortDesc:
       "Hi, it’s Luke, No more fads, just evidence-based training that delivers real results.",
