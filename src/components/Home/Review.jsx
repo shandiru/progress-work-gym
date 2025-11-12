@@ -126,7 +126,7 @@ export default function Review() {
     <section
       id="review"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-black via-[#111] to-black text-white scroll-m-15"
+      className="py-20 bg-linear-to-b from-black via-[#111] to-black text-white scroll-m-15"
     >
       <div className="container mx-auto px-4 md:px-12">
         {/* Heading */}
