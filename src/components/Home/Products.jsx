@@ -1,4 +1,3 @@
-// File: Products.jsx
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -80,26 +79,7 @@ const productData = {
   ],
 
   "Protein Powder": [
-    {
-      "name": "Naughty Boy Birthday Cake",
-      "desc": "Sweet birthday cake flavored protein powder",
-      "img": "Naughty_Boy_Birthday_Cake-removebg-preview.png"
-    },
-    {
-      "name": "Naughty Boy Chocolate Orange",
-      "desc": "Rich chocolate with a zesty orange twist",
-      "img": "Naughty Boy Chocolate Orange.png"
-    },
-    {
-      "name": "NXT Nutrition Beef Isolate Lemon Lime",
-      "desc": "Beef isolate protein with lemon lime flavor",
-      "img": "NXT_Nutrition-Beef_Isolate-Lemon___Lime-removebg-preview.png"
-    },
-    {
-      "name": "NXT Nutrition Beef Isolate Mojito",
-      "desc": "Refreshing mojito flavored beef isolate protein",
-      "img": "NXT_Nutrition-Beef_Isolate-Mojito-removebg-preview.png"
-    },
+  
     {
       "name": "Per4m Protein Pancakes Chocolate Chip",
       "desc": "Protein-packed pancakes with chocolate chips",
@@ -174,7 +154,27 @@ const productData = {
       "name": "TBJP Cream Of Rice",
       "desc": "Classic cream of rice carbohydrate supplement",
       "img": "TBJP_-_Cream_Of_Rice-removebg-preview.png"
-    }
+    },
+      {
+      "name": "Naughty Boy Birthday Cake",
+      "desc": "Sweet birthday cake flavored protein powder",
+      "img": "Naughty_Boy_Birthday_Cake-removebg-preview.png"
+    },
+    {
+      "name": "Naughty Boy Chocolate Orange",
+      "desc": "Rich chocolate with a zesty orange twist",
+      "img": "Naughty Boy Chocolate Orange.png"
+    },
+    {
+      "name": "NXT Nutrition Beef Isolate Lemon Lime",
+      "desc": "Beef isolate protein with lemon lime flavor",
+      "img": "NXT_Nutrition-Beef_Isolate-Lemon___Lime-removebg-preview.png"
+    },
+    {
+      "name": "NXT Nutrition Beef Isolate Mojito",
+      "desc": "Refreshing mojito flavored beef isolate protein",
+      "img": "NXT_Nutrition-Beef_Isolate-Mojito-removebg-preview.png"
+    },
   ],
 
   "Protein Bars": [
@@ -381,8 +381,9 @@ const productData = {
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("Pre Workout");
   const [startIndex, setStartIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3); // 👈 responsive state
 
-  // Refs for animations
+  // Refs
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subRef = useRef(null);
@@ -390,144 +391,63 @@ export default function Products() {
   const gridRef = useRef(null);
   const leftBtnRef = useRef(null);
   const rightBtnRef = useRef(null);
-
-  // For direction and category-change effects
   const lastIndexRef = useRef(0);
   const lastCategoryRef = useRef(activeCategory);
 
-  // Data guards
+  // 🧠 Responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setItemsPerView(1);
+      else if (window.innerWidth < 1024) setItemsPerView(2);
+      else setItemsPerView(3);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Data & visible slice
   const items = useMemo(
     () => (productData?.[activeCategory] ? productData[activeCategory] : []),
     [activeCategory]
   );
   const visibleItems = useMemo(
-    () => items.slice(startIndex, startIndex + 3),
-    [items, startIndex]
+    () => items.slice(startIndex, startIndex + itemsPerView),
+    [items, startIndex, itemsPerView]
   );
   const categories = useMemo(() => Object.keys(productData || {}), []);
 
-  // Initial scroll reveals
-  useEffect(() => {
-    let ctx;
-    let mounted = true;
-
-    (async () => {
-      const gsapModule = await import("gsap");
-      const ScrollTriggerModule = await import("gsap/ScrollTrigger");
-      const gsap = gsapModule.default || gsapModule;
-      const ScrollTrigger =
-        ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
-      gsap.registerPlugin(ScrollTrigger);
-      if (!mounted) return;
-
-      ctx = gsap.context(() => {
-        // Initial states
-        gsap.set([titleRef.current, subRef.current], { autoAlpha: 0, y: 24 });
-        gsap.set([tabsRef.current, leftBtnRef.current, rightBtnRef.current], {
-          autoAlpha: 0,
-          y: 16,
-        });
-
-        // Title + subtitle
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-            defaults: { ease: "power3.out" },
-          })
-          .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.45 })
-          .to(subRef.current, { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.2")
-          .to(
-            [tabsRef.current, leftBtnRef.current, rightBtnRef.current],
-            { autoAlpha: 1, y: 0, duration: 0.4, stagger: 0.1 },
-            "-=0.1"
-          );
-
-        // Initial cards (stagger)
-        const cards = () =>
-          gridRef.current
-            ? Array.from(gridRef.current.querySelectorAll(":scope > div"))
-            : [];
-
-        gsap.set(cards(), {
-          autoAlpha: 0,
-          y: 28,
-          rotateX: 6,
-          transformOrigin: "50% 100%",
-        });
-
-        gsap.to(cards(), {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }, sectionRef);
-    })();
-
-    return () => {
-      mounted = false;
-      ctx?.revert();
-    };
-  }, []);
-
-  // Animate on paging or category change
+  // GSAP animations
   useEffect(() => {
     (async () => {
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default || gsapModule;
-
       const cards =
         gridRef.current &&
         Array.from(gridRef.current.querySelectorAll(":scope > div"));
-      if (!cards || !cards.length) return;
+      if (!cards?.length) return;
 
-      // Category changed → soft fade/raise + slight stagger
       if (lastCategoryRef.current !== activeCategory) {
         gsap.fromTo(
           cards,
           { autoAlpha: 0, y: 20 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.45,
-            ease: "power3.out",
-            stagger: 0.08,
-          }
+          { autoAlpha: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.08 }
         );
         lastCategoryRef.current = activeCategory;
         lastIndexRef.current = startIndex;
         return;
       }
 
-      // Paging → slide in from direction
-      const dir = Math.sign(startIndex - lastIndexRef.current) || 1; // right = 1, left = -1
+      const dir = Math.sign(startIndex - lastIndexRef.current) || 1;
       gsap.fromTo(
         cards,
         { x: 24 * dir, autoAlpha: 0 },
-        {
-          x: 0,
-          autoAlpha: 1,
-          duration: 0.35,
-          ease: "power3.out",
-          stagger: 0.06,
-        }
+        { x: 0, autoAlpha: 1, duration: 0.35, ease: "power3.out", stagger: 0.06 }
       );
       lastIndexRef.current = startIndex;
     })();
   }, [activeCategory, startIndex, visibleItems.length]);
 
-  // Micro press on arrows
   const pressButton = async (ref) => {
     const gsapModule = await import("gsap");
     const gsap = gsapModule.default || gsapModule;
@@ -548,9 +468,9 @@ export default function Products() {
   };
 
   const nextSlide = async () => {
-    if (startIndex + 3 >= items.length) return;
+    if (startIndex + itemsPerView >= items.length) return;
     await pressButton(rightBtnRef);
-    setStartIndex((prev) => Math.min(prev + 1, items.length - 3));
+    setStartIndex((prev) => Math.min(prev + 1, items.length - itemsPerView));
   };
 
   const handleCategory = (cat) => {
@@ -602,7 +522,16 @@ export default function Products() {
         </button>
 
         {/* Product Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full" ref={gridRef}>
+        <div
+          ref={gridRef}
+          className={`grid ${
+            itemsPerView === 1
+              ? "grid-cols-1"
+              : itemsPerView === 2
+              ? "sm:grid-cols-2"
+              : "lg:grid-cols-3"
+          } gap-6 max-w-6xl w-full`}
+        >
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
@@ -627,7 +556,7 @@ export default function Products() {
         <button
           ref={rightBtnRef}
           onClick={nextSlide}
-          disabled={startIndex + 3 >= items.length}
+          disabled={startIndex + itemsPerView >= items.length}
           className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400 disabled:opacity-40 disabled:cursor-not-allowed will-change-transform"
           aria-label="Next"
         >
@@ -637,7 +566,6 @@ export default function Products() {
     </section>
   );
 }
-
 
 
 

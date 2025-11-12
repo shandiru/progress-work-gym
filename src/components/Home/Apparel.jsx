@@ -50,7 +50,7 @@ export default function BeforeAfterGallery() {
     [activeCategory]
   );
 
-  // Adjust visible items by screen size
+  // 🧩 Set items per view (1 on mobile)
   const [itemsPerView, setItemsPerView] = useState(3);
   useEffect(() => {
     const updateItems = () => {
@@ -165,6 +165,7 @@ export default function BeforeAfterGallery() {
           <FaChevronLeft />
         </button>
 
+        {/* 🧱 Show only 1 item per slide on mobile */}
         <div
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl w-full"

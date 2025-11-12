@@ -51,7 +51,7 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div ref={(el) => (colsRef.current[0] = el)}>
           <img
-            src="/logo.avif"
+            src="/logo.png"
             alt="Progress Works Gym Logo"
             width={60}
             height={60}

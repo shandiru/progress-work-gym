@@ -5,7 +5,7 @@ const plans = [
   {
     title: '1 Day',
     price: 9,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Full Day Pass',
       'Unlimited Access',
@@ -15,7 +15,7 @@ const plans = [
   {
     title: '7 Day',
     price: 21,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Unlimited Week Pass',
       '7 Days Access',
@@ -25,7 +25,7 @@ const plans = [
   {
     title: 'Multi Pass',
     price: 65,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       '10 Visit Pass',
       'Valid for 4 Months',

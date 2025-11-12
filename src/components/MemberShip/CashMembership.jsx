@@ -5,7 +5,7 @@ const plans = [
   {
     title: '1 Month',
     price: 45,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Gym available during all hours',
@@ -16,7 +16,7 @@ const plans = [
   {
     title: '3 Month',
     price: 116,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Gym available during all hours',
@@ -27,7 +27,7 @@ const plans = [
   {
     title: '6 Month',
     price: 213,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Gym available during all hours',
@@ -38,7 +38,7 @@ const plans = [
   {
     title: '12 Month',
     price: 396,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Gym available during all hours',

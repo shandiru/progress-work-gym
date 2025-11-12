@@ -5,7 +5,7 @@ const plans = [
   {
     title: 'Senior Citizen',
     price: 31,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Available to seniors aged 65 years and above',
@@ -17,7 +17,7 @@ const plans = [
   {
     title: 'Off Peak',
     price: 33,
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
       'Valid Mon – Fri, 10:00am – 3:30pm',

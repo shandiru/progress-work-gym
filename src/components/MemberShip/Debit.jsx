@@ -5,7 +5,7 @@ const plans = [
   {
     title: '1 Month Rolling Membership',
     price: '39',
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'No Joining Fee',
       'Usage 7 Days a Week',
@@ -17,7 +17,7 @@ const plans = [
   {
     title: '1 Month Couples Membership',
     price: '68',
-    image: '/logo.avif',
+    image: '/logo.png',
     features: [
       'No Joining Fee',
       'Usage 7 Days a Week',

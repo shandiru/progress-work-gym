@@ -71,7 +71,7 @@ export default function Navbar() {
         {/* ✅ Logo */}
         <a href="/" className="flex items-center gap-3">
           <img
-            src="/logo.avif"
+            src="/logo.png"
             alt="Progress Works Gym"
             className="h-12 w-auto object-contain"
           />
