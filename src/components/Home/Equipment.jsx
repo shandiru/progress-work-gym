@@ -1,9 +1,8 @@
+
+
+
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-
-
 
 // Equipment data by category
 const equipmentData = {
@@ -412,6 +411,7 @@ const equipmentData = {
   ],
 };
 
+
 export default function Equipment() {
   const [activeCategory, setActiveCategory] = useState("Legs");
   const [startIndex, setStartIndex] = useState(0);
@@ -421,11 +421,9 @@ export default function Equipment() {
   const subRef = useRef(null);
   const gridRef = useRef(null);
 
+  const categories = Object.keys(equipmentData); // ["Legs", "Back", "Chest", "Arms", "Cardio"]
   const items = useMemo(() => equipmentData[activeCategory] || [], [activeCategory]);
   const visibleItems = useMemo(() => items.slice(startIndex, startIndex + 3), [items, startIndex]);
-
-  // 👉 Change to true later to show real content
-  const showRealContent = false;
 
   useEffect(() => {
     let ctx;
@@ -480,45 +478,44 @@ export default function Equipment() {
         </p>
       </div>
 
+      {/* Category Buttons */}
+      <div className="flex justify-center gap-4 mb-6 flex-wrap">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            className={`px-4 py-2 rounded-md font-semibold ${
+              activeCategory === cat
+                ? "bg-red-600 text-white"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+            }`}
+            onClick={() => setActiveCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
       <div
         ref={gridRef}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto"
       >
-        {showRealContent ? (
-          visibleItems.map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="border border-red-600 rounded-md overflow-hidden bg-[#0d1117] will-change-transform"
-            >
-              <img
-                src={item.img}
-                alt={item.name}
-                className="w-full h-92 object-cover bg-gray-800"
-              />
-              <div className="p-4">
-                <h4 className="font-bold text-white">{item.name}</h4>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
-              </div>
+        {visibleItems.map((item, index) => (
+          <div
+            key={`${item.name}-${index}`}
+            className="border border-red-600 rounded-md overflow-hidden bg-[#0d1117] will-change-transform"
+          >
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-full h-92 object-cover bg-gray-800"
+            />
+            <div className="p-4">
+              <h4 className="font-bold text-white">{item.name}</h4>
+              <p className="text-gray-400 text-sm">{item.desc}</p>
             </div>
-          ))
-        ) : (
-          <div className="col-span-full text-center py-24">
-            <h3 className="text-3xl font-bold text-white">
-               Coming <span className="text-red-600">Soon</span>
-            </h3>
-            <p className="text-gray-400 mt-3 text-lg">
-              We're preparing something amazing for you.
-            </p>
           </div>
-        )}
+        ))}
       </div>
     </section>
   );
 }
-
-
-
-
-
-
-
