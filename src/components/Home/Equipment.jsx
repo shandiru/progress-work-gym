@@ -145,13 +145,13 @@ export default function Equipment() {
               key={`${item.name}-${index}`}
               className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300"
             >
-              <div className="h-64 bg-white flex items-center justify-center overflow-hidden">
+              <div className="h-94 bg-black flex items-center justify-center overflow-hidden">
                 <img
                   src={item.img}
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full rounded-2xl p-3 object-contain transition-transform duration-300 hover:scale-105"
                 />
               </div>
               <div className="p-4 bg-[#0d1117]">
