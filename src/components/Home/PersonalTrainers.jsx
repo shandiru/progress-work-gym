@@ -78,6 +78,59 @@ const trainers = [
       ],
     },
   },
+  {
+    name: "Tom",
+    title: "Personal Trainer & Fitness Coach",
+    image: "/tom.jpg",
+    experience: "4+ Years Experience",
+    shortDesc:
+      "Hi, I’m Tom. I share my knowledge and experience to help you grow in confidence and progress on your fitness journey.",
+
+    fullDesc: {
+      intro:
+        "With my years of experience at Progress Works, I’ve had the pleasure of helping people with a wide range of fitness goals.",
+
+      paragraph:
+        "Whether you're new to the gym or levelling up, with the right guidance I’ll help you reach your fitness goals and build sustainable habits.",
+
+      stats: [
+        { label: "Years Experience", value: "4+" },
+        { label: "Sessions Delivered", value: "500+" },
+      ],
+
+      services: [
+        "1-1 Personal Training",
+        "Small Group Training",
+        "Nutritional Guidance & Meal Plans",
+      ],
+
+      contact: [
+        {
+          label: "Facebook",
+          value:
+            "https://www.facebook.com/share/1AQHzEzwG5/?mibextid=wwXIfr",
+          platform: "facebook",
+        },
+        {
+          label: "Instagram",
+          value:
+            "thomaslippitt",
+          platform: "instagram",
+        },
+        {
+          label: "Email",
+          value: "Lippo16@hotmail.co.uk",
+          platform: "email",
+        },
+        {
+          label: "Mobile",
+          value: "07463733501",
+          platform: "phone",
+        },
+      ],
+    },
+  },
+
 ];
 
 export default function TrainersSection() {
