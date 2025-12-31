@@ -78,43 +78,37 @@ const trainers = [
       ],
     },
   },
-  {
+ {
     name: "Tom",
     title: "Personal Trainer & Fitness Coach",
     image: "/tom.jpg",
     experience: "4+ Years Experience",
     shortDesc:
-      "Hi, I’m Tom. I share my knowledge and experience to help you grow in confidence and progress on your fitness journey.",
-
+      "Hi, I’m Tom. I am here to share my knowledge and experience to help you see progress and grow in confidence on your fitness journey. ",
     fullDesc: {
       intro:
-        "With my years of experience at Progress Works, I’ve had the pleasure of helping people with a wide range of fitness goals.",
-
+        "With my years of experience here at Progress works, I have had the pleasure in helping and offering my support to a range of different people. All with varied goals to get into the best physical and mental shape they have always desired.",
       paragraph:
-        "Whether you're new to the gym or levelling up, with the right guidance I’ll help you reach your fitness goals and build sustainable habits.",
-
+        "Whether you're new to the gym or levelling up, with the right guidance I'll help you reach your fitness goals.",
       stats: [
         { label: "Years Experience", value: "4+" },
         { label: "Sessions Delivered", value: "500+" },
       ],
-
       services: [
         "1-1 Personal Training",
         "Small Group Training",
         "Nutritional Guidance & Meal Plans",
       ],
-
       contact: [
         {
           label: "Facebook",
-          value:
-            "https://www.facebook.com/share/1AQHzEzwG5/?mibextid=wwXIfr",
+          value: "Thomas Lippitt PT",
           platform: "facebook",
+          url: "https://web.facebook.com/profile.php?id=61582789436962&mibextid=wwXIfr&rdid=dquj1rB0Ds0CAyDS&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1AQHzEzwG5%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#",
         },
         {
           label: "Instagram",
-          value:
-            "thomaslippitt",
+          value: "thomaslippitt",
           platform: "instagram",
         },
         {
@@ -130,7 +124,6 @@ const trainers = [
       ],
     },
   },
-
 ];
 
 export default function TrainersSection() {
@@ -278,25 +271,20 @@ export default function TrainersSection() {
   };
 
   const getUrl = (item) => {
-    if (item.platform === "website") {
-      return `https://${item.value.replace(/\s+/g, "")}`;
+    if (item.url) return item.url;
+
+    switch (item.platform) {
+      case "instagram":
+        return `https://instagram.com/${item.value}`;
+      case "facebook":
+        return `https://facebook.com/${item.value}`;
+      case "phone":
+        return `tel:${item.value}`;
+      case "email":
+        return `mailto:${item.value}`;
+      default:
+        return "#";
     }
-    if (item.platform === "instagram") {
-      return `https://instagram.com/${item.value}`;
-    }
-    if (item.platform === "facebook") {
-      return `https://facebook.com/search/top?q=${item.value}`;
-    }
-    if (item.platform === "youtube") {
-      return `https://youtube.com/results?search_query=${item.value}`;
-    }
-    if (item.platform === "phone") {
-      return `tel:${item.value}`;
-    }
-    if (item.platform === "email") {
-      return `mailto:${item.value}`;
-    }
-    return item.value;
   };
 
   return (
