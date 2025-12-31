@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import RealResultsSection from "./RealResultsSection"
 
 const trainers = [
   {
@@ -78,7 +79,7 @@ const trainers = [
       ],
     },
   },
- {
+  {
     name: "Tom",
     title: "Personal Trainer & Fitness Coach",
     image: "/tom.jpg",
@@ -420,7 +421,29 @@ export default function TrainersSection() {
                   </ul>
                 </div>
               )}
+
+
             </div>
+              {activeTrainer?.name === "Tom" && (
+                <RealResultsSection
+                  data={[
+                    {
+                      id: "tom-result-1",
+                      before: "/1.jpg",
+                      after: "/2.jpg",
+                      quote:
+                        "After a pec major tear led to weight gain, the focus was slow, sustainable fat loss. Over 8 months, 15kg was lost by staying consistent and patient.",
+                    },
+                    {
+                      id: "tom-result-2",
+                      before: "/3.jpg",
+                      after: "/4.jpg",
+                      quote:
+                        "Client regained strength and mobility post-injury with a structured progressive program, achieving personal bests within 6 months.",
+                    },
+                  ]}
+                />
+              )}
 
             <div className="flex gap-2 justify-end mt-6">
               <a
