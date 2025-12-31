@@ -92,7 +92,7 @@ export default function Equipment() {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-4" id="ourproducts">
+    <section className="bg-black text-white py-20 px-4" id="ourequipment">
       {/* Title */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">
