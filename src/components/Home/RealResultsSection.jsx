@@ -6,8 +6,8 @@ export default function RealResultsSection() {
     const resultsData = [
         {
             id: 'slide-1',
-            before: '/2.jpeg',
-            after: '/2.jpg',
+            before: '/2.jpg',
+            after: '/2.jpeg',
             quote:
                 'After a pec major tear led to weight gain, my client focused on slow, steady lifestyle changes—aiming for 1lb a week. Over 8 months, he lost 15kg, proving that sustainable fat loss and consistency matter more than quick fixes.',
             avatar: 'https://samantha.bslthemes.com/wp-content/uploads/2023/02/slider-na-2-140x140.png',
@@ -137,8 +137,8 @@ export default function RealResultsSection() {
                                     aria-label="Before and after comparison slider"
                                 >
                                     <img
-                                        src={item.before}
-                                        alt="before"
+                                        src={item.after}
+                                        alt="after"
                                         className="absolute inset-0 h-full w-full object-cover select-none"
                                         draggable="false"
                                     />
@@ -147,9 +147,9 @@ export default function RealResultsSection() {
                                         style={{ width: `${posMap[item.id]}%` }}
                                     >
                                         <img
-                                            src={item.after}
-                                            alt="after"
-                                            className="h-full w-full object-cover select-none"
+                                            src={item.before}
+                                            alt="before"
+                                            className="absolute inset-0 h-full w-full object-cover select-none"
                                             draggable="false"
                                             style={{ width: `${10000 / posMap[item.id]}%` }}
                                         />
