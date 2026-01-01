@@ -6,7 +6,7 @@ export default function RealResultsSection() {
     const resultsData = [
         {
             id: 'slide-1',
-            before: '/1.jpg',
+            before: '/2.jpeg',
             after: '/2.jpg',
             quote:
                 'After a pec major tear led to weight gain, my client focused on slow, steady lifestyle changes—aiming for 1lb a week. Over 8 months, he lost 15kg, proving that sustainable fat loss and consistency matter more than quick fixes.',
