@@ -99,6 +99,16 @@ WeightRoom: [
   { name: "Functional Training Station", desc: "Specialized equipment for functional fitness", img: "/Progress Work Equipment_Weight Room_WHATEVER THIS IS .JPG" },
   { name: "Yoga & Stretch Area", desc: "Dedicated space with mats for flexibility and cooldown", img: "/Progress Work Equipment_Weight Room_YOGA MATS_STRETCH AREA.JPG" },
 ],
+CoreRoom: [
+  { name: "Abdominal ISO Machine", desc: "Targeted abdominal isolation (Vintage station)", img: "/Progress Work Equipment_Core room_ABDOMINAL (VERY DAMAGED).JPG" },
+  { name: "Core Room Branding 2", desc: "Gym facility logo and signage", img: "/Progress Work Equipment_Core room_CORE ROOM LOGO 2.JPG" },
+  { name: "Core Room Branding", desc: "Gym facility logo and signage", img: "/Progress Work Equipment_Core room_CORE ROOM LOGO.JPG" },
+  { name: "Core Room Overview", desc: "Wide view of the core and floor exercise area", img: "/Progress Work Equipment_Core room_CORE ROOM OVERVIEW.JPG" },
+  { name: "Forward Ab Raises", desc: "Parallel bar station for knee and leg raises", img: "/Progress Work Equipment_Core room_FORWARD AB RAISES.JPG" },
+  { name: "Leg Raise Station (Alt)", desc: "Alternative angle for vertical leg raise equipment", img: "/Progress Work Equipment_Core room_LEG RAISE_AB RAISES ALT.JPG" },
+  { name: "Vertical Leg Raise", desc: "Power tower for lower ab and oblique development", img: "/Progress Work Equipment_Core room_LEG RAISE_AB RAISES.JPG" },
+  { name: "Multi-Core Station", desc: "Specialized equipment for core rotation and stability", img: "/Progress Work Equipment_Core room_NAME UNKNOWN.JPG" },
+],
 };
 
 /* ===================== COMPONENT ===================== */
