@@ -53,6 +53,28 @@ const equipmentData = {
   { name: "Step Machine", desc: "Compact stepping machine for glute activation", img: "/Progress Work Equipment_Cardio area_STEP MACHINE.JPG" },
   { name: "Standard Treadmill", desc: "Classic treadmill for walking or running", img: "/Progress Work Equipment_Cardio area_TREADMILL.JPG" },
 ],
+WeightRoom: [
+  { name: "Abdominal Machine", desc: "Targeted core isolation and abdominal strengthening", img: "/Progress Work Equipment_Weight Room_ABB UNKNOWN .JPG" },
+  { name: "Abdominal Crunch", desc: "Seated crunch machine for upper and lower abs", img: "/Progress Work Equipment_Weight Room_ABDOMINAL CRUNCH.JPG" },
+  { name: "Bicep Curl Machine", desc: "Isolated arm curls for bicep development", img: "/Progress Work Equipment_Weight Room_ARM CURLS.JPG" },
+  { name: "Tricep Extension", desc: "Overhead or seated extension for arm definition", img: "/Progress Work Equipment_Weight Room_ARM EXTENSION.JPG" },
+  { name: "Assisted Chin-Up", desc: "Counter-balanced pull-up and dip station", img: "/Progress Work Equipment_Weight Room_ASSIST CHIN.JPG" },
+  { name: "Barbell Weights", desc: "Olympic bars and plates for compound lifting", img: "/Progress Work Equipment_Weight Room_BAR WEIGHTS .JPG" },
+  { name: "Stability Balls", desc: "Yoga balls for core stability and balance work", img: "/Progress Work Equipment_Weight Room_BIG YOGA BALLS (CUT GUY OUT).JPG" },
+  { name: "Horizontal Dumbbell Rack", desc: "Full range of dumbbells with boxing area access", img: "/Progress Work Equipment_Weight Room_BOXING BAG_DUMBELLS HORIZONTAL.JPG" },
+  { name: "Vertical Dumbbell Rack", desc: "Space-saving dumbbell storage and heavy bag station", img: "/Progress Work Equipment_Weight Room_BOXING BAG_DUMBELLS VERITCAL.JPG" },
+  { name: "Calf Raise", desc: "Isolated lower leg training for calf muscle growth", img: "/Progress Work Equipment_Weight Room_CALF RAISES MAYBE_.JPG" },
+  { name: "Chest Press (Plate Loaded)", desc: "Heavy-duty chest press for pectoral strength", img: "/Progress Work Equipment_Weight Room_CHEST PRESS MAYBE_.JPG" },
+  { name: "Incline Chest Press", desc: "Targeted upper chest isolation machine", img: "/Progress Work Equipment_Weight Room_CHEST PRESS(I THINKO(.JPG" },
+  { name: "Standard Chest Press", desc: "Selectorized machine for general chest development", img: "/Progress Work Equipment_Weight Room_CHEST PRESS.JPG" },
+  { name: "Preacher Curl Machine", desc: "Fixed-angle arm curl for maximum bicep peak", img: "/Progress Work Equipment_Weight Room_CURLING MACHINE.JPG" },
+  { name: "Decline Bench Press", desc: "Bench for targeting the lower pectoral muscles", img: "/Progress Work Equipment_Weight Room_DECLINE BENCH PRESS.JPG" },
+  { name: "Flat Utility Bench", desc: "Versatile bench for dumbbell and barbell exercises", img: "/Progress Work Equipment_Weight Room_FLAT BENCH.JPG" },
+  { name: "Pec Fly / Rear Delt", desc: "Dual function machine for chest and back shoulders", img: "/Progress Work Equipment_Weight Room_FLY_REAR DELT.JPG" },
+  { name: "Guided Bench (Smith Machine)", desc: "Fixed-track barbell for safe heavy lifting", img: "/Progress Work Equipment_Weight Room_GUIDED BENCH.JPG" },
+  { name: "High Row", desc: "Vertical pulling machine for Lat and Upper Back strength", img: "/Progress Work Equipment_Weight Room_HIGH ROW(BACK).JPG" },
+  { name: "Incline Bench Press", desc: "Adjustable bench for upper body compound movements", img: "/Progress Work Equipment_Weight Room_INCLINE BENCH PRESS.JPG" },
+],
 };
 
 /* ===================== COMPONENT ===================== */
