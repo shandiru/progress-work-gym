@@ -42,10 +42,17 @@ const equipmentData = {
     { name: "Arms2", desc: "Chest fly & rear delt machine", img: "/A2.png" },
   ],
 
-  Cardio: [
-    { name: "Cardio1", desc: "Treadmill for endurance training", img: "/C1.png" },
-    { name: "Cardio2", desc: "Stair climber for intense cardio", img: "/C2.png" },
-  ],
+ Cardio: [
+  { name: "Stationary Bikes", desc: "Standard bikes for low-impact cardio", img: "/Progress Work Equipment_Cardio area_BIKES (CUT LADY)_.JPG" },
+  { name: "Incline Treadmill", desc: "Treadmill with adjustable incline for hill training", img: "/Progress Work Equipment_Cardio area_INCLINE TEADMILL.JPG" },
+  { name: "Treadmill Row", desc: "Standard high-performance treadmills", img: "/Progress Work Equipment_Cardio area_MORE TREADMILLS.JPG" },
+  { name: "Ski-Erg / Alternative Rower", desc: "Vertical rowing alternative for upper body cardio", img: "/Progress Work Equipment_Cardio area_ROWING ALTERNATIVE.JPG" },
+  { name: "Rowing Machine", desc: "Full-body seated rowing ergometer", img: "/Progress Work Equipment_Cardio area_ROWING MACHINE.JPG" },
+  { name: "Running Station", desc: "Additional treadmill and running equipment", img: "/Progress Work Equipment_Cardio area_RUNNING THINGS.JPG" },
+  { name: "Stair Masters", desc: "Stepmill for intense lower body and cardio", img: "/Progress Work Equipment_Cardio area_STAIR MASTERS.JPG" },
+  { name: "Step Machine", desc: "Compact stepping machine for glute activation", img: "/Progress Work Equipment_Cardio area_STEP MACHINE.JPG" },
+  { name: "Standard Treadmill", desc: "Classic treadmill for walking or running", img: "/Progress Work Equipment_Cardio area_TREADMILL.JPG" },
+],
 };
 
 /* ===================== COMPONENT ===================== */
