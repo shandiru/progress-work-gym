@@ -30,15 +30,16 @@ const equipmentData = {
  
 
  Cardio: [
-  { name: "Name 1", desc: "Description 1", img: "/Progress Work Equipment_Cardio area_BIKES (CUT LADY)_.JPG" },
-  { name: "Name 2", desc: "Description 2", img: "/Progress Work Equipment_Cardio area_INCLINE TEADMILL.JPG" },
-  { name: "Name 3", desc: "Description 3", img: "/Progress Work Equipment_Cardio area_MORE TREADMILLS.JPG" },
-  { name: "Name 4", desc: "Description 4", img: "/Progress Work Equipment_Cardio area_ROWING ALTERNATIVE.JPG" },
-  { name: "Name 5", desc: "Description 5", img: "/Progress Work Equipment_Cardio area_ROWING MACHINE.JPG" },
-  { name: "Name 6", desc: "Description 6", img: "/Progress Work Equipment_Cardio area_RUNNING THINGS.JPG" },
-  { name: "Name 7", desc: "Description 7", img: "/Progress Work Equipment_Cardio area_STAIR MASTERS.JPG" },
-  { name: "Name 8", desc: "Description 8", img: "/Progress Work Equipment_Cardio area_STEP MACHINE.JPG" },
-  { name: "Name 9", desc: "Description 9", img: "/Progress Work Equipment_Cardio area_TREADMILL.JPG" },
+  { name: "Name 1", desc: "Description 1", img: "/ProgressWorkEquipment_Cardioarea_BIKESCUTLADY_.JPG" },
+  { name: "Name 2", desc: "Description 2", img: "/ProgressWorkEquipment_Cardioarea_INCLINETEADMILL.JPG" },
+  { name: "Name 3", desc: "Description 3", img: "/ProgressWorkEquipment_Cardioarea_MORETREADMILLS.JPG" },
+  { name: "Name 4", desc: "Description 4", img: "/ProgressWorkEquipment_Cardioarea_ROWINGALTERNATIVE.JPG" },
+  { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Cardioarea_ROWINGMACHINE.JPG" },
+  { name: "Name 6", desc: "Description 6", img: "/ProgressWorkEquipment_Cardioarea_RUNNINGTHINGS.JPG" },
+  { name: "Name 7", desc: "Description 7", img: "/ProgressWorkEquipment_Cardioarea_STAIRMASTERS.JPG" },
+  { name: "Name 8", desc: "Description 8", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINE.JPG" },
+  { name: "Name 9", desc: "Description 9", img: "/ProgressWorkEquipment_Cardioarea_TREADMILL.JPG" },
+   { name: "Name 10", desc: "Description 10", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
 ],
 WeightRoom: [
   { name: "Name 1", desc: "Description 1", img: "/Progress Work Equipment_Weight Room_ABB UNKNOWN .JPG" },
