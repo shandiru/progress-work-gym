@@ -88,14 +88,14 @@ WeightRoom: [
   { name: "Name 44", desc: "Description 44", img: "/ProgressWorkEquipment_WeightRoom_YOGAMATS_STRETCHAREA.JPG" },
 ],
 CoreRoom: [
-  { name: "Name 1", desc: "Description 1", img: "/Progress Work Equipment_Core room_ABDOMINAL (VERY DAMAGED).JPG" },
-  { name: "Name 2", desc: "Description 2", img: "/Progress Work Equipment_Core room_CORE ROOM LOGO 2.JPG" },
-  { name: "Name 3", desc: "Description 3", img: "/Progress Work Equipment_Core room_CORE ROOM LOGO.JPG" },
-  { name: "Name 4", desc: "Description 4", img: "/Progress Work Equipment_Core room_CORE ROOM OVERVIEW.JPG" },
-  { name: "Name 5", desc: "Description 5", img: "/Progress Work Equipment_Core room_FORWARD AB RAISES.JPG" },
-  { name: "Name 6", desc: "Description 6", img: "/Progress Work Equipment_Core room_LEG RAISE_AB RAISES ALT.JPG" },
-  { name: "Name 7", desc: "Description 7", img: "/Progress Work Equipment_Core room_LEG RAISE_AB RAISES.JPG" },
-  { name: "Name 8", desc: "Description 8", img: "/Progress Work Equipment_Core room_NAME UNKNOWN.JPG" },
+  { name: "Name 1", desc: "Description 1", img: "/ProgressWorkEquipment_Coreroom_ABDOMINALVERYDAMAGED.JPG" },
+  { name: "Name 2", desc: "Description 2", img: "/ProgressWorkEquipment_Coreroom_COREROOMLOGO.JPG" },
+  { name: "Name 3", desc: "Description 3", img: "/ProgressWorkEquipment_Coreroom_COREROOMLOGO2.JPG" },
+  { name: "Name 4", desc: "Description 4", img: "/ProgressWorkEquipment_Coreroom_COREROOMOVERVIEW.JPG" },
+  { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Coreroom_FORWARDABRAISES.JPG" },
+  { name: "Name 6", desc: "Description 6", img: "/ProgressWorkEquipment_Coreroom_LEGRAISE_ABRAISES.JPG" },
+  { name: "Name 7", desc: "Description 7", img: "/ProgressWorkEquipment_Coreroom_LEGRAISE_ABRAISESALT.JPG" },
+  { name: "Name 8", desc: "Description 8", img: "/ProgressWorkEquipment_Coreroom_NAMEUNKNOWN.JPG" },
 ],
 };
 
