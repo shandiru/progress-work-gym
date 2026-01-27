@@ -27,11 +27,12 @@ function Home() {
     <>
       <Header />
       <About />
+       <Equipment />
       <TrainersSection />
       <MembershipPlans />
       <SpecialOffers />
       <Partners />
-      <Equipment />
+     
       <Products />
       <FoodProducts />
       <Apparel />
