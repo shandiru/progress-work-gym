@@ -28,7 +28,7 @@ function Home() {
       <Header />
       <About />
        <Equipment />
-      <TrainersSection />
+      
       <MembershipPlans />
       <SpecialOffers />
       <Partners />
@@ -38,6 +38,7 @@ function Home() {
       <Apparel />
       <InHousePartners />
       <ChampSection />
+      <TrainersSection />
       <WhyChooseUsSection />
       <Review />
       <FaqSection />
