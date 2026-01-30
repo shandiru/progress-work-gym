@@ -26,16 +26,16 @@ export const equipmentData = {
 
 
     Cardio: [
-        { name: "Name 1", desc: "Description 1", img: "/ProgressWorkEquipment_Cardioarea_BIKESCUTLADY_.JPG" },
-        { name: "Name 2", desc: "Description 2", img: "/ProgressWorkEquipment_Cardioarea_INCLINETEADMILL.JPG" },
-        { name: "Name 3", desc: "Description 3", img: "/ProgressWorkEquipment_Cardioarea_MORETREADMILLS.JPG" },
-        { name: "Name 4", desc: "Description 4", img: "/ProgressWorkEquipment_Cardioarea_ROWINGALTERNATIVE.JPG" },
-        { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Cardioarea_ROWINGMACHINE.JPG" },
-        { name: "Name 6", desc: "Description 6", img: "/ProgressWorkEquipment_Cardioarea_RUNNINGTHINGS.JPG" },
-        { name: "Name 7", desc: "Description 7", img: "/ProgressWorkEquipment_Cardioarea_STAIRMASTERS.JPG" },
-        { name: "Name 8", desc: "Description 8", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINE.JPG" },
-        { name: "Name 9", desc: "Description 9", img: "/ProgressWorkEquipment_Cardioarea_TREADMILL.JPG" },
-        { name: "Name 10", desc: "Description 10", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
+        { name: "Cybex Upright Bike", desc: "Cybex, Exercise Bike", img: "/ProgressWorkEquipment_Cardioarea_BIKESCUTLADY_.JPG" },
+        { name: "Half Human, None Motorised Curved Treadmill", desc: "Half Human, Treadmill, Perfect For Sprint Intervals", img: "/ProgressWorkEquipment_Cardioarea_INCLINETEADMILL.JPG" },
+        { name: "Life Fitness Aspire Treadmill", desc: "Life Fitness, Motorised Treadmill ", img: "/ProgressWorkEquipment_Cardioarea_MORETREADMILLS.JPG" },
+        { name: "Concept 2 Rower", desc: "Concept 2, Rowing Machine", img: "/ProgressWorkEquipment_Cardioarea_ROWINGALTERNATIVE.JPG" },
+     //   { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Cardioarea_ROWINGMACHINE.JPG" },
+        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer", img: "/ProgressWorkEquipment_Cardioarea_RUNNINGTHINGS.JPG" },
+        { name: "Stairmaster", desc: "StairMaster", img: "/ProgressWorkEquipment_Cardioarea_STAIRMASTERS.JPG" },
+        { name: "Matrix Stepper", desc: "Matrix, Endurance Stepper", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINE.JPG" },
+      //  { name: "Name 9", desc: "Description 9", img: "/ProgressWorkEquipment_Cardioarea_TREADMILL.JPG" },
+        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer / Handles ", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
     ],
 
 
