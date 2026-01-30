@@ -20,17 +20,19 @@ export const equipmentData = {
         { "name": "Cybex Glute KickBack", "desc": "Cybex, Max Load - 100kg (Pin Loaded)", "img": "leg15.jpg" },
         { "name": "Gymwarehouse Laying Leg Curl", "desc": "Gymwarehouse, Max Load ", "img": "leg16.jpg" },
         //    { "name": "Name 17", "desc": "Description 17", "img": "leg17.jpg" },
-        { "name": "Cybex Standing Hamstring Curl", "desc": "Cybex, Plate Loaded", "img": "leg18.jpg" },
-        { "name": "HACKSQUAD", "desc": "", "img": "HACKSQUAD.JPG.jpeg" },
-        { "name": "PRONELEGCURL", "desc": "", "img": "PRONELEGCURL.JPG.jpeg" },
-        { "name": "SEATEDCALF", "desc": "", "img": "SEATEDCALF.JPG.jpeg" },
-        { "name": "SEATEDLEGCURL", "desc": "", "img": "SEATEDLEGCURL.JPG.jpeg" },
+        
+            { "name": "Cybex Standing Hamstring Curl", "desc": "Cybex, Plate Loaded", "img": "leg18.jpg" },
+            { "name": "Hack Squat", "desc": "", "img": "HACKSQUAD.JPG.jpeg" },
+            { "name": "Prone Leg Curl", "desc": "", "img": "PRONELEGCURL.JPG.jpeg" },
+            { "name": "Seated Calf", "desc": "", "img": "SEATEDCALF.JPG.jpeg" },
+            { "name": "Seated Leg Curl", "desc": "", "img": "SEATEDLEGCURL.JPG.jpeg" },
+            { "name": "Squat Move", "desc": "", "img": "SQUATMOVE.JPG.jpeg" },
+            { "name": "Hip Abduction Adduction", "desc": "", "img": "HIPABDUCTIONADDUCTION.JPG.jpeg" },
+            { "name": "Leg Curl", "desc": "", "img": "LEGCURL.JPG.jpeg" },
+            { "name": "Leg Extensions", "desc": "", "img": "LEGEXTENSIONS.JPG.jpeg" },
+            { "name": "Leg Press", "desc": "", "img": "LEGPRESS.JPG.jpeg" }
+        
 
-        { "name": "SQUATMOVE", "desc": "", "img": "SQUATMOVE.JPG.jpeg" },
-        { "name": "HIPABDUCTIONADDUCTION", "desc": "", "img": "HIPABDUCTIONADDUCTION.JPG.jpeg" },
-        { "name": "LEGCURL", "desc": "", "img": "LEGCURL.JPG.jpeg" },
-        { "name": "LEGEXTENSIONS", "desc": "", "img": "LEGEXTENSIONS.JPG.jpeg" },
-        { "name": "LEGPRESS", "desc": "", "img": "LEGPRESS.JPG.jpeg" },
 
 
     ],
