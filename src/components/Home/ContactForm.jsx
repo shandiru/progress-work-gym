@@ -72,7 +72,7 @@ export default function ContactForm() {
         (response) => {
           // Show success toast
           toast.success("Message sent successfully!");
-          console.log("Success:", response);
+         
 
           // Clear form after successful submission
           e.target.reset(); // Reset the form
