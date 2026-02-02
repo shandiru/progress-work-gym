@@ -93,12 +93,12 @@ export const equipmentData = {
         { name: "Cybex Eagle Row", desc: "Cybex, Max Load - 128.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_ROW2.JPG" },
         { name: "Cybex Dual Handle Seated Row", desc: "Cybex Dual Handle Seated Row", img: "/ProgressWorkEquipment_WeightRoom_ROWING.JPG" },
         { name: "Dumbell Rack", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/ProgressWorkEquipment_WeightRoom_STANDARDWEIGHTDIFFERENTANGLE.JPG" },
-        { name: "Name 39", desc: "Description 39", img: "/ProgressWorkEquipment_WeightRoom_STANDARDWEIGHTS.JPG" },
-        { name: "Dumbell Rack Different angle", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg", img: "/ProgressWorkEquipment_WeightRoom_STANDINGMULTIFLIGHT.JPG" },
-        { name: "Panatta Standing Multi Flight", desc: "Panatta, Max Weight Load - 120kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_TBARROWBACK.JPG" },
-        { name: "Panatta T-Bar Row", desc: "Panatta, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_WEIGHTRACKSMALL.JPG" },
-        { name: "Jordan Dumbells (Silver)", desc: "Jordan, Dumbells, Weight Range - 1kg - 10kg", img: "/ProgressWorkEquipment_WeightRoom_WHATEVERTHISIS.JPG" },
-        { name: "Watson Dumbell Assist", desc: "Watson, Dumbell Assist", img: "/ProgressWorkEquipment_WeightRoom_YOGAMATS_STRETCHAREA.JPG" },
+        { name: "Dumbell Rack Different angle ", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/ProgressWorkEquipment_WeightRoom_STANDARDWEIGHTS.JPG" },
+        { name: "Panatta Standing Multi Flight", desc: "Panatta, Max Weight Load - 120kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_STANDINGMULTIFLIGHT.JPG" },
+        { name: "Panatta T-Bar Row", desc: "Panatta, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_TBARROWBACK.JPG" },
+        { name: "Jordan Dumbells (Silver)", desc: "Jordan, Dumbells, Weight Range - 1kg - 10kg", img: "/ProgressWorkEquipment_WeightRoom_WEIGHTRACKSMALL.JPG" },
+        { name: "Watson Dumbell Assist", desc: "Watson, Dumbell Assist", img: "/ProgressWorkEquipment_WeightRoom_WHATEVERTHISIS.JPG" },
+        { name: "Uttam Matts", desc: "Uttam, Matted Area", img: "/ProgressWorkEquipment_WeightRoom_YOGAMATS_STRETCHAREA.JPG" },
     ],
 
 
