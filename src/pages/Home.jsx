@@ -26,23 +26,24 @@ function Home() {
   return (
     <>
       <Header />
+       <SpecialOffers />
+       <MembershipPlans />
+       <Partners />
       <About />
        <Equipment />
-      
-      <MembershipPlans />
-      <SpecialOffers />
-      <Partners />
-     
+       <Contact />
+      <Apparel />
+      <TrainersSection />
       <Products />
       <FoodProducts />
-      <Apparel />
+      
       <InHousePartners />
       <ChampSection />
-      <TrainersSection />
+     
       <WhyChooseUsSection />
       <Review />
       <FaqSection />
-      <Contact />
+     
       <ContactForm />
     </>
   )
