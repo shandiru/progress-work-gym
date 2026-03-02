@@ -78,7 +78,7 @@ const TermsConditions = () => {
                       </p>
                       <div className="text-white">
                           <p><strong>Progress Works Gym</strong></p>
-                          {/* <p>Email: <a href="mailto:smashedashby@gmail.com" className="text-yellow-500 hover:underline">smashedashby@gmail.com</a></p> */}
+                       
                           <p>Phone: 0116 287 7667</p>
                           <p>Address: 132 Station Rd, Glenfield, Leicester LE3 8BR</p>
                       </div>
