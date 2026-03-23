@@ -6,10 +6,11 @@ const plans = [
     title: "Pay As You Go",
     slug: "cash-membership",
     options: [
-      { label: "1 Month", price: "£45" },
-      { label: "3 Month", price: "£116" },
-      { label: "6 Month", price: "£213" },
-      { label: "12 Month", price: "£396" },
+       { label: "Weekly", price: "£22" },
+      { label: "1 Month", price: "£46" },
+      { label: "3 Month", price: "£119" },
+      { label: "6 Month", price: "£219" },
+      { label: "12 Month", price: "£408" },
     ],
   },
   {

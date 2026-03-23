@@ -2,9 +2,20 @@
 import React from 'react'
 
 const plans = [
+   {
+    title: '1 week',
+    price: 22,
+    image: '/logo.png',
+    features: [
+      'Pay As You Go (No Contract)',
+      'Gym available during all hours',
+      'Unlimited usage',
+      'Free induction',
+    ],
+  },
   {
     title: '1 Month',
-    price: 45,
+    price: 46,
     image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
@@ -15,7 +26,7 @@ const plans = [
   },
   {
     title: '3 Month',
-    price: 116,
+    price: 119,
     image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
@@ -26,7 +37,7 @@ const plans = [
   },
   {
     title: '6 Month',
-    price: 213,
+    price: 219,
     image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
@@ -37,7 +48,7 @@ const plans = [
   },
   {
     title: '12 Month',
-    price: 396,
+    price: 408,
     image: '/logo.png',
     features: [
       'Pay As You Go (No Contract)',
