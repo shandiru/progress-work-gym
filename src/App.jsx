@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import TermsConditions from "./components/Term";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import GDPRBanner from "../src/components/GDPRBanner"
+import PartnerMembership from "./pages/PartnerMembershippage"
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/plans-pricing" element={<Debit />} />
         <Route path="/cash-membership" element={<CashMembership />} />
+        <Route path="/partner-memmbership" element={<PartnerMembership />} />
         <Route path="/special-memberships" element={<SpecialMemberships />} />
         <Route path="/day-passes" element={<DayPasses />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />

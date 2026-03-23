@@ -38,6 +38,20 @@ const plans = [
       { label: "Multi Pass", price: "£65" },
     ],
   },
+  {
+    title: "Partner Memberships",
+    slug: "partner-memmbership",
+    options: [
+      { label: "1 Month", price: "£82" },
+      { label: "3 Month", price: "£219" },
+      { label: "6 Month", price: "£408" },
+       { label: "12 Month", price: "£747" },
+       { label: "OAP", price: "£32" },
+       { label: "Off Peak", price: "£34" },
+    ],
+  },
+  
+
 ];
 
 export default function MembershipPlans() {
