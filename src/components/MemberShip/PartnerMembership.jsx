@@ -7,7 +7,7 @@ const plans = [
     price: 82,
     image: '/logo.png',
     features: [
-      'Access for 2 Partners',
+      'Couples From Same Household',
       'Flexible Pay As You Go',
       'Full Gym Access (All Hours)',
       'Free Induction for Both',
@@ -18,7 +18,7 @@ const plans = [
     price: 219,
     image: '/logo.png',
     features: [
-      'Access for 2 Partners',
+      'Couples From Same Household',
       'Flexible Pay As You Go',
       'Full Gym Access (All Hours)',
       'Free Induction for Both',
@@ -29,7 +29,7 @@ const plans = [
     price: 408,
     image: '/logo.png',
     features: [
-      'Access for 2 Partners',
+      'Couples From Same Household',
       'Flexible Pay As You Go',
       'Full Gym Access (All Hours)',
       'Free Induction for Both',
@@ -40,34 +40,13 @@ const plans = [
     price: 747,
     image: '/logo.png',
     features: [
-      'Access for 2 Partners',
+      'Couples From Same Household',
       'Flexible Pay As You Go',
       'Full Gym Access (All Hours)',
       'Free Induction for Both',
     ],
-  },
-  {
-    title: 'OAP',
-    price: 32,
-    image: '/logo.png',
-    features: [
-      'Partner Friendly Plan',
-      'Off-Peak Shared Access',
-      'Light Gym Usage',
-      'Free Induction Included',
-    ],
-  },
-   {
-    title: 'Off Peak',
-    price: 34,
-    image: '/logo.png',
-    features: [
-      'Partner Access (Off Peak)',
-      'Shared Gym Usage',
-      'Flexible Timing Access',
-      'Free Induction Included',
-    ],
-  },
+  }
+  
 ]
 
 export default function PricingPlansSection() {
