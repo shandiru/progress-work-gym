@@ -14,7 +14,7 @@ const plans = [
   },
   {
     title: '7 Day',
-    price: 21,
+    price: 22,
     image: '/logo.png',
     features: [
       'Unlimited Week Pass',

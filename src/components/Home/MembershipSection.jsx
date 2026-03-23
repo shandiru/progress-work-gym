@@ -6,7 +6,7 @@ const plans = [
     title: "Pay As You Go",
     slug: "cash-membership",
     options: [
-      { label: "Weekly", price: "£22" },
+   
       { label: "1 Month", price: "£46" },
       { label: "3 Month", price: "£119" },
       { label: "6 Month", price: "£219" },
@@ -34,7 +34,7 @@ const plans = [
     slug: "day-passes",
     options: [
       { label: "1 Day", price: "£9" },
-      { label: "7 Day", price: "£21" },
+      { label: "7 Day", price: "£22" },
       { label: "Multi Pass", price: "£65" },
     ],
   },

@@ -2,17 +2,7 @@
 import React from 'react'
 
 const plans = [
-   {
-    title: '1 week',
-    price: 22,
-    image: '/logo.png',
-    features: [
-      'Pay As You Go (No Contract)',
-      'Gym available during all hours',
-      'Unlimited usage',
-      'Free induction',
-    ],
-  },
+   
   {
     title: '1 Month',
     price: 46,
