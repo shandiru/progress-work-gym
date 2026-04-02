@@ -26,25 +26,25 @@ function Home() {
   return (
     <>
       <Header />
-       <SpecialOffers />
-       <MembershipPlans />
-       <Partners />
+      <SpecialOffers />
+      <MembershipPlans />
       <About />
-       <Equipment />
-       <Contact />
+      <Equipment />
+      <Contact />
       <Apparel />
       <TrainersSection />
       <Products />
       <FoodProducts />
-      
+
       <InHousePartners />
       <ChampSection />
-     
+
       <WhyChooseUsSection />
       <Review />
       <FaqSection />
-     
+
       <ContactForm />
+      <Partners />
     </>
   )
 }

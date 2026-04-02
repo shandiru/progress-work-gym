@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import {equipmentData} from "../../../Data/EquipmentData/equipmentData"
 /* ===================== DATA ===================== */

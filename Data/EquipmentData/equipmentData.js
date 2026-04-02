@@ -1,59 +1,4 @@
 export const equipmentData = {
-
-
-
-    Legs: [
-        { "name": "Cybex Half Rack / DeadLift Platform", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg1.jpg" },
-        { "name": "Panatta Half Rack", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg2.png" },
-        { "name": "Cybex Power Rack", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg3.jpg" },
-        { "name": "Gymleco Hip Press", "desc": "Gymleco, Plate Loaded", "img": "leg4.jpg" },
-        //  { "name": "Name 5", "desc": "Description 5", "img": "leg5.jpg" },
-        { "name": "ISO Lever Hack Squat", "desc": "Plate Loaded", "img": "leg6.jpg" },
-        { "name": "Panatta Leg Press", "desc": "Panatta, Plate Loaded", "img": "leg7.jpg" },
-        { "name": "Panatta Vertical Leg Press", "desc": "Panatta, Plate Loaded", "img": "leg8.jpg" },
-        { "name": "Cutler Pendulum Squat", "desc": "Cutler, Plate Loaded", "img": "leg9.jpg" },
-        //    { "name": "Name 10", "desc": "Description 10", "img": "leg10.jpg" },
-        { "name": "Cybex Plate Loaded Leg Press", "desc": "Cybex, Plate loaded", "img": "leg11.jpg" },
-        { "name": "Cybex Standing Calf Raise", "desc": "Cybex, Max Load - 182.3kg (Pin Loaded)", "img": "leg12.jpg" },
-        { "name": "Cybex Seated Leg Curl", "desc": "Cybex, Max Load - 92.3kg (Pin loaded)", "img": "leg13.jpg" },
-        { "name": "Cybex Seated Leg Curl", "desc": "Cybex, Plate Loaded", "img": "leg14.jpg" },
-        { "name": "Cybex Glute KickBack", "desc": "Cybex, Max Load - 100kg (Pin Loaded)", "img": "leg15.jpg" },
-        { "name": "Gymwarehouse Laying Leg Curl", "desc": "Gymwarehouse, Max Load ", "img": "leg16.jpg" },
-        //    { "name": "Name 17", "desc": "Description 17", "img": "leg17.jpg" },
-        
-            { "name": "Cybex Standing Hamstring Curl", "desc": "Cybex, Plate Loaded", "img": "leg18.jpg" },
-            { "name": "Hack Squat", "desc": "", "img": "HACKSQUAD.JPG.jpeg" },
-            { "name": "Prone Leg Curl", "desc": "", "img": "PRONELEGCURL.JPG.jpeg" },
-            { "name": "Seated Calf", "desc": "", "img": "SEATEDCALF.JPG.jpeg" },
-            { "name": "Seated Leg Curl", "desc": "", "img": "SEATEDLEGCURL.JPG.jpeg" },
-            { "name": "Squat Move", "desc": "", "img": "SQUATMOVE.JPG.jpeg" },
-            { "name": "Hip Abduction Adduction", "desc": "", "img": "HIPABDUCTIONADDUCTION.JPG.jpeg" },
-            { "name": "Leg Curl", "desc": "", "img": "LEGCURL.JPG.jpeg" },
-            { "name": "Leg Extensions", "desc": "", "img": "LEGEXTENSIONS.JPG.jpeg" },
-            { "name": "Leg Press", "desc": "", "img": "LEGPRESS.JPG.jpeg" }
-        
-
-
-
-    ],
-
-
-
-    Cardio: [
-        { name: "Cybex Upright Bike", desc: "Cybex, Exercise Bike", img: "/ProgressWorkEquipment_Cardioarea_BIKESCUTLADY_.JPG" },
-        { name: "Half Human, None Motorised Curved Treadmill", desc: "Half Human, Treadmill, Perfect For Sprint Intervals", img: "/ProgressWorkEquipment_Cardioarea_INCLINETEADMILL.JPG" },
-        { name: "Life Fitness Aspire Treadmill", desc: "Life Fitness, Motorised Treadmill ", img: "/ProgressWorkEquipment_Cardioarea_MORETREADMILLS.JPG" },
-        { name: "Concept 2 Rower", desc: "Concept 2, Rowing Machine", img: "/ProgressWorkEquipment_Cardioarea_ROWINGALTERNATIVE.JPG" },
-        //   { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Cardioarea_ROWINGMACHINE.JPG" },
-        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer", img: "/ProgressWorkEquipment_Cardioarea_RUNNINGTHINGS.JPG" },
-        { name: "Stairmaster", desc: "StairMaster", img: "/ProgressWorkEquipment_Cardioarea_STAIRMASTERS.JPG" },
-        { name: "Matrix Stepper", desc: "Matrix, Endurance Stepper", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINE.JPG" },
-        //  { name: "Name 9", desc: "Description 9", img: "/ProgressWorkEquipment_Cardioarea_TREADMILL.JPG" },
-        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer / Handles ", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
-    ],
-
-
-
     WeightRoom: [
         { name: "Cybex Glute & Hamstring", desc: "Cybex, Glute and Hamstring Machine, Multi Purpose", img: "/ProgressWorkEquipment_WeightRoom_ABBUNKNOWN.JPG" },
         { name: "Panatta Ab Crunch Machine", desc: "Panatta, Ab Crunch, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_ABDOMINALCRUNCH.JPG" },
@@ -100,6 +45,61 @@ export const equipmentData = {
         { name: "Watson Dumbell Assist", desc: "Watson, Dumbell Assist", img: "/ProgressWorkEquipment_WeightRoom_WHATEVERTHISIS.JPG" },
         { name: "Uttam Matts", desc: "Uttam, Matted Area", img: "/ProgressWorkEquipment_WeightRoom_YOGAMATS_STRETCHAREA.JPG" },
     ],
+
+
+
+    Legs: [
+        { "name": "Cybex Half Rack / DeadLift Platform", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg1.jpeg" },
+        { "name": "Panatta Half Rack", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg2.jpeg" },
+        { "name": "Cybex Power Rack", "desc": "Cybex, For Barbell Compound Lifts", "img": "leg3.jpg" },
+        { "name": "Gymleco Hip Press", "desc": "Gymleco, Plate Loaded", "img": "leg4.jpg" },
+        //  { "name": "Name 5", "desc": "Description 5", "img": "leg5.jpg" },
+        { "name": "ISO Lever Hack Squat", "desc": "Plate Loaded", "img": "leg6.jpg" },
+        { "name": "Panatta Leg Press", "desc": "Panatta, Plate Loaded", "img": "leg7.jpg" },
+        { "name": "Panatta Vertical Leg Press", "desc": "Panatta, Plate Loaded", "img": "leg8.jpg" },
+        { "name": "Cutler Pendulum Squat", "desc": "Cutler, Plate Loaded", "img": "leg9.jpg" },
+        //    { "name": "Name 10", "desc": "Description 10", "img": "leg10.jpg" },
+        { "name": "Cybex Plate Loaded Leg Press", "desc": "Cybex, Plate loaded", "img": "leg11.jpg" },
+        { "name": "Cybex Standing Calf Raise", "desc": "Cybex, Max Load - 182.3kg (Pin Loaded)", "img": "leg12.jpg" },
+        { "name": "Cybex Seated Leg Curl", "desc": "Cybex, Max Load - 92.3kg (Pin loaded)", "img": "leg13.jpeg" },
+        { "name": "Cybex Seated Leg Curl", "desc": "Cybex, Plate Loaded", "img": "leg14.jpg" },
+        { "name": "Cybex Glute KickBack", "desc": "Cybex, Max Load - 100kg (Pin Loaded)", "img": "leg15.jpg" },
+        { "name": "Gymwarehouse Laying Leg Curl", "desc": "Gymwarehouse, Max Load ", "img": "leg16.jpg" },
+        //    { "name": "Name 17", "desc": "Description 17", "img": "leg17.jpg" },
+
+        { "name": "Cybex Standing Hamstring Curl", "desc": "Cybex, Plate Loaded", "img": "leg18.jpg" },
+        { "name": "Hack Squat", "desc": "", "img": "HACKSQUAD.JPG.jpeg" },
+        { "name": "Prone Leg Curl", "desc": "", "img": "PRONELEGCURL.JPG.jpeg" },
+        { "name": "Seated Calf", "desc": "", "img": "SEATEDCALF.JPG.jpeg" },
+        { "name": "Seated Leg Curl", "desc": "", "img": "SEATEDLEGCURL.JPG.jpeg" },
+        { "name": "Squat Move", "desc": "", "img": "SQUATMOVE.JPG.jpeg" },
+        { "name": "Hip Abduction Adduction", "desc": "", "img": "HIPABDUCTIONADDUCTION.JPG.jpeg" },
+        { "name": "Leg Curl", "desc": "", "img": "LEGCURL.JPG.jpeg" },
+        { "name": "Leg Extensions", "desc": "", "img": "LEGEXTENSIONS.JPG.jpeg" },
+        { "name": "Leg Press", "desc": "", "img": "LEGPRESS.JPG.jpeg" }
+
+
+
+
+    ],
+
+
+
+    Cardio: [
+        { name: "Cybex Upright Bike", desc: "Cybex, Exercise Bike", img: "/ProgressWorkEquipment_Cardioarea_BIKESCUTLADY_.JPG" },
+        { name: "Half Human, None Motorised Curved Treadmill", desc: "Half Human, Treadmill, Perfect For Sprint Intervals", img: "/ProgressWorkEquipment_Cardioarea_INCLINETEADMILL.JPG" },
+        { name: "Life Fitness Aspire Treadmill", desc: "Life Fitness, Motorised Treadmill ", img: "/ProgressWorkEquipment_Cardioarea_MORETREADMILLS.JPG" },
+        { name: "Concept 2 Rower", desc: "Concept 2, Rowing Machine", img: "/ProgressWorkEquipment_Cardioarea_ROWINGALTERNATIVE.JPG" },
+        //   { name: "Name 5", desc: "Description 5", img: "/ProgressWorkEquipment_Cardioarea_ROWINGMACHINE.JPG" },
+        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer", img: "/ProgressWorkEquipment_Cardioarea_RUNNINGTHINGS.JPG" },
+        { name: "Stairmaster", desc: "StairMaster", img: "/ProgressWorkEquipment_Cardioarea_STAIRMASTERS.JPG" },
+        { name: "Matrix Stepper", desc: "Matrix, Endurance Stepper", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINE.JPG" },
+        //  { name: "Name 9", desc: "Description 9", img: "/ProgressWorkEquipment_Cardioarea_TREADMILL.JPG" },
+        { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer / Handles ", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
+    ],
+
+
+
 
 
 
