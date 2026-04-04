@@ -30,15 +30,15 @@ export const equipmentData = {
         { name: "Hammer Strength ISO Lateral Row", desc: "Hammer Strength, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_LATROWINDUVIDUAL.JPG" },
         { name: "Medicine/Slam balls", desc: "Medicine/Slam balls", img: "/ProgressWorkEquipment_WeightRoom_MEDICINEBALLS.JPG" },
         { name: "Gymleco T-Bar Row", desc: "Gymleco, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_NAMEUNKNOWN.JPG" },
-        { name: "Cybex Overhead Press", desc: "Cybex, Max Load - 92.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_OVERHEADPRESS.JPG" },
+        { name: "Cybex Overhead Press", desc: "Cybex, Max Load - 92.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_OVERHEADPRESS.jpeg" },
         { name: "Cybex Plate Loaded Overhead Press ", desc: "Cybex, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_OVERHEADPRESS2.JPG" },
         { name: "Cybex Pull Down", desc: "Cybex, Max Load - 137.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_PULLDOWN.JPG" },
         { name: "Panatta Pull Over Machine", desc: "Panatta, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_PULLOVERMACHINGBACK.JPG" },
         //    { name: "Name 35", desc: "Description 35", img: "/ProgressWorkEquipment_WeightRoom_PULLOVERMACHINGFRONT.JPG" },
-        { name: "Cybex Eagle Row", desc: "Cybex, Max Load - 128.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_ROW2.JPG" },
-        { name: "Cybex Dual Handle Seated Row", desc: "Cybex Dual Handle Seated Row", img: "/ProgressWorkEquipment_WeightRoom_ROWING.JPG" },
-        { name: "Dumbell Rack", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/ProgressWorkEquipment_WeightRoom_STANDARDWEIGHTDIFFERENTANGLE.JPG" },
-        { name: "Dumbell Rack Different angle ", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/ProgressWorkEquipment_WeightRoom_STANDARDWEIGHTS.JPG" },
+        { name: "Cybex Eagle Row", desc: "Cybex, Max Load - 128.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_ROW2.jpeg" },
+        { name: "Cybex Dual Handle Seated Row", desc: "Cybex Dual Handle Seated Row", img: "/ProgressWorkEquipment_WeightRoom_ROWING.jpeg" },
+        { name: "Dumbell Rack", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/r1.jpeg" },
+        { name: "Dumbell Rack Different angle ", desc: "Jordan, Weight Range - 2.5kg - 62.5kg (2.5kg increments) + Set of 72.5kg ", img: "/r2.jpeg" },
         { name: "Panatta Standing Multi Flight", desc: "Panatta, Max Weight Load - 120kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_STANDINGMULTIFLIGHT.JPG" },
         { name: "Panatta T-Bar Row", desc: "Panatta, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_TBARROWBACK.JPG" },
         { name: "Jordan Dumbells (Silver)", desc: "Jordan, Dumbells, Weight Range - 1kg - 10kg", img: "/ProgressWorkEquipment_WeightRoom_WEIGHTRACKSMALL.JPG" },
@@ -98,11 +98,6 @@ export const equipmentData = {
         { name: "Cybex Arc Trainer", desc: "Cybex, Arc Trainer / Handles ", img: "/ProgressWorkEquipment_Cardioarea_STEPMACHINENEWANGLE.JPG" },
     ],
 
-
-
-
-
-
     CoreRoom: [
         { name: "Cybex Abdominal Crunch", desc: "Cybex, Max Load - 137.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_Coreroom_ABDOMINALVERYDAMAGED.JPG" },
         { name: "", desc: "", img: "/ProgressWorkEquipment_Coreroom_COREROOMLOGO.JPG" },
@@ -112,5 +107,12 @@ export const equipmentData = {
         { name: "Cybex, Chin, Dip, Leg Raise Station", desc: "Cybex, Multi Purpose Machine", img: "/ProgressWorkEquipment_Coreroom_LEGRAISE_ABRAISES.JPG" },
         // duplicate image   { name: "Name 7", desc: "Description 7", img: "/ProgressWorkEquipment_Coreroom_LEGRAISE_ABRAISESALT.JPG" },
         { name: "Cybex Adjustable Abdominal Bench", desc: "Cybex, Abdominal Bench Machine", img: "/ProgressWorkEquipment_Coreroom_NAMEUNKNOWN.JPG" },
+    ],
+
+    PosingRoom: [
+         { name: "", desc: "", img: "/p4.jpeg" },
+        { name: "", desc: "", img: "/p1.jpeg" },
+        { name: "", desc: "", img: "/p2.jpeg" },
+        { name: "", desc: "", img: "/p3.jpeg" }
     ],
 };
