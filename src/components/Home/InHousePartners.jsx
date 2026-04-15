@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 const PARTNERS = [
   { name: "Fine Line", handle: "@finelines_tattoo_pmuleicester", photo: "/jodie1.png", logo: "/fineline.png" },
   { name: "Top Teir Pysio - Keith", handle: "@toptierphysio", photo: "/h-p-2.jpg", logo: "/top.jpg" },
-  { name: "Milenium Fit", handle: "@millenniumfit1", photo: "/h-p-3.jpg", logo: "/fit.png" },
+  { name: "Millennium Fit", handle: "@millenniumfit1", photo: "/new-milli-image.jpg", logo: "/fit.png" },
   { name: "Urban Martial Arts", handle: "@umaleicester", photo: "/h-p-4.png", logo: "/art.jpg" },
 ];
 
