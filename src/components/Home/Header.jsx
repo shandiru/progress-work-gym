@@ -73,6 +73,7 @@ export default function Header() {
         loop
         muted
         playsInline
+        preload="metadata"
       />
 
       {/* Overlay (use bg-black/50 or bg-black bg-opacity-50) */}

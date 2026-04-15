@@ -2,10 +2,6 @@
 import { useEffect, useRef } from "react";
 import { FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -13,33 +9,50 @@ export default function Footer() {
   const bottomBarRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(colsRef.current, {
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 85%",
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.2,
-      });
+    let ctx;
+    let mounted = true;
 
-      gsap.from(bottomBarRef.current, {
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 85%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.8,
-        ease: "power3.out",
-      });
-    }, footerRef);
+    (async () => {
+      const gsapModule = await import("gsap");
+      const scrollTriggerModule = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default || gsapModule;
+      const ScrollTrigger =
+        scrollTriggerModule.ScrollTrigger || scrollTriggerModule.default;
 
-    return () => ctx.revert();
+      gsap.registerPlugin(ScrollTrigger);
+      if (!mounted) return;
+
+      ctx = gsap.context(() => {
+        gsap.from(colsRef.current, {
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 85%",
+          },
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+        });
+
+        gsap.from(bottomBarRef.current, {
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 85%",
+          },
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          delay: 0.8,
+          ease: "power3.out",
+        });
+      }, footerRef);
+    })();
+
+    return () => {
+      mounted = false;
+      ctx?.revert();
+    };
   }, []);
 
   return (
@@ -55,6 +68,8 @@ export default function Footer() {
             alt="Progress Works Gym Logo"
             width={60}
             height={60}
+            loading="lazy"
+            decoding="async"
             className="object-contain mb-4"
           />
           <h1 className="text-2xl md:text-xl lg:text-2xl font-bold text-white">
