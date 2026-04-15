@@ -9,11 +9,11 @@ const categories = ["Hoodie", "T-shirt", "Vest"];
 
 const beforeAfterData = [
   // 🧥 Hoodie Category
-  { id: 1, category: "Hoodie", before: "/Hoodie 1a.png", after: "/Hoodie 1b.png" },
-  { id: 2, category: "Hoodie", before: "/Hoodie 2a.png", after: "/Hoodie 2b.png" },
-  { id: 3, category: "Hoodie", before: "/hoodie 3a.png", after: "/hoodie 3b.png" },
-  { id: 4, category: "Hoodie", before: "/hoodie 4b.png", after: "/hoodie 4a.png" },
-  { id: 5, category: "Hoodie", before: "/hoodie 5a.png", after: "/hoodie5b.png" },
+  { id: 1, category: "Hoodie", before: "/Hoodie 1a.webp", after: "/Hoodie 1b.webp" },
+  { id: 2, category: "Hoodie", before: "/Hoodie 2a.webp", after: "/Hoodie 2b.webp" },
+  { id: 3, category: "Hoodie", before: "/hoodie 3a.webp", after: "/hoodie 3b.webp" },
+  { id: 4, category: "Hoodie", before: "/hoodie 4b.webp", after: "/hoodie 4a.webp" },
+  { id: 5, category: "Hoodie", before: "/hoodie 5a.webp", after: "/hoodie5b.webp" },
 
   // 👕 T-shirt Category
   { id: 6, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
