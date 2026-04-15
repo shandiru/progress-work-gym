@@ -9,4 +9,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+          gsap: ["gsap"],
+          swiper: ["swiper/react", "swiper/modules"],
+        },
+      },
+    },
+  },
 })

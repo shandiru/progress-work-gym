@@ -26,9 +26,9 @@ export const equipmentData = {
         { name: "Cybex Lateral Raise", desc: "Cybex, Max Load - 92.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_LATERALRAISE.JPG" },
         { name: "Nautilus Impact Lat Pull Down", desc: "Nautilus, Max Load - 130kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_LATPULLDOWN.3.JPG" },
         { name: "Cybex Multi Jungle Stack", desc: "Cybex, Seated Cable Row, Lat Pull Down", img: "/ProgressWorkEquipment_WeightRoom_LATPULLDOWN.JPG" },
-        { name: "Cybex Multi Jungle Stack", desc: "Cybex, Dual Handle Lat Pull Down, Dual Handle Seated Row", img: "/ProgressWorkEquipment_WeightRoom_LATPULLDOWN2.JPG" },
+     
         { name: "Hammer Strength ISO Lateral Row", desc: "Hammer Strength, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_LATROWINDUVIDUAL.JPG" },
-        { name: "Medicine/Slam balls", desc: "Medicine/Slam balls", img: "/ProgressWorkEquipment_WeightRoom_MEDICINEBALLS.JPG" },
+      
         { name: "Gymleco T-Bar Row", desc: "Gymleco, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_NAMEUNKNOWN.JPG" },
         { name: "Cybex Overhead Press", desc: "Cybex, Max Load - 92.3kg (Pin Loaded)", img: "/ProgressWorkEquipment_WeightRoom_OVERHEADPRESS.jpeg" },
         { name: "Cybex Plate Loaded Overhead Press ", desc: "Cybex, Plate Loaded", img: "/ProgressWorkEquipment_WeightRoom_OVERHEADPRESS2.JPG" },

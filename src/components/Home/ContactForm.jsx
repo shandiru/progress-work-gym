@@ -1,51 +1,60 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
 import emailjs from "emailjs-com"; // Import EmailJS
 import { toast, ToastContainer } from "react-toastify"; // Import toast and ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import the default CSS for Toastify
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactForm() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const formRef = useRef(null);
 
-  const [formStatus, setFormStatus] = useState(""); // For showing form submission status
-
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate heading + paragraph
-      gsap.from(headingRef.current.children, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.2,
-      });
+    let ctx;
+    let mounted = true;
 
-      // Animate form fields
-      gsap.from(formRef.current.children, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        ease: "power3.out",
-        stagger: 0.15,
-        delay: 0.2,
-      });
-    }, sectionRef);
+    (async () => {
+      const gsapModule = await import("gsap");
+      const scrollTriggerModule = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default || gsapModule;
+      const ScrollTrigger =
+        scrollTriggerModule.ScrollTrigger || scrollTriggerModule.default;
 
-    return () => ctx.revert();
+      gsap.registerPlugin(ScrollTrigger);
+      if (!mounted) return;
+
+      ctx = gsap.context(() => {
+        gsap.from(headingRef.current.children, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+          },
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+        });
+
+        gsap.from(formRef.current.children, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.15,
+          delay: 0.2,
+        });
+      }, sectionRef);
+    })();
+
+    return () => {
+      mounted = false;
+      ctx?.revert();
+    };
   }, []);
 
   const handleSubmit = (e) => {
@@ -69,10 +78,9 @@ export default function ContactForm() {
         "tmUgtXKf_TwGrV1iE" // User ID from EmailJS
       )
       .then(
-        (response) => {
+        () => {
           // Show success toast
           toast.success("Message sent successfully!");
-         
 
           // Clear form after successful submission
           e.target.reset(); // Reset the form
@@ -174,7 +182,11 @@ export default function ContactForm() {
               Send Message
             </button>
           </div>
-          <p class="text-xs text-center text-white">By submitting this form, you agree to us processing your details to respond to your enquiry. Your information is handled securely and in line with our Privacy Policy.</p>
+          <p className="text-xs text-center text-white">
+            By submitting this form, you agree to us processing your details to
+            respond to your enquiry. Your information is handled securely and in
+            line with our Privacy Policy.
+          </p>
         </form>
 
         {/* Toast Notifications Container */}

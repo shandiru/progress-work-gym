@@ -82,7 +82,9 @@ export default function RealResultsSection() {
         try {
             const cs = getComputedStyle(el);
             gap = parseFloat(cs.columnGap || cs.gap || '0') || 0;
-        } catch { }
+        } catch {
+            gap = 0;
+        }
         const cardWidth = first
             ? first.getBoundingClientRect().width + gap
             : Math.round(el.clientWidth * 0.8);

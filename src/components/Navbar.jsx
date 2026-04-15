@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
@@ -46,14 +46,6 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const toggleDropdown = (label, e) => {
     e.stopPropagation();

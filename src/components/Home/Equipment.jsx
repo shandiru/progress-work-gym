@@ -25,7 +25,10 @@ export default function Equipment() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const items = equipmentData[activeCategory] || [];
+  const items = useMemo(
+    () => equipmentData[activeCategory] || [],
+    [activeCategory]
+  );
 
   const visibleItems = useMemo(
     () => items.slice(startIndex, startIndex + itemsPerView),

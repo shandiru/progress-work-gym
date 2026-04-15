@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function GDPRConsent() {
   const [visible, setVisible] = useState(false); // Show consent banner
-  const [accepted, setAccepted] = useState(null); // true/false/null
   const [showIcon, setShowIcon] = useState(false); // Show cookie icon
 
   useEffect(() => {
     const consent = localStorage.getItem("gdprConsent");
     if (consent === "true" || consent === "false") {
-      setAccepted(consent === "true");
       setShowIcon(true); // show cookie icon if previously chosen
     } else {
       setVisible(true); // no previous choice
@@ -17,14 +15,12 @@ export default function GDPRConsent() {
 
   const handleAccept = () => {
     localStorage.setItem("gdprConsent", "true");
-    setAccepted(true);
     setVisible(false);
     setShowIcon(true);
   };
 
   const handleReject = () => {
     localStorage.setItem("gdprConsent", "false");
-    setAccepted(false);
     setVisible(false);
     setShowIcon(true);
   };
