@@ -16,12 +16,12 @@ const beforeAfterData = [
   { id: 5, category: "Hoodie", before: "/hoodie 5a.webp", after: "/hoodie5b.webp" },
 
   // 👕 T-shirt Category
-  { id: 6, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
-  { id: 7, category: "T-shirt", before: "/t shirt 2a.png", after: "/t shirt 2 a.png" },
-  { id: 8, category: "T-shirt", before: "/t shirt 3b.png", after: "/t shirt 3a.png" },
-  { id: 9, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
-  { id: 10, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
-  { id: 11, category: "T-shirt", before: "/t shirt 6a.png", after: "/t shirt 6b.png" },
+  { id: 6, category: "T-shirt", before: "/t shirt 1b.webp", after: "/t shirt 1a.webp" },
+  { id: 7, category: "T-shirt", before: "/t shirt 2a.webp", after: "/t shirt 2 a.webp" },
+  { id: 8, category: "T-shirt", before: "/t shirt 3b.webp", after: "/t shirt 3a.webp" },
+  { id: 9, category: "T-shirt", before: "/t shirt 4b.webp", after: "/t shirt 4a.webp" },
+  { id: 10, category: "T-shirt", before: "/t shirt 5a.webp", after: "/t shirt 5b.webp" },
+  { id: 11, category: "T-shirt", before: "/t shirt 6a.webp", after: "/t shirt 6b.webp" },
 
   // 🦺 Vest Category
   { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
