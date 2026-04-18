@@ -98,7 +98,7 @@ export default function InHousePartners() {
         {PARTNERS.map((p, i) => (
           <article
             key={i}
-            className="rounded-xl border border-red-600 bg-black overflow-hidden shadow-lg hover:shadow-red-600/50 transition-all duration-300 will-change-transform"
+            className="pw-card overflow-hidden rounded-[24px] bg-black will-change-transform"
           >
             {/* Top image */}
             <div className="w-full aspect-[4/5] overflow-hidden">

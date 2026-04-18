@@ -350,10 +350,10 @@ export default function Products() {
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${
+            className={`rounded-full px-5 py-2 text-sm transition-all duration-300 ${
               activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border-red-600 text-white hover:bg-red-600"
+                ? "pw-chip pw-chip-active"
+                : "pw-chip"
             }`}
           >
             {cat}
@@ -370,7 +370,7 @@ export default function Products() {
           disabled={startIndex === 0}
           className={`${
             startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400 will-change-transform`}
+          } pw-arrow inline-flex rounded-full p-2 text-xl will-change-transform`}
           aria-label="Previous"
         >
           <FaChevronLeft />
@@ -390,7 +390,7 @@ export default function Products() {
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="border border-red-600 rounded-md overflow-hidden bg-[#0d1117] will-change-transform"
+              className="pw-card rounded-[24px] overflow-hidden bg-[#0d1117] will-change-transform"
             >
               <img
                 src={item.img}
@@ -414,7 +414,7 @@ export default function Products() {
             startIndex >= items.length - itemsPerView
               ? "opacity-50 cursor-not-allowed"
               : ""
-          } text-red-500 md:flex text-xl bg-white rounded-full p-2 hover:bg-gray-400 will-change-transform`}
+          } pw-arrow inline-flex rounded-full p-2 text-xl will-change-transform`}
           aria-label="Next"
         >
           <FaChevronRight />

@@ -497,10 +497,10 @@ export default function Products() {
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition-colors ${
+            className={`rounded-full px-5 py-2 text-sm transition-all duration-300 ${
               activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border-red-600 text-white hover:bg-red-600"
+                ? "pw-chip pw-chip-active"
+                : "pw-chip"
             }`}
           >
             {cat}
@@ -515,7 +515,7 @@ export default function Products() {
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400 disabled:opacity-40 disabled:cursor-not-allowed will-change-transform"
+          className="pw-arrow inline-flex rounded-full p-2 text-xl will-change-transform"
           aria-label="Previous"
         >
           <FaChevronLeft />
@@ -535,7 +535,7 @@ export default function Products() {
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300 will-change-transform"
+              className="pw-card rounded-[24px] overflow-hidden bg-black will-change-transform"
             >
               <div className="w-full h-68 flex items-center justify-center bg-white">
                 <img
@@ -557,7 +557,7 @@ export default function Products() {
           ref={rightBtnRef}
           onClick={nextSlide}
           disabled={startIndex + itemsPerView >= items.length}
-          className="text-red-500 md:flex text-xl cursor-pointer bg-white rounded-full p-2 hover:bg-gray-400 disabled:opacity-40 disabled:cursor-not-allowed will-change-transform"
+          className="pw-arrow inline-flex rounded-full p-2 text-xl will-change-transform"
           aria-label="Next"
         >
           <FaChevronRight />

@@ -94,14 +94,14 @@ export default function AboutFaqSection({
           {/* LEFT: IMAGE */}
           <div
             ref={mediaRef}
-            className="relative order-1 overflow-hidden rounded-2xl border border-red-600/20 bg-black"
+            className="pw-surface relative order-1 overflow-hidden rounded-2xl bg-black"
           >
             <img
               src={imageSrc}
               alt={imageAlt}
               className="h-full w-full object-cover object-center opacity-95 transition-transform duration-500 hover:scale-[1.02]"
             />
-            <div className="pointer-events-none absolute left-4 top-4 hidden select-none items-center justify-center rounded-full border border-red-600/30 bg-black/70 px-4 py-2 text-xs uppercase tracking-widest text-red-600 backdrop-blur sm:flex">
+            <div className="pointer-events-none absolute left-4 top-4 hidden select-none items-center justify-center rounded-full border border-white/10 bg-black/70 px-4 py-2 text-xs uppercase tracking-widest text-white/80 backdrop-blur sm:flex">
               Train Hard • Stay Humble • Be Proud
             </div>
             <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black/70 to-transparent" />
@@ -193,7 +193,7 @@ function FaqRow({ index, item }) {
   return (
     <div
       ref={rowRef}
-      className="faq-row overflow-hidden rounded-xl border border-red-600/20 bg-black/60"
+      className="faq-row pw-subtle-block overflow-hidden rounded-xl bg-black/60"
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
@@ -211,7 +211,7 @@ function FaqRow({ index, item }) {
           <span className="text-base font-semibold sm:text-lg">{item.q}</span>
         </div>
         <span
-          className={`ml-auto inline-flex h-7 w-7 flex-none items-center justify-center rounded-md border border-red-600/20 transition-transform ${
+          className={`ml-auto inline-flex h-7 w-7 flex-none items-center justify-center rounded-md border border-white/10 transition-transform ${
             open ? "rotate-45" : "rotate-0"
           }`}
           aria-hidden

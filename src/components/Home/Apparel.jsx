@@ -3,27 +3,23 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 gsap.registerPlugin(Draggable);
 
 const categories = ["Hoodie", "T-shirt", "Vest"];
 
 const beforeAfterData = [
-  // 🧥 Hoodie Category
   { id: 1, category: "Hoodie", before: "/Hoodie 1a.webp", after: "/Hoodie 1b.webp" },
   { id: 2, category: "Hoodie", before: "/Hoodie 2a.webp", after: "/Hoodie 2b.webp" },
   { id: 3, category: "Hoodie", before: "/hoodie 3a.webp", after: "/hoodie 3b.webp" },
   { id: 4, category: "Hoodie", before: "/hoodie 4b.webp", after: "/hoodie 4a.webp" },
   { id: 5, category: "Hoodie", before: "/hoodie 5a.webp", after: "/hoodie5b.webp" },
-
-  // 👕 T-shirt Category
   { id: 6, category: "T-shirt", before: "/t shirt 1b.webp", after: "/t shirt 1a.webp" },
   { id: 7, category: "T-shirt", before: "/t shirt 2a.webp", after: "/t shirt 2 a.webp" },
   { id: 8, category: "T-shirt", before: "/t shirt 3b.webp", after: "/t shirt 3a.webp" },
   { id: 9, category: "T-shirt", before: "/t shirt 4b.webp", after: "/t shirt 4a.webp" },
   { id: 10, category: "T-shirt", before: "/t shirt 5a.webp", after: "/t shirt 5b.webp" },
   { id: 11, category: "T-shirt", before: "/t shirt 6a.webp", after: "/t shirt 6b.webp" },
-
-  // 🦺 Vest Category
   { id: 12, category: "Vest", before: "/vest 1a.webp", after: "/vest 1.webp" },
   { id: 13, category: "Vest", before: "/vest 2a.webp", after: "/vest 2.webp" },
   { id: 14, category: "Vest", before: "/vest 3a.webp", after: "/vest 3.webp" },
@@ -35,13 +31,13 @@ const beforeAfterData = [
 export default function BeforeAfterGallery() {
   const [activeCategory, setActiveCategory] = useState("Hoodie");
   const [startIndex, setStartIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
   const gridRef = useRef(null);
   const leftBtnRef = useRef(null);
   const rightBtnRef = useRef(null);
   const lastIndexRef = useRef(0);
   const lastCategoryRef = useRef(activeCategory);
 
-  // Filtered data
   const items = useMemo(
     () =>
       activeCategory === "All"
@@ -50,14 +46,13 @@ export default function BeforeAfterGallery() {
     [activeCategory]
   );
 
-  // 🧩 Set items per view (1 on mobile)
-  const [itemsPerView, setItemsPerView] = useState(3);
   useEffect(() => {
     const updateItems = () => {
       if (window.innerWidth < 640) setItemsPerView(1);
       else if (window.innerWidth < 1024) setItemsPerView(2);
       else setItemsPerView(3);
     };
+
     updateItems();
     window.addEventListener("resize", updateItems);
     return () => window.removeEventListener("resize", updateItems);
@@ -67,6 +62,18 @@ export default function BeforeAfterGallery() {
     () => items.slice(startIndex, startIndex + itemsPerView),
     [items, startIndex, itemsPerView]
   );
+
+  const pressButton = async (ref) => {
+    if (!ref.current) return;
+
+    await gsap.to(ref.current, {
+      scale: 0.94,
+      duration: 0.08,
+      ease: "power2.out",
+      yoyo: true,
+      repeat: 1,
+    });
+  };
 
   const prevSlide = async () => {
     if (startIndex > 0) {
@@ -87,18 +94,6 @@ export default function BeforeAfterGallery() {
     setStartIndex(0);
   };
 
-  const pressButton = async (ref) => {
-    if (!ref.current) return;
-    await gsap.to(ref.current, {
-      scale: 0.94,
-      duration: 0.08,
-      ease: "power2.out",
-      yoyo: true,
-      repeat: 1,
-    });
-  };
-
-  // Animate transitions
   useEffect(() => {
     const cards = gridRef.current && Array.from(gridRef.current.querySelectorAll(":scope > div"));
     if (!cards?.length) return;
@@ -124,26 +119,25 @@ export default function BeforeAfterGallery() {
   }, [activeCategory, startIndex, visibleItems.length]);
 
   return (
-    <section className="bg-black text-white py-16 px-4 sm:px-8" id="before-after">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold">
+    <section className="bg-black px-4 py-16 text-white sm:px-8" id="before-after">
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl font-bold md:text-4xl">
           OUR <span className="text-red-600">APPAREL</span>
         </h2>
-        <p className="text-gray-400 mt-2 text-sm md:text-base">
-          State-of-the-art machines for every muscle group
+        <p className="mt-2 text-sm text-gray-400 md:text-base">
+          Premium pieces designed for training days, recovery days, and everything between
         </p>
       </div>
 
-      {/* Category Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
+      <div className="mb-8 flex flex-wrap justify-center gap-3">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 rounded-md text-sm sm:text-base transition-colors ${
+            className={`rounded-full px-5 py-2 text-sm transition-all duration-300 sm:text-base ${
               activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border border-red-600 text-white hover:bg-red-600"
+                ? "bg-linear-to-r from-red-600 to-red-500 text-white shadow-[0_16px_35px_rgba(220,38,38,0.35)]"
+                : "border border-white/10 bg-white/[0.04] text-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.28)] hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             }`}
           >
             {cat}
@@ -151,24 +145,22 @@ export default function BeforeAfterGallery() {
         ))}
       </div>
 
-      {/* Carousel Controls + Grid */}
       <div className="flex items-center justify-center gap-3 sm:gap-5">
         <button
           ref={leftBtnRef}
           onClick={prevSlide}
           disabled={startIndex === 0}
           className={`${
-            startIndex === 0 ? "opacity-40 cursor-not-allowed" : ""
-          } text-red-500 text-lg sm:text-xl bg-white rounded-full p-2 sm:p-3 hover:bg-gray-300`}
+            startIndex === 0 ? "cursor-not-allowed opacity-40" : ""
+          } rounded-full border border-white/12 bg-white/[0.06] p-2.5 text-lg text-white shadow-[0_18px_40px_rgba(0,0,0,0.32)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.12] sm:p-3 sm:text-xl`}
           aria-label="Previous"
         >
           <FaChevronLeft />
         </button>
 
-        {/* 🧱 Show only 1 item per slide on mobile */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl w-full"
+          className="grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
         >
           {visibleItems.map((item) => (
             <BeforeAfterCard key={item.id} before={item.before} after={item.after} />
@@ -180,8 +172,8 @@ export default function BeforeAfterGallery() {
           onClick={nextSlide}
           disabled={startIndex >= items.length - itemsPerView}
           className={`${
-            startIndex >= items.length - itemsPerView ? "opacity-40 cursor-not-allowed" : ""
-          } text-red-500 text-lg sm:text-xl bg-white rounded-full p-2 sm:p-3 hover:bg-gray-300`}
+            startIndex >= items.length - itemsPerView ? "cursor-not-allowed opacity-40" : ""
+          } rounded-full border border-white/12 bg-white/[0.06] p-2.5 text-lg text-white shadow-[0_18px_40px_rgba(0,0,0,0.32)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.12] sm:p-3 sm:text-xl`}
           aria-label="Next"
         >
           <FaChevronRight />
@@ -201,46 +193,65 @@ function BeforeAfterCard({ before, after }) {
     const afterImg = afterRef.current;
     const handle = handleRef.current;
 
-    const width = container.offsetWidth;
-    gsap.set(handle, { x: width / 2 });
-    gsap.set(afterImg, { clipPath: `inset(0 50% 0 0)` });
+    if (!container || !afterImg || !handle) return;
 
-    Draggable.create(handle, {
+    const setSliderPosition = (width) => {
+      gsap.set(handle, { x: width / 2 });
+      gsap.set(afterImg, { clipPath: "inset(0 50% 0 0)" });
+    };
+
+    setSliderPosition(container.offsetWidth);
+
+    const [draggable] = Draggable.create(handle, {
       type: "x",
       bounds: container,
       onDrag: function () {
-        const percent = (this.x / width) * 100;
+        const percent = (this.x / container.offsetWidth) * 100;
         gsap.set(afterImg, { clipPath: `inset(0 ${100 - percent}% 0 0)` });
       },
     });
 
     const onResize = () => {
-      const w = container.offsetWidth;
-      gsap.set(handle, { x: w / 2 });
-      gsap.set(afterImg, { clipPath: `inset(0 50% 0 0)` });
+      setSliderPosition(container.offsetWidth);
     };
+
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      draggable?.kill();
+    };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-110 aspect-[4/3] rounded-lg overflow-hidden border border-red-600 bg-[#0d1117] shadow-lg"
+      className="group relative w-full overflow-hidden rounded-[26px] border border-white/10 bg-linear-to-b from-white/10 via-white/[0.04] to-white/[0.02] p-[1px] shadow-[0_24px_60px_rgba(0,0,0,0.42)] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_30px_70px_rgba(0,0,0,0.52)]"
     >
-      <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" />
-      <img
-        ref={afterRef}
-        src={after}
-        alt="After"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div
-        ref={handleRef}
-        className="absolute top-0 bottom-0 w-[3px] bg-red-600 cursor-ew-resize z-10 flex items-center justify-center"
-      >
-        <div className="absolute -left-3 bg-red-600 text-white text-[10px] sm:text-xs px-2 py-1 rounded-full shadow">
-          ⇆
+      <div className="relative h-110 aspect-[4/3] overflow-hidden rounded-[25px] bg-[#0d1117]">
+        <img src={before} alt="Before" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          ref={afterRef}
+          src={after}
+          alt="After"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-white/10" />
+
+        <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/10 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm sm:text-xs">
+          Before
+        </div>
+        <div className="pointer-events-none absolute right-4 top-4 rounded-full border border-white/10 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm sm:text-xs">
+          After
+        </div>
+
+        <div
+          ref={handleRef}
+          className="absolute top-0 bottom-0 z-10 flex w-[2px] cursor-ew-resize items-center justify-center bg-white/80 shadow-[0_0_20px_rgba(255,255,255,0.35)]"
+        >
+          <div className="absolute -left-[23px] flex h-11 w-12 items-center justify-center rounded-full border border-white/20 bg-black/65 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_14px_28px_rgba(0,0,0,0.35)] backdrop-blur-md sm:h-12 sm:w-[54px]">
+            Drag
+          </div>
         </div>
       </div>
     </div>

@@ -88,7 +88,7 @@ export default function TrainersSection() {
         {trainers.map((t, i) => (
           <div
             key={i}
-            className="border border-red-600 p-6 rounded-md flex flex-col items-center bg-[#161b22]"
+            className="pw-card flex flex-col items-center rounded-[24px] bg-[#161b22] p-6"
           >
             <img
               src={t.image}
@@ -106,7 +106,7 @@ export default function TrainersSection() {
             <div className="flex justify-center w-full">
               <button
                 onClick={() => setActiveTrainer(t)}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold"
+                className="pw-primary-button rounded-md px-4 py-2 font-semibold text-white"
               >
                 Read More
               </button>
@@ -119,10 +119,10 @@ export default function TrainersSection() {
       {/* Modal */}
       {activeTrainer && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4">
-          <div className="bg-[#161b22] border border-red-600 rounded-lg w-full max-w-2xl p-6 relative text-white overflow-y-auto max-h-[90vh]">
+          <div className="pw-modal relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[28px] p-6 text-white">
             <button
               onClick={() => setActiveTrainer(null)}
-              className="absolute top-4 right-4 text-white text-2xl"
+              className="pw-ghost-button absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl"
             >
               &times;
             </button>
@@ -150,7 +150,7 @@ export default function TrainersSection() {
             {activeTrainer.fullDesc.stats && activeTrainer.fullDesc.stats.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
                 {activeTrainer.fullDesc.stats.map((stat, idx) => (
-                  <div key={idx} className="bg-[#0d1117] border rounded-md p-4">
+                  <div key={idx} className="pw-subtle-block rounded-md p-4">
                     <p className="text-red-500 font-bold text-lg">{stat.value}</p>
                     <p className="text-sm text-gray-300">{stat.label}</p>
                   </div>
@@ -187,12 +187,12 @@ export default function TrainersSection() {
             </div>
 
             <div className="flex gap-2 justify-end mt-6">
-              <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm rounded">
+              <button className="pw-primary-button rounded px-4 py-2 text-sm text-white">
                 Book Consultation
               </button>
               <button
                 onClick={() => setActiveTrainer(null)}
-                className="border border-red-600 px-4 py-2 text-sm text-red-500 rounded"
+                className="pw-ghost-button rounded px-4 py-2 text-sm"
               >
                 Close
               </button>

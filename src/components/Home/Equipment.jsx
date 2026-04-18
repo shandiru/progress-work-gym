@@ -66,10 +66,10 @@ export default function Equipment() {
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-1 border rounded-md transition ${
+            className={`rounded-full px-5 py-2 text-sm transition-all duration-300 ${
               activeCategory === cat
-                ? "bg-red-600 text-white"
-                : "border-red-600 hover:bg-red-600"
+                ? "pw-chip pw-chip-active"
+                : "pw-chip"
             }`}
           >
             {cat}
@@ -83,7 +83,7 @@ export default function Equipment() {
         <button
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className="bg-white text-black p-2 rounded-full disabled:opacity-40"
+          className="pw-arrow rounded-full p-2"
         >
           <FaChevronLeft />
         </button>
@@ -102,7 +102,7 @@ export default function Equipment() {
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300"
+              className="pw-card rounded-[24px] overflow-hidden bg-black"
             >
               <div className="h-94 bg-black flex items-center justify-center overflow-hidden">
                 <img
@@ -125,7 +125,7 @@ export default function Equipment() {
         <button
           onClick={nextSlide}
           disabled={startIndex + itemsPerView >= items.length}
-          className="bg-white text-black p-2 rounded-full disabled:opacity-40"
+          className="pw-arrow rounded-full p-2"
         >
           <FaChevronRight />
         </button>

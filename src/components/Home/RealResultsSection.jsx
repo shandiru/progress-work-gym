@@ -109,7 +109,7 @@ export default function RealResultsSection() {
                 <button
                     type="button"
                     onClick={() => scrollByCard(-1)}
-                    className="hidden md:inline-flex absolute left-0 lg:-left-12 top-1/2 z-10 -translate-y-1/2 items-center justify-center rounded-full border border-red-600 w-10 h-10 lg:w-12 lg:h-12 bg-[#161b22] text-white hover:bg-red-600 transition-colors duration-200 text-xl lg:text-2xl"
+                    className="pw-arrow absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full text-xl lg:-left-12 lg:h-12 lg:w-12 lg:text-2xl md:inline-flex"
                     aria-label="Previous"
                 >
                     <FaChevronLeft />
@@ -126,7 +126,7 @@ export default function RealResultsSection() {
                             key={item.id}
                             className="snap-center shrink-0 w-[85vw] xs:w-[80vw] sm:w-[70vw] md:w-[48%] lg:w-[450px] xl:w-[500px]"
                         >
-                            <div className="rounded-xl border border-red-600 bg-[#161b22] p-3 sm:p-4 lg:p-5 shadow-lg hover:shadow-xl transition-shadow duration-200 h-auto">
+                            <div className="pw-surface h-auto rounded-[24px] p-3 sm:p-4 lg:p-5">
                                 {/* Before/After slider */}
                                 <div
                                     ref={setContainerRef(item.id)}
@@ -192,7 +192,7 @@ export default function RealResultsSection() {
                                         After
                                     </div>
                                 </div>
-                                <blockquote className="rounded-lg bg-[#0d1117] p-3 sm:p-4 text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                <blockquote className="pw-subtle-block rounded-[18px] p-3 text-xs leading-relaxed text-gray-300 sm:p-4 sm:text-sm">
                                     <p className="line-clamp-6 sm:line-clamp-none">{item.quote}</p>
                                 </blockquote>
                             </div>
@@ -204,7 +204,7 @@ export default function RealResultsSection() {
                 <button
                     type="button"
                     onClick={() => scrollByCard(1)}
-                    className="hidden md:inline-flex absolute right-0 lg:-right-12 top-1/2 z-10 -translate-y-1/2 items-center justify-center rounded-full border border-red-600 w-10 h-10 lg:w-12 lg:h-12 bg-[#161b22] text-white hover:bg-red-600 transition-colors duration-200 text-xl lg:text-2xl"
+                    className="pw-arrow absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full text-xl lg:-right-12 lg:h-12 lg:w-12 lg:text-2xl md:inline-flex"
                     aria-label="Next"
                 >
                     <FaChevronRight />

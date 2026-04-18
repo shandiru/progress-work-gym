@@ -136,7 +136,7 @@ export default function SpecialOffers() {
         {/* Card */}
         <div
           ref={cardRef}
-          className="w-full rounded-xl border border-red-500 bg-red-600/10 shadow-md will-change-transform"
+          className="pw-surface w-full rounded-[24px] will-change-transform"
         >
           {/* Card header */}
           <div className="flex items-start justify-between gap-4 p-5">
@@ -157,7 +157,7 @@ export default function SpecialOffers() {
             </button> */}
             <button
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center gap-2 h-10 px-4 rounded-md border border-red-500 text-sm sm:text-base text-white hover:bg-red-600 transition whitespace-nowrap"
+            className="pw-ghost-button inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 text-sm sm:text-base"
             aria-expanded={open}
             aria-controls="offers-body"
           >
@@ -170,7 +170,7 @@ export default function SpecialOffers() {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-red-500/40 mx-5" />
+          <div className="mx-5 h-px bg-white/10" />
 
           {/* Collapsible body (always in DOM for height animation) */}
           <div
@@ -183,7 +183,7 @@ export default function SpecialOffers() {
               {offers.map((o, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-red-500 bg-red-600/20 p-3 shadow-sm"
+                  className="pw-subtle-block rounded-lg p-3 shadow-sm"
                 >
                   <div className="font-semibold text-white">{o.title}</div>
                   <div className="text-red-200 text-sm mt-1">{o.note}</div>

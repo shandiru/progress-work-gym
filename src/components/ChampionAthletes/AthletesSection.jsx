@@ -8,7 +8,7 @@ const ACCENT = {
   dot: "bg-red-500",
   badgeBg: "bg-red-500/10",
   badgeText: "text-red-400",
-  border: "border-red-600",
+  border: "border-white/10",
   muted: "text-gray-300",
   surface: "bg-black",
   surfaceAlt: "bg-zinc-900",
@@ -123,10 +123,8 @@ function AthleteCard({ a }) {
       <div
         className={[
           ACCENT.surface,
-          "rounded-2xl border",
           ACCENT.border,
-          "shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden",
-          "flex flex-col h-full",
+          "pw-card rounded-2xl overflow-hidden flex h-full flex-col",
         ].join(" ")}
       >
         {/* Image */}
@@ -184,7 +182,7 @@ function AthleteCard({ a }) {
           </div>
 
           {/* Metrics */}
-          <div className="mt-auto pt-4 border-t border-red-600">
+          <div className="pw-divider mt-auto border-t pt-4">
             <div className="grid grid-cols-3 gap-4 min-w-0">
               {a.stats.map((s) => (
                 <Metric key={s.label} {...s} />

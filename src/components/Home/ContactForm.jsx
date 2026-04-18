@@ -115,7 +115,7 @@ export default function ContactForm() {
         <form
           ref={formRef}
           onSubmit={handleSubmit} // Bind the submit handler
-          className="bg-[#111111] rounded-lg border border-red-600/30 p-6 sm:p-8 grid grid-cols-1 gap-5 shadow-lg"
+          className="pw-surface grid grid-cols-1 gap-5 rounded-[28px] p-6 sm:p-8"
         >
           {/* Full Name */}
           <div>
@@ -177,7 +177,7 @@ export default function ContactForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-2.5 rounded-md font-semibold text-sm shadow-md hover:shadow-red-600/30 transition-transform hover:-translate-y-0.5"
+              className="pw-primary-button rounded-md px-8 py-2.5 text-sm font-semibold text-white"
             >
               Send Message
             </button>

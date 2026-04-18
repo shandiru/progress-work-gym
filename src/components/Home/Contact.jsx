@@ -90,9 +90,9 @@ export default function Contact() {
       {/* Map Card */}
       <div
         ref={cardRef}
-        className="max-w-4xl mx-auto border border-red-600 rounded-md overflow-hidden shadow-lg bg-[#161b22]"
+        className="pw-surface max-w-4xl mx-auto overflow-hidden rounded-[28px]"
       >
-        <div className="text-center p-4 border-b border-red-600">
+        <div className="pw-divider border-b p-4 text-center">
           <h3 className="text-xl font-semibold text-white">Our Location</h3>
           <p className="text-gray-400 text-sm">Explore our gym location with 360° Street View</p>
         </div>
@@ -120,7 +120,7 @@ export default function Contact() {
               href="https://www.google.com/maps/@52.6531416,-1.2010203,3a,90y,10.17h/data=!3m8!1e1!3m6!1sCIABIhAGbzaqChiQ-2fzxD4ADMG2!2e10!3e12" // Google Maps Location Link
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium will-change-transform"
+              className="pw-primary-button rounded-md px-5 py-2 text-sm font-medium will-change-transform"
               onMouseDown={async (e) => {
                 const gsapModule = await import("gsap");
                 const gsap = gsapModule.default || gsapModule;
@@ -135,7 +135,7 @@ export default function Contact() {
               href="https://www.google.com/maps/dir/?api=1&destination=132+Station+Rd,+Glenfield,+Leicester+LE3+8BR" // Google Maps Directions Link
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-5 py-2 rounded-md text-sm font-medium will-change-transform"
+              className="pw-ghost-button rounded-md px-5 py-2 text-sm font-medium will-change-transform"
               onMouseDown={async (e) => {
                 const gsapModule = await import("gsap");
                 const gsap = gsapModule.default || gsapModule;

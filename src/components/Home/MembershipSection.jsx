@@ -191,10 +191,8 @@ export default function MembershipPlans() {
           className="
             absolute left-0 top-1/2 -translate-y-1/2 z-10
             -translate-x-3 sm:-translate-x-5
-            w-9 h-9 sm:w-10 sm:h-10 rounded-full border
-            border-red-600 bg-[#141820] text-red-500
-            hover:bg-red-600 hover:text-white
-            shadow-lg shadow-red-600/20
+            w-9 h-9 sm:w-10 sm:h-10 rounded-full
+            pw-arrow
             flex items-center justify-center
             transition-all duration-200 select-none cursor-pointer
           "
@@ -212,10 +210,8 @@ export default function MembershipPlans() {
           className="
             absolute right-0 top-1/2 -translate-y-1/2 z-10
             translate-x-3 sm:translate-x-5
-            w-9 h-9 sm:w-10 sm:h-10 rounded-full border
-            border-red-600 bg-[#141820] text-red-500
-            hover:bg-red-600 hover:text-white
-            shadow-lg shadow-red-600/20
+            w-9 h-9 sm:w-10 sm:h-10 rounded-full
+            pw-arrow
             flex items-center justify-center
             transition-all duration-200 select-none cursor-pointer
           "
@@ -246,7 +242,7 @@ export default function MembershipPlans() {
                 style={{ minWidth: `${cardPct}%` }}
                 className="px-2 sm:px-3"
               >
-                <div className="border border-red-600 rounded-md p-5 flex flex-col bg-[#141820] h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/10 transition-all duration-300">
+                <div className="pw-card flex h-full flex-col rounded-[24px] bg-[#141820] p-5">
                   <h3 className="text-base sm:text-lg font-semibold text-red-500 mb-4 leading-tight">
                     {plan.title}
                   </h3>
@@ -265,7 +261,7 @@ export default function MembershipPlans() {
 
                   <a
                     href={`/${plan.slug}`}
-                    className="block text-center w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-md font-semibold text-sm mt-auto transition-colors duration-200"
+                    className="pw-primary-button mt-auto block w-full rounded-md py-2 text-center text-sm font-semibold text-white"
                   >
                     Choose Plan
                   </a>
