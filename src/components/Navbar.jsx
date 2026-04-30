@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
@@ -17,10 +17,11 @@ const NAV_LINKS = [
   },
   {
     label: "Programs",
-    href: "/#programs",
+    href: "/#specialoffer",
     dropdown: [
       { label: "Special Offer", href: "/#specialoffer" },
       { label: "Our Equipment", href: "/#ourequipment" },
+      { label: "Apparel", href: "/#before-after" },
       { label: "Champion Athletes", href: "/#ChampionAthletes" },
     ],
   },
@@ -41,11 +42,13 @@ const NAV_LINKS = [
     ],
   },
   { label: "Reviews", href: "/#review" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navRef = useRef(null);
 
   const toggleDropdown = (label, e) => {
     e.stopPropagation();
@@ -57,8 +60,18 @@ export default function Navbar() {
     setActiveDropdown(null);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <header className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
+    <header ref={navRef} className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* ✅ Logo */}
         <a href="/" className="flex items-center gap-3">
