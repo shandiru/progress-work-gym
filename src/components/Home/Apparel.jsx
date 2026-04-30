@@ -130,7 +130,7 @@ export default function BeforeAfterGallery() {
           OUR <span className="text-red-600">APPAREL</span>
         </h2>
         <p className="text-gray-400 mt-2 text-sm md:text-base">
-          State-of-the-art machines for every muscle group
+          Premium gym wear designed for comfort and performance
         </p>
       </div>
 
