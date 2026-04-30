@@ -143,6 +143,8 @@ export default function RealResultsSection() {
                                         alt="after"
                                         className="absolute inset-0 h-full w-full object-cover select-none"
                                         draggable="false"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                     <div
                                         className="absolute inset-0 overflow-hidden"
@@ -153,6 +155,8 @@ export default function RealResultsSection() {
                                             alt="before"
                                             className="absolute inset-0 h-full w-full object-cover select-none"
                                             draggable="false"
+                                            loading="lazy"
+                                            decoding="async"
                                             style={{ width: `${10000 / posMap[item.id]}%` }}
                                         />
                                     </div>

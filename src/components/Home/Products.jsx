@@ -542,6 +542,8 @@ export default function Products() {
                   src={item.img}
                   alt={item.name}
                   className="max-h-full object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="bg-[#0d1117] p-4">

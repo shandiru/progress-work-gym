@@ -228,12 +228,14 @@ function BeforeAfterCard({ before, after }) {
       ref={containerRef}
       className="relative w-full h-110 aspect-[4/3] rounded-lg overflow-hidden border border-red-600 bg-[#0d1117] shadow-lg"
     >
-      <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
       <img
         ref={afterRef}
         src={after}
         alt="After"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
       />
       <div
         ref={handleRef}
