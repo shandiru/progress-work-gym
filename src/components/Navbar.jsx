@@ -5,7 +5,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/", scrollToTop: true },
   {
     label: "About",
     href: "/#about",
@@ -90,7 +90,10 @@ export default function Navbar() {
                 smooth
                 to={link.href}
                 className="transition-all text-white/90 hover:text-red-500"
-                onClick={closeAllMenus}
+                onClick={() => {
+                  if (link.scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
+                  closeAllMenus();
+                }}
               >
                 {link.label}
               </HashLink>
@@ -161,7 +164,10 @@ export default function Navbar() {
                     smooth
                     to={link.href}
                     className="text-lg font-medium hover:text-red-500 transition"
-                    onClick={closeAllMenus}
+                    onClick={() => {
+                      if (link.scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
+                      closeAllMenus();
+                    }}
                   >
                     {link.label}
                   </HashLink>
