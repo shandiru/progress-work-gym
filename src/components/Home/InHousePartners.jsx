@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 const PARTNERS = [
   { name: "Fine Line", handle: "@finelines_tattoo_pmuleicester", photo: "/jodie1.png", logo: "/fineline.png" },
   { name: "Top Teir Pysio - Keith", handle: "@toptierphysio", photo: "/h-p-2.jpg", logo: "/top.jpg" },
-  { name: "Milenium Fit", handle: "@millenniumfit1", photo: "/h-p-3.jpg", logo: "/fit.png" },
+  { name: "Millennium Fit", handle: "@millenniumfit1", photo: "/new-milli-image.jpg", logo: "/fit.png" },
   { name: "Urban Martial Arts", handle: "@umaleicester", photo: "/h-p-4.png", logo: "/art.jpg" },
 ];
 
@@ -69,15 +69,6 @@ export default function InHousePartners() {
           );
         });
 
-        // Hover micro-interaction (lift)
-        cards.forEach((card) => {
-          card.addEventListener("mouseenter", () => {
-            gsap.to(card, { y: -6, boxShadow: "0 12px 24px rgba(239,68,68,0.25)", duration: 0.18, ease: "power2.out" });
-          });
-          card.addEventListener("mouseleave", () => {
-            gsap.to(card, { y: 0, boxShadow: "0 0px 0px rgba(0,0,0,0)", duration: 0.2, ease: "power2.out" });
-          });
-        });
       }, sectionRef);
     })();
 
@@ -111,12 +102,24 @@ export default function InHousePartners() {
           >
             {/* Top image */}
             <div className="w-full aspect-[4/5] overflow-hidden">
-              <img src={p.photo} alt={p.name} className="w-full h-full object-cover" />
+              <img
+                src={p.photo}
+                alt={p.name}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Logo strip */}
             <div className="bg-black flex items-center justify-center h-24 mt-3">
-              <img src={p.logo} alt={`${p.name} logo`} className="max-h-20 max-w-[80%] object-contain" />
+              <img
+                src={p.logo}
+                alt={`${p.name} logo`}
+                loading="lazy"
+                decoding="async"
+                className="max-h-20 max-w-[80%] object-contain"
+              />
             </div>
 
             {/* Text */}

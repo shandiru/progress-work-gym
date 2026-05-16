@@ -82,7 +82,9 @@ export default function RealResultsSection() {
         try {
             const cs = getComputedStyle(el);
             gap = parseFloat(cs.columnGap || cs.gap || '0') || 0;
-        } catch { }
+        } catch {
+            gap = 0;
+        }
         const cardWidth = first
             ? first.getBoundingClientRect().width + gap
             : Math.round(el.clientWidth * 0.8);
@@ -141,6 +143,8 @@ export default function RealResultsSection() {
                                         alt="after"
                                         className="absolute inset-0 h-full w-full object-cover select-none"
                                         draggable="false"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                     <div
                                         className="absolute inset-0 overflow-hidden"
@@ -151,6 +155,8 @@ export default function RealResultsSection() {
                                             alt="before"
                                             className="absolute inset-0 h-full w-full object-cover select-none"
                                             draggable="false"
+                                            loading="lazy"
+                                            decoding="async"
                                             style={{ width: `${10000 / posMap[item.id]}%` }}
                                         />
                                     </div>

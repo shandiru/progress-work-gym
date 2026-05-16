@@ -22,7 +22,10 @@ export default function Equipment() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const items = equipmentData[activeCategory] || [];
+  const items = useMemo(
+    () => equipmentData[activeCategory] || [],
+    [activeCategory]
+  );
 
   const visibleItems = useMemo(
     () => items.slice(startIndex, startIndex + itemsPerView),
@@ -45,7 +48,7 @@ export default function Equipment() {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-4" id="ourequipment">
+    <section className="bg-black text-white py-20 px-4 scroll-m-15" id="ourequipment">
       {/* Title */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold">

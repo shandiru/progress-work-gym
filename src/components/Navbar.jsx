@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/", scrollToTop: true },
   {
     label: "About",
     href: "/#about",
@@ -17,10 +17,11 @@ const NAV_LINKS = [
   },
   {
     label: "Programs",
-    href: "/#programs",
+    href: "/#specialoffer",
     dropdown: [
       { label: "Special Offer", href: "/#specialoffer" },
       { label: "Our Equipment", href: "/#ourequipment" },
+      { label: "Apparel", href: "/#before-after" },
       { label: "Champion Athletes", href: "/#ChampionAthletes" },
     ],
   },
@@ -41,19 +42,13 @@ const NAV_LINKS = [
     ],
   },
   { label: "Reviews", href: "/#review" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const navRef = useRef(null);
 
   const toggleDropdown = (label, e) => {
     e.stopPropagation();
@@ -65,8 +60,18 @@ export default function Navbar() {
     setActiveDropdown(null);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <header className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
+    <header ref={navRef} className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* ✅ Logo */}
         <a href="/" className="flex items-center gap-3">
@@ -85,7 +90,10 @@ export default function Navbar() {
                 smooth
                 to={link.href}
                 className="transition-all text-white/90 hover:text-red-500"
-                onClick={closeAllMenus}
+                onClick={() => {
+                  if (link.scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
+                  closeAllMenus();
+                }}
               >
                 {link.label}
               </HashLink>
@@ -156,7 +164,10 @@ export default function Navbar() {
                     smooth
                     to={link.href}
                     className="text-lg font-medium hover:text-red-500 transition"
-                    onClick={closeAllMenus}
+                    onClick={() => {
+                      if (link.scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
+                      closeAllMenus();
+                    }}
                   >
                     {link.label}
                   </HashLink>

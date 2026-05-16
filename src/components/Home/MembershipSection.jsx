@@ -73,7 +73,6 @@ export default function MembershipPlans() {
   // Build infinite list: [...last N clones, ...original, ...first N clones]
   // N = visibleCount (max 4). We'll clone all 5 on both ends to be safe.
   const cloneCount = total;
-  const infinite   = [...plans, ...plans, ...plans]; // prefix + real + suffix (all same length)
   // Actually: prefix = last `cloneCount` items, suffix = first `cloneCount` items
   const prefixClones = plans.slice(-cloneCount);
   const suffixClones = plans.slice(0, cloneCount);

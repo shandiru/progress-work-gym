@@ -9,27 +9,27 @@ const categories = ["Hoodie", "T-shirt", "Vest"];
 
 const beforeAfterData = [
   // 🧥 Hoodie Category
-  { id: 1, category: "Hoodie", before: "/Hoodie 1a.png", after: "/Hoodie 1b.png" },
-  { id: 2, category: "Hoodie", before: "/Hoodie 2a.png", after: "/Hoodie 2b.png" },
-  { id: 3, category: "Hoodie", before: "/hoodie 3a.png", after: "/hoodie 3b.png" },
-  { id: 4, category: "Hoodie", before: "/hoodie 4b.png", after: "/hoodie 4a.png" },
-  { id: 5, category: "Hoodie", before: "/hoodie 5a.png", after: "/hoodie5b.png" },
+  { id: 1, category: "Hoodie", before: "/Hoodie 1a.webp", after: "/Hoodie 1b.webp" },
+  { id: 2, category: "Hoodie", before: "/Hoodie 2a.webp", after: "/Hoodie 2b.webp" },
+  { id: 3, category: "Hoodie", before: "/hoodie 3a.webp", after: "/hoodie 3b.webp" },
+  { id: 4, category: "Hoodie", before: "/hoodie 4b.webp", after: "/hoodie 4a.webp" },
+  { id: 5, category: "Hoodie", before: "/hoodie 5a.webp", after: "/hoodie5b.webp" },
 
   // 👕 T-shirt Category
-  { id: 6, category: "T-shirt", before: "/t shirt 1b.png", after: "/t shirt 1a.png" },
-  { id: 7, category: "T-shirt", before: "/t shirt 2a.png", after: "/t shirt 2 a.png" },
-  { id: 8, category: "T-shirt", before: "/t shirt 3b.png", after: "/t shirt 3a.png" },
-  { id: 9, category: "T-shirt", before: "/t shirt 4b.png", after: "/t shirt 4a.png" },
-  { id: 10, category: "T-shirt", before: "/t shirt 5a.png", after: "/t shirt 5b.png" },
-  { id: 11, category: "T-shirt", before: "/t shirt 6a.png", after: "/t shirt 6b.png" },
+  { id: 6, category: "T-shirt", before: "/t shirt 1b.webp", after: "/t shirt 1a.webp" },
+  { id: 7, category: "T-shirt", before: "/t shirt 2a.webp", after: "/t shirt 2 a.webp" },
+  { id: 8, category: "T-shirt", before: "/t shirt 3b.webp", after: "/t shirt 3a.webp" },
+  { id: 9, category: "T-shirt", before: "/t shirt 4b.webp", after: "/t shirt 4a.webp" },
+  { id: 10, category: "T-shirt", before: "/t shirt 5a.webp", after: "/t shirt 5b.webp" },
+  { id: 11, category: "T-shirt", before: "/t shirt 6a.webp", after: "/t shirt 6b.webp" },
 
   // 🦺 Vest Category
-  { id: 12, category: "Vest", before: "/vest 1a.png", after: "/vest 1.png" },
-  { id: 13, category: "Vest", before: "/vest 2a.png", after: "/vest 2.png" },
-  { id: 14, category: "Vest", before: "/vest 3a.png", after: "/vest 3.png" },
-  { id: 15, category: "Vest", before: "/vest 4a.png", after: "/vest 4b.png" },
-  { id: 16, category: "Vest", before: "/vest 5.png", after: "/vest 5 a.png" },
-  { id: 17, category: "Vest", before: "/vest 6.png", after: "/vest 6a.png" },
+  { id: 12, category: "Vest", before: "/vest 1a.webp", after: "/vest 1.webp" },
+  { id: 13, category: "Vest", before: "/vest 2a.webp", after: "/vest 2.webp" },
+  { id: 14, category: "Vest", before: "/vest 3a.webp", after: "/vest 3.webp" },
+  { id: 15, category: "Vest", before: "/vest 4a.webp", after: "/vest 4b.webp" },
+  { id: 16, category: "Vest", before: "/vest 5.webp", after: "/vest 5 a.webp" },
+  { id: 17, category: "Vest", before: "/vest 6.webp", after: "/vest 6a.webp" },
 ];
 
 export default function BeforeAfterGallery() {
@@ -130,7 +130,7 @@ export default function BeforeAfterGallery() {
           OUR <span className="text-red-600">APPAREL</span>
         </h2>
         <p className="text-gray-400 mt-2 text-sm md:text-base">
-          State-of-the-art machines for every muscle group
+          Premium gym wear designed for comfort and performance
         </p>
       </div>
 
@@ -228,12 +228,14 @@ function BeforeAfterCard({ before, after }) {
       ref={containerRef}
       className="relative w-full h-110 aspect-[4/3] rounded-lg overflow-hidden border border-red-600 bg-[#0d1117] shadow-lg"
     >
-      <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
       <img
         ref={afterRef}
         src={after}
         alt="After"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
       />
       <div
         ref={handleRef}

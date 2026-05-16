@@ -252,7 +252,7 @@ const defaultFaqs = [
   },
   {
     q: "What’s the difference between Off-Peak and Standard membership?",
-    a: "Off-Peak Membership: Access to the gym between 10:00am – 3:30pm only. Standard Membership: Full access to the gym anytime during opening hours.",
+    a: "Off-Peak Membership: Access to the gym between 10:00am – 3:30pm only, Monday to Friday. Standard Membership: Full access to the gym anytime during opening hours.",
   },
   {
     q: "What’s the minimum age to join the gym?",

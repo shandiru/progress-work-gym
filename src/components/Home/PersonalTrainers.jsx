@@ -317,6 +317,8 @@ export default function TrainersSection() {
                 src={t.image}
                 alt={t.name}
                 className="w-32 h-32 object-cover rounded-full mb-4"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="text-xl font-semibold text-center">{t.name}</h3>
               <p className="text-red-500 text-sm text-center">{t.title}</p>
