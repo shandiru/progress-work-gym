@@ -1,12 +1,23 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaRegClock,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   const footerRef = useRef(null);
   const colsRef = useRef([]);
   const bottomBarRef = useRef(null);
+  const openingHours = [
+    { day: "Monday to Thursday", hours: "6 AM - 9:30 PM" },
+    { day: "Friday", hours: "6 AM - 9 PM" },
+    { day: "Saturday", hours: "8 AM - 4 PM" },
+    { day: "Sunday", hours: "8 AM - 2 PM" },
+  ];
 
   useEffect(() => {
     let ctx;
@@ -60,7 +71,7 @@ export default function Footer() {
       ref={footerRef}
       className="bg-black text-gray-400 py-14 px-6 lg:px-12"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
         {/* Column 1: Brand */}
         <div ref={(el) => (colsRef.current[0] = el)}>
           <img
@@ -161,6 +172,25 @@ export default function Footer() {
               @progress_works_gym
             </a>
           </p>
+        </div>
+
+        {/* Column 4: Opening Hours */}
+        <div ref={(el) => (colsRef.current[3] = el)}>
+          <h4 className="text-white text-lg font-semibold mb-5 relative inline-block">
+            Opening Hours
+            <span className="absolute left-0 -bottom-1 h-[2px] w-10 bg-red-600"></span>
+          </h4>
+            <div>
+              {openingHours.map(({ day, hours }) => (
+                <div
+                  key={day}
+                  className="flex items-start justify-between gap-2 pb-3 text-sm last:border-b-0 last:pb-0"
+                >
+                  <span className="font-medium text-gray-200">{day}</span>
+                  <span className="text-right text-gray-400">{hours}</span>
+                </div>
+              ))}
+            </div>
         </div>
       </div>
 
