@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {equipmentData} from "../../../Data/EquipmentData/equipmentData"
-/* ===================== DATA ===================== */
+import { equipmentData } from "../../../Data/EquipmentData/equipmentData";
 
-
-/* ===================== COMPONENT ===================== */
 export default function Equipment() {
   const categories = useMemo(() => Object.keys(equipmentData), []);
   const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -80,7 +77,7 @@ export default function Equipment() {
         <button
           onClick={prevSlide}
           disabled={startIndex === 0}
-          className="bg-white text-black p-2 rounded-full disabled:opacity-40"
+          className="bg-white text-black p-2 rounded-full disabled:opacity-40 shrink-0"
         >
           <FaChevronLeft />
         </button>
@@ -99,18 +96,19 @@ export default function Equipment() {
           {visibleItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300"
+              className="border border-red-600 rounded-md overflow-hidden bg-black hover:scale-105 transition-transform duration-300 flex flex-col"
             >
-              <div className="h-94 bg-black flex items-center justify-center overflow-hidden">
+              {/* FIXED IMAGE CONTAINER */}
+              <div className="aspect-square bg-black flex items-center justify-center overflow-hidden p-4">
                 <img
                   src={item.img}
                   alt={item.name}
                   loading="lazy"
-                  decoding="async"
-                  className="w-full h-full rounded-2xl p-3 object-contain transition-transform duration-300 hover:scale-105"
+                  className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
                 />
               </div>
-              <div className="p-4 bg-[#0d1117]">
+              
+              <div className="p-4 bg-[#0d1117] flex-grow">
                 <h4 className="font-bold">{item.name}</h4>
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
@@ -122,7 +120,7 @@ export default function Equipment() {
         <button
           onClick={nextSlide}
           disabled={startIndex + itemsPerView >= items.length}
-          className="bg-white text-black p-2 rounded-full disabled:opacity-40"
+          className="bg-white text-black p-2 rounded-full disabled:opacity-40 shrink-0"
         >
           <FaChevronRight />
         </button>
