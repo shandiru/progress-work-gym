@@ -16,7 +16,7 @@ export default function Footer() {
     { day: "Monday to Thursday", hours: "6 AM - 9:30 PM" },
     { day: "Friday", hours: "6 AM - 9 PM" },
     { day: "Saturday", hours: "8 AM - 4 PM" },
-    { day: "Sunday", hours: "8 AM - 2 PM" },
+    { day: "Sunday / Bank Holiday", hours: "8 AM - 2 PM" },
   ];
 
   useEffect(() => {
