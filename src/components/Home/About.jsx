@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { FaArrowRight, FaDumbbell } from "react-icons/fa";
 import { GiGymBag, GiWeightLiftingUp } from "react-icons/gi";
+import { HashLink } from "react-router-hash-link";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -120,13 +121,14 @@ export default function About() {
           </div>
 
           {/* CTA */}
-          <a
+          <HashLink
+            smooth
             ref={ctaRef}
-            href="/#contact"
+            to="/#contact"
             className="inline-block mt-6 bg-[#ed1c24] text-white text-sm font-bold uppercase px-6 py-3 rounded shadow hover:bg-red-700 transition"
           >
             Take A Tour <FaArrowRight className="inline-block ml-2" />
-          </a>
+          </HashLink>
         </div>
 
         {/* Right Image + Circle */}

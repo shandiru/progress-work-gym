@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
@@ -74,13 +75,13 @@ export default function Navbar() {
     <header ref={navRef} className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3" onClick={closeAllMenus}>
           <img
             src="/logo.png"
             alt="Progress Works Gym"
             className="h-12 w-auto object-contain"
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-10 font-semibold text-sm tracking-wide">
@@ -100,8 +101,11 @@ export default function Navbar() {
 
               {link.dropdown && (
                 <button
+                  type="button"
                   onClick={(e) => toggleDropdown(link.label, e)}
                   className="ml-1 text-white/80 hover:text-red-500 transition"
+                  aria-expanded={activeDropdown === link.label}
+                  aria-label={`Toggle ${link.label} menu`}
                 >
                   {activeDropdown === link.label ? (
                     <FiChevronUp className="w-4 h-4" />
@@ -143,11 +147,14 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
+          type="button"
           className="lg:hidden text-white text-2xl"
           onClick={() => {
             setMenuOpen(!menuOpen);
             setActiveDropdown(null);
           }}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -173,8 +180,11 @@ export default function Navbar() {
                   </HashLink>
                   {link.dropdown && (
                     <button
+                      type="button"
                       onClick={(e) => toggleDropdown(link.label, e)}
                       className="text-white hover:text-red-500"
+                      aria-expanded={activeDropdown === link.label}
+                      aria-label={`Toggle ${link.label} menu`}
                     >
                       {activeDropdown === link.label ? (
                         <FiChevronUp className="w-5 h-5" />

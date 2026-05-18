@@ -95,7 +95,7 @@ export default function ContactForm() {
 
   return (
     <section
-      id="contact"
+      id="contact-form"
       ref={sectionRef}
       className="bg-black py-16 px-4 sm:px-6 lg:px-12"
     >

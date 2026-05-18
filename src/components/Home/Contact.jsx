@@ -117,7 +117,7 @@ export default function Contact() {
           <div ref={btnsRef} className="flex flex-col sm:flex-row justify-center gap-4">
             {/* Button to Open in Google Maps */}
             <a
-              href="https://www.google.com/maps/@52.6531416,-1.2010203,3a,90y,10.17h/data=!3m8!1e1!3m6!1sCIABIhAGbzaqChiQ-2fzxD4ADMG2!2e10!3e12" // Google Maps Location Link
+              href="https://maps.app.goo.gl/mDr3jiv8VKW1pu8f9" // Google Maps Location Link
               target="_blank"
               rel="noopener noreferrer"
               className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium will-change-transform"

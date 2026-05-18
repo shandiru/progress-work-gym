@@ -4,9 +4,7 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaRegClock,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
@@ -111,13 +109,13 @@ export default function Footer() {
               </HashLink>
             </li>
             <li>
-              <HashLink to="#trainers" className="hover:text-red-500 transition-colors">
+              <HashLink to="/#trainers" className="hover:text-red-500 transition-colors">
                 Personal Trainers
               </HashLink>
             </li>
             <li>
               <HashLink
-                to="#ChampionAthletes"
+                to="/#ChampionAthletes"
                 className="hover:text-red-500 transition-colors"
               >
                 Champion Athletes
@@ -145,7 +143,7 @@ export default function Footer() {
           <p className="text-sm mb-3 flex items-start gap-2">
             <FaMapMarkerAlt className="mt-0.5 text-red-500 w-4 h-4 flex-shrink-0" />
             <a
-              href="https://www.google.com/maps/@52.6531416,-1.2010203,3a,90y,10.17h/data=!3m8!1e1!3m6!1sCIABIhAGbzaqChiQ-2fzxD4ADMG2!2e10!3e12"
+              href="https://maps.app.goo.gl/mDr3jiv8VKW1pu8f9"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-500 transition-colors"

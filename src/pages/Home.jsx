@@ -28,15 +28,51 @@ function Home() {
       <SpecialOffers />
       <MembershipPlans />
       <About />
-      <LazySection component={Equipment} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={Contact} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={Apparel} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={TrainersSection} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={Products} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={FoodProducts} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={InHousePartners} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={ChampSection} minHeightClassName={sectionPlaceholder} />
-      <LazySection component={WhyChooseUsSection} minHeightClassName={sectionPlaceholder} />
+      <LazySection
+        component={Equipment}
+        sectionIds={["ourequipment"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={Contact}
+        sectionIds={["contact"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={Apparel}
+        sectionIds={["before-after"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={TrainersSection}
+        sectionIds={["trainers"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={Products}
+        sectionIds={["ourproducts"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={FoodProducts}
+        sectionIds={["ourfoods"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={InHousePartners}
+        sectionIds={["ourpartners"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={ChampSection}
+        sectionIds={["ChampionAthletes"]}
+        minHeightClassName={sectionPlaceholder}
+      />
+      <LazySection
+        component={WhyChooseUsSection}
+        sectionIds={["why"]}
+        minHeightClassName={sectionPlaceholder}
+      />
       <LazySection component={Review} minHeightClassName={sectionPlaceholder} />
       <LazySection component={FaqSection} minHeightClassName={sectionPlaceholder} />
       <LazySection component={ContactForm} minHeightClassName={sectionPlaceholder} />
