@@ -5,7 +5,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/", scrollToTop: true },
+  { label: "Home", href: "/#", scrollToTop: true },
   {
     label: "About",
     href: "/#about",
@@ -73,7 +73,7 @@ export default function Navbar() {
   return (
     <header ref={navRef} className="bg-[#06091A] text-white shadow-lg fixed w-full top-0 left-0 z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
-        {/* ✅ Logo */}
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
@@ -82,7 +82,7 @@ export default function Navbar() {
           />
         </a>
 
-        {/* ✅ Desktop Nav */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-10 font-semibold text-sm tracking-wide">
           {NAV_LINKS.map((link) => (
             <div key={link.label} className="relative flex items-center gap-1 group">
@@ -111,7 +111,7 @@ export default function Navbar() {
                 </button>
               )}
 
-              {/* ✅ Dropdown */}
+              {/* Dropdown */}
               {link.dropdown && activeDropdown === link.label && (
                 <div className="absolute top-[2.5rem] left-0 w-52 bg-[#0B0F1F] border border-gray-700 rounded-lg shadow-xl overflow-hidden">
                   {link.dropdown.map((item, index) => (
@@ -131,7 +131,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* ✅ Instagram Icon */}
+        {/* Instagram Icon */}
         <a
           href="https://www.instagram.com/progress_works_gym"
           target="_blank"
@@ -141,7 +141,7 @@ export default function Navbar() {
           <FaInstagram className="text-lg" />
         </a>
 
-        {/* ✅ Mobile Hamburger */}
+        {/* Mobile Hamburger */}
         <button
           className="lg:hidden text-white text-2xl"
           onClick={() => {
@@ -153,7 +153,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ✅ Mobile Drawer */}
+      {/* Mobile Drawer */}
       {menuOpen && (
         <div className="lg:hidden bg-[#06091A] border-t border-gray-700">
           <nav className="flex flex-col gap-4 py-6 px-6 text-base">

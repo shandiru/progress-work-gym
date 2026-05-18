@@ -7,6 +7,7 @@ import {
   FaRegClock,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -105,32 +106,32 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="/" className="hover:text-red-500 transition-colors">
+              <HashLink to="/#" className="hover:text-red-500 transition-colors">
                 Home
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a href="#trainers" className="hover:text-red-500 transition-colors">
+              <HashLink to="#trainers" className="hover:text-red-500 transition-colors">
                 Personal Trainers
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#ChampionAthletes"
+              <HashLink
+                to="#ChampionAthletes"
                 className="hover:text-red-500 transition-colors"
               >
                 Champion Athletes
-              </a>
+              </HashLink>
             </li>
             <li>
-              <Link to="/privacy-policy" className="hover:text-red-500">
+              <HashLink to="/privacy-policy" className="hover:text-red-500">
                 Privacy Policy
-              </Link>
+              </HashLink>
             </li>
             <li>
-              <Link to="/terms-conditions" className="hover:text-red-500">
+              <HashLink to="/terms-conditions" className="hover:text-red-500">
                 Terms & Conditions
-              </Link>
+              </HashLink>
             </li>
           </ul>
         </div>
